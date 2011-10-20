@@ -1,0 +1,111 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Vmpanel</title>
+    <%= stylesheet_link_tag :all %>
+    <%= javascript_include_tag :defaults %>
+    <%= javascript_include_tag "highslide/highslide" %>
+    <%= javascript_include_tag "easySlider1.5" %>
+    <script type="text/javascript">    
+      hs.graphicsDir = '/javascripts/highslide/graphics/';
+    </script>
+    <style type="text/css">
+      <!--
+      .text {font:bold 12px Arial; font-weight:bold; color:#47494b; padding-left:20px;}
+      -->
+    </style>
+    <% if @show_slider %>
+    <script type="text/javascript">
+    $(document).ready(function(){	
+      $("#slider").easySlider({
+        auto: true,
+        continuous: true 
+      });
+    });
+    function MM_openBrWindow(theURL,winName,features) { //v2.0
+      window.open(theURL,winName,features);
+    }
+    </script>
+    <% end %>
+<!--[if lt IE 7.]>
+<script defer type="text/javascript" src="/javascripts/pngfix.js"></script>
+<![endif]-->
+    <%#= csrf_meta_tags %>
+  </head>
+  <body>
+    <div class="<%= request.fullpath == "/"?"homebg":"innerbg" %>">
+      <div class="home-topcontainer">
+        <!--header section start-->
+        <div class="header">
+          <div class="logo"><a href="/"><img src="/images_new/logo.jpg" width="211" height="92" alt="VM Complete" /></a></div>
+          <div class="top-navigation">
+            <ul class="navigation">
+              <li><a href="<%= "/" %>" title="Home" class="current" ><span>Home</span></a></li>
+              <li><a href="/pricing" title="Pricing" ><span>Pricing</span></a></li>
+              <li><a href="#" title="Features"><span>Features</span></a></li>
+              <li><a href="#" title="Demo"><span>Demo</span></a></li>
+              <li><a href="#" title="About Us" ><span>About Us</span></a></li>
+              <li><a href="#" title="Support"><span>Support</span></a></li>
+              <li><a href="reseller" title="Login"><span>Login</span></a></li>
+            </ul>
+          </div>
+          <div class="clear"></div>
+          <!-- <img src="images/carousel-banner.jpg" width="960" height="410" alt="VM Banner" /> -->
+          <% if @show_slider %>
+            <!-- slider section-->
+            <div id="slider">
+              <ul>
+                <li><img src="/images_new/slide01.png" width="960" height="370" alt="Test" />
+                  <div class="slider-brief">
+                    <h2>VMComplete Control Panel</h2>
+                    <p>The VMComplete Control Panel provides the industry’s first full life-cycle hosting automation solution. VMComplete comes standard with a variety of Enterprise modules including E-Commerce, Virtual Machine provisioning &amp; management, Helpdesk system, Customer control panel, Communications Director and many more features! </p>
+                  </div>
+                </li>
+                <li><img src="/images_new/client_manager_slide1.png" width="960" height="370" alt="Vm Manager" />
+                  <div class="slider-brief">
+                    <h2>Client Manager </h2>
+                    <p>Clients can manage their account details, billing information, helpdesk tickets and access their virtual machine management panel.</p>
+                  </div>
+                </li>
+                <li><img src="/images_new/server_manager_slide2.png" width="960" height="370" alt="Server Manager" />
+                  <div class="slider-brief">
+                    <h2>Virtual Machine Manager </h2>
+                    <p>Complete Virual Machine Management. Manage server processes, services, start/stop/reboot, backup/restore, reinstall and manage all server resources all from one single panel. Accessible from both the Administrator and Client Panels.   </p>
+                  </div>
+                </li>
+                <li><img src="/images_new/billing_manager_slide4.png" width="960" height="370" alt="Billing Manager" />
+                  <div class="slider-brief">
+                    <h2>Billing Manager</h2>
+                    <p>Clients can choose their vps plan, add-ons, etc and then purchase them. They will be able to use credit card gateways or paypal payments.  </p>
+                  </div>
+                </li>
+                <!--<li><img src="images/vm_manager_slide3.png" width="960" height="370" alt="Vm Manager" />
+                 <div class="slider-brief">
+                   <h2>VM Manager </h2>
+                   <p>Complete Network management for VPS from the CP itself, for both Xen and OpenVZ. VM operations like Add/Delete/disable/enable/restart VPS.  </p>
+                 </div>
+               </li>-->
+              </ul>
+            </div>
+            <!-- slider section-->
+          <% else %>
+            <div class="innerbanner"><img src="/images_new/innerbanner.jpg" alt="banner" width="960" height="148" border="0" /></div>
+          <% end %>
+        </div>
+        <!--header section end-->
+        <%= yield %>
+      </div>
+    </div>
+    <div class="footer">
+      <div class="footerarea">
+        <div class="footerleft">
+          <p><a href="index.php" style="padding-left:0px">Home</a>|<a href="pricing.php">Pricing</a>| <a href="#">Features</a> |<a href="#">Demo</a>|<a href="#">About Us</a>|<a href="#">Support</a>|<a href="reseller">Login</a></p>
+          <p>&copy; <?php echo date('Y');?> VMComplete. All Rights Received</p>
+        </div>
+        <div class="followon"></div>
+        <div class="clear"></div>
+      </div>
+    </div>
+  </body>
+</html>

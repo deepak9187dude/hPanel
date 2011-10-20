@@ -1,0 +1,41 @@
+<%#*<script type="text/javascript">%>
+
+
+  <%#*function checkCountry(country) {%>
+    <%#*if(country == 225) {%>
+        
+      <%#*document.getElementById('stateid').style.display= "block";%>
+      <%#*//document.getElementById('usstates2').style.display= "block";%>
+          
+    <%#*} else {%>
+      <%#*document.getElementById('stateid').style.display= "none";%>
+      <%#*//document.getElementById('usstates2').style.display= "none";%>
+        
+    <%#*}%>
+
+  <%#*}%>
+<%#*</script>%>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td class="middle_top"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td colspan="2"><span class="bodytext_1"><a href="index.php?cid=3" class="bodylink">Home</a> &gt;  <a href="index.php?cid=21&action=CMM" class="bodylink">Client Manager</a> &gt; #HEAD#  </span></td>
+        </tr>
+        <tr>
+          <td width="47"><img src="#IMG_PATH##TITLE_IMG#" title="#HEAD#" width="30" height="32" border="0" align="bottom" /></td>
+          <td width="1262"  valign="top" style="padding-top:2px"><span class="txt_big_red">#HEAD#</span></td>
+        </tr>
+      </table></td>
+
+  </tr>
+  <tr>
+    <td class="tdgap1"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td class="tdgap1">
+            <%= render 'form' %>
+          </td>
+        </tr>
+      </table> </td>
+  </tr>
+</table>
+

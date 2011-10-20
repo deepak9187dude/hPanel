@@ -1,0 +1,258 @@
+<%#*<script type="text/javascript" language="javascript">%>
+  <%#*function ShowDiv(id1, id2)%>
+  <%#*{%>
+ 
+    <%#*window.document.getElementById(id1).style.display = "block";%>
+    <%#*window.document.getElementById(id2).style.display = "none";%>
+
+  <%#*}%>
+  <%#*function ShowHideSerch(id)%>
+  <%#*{%>
+    <%#*var  browser_type = navigator.appName;%>
+    <%#*var imgId = "img"+id;%>
+    <%#*id = "tr"+id;%>
+ 
+    <%#*var img = document.getElementById(imgId);%>
+	 
+    <%#*if(browser_type=="Microsoft Internet Explorer")%>
+    <%#*{%>
+      <%#*if(img.src == "<?php echo SHOW_IMG_PATH; ?>")%>
+      <%#*{%>
+        <%#*img.src = "<?php echo HIDE_IMG_PATH; ?>";%>
+        <%#*//document.getElementById(id).style.display='none';%>
+        <%#*window.document.getElementById(id).style.setAttribute('display', 'none');%>
+			
+      <%#*}%>
+      <%#*else%>
+      <%#*{%>
+        <%#*img.src = "<?php echo SHOW_IMG_PATH; ?>";%>
+        <%#*//document.getElementById(id).style.display='table-row';%>
+        <%#*window.document.getElementById(id).style.setAttribute('cssText', 'table-row');%>
+		
+	
+      <%#*}%>
+    <%#*}%>
+    <%#*else%>
+    <%#*{%>
+		
+      <%#*if(img.src == "<?php echo SHOW_IMG_PATH; ?>")%>
+      <%#*{%>
+        <%#*img.src = "<?php echo HIDE_IMG_PATH; ?>";%>
+        <%#*document.getElementById(id).style.display='none';%>
+			
+      <%#*}%>
+      <%#*else%>
+      <%#*{%>
+        <%#*img.src = "<?php echo SHOW_IMG_PATH; ?>";%>
+        <%#*document.getElementById(id).style.display='table-row';%>
+		
+	
+      <%#*}%>
+    <%#*}%>	
+  <%#*}%>
+<%#*</script>%>
+<!-- action CMT-->
+<form name="frmsearch" action="index.php?cid=9&action=CMS&left=0" method="post" id="frmsearch">
+  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+      <td class="middle_top">
+        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td colspan="3">
+              <span class="bodytext_1">
+                <a href="index.php?cid=3" class="bodylink">Home</a> &gt; 
+                <a href="index.php?cid=3" class="bodylink">Client Manager</a> &gt; 
+                <a href="index.php?cid=9&action=CML&left=0" class="bodylink">Clients</a> 
+                > Subscriptions 
+              </span>
+            </td>
+          </tr>
+          <tr>
+            <td width="3%"><img src="#IMG_PATH#icon_view_client_big.png"  width="30" height="32" border="0" align="bottom" /></td>
+            <td width="92%" valign="top" style="padding-top:2px; padding-left:7px"><span class="txt_big_red"><?php echo $_SESSION["NAME"];?></span></td>
+            <td width="5%" valign="top" style="padding-top:2px"><img src="#IMG_PATH#<?php echo $_SESSION["STATUSIMG"];?>" title="#STATUS#" width="30" height="30" border="0" align="bottom" /></td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+    <tr>
+      <td class="tdgap1">
+        <div id="gallery">
+          <a class="offdiv"  href="index.php?cid=9&action=CMT&userid=<?php echo $_SESSION['USERID'];?>&left=0">
+            <span>
+              <div class="offdiv" title="General Settings">
+                <span onclick="ShowDiv('divGS','divTmp')">General Settings</span>
+              </div>              
+            </span>
+          </a>
+          <!--<a class="offdiv"  href='index.php?cid=9&action=CMV&userid=<?php echo $_SESSION["USERID"];?>&left=0'><div class="offdiv" title="Containers"><span onclick="ShowDiv('divC','divTmp')">Containers</span></div> </a>
+          -->
+          <a class="offdiv"  href='index.php?cid=9&action=CMF&userid=<?php echo $_SESSION['USERID'];?>&left=0'><div class="offdiv" title="Anti-fraud status"><span onclick="ShowDiv('divA','divTmp')">Anti-fraud status</span></div> </a>
+          <a class="ondiv"  href="index.php?cid=9&action=CMS&userid=<?php echo $_SESSION['USERID'];?>&left=0"><div class="ondiv" title="Subscriptions"><span onclick="ShowDiv('divS','divTmp')">Subscriptions</span></div> </a>
+          <a class="offdiv"  href='index.php?cid=9&action=CMB&userid=<?php echo $_SESSION['USERID']?>&left=0'><div class="offdiv" title="Billing History"><span onclick="ShowDiv('divBH','divTmp')">Billing History</span></div> </a>
+          <a class="offdiv"  href='index.php?cid=9&action=CLL&userid=<?php echo $_SESSION['USERID']?>&left=0'><div class="offdiv" title="License Details"><span onclick="ShowDiv('divLD','divTmp')">License Details</span></div> </a>
+        </div>
+        <div id="General Settings" style="height: 100%;" class="hide">
+          <div id="divTmp">
+          </div>
+          <div id="divGS">
+          </div>
+        </div>
+        <div id="Containers" style="height: 100%;" class="hide">
+          <div id="divC">
+        </div>
+        </div>
+        <div id="Anti-fraud status" style="height: 100%;" class="hide">
+          <div id="divA">
+          </div>
+        </div>
+
+        <div id="Subscriptions" style="height: 100%;" class="show">								   	 								 		<div id="divS">
+            <table width="100%" border="0" cellpadding="0" cellspacing="1">
+              <tr>
+                <td>
+                  <table width="100%" border="0" cellpadding="0" cellspacing="0">
+
+                    <tbody>
+                      <tr width="100%">
+                        <td colspan="9" valign="top">&nbsp;</td></tr>
+                      <tr class="cate_listing_head">
+                        <td valign="middle">&nbsp;&nbsp;Search
+                        </td>
+                        <td valign="middle" width="5%" align="right">
+                          <img id="imgHR33" style="padding-left: 20px;" src="#IMG_PATH#search_show.png" onClick="javascript:ShowHideSerch('HR33');" align="baseline">
+                        </td>
+                      </tr>
+                      <tr style="display: table-row;" width="100%" id="trHR33">
+                        <td colspan="9" valign="top">
+                          <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                            <tbody>
+                              <tr>
+                                <td width="6%" nowrap="nowrap" valign="bottom">ID&nbsp;<br>
+                                  <input name="txtSubid" id="txtSubid" size="4" value="#SEARCHVAL1#" type="text"></td>			
+                                <td width="10%" nowrap="nowrap" valign="bottom"> Plan&nbsp;&nbsp;<br>
+                                  <input name="txthostplan" id="txthostplan" size="11" value="#HOSTPLAN#" type="text">
+                                </td>
+                                <td width="11%" nowrap="nowrap" valign="top">
+                                  Status&nbsp;&nbsp;<br>
+                                  <select name="cmbstatus" id="cmbstatus">								
+                                    <option value="All" selected="selected">All</option>
+                                    #SUBSTATUS#
+                                  </select>
+                                </td>
+                                <td width="13%" nowrap="nowrap" valign="top">
+                                  &nbsp;&nbsp;<br>
+
+                                  <!--<select name="hostplantype" id="hostplantype">
+                          <option value="All" selected="selected">All</option>
+              #HOSTPLANTYPE#
+                                  </select>-->
+
+                                </td>
+                                <td width="3%" nowrap="nowrap" valign="bottom">
+                                  <a href="#">
+                                    <input src="#IMG_PATH#icon_search.gif" title="Search" id="go" name="go" width="31" height="33" type="image">
+                                  </a> 
+                                </td>
+                                <td width="3%" class="bodytext" valign="bottom">Show</td>
+                                <td width="54%" class="bodytext" valign="bottom">
+                                  <select name="limit" class="limit" id="limit" onchange="document.frmsearch.submit()">
+                                    #LIMIT#
+                                  </select>
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </td>
+              </tr>
+              <tr>
+                <td align="right" valign="middle">&nbsp;<a class="det_link" href="downloadxls.php?id=<?php echo $_SESSION['USERID'];?>&key=CMS&search1=#SEARCHVALUE1#&search2=#SEARCHVAL2#&search3=#SEARCHVAL3#&search4=#SEARCHVAL4#">
+                    <img src="#IMG_PATH#excel.jpg" title="Export to Excel">
+                  </a>
+                </td>
+              </tr>
+              <!--<tr><td valign="middle">&nbsp;</td></tr>-->
+              <tr>
+                <td valign="middle">
+                  <table class="bgcolor3" width="100%" border="0" cellpadding="0" cellspacing="1">
+                    <tr>
+                      <td class="cate_listing" width="5%" align="center"  nowrap="nowrap">
+                        <a href="index.php?cid=9&left=0&action=CMS&orderby=id&sort=#SORT#&#SEARCHURL2#&limit=<?php echo $_SESSION['cmslimit'] ?>&page=<?php echo $_REQUEST['page'] ?>&userid=<?php echo $_REQUEST['userid'];?>" class="cate_listing">ID</a> 
+                        #id_IMAGE#</td>	
+                      <td class="cate_listing" width="16%" align="center"  nowrap="nowrap">
+                        <a href="index.php?cid=9&left=0&action=CMS&orderby=subscriptionname&sort=#SORT#&#SEARCHURL2#&limit=<?php echo $_SESSION['cmslimit'] ?>&page=<?php echo $_REQUEST['page'] ?>&userid=<?php echo $_REQUEST['userid'];?>" class="cate_listing">Subscription Name</a> #subscriptionname_IMAGE#
+                      </td>						                    
+                      <td class="cate_listing" width="9%" align="center"  nowrap="nowrap">
+                        <a href="index.php?cid=9&left=0&action=CMS&orderby=plan&sort=#SORT#&#SEARCHURL2#&limit=<?php echo $_SESSION['cmslimit'] ?>&page=<?php echo $_REQUEST['page'] ?>&userid=<?php echo $_REQUEST['userid'];?>" class="cate_listing">Plan Name</a> #plan_IMAGE#
+                      </td>
+                      <!--<td class="cate_listing" width="15%" align="center"  nowrap="nowrap"><a href="index.php?cid=9&left=0&action=CMS&orderby=vm_name&sort=#SORT#&#SEARCHURL2#&limit=<?php echo $_SESSION['cmslimit'] ?>&page=<?php echo $_REQUEST['page'] ?>&userid=<?php echo $_REQUEST['userid'];?>" class="cate_listing">VM Name</a> #vm_name_IMAGE#</td>-->
+                      <td class="cate_listing" width="14%" align="center" nowrap="nowrap">
+                        <a href="index.php?cid=9&left=0&action=CMS&orderby=accname&sort=#SORT#&#SEARCHURL2#&limit=<?php echo $_SESSION['cmslimit'] ?>&page=<?php echo $_REQUEST['page'] ?>&userid=<?php echo $_REQUEST['userid'];?>" class="cate_listing">Account Name</a> #accname_IMAGE#
+                      </td>
+                      <!--<td class="cate_listing" width="15%" align="center" nowrap="nowrap"><a href="index.php?cid=9&left=0&action=CMS&orderby=plantype&sort=#SORT#&#SEARCHURL2#&limit=<?php echo $_SESSION['cmslimit'] ?>&page=<?php echo $_REQUEST['page'] ?>&userid=<?php echo $_REQUEST['userid'];?>" class="cate_listing">Hosting Plan Type</a> #plantype_IMAGE#</td>-->
+                      <td class="cate_listing" width="10%" align="center" nowrap="nowrap">
+                        <a href="index.php?cid=9&left=0&action=CMS&orderby=status&sort=#SORT#&#SEARCHURL2#&limit=<?php echo $_SESSION['cmslimit'] ?>&page=<?php echo $_REQUEST['page'] ?>&userid=<?php echo $_REQUEST['userid'];?>" class="cate_listing">Status</a> #status_IMAGE#
+                      </td>
+                      <td class="cate_listing" width="10%" align="center" nowrap="nowrap">
+                        <a href="index.php?cid=9&left=0&action=CMS&orderby=startdate&sort=#SORT#&#SEARCHURL2#&limit=<?php echo $_SESSION['cmslimit'] ?>&page=<?php echo $_REQUEST['page'] ?>&userid=<?php echo $_REQUEST['userid'];?>" class="cate_listing">Start Date</a> #startdate_IMAGE#
+                      </td>
+
+                      <td class="cate_listing" width="10%" align="center" nowrap="nowrap"><a href="index.php?cid=9&left=0&action=CMS&orderby=enddate&sort=#SORT#&#SEARCHURL2#&limit=<?php echo $_SESSION['cmslimit'] ?>&page=<?php echo $_REQUEST['page'] ?>&userid=<?php echo $_REQUEST['userid'];?>" class="cate_listing">End Date</a> #enddate_IMAGE#
+                      </td>												
+                    </tr>
+                    <% for subscription in @subscriptions %>
+                    <sub_loop>
+                      <tr>
+                        <td class="bgcolor4" width="5%" align="center" nowrap="nowrap"><a class="det_link" href="BillingDirector/Subscriptiondetails.php?id=#ID#&page=Subscriptions"><%= subscription.id %></a></td>
+
+                        <td class="bgcolor4" width="10%" align="center" nowrap="nowrap"><a class="det_link" href="BillingDirector/Subscriptiondetails.php?id=#ID#&page=Subscriptions"><%= subscription.name %></a></td>
+                        <td class="bgcolor4" width="15%" align="center" nowrap="nowrap"><%= subscription.hosting_plan_id %></td>
+                        <!--<td class="bgcolor4" width="15%" align="center" nowrap="nowrap">#VM_NAME#</td>-->
+                        <td class="bgcolor4" width="14%" align="center" valign="middle"><%= subscription.account_name %></td>
+                        <!--<td class="bgcolor4" width="15%" align="center" nowrap="nowrap">#TYPE#</td>-->
+                        <td class="bgcolor4" width="10%" align="center" nowrap="nowrap">
+                          <%=raw (subscription.status=='Active')?"<img src='/images/online.png'>":"<img src='/images/offline.png'>" %> <span class="#STATUS_CSS#"><%= subscription.status %></span>
+                        </td>	
+                        <td class="bgcolor4" width="10%" align="center" nowrap="nowrap"><%= subscription.start_date %></td>	
+                        <td class="bgcolor4" width="10%" align="center" nowrap="nowrap"><%= subscription.end_date %></td>
+                      </tr>
+                    </sub_loop>
+                    <% end %>
+                    <tr style="display:#STYLE#"><td height="50" colspan="9" align="center" bgcolor="#FFFFFF" class="no_record">#MESSAGE#</td>
+                    </tr> 
+                  </table>
+                </td>
+              </tr>
+
+              <tr><td height="50" colspan="8" align="right">#PAGINATION#</td>
+              </tr>
+            </table>
+
+          </div>
+        </div>
+
+        <div id="Billing History" style="height: 100%;" class="hide">
+
+          <div id="divBH">
+          </div>
+        </div>
+
+        <div id="License details" style="height: 100%;" class="hide">
+
+          <div id="divLD">
+          </div>
+        </div>
+        <div id="Payment settings" style="height: 100%;" class="hide">
+
+          <div id="divPS">
+          </div>
+        </div>
+      </td>
+    </tr>
+
+  </table>
+</form>

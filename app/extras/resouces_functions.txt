@@ -1,0 +1,20 @@
+  def index 
+  end
+
+  def create #create a new
+  end
+
+  def show #display a specific
+  end
+
+  def update #update a specific
+  end
+
+  def new #return an HTML form for creating a new
+  end
+
+  def destroy #delete a specific
+  end
+
+  def edit #return an HTML form for editing
+  end
