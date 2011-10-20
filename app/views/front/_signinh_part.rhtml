@@ -2,7 +2,7 @@
   <!--<form action="" name="frmucr" id="frmucr" method="post">-->
   <%#*<form onsubmit="return validateForms('frmucr');" method="post" id="frmucr" name="frmucr" action="">%>
 
-
+<%= form_for @user do |f| %>
     <table width="100%" cellspacing="0" cellpadding="0" border="0" align="center">
       <tbody>
         <tr>
@@ -74,7 +74,7 @@
                                     <table width="100%" cellspacing="0" cellpadding="4" border="0">
                                       <tbody>
                                         <tr valign="middle">
-                                          <td width="23%" align="left">
+                                          <td width="23%" align="left">                                            
                                             <input type="text" size="30" id="txtexistingemail1" class="textfield" name="txtexistingemail1"/>
                                           </td>
                                           <td width="47%" align="left"> &nbsp;
@@ -164,12 +164,13 @@
                                             </select>
                                           </td>
                                           <td valign="top" align="left">
-                                            <input type="text" value="" id="txtfirst_1_3" class="textfield" name="txtfirst_1_3"/>
+                                            <%= f.text_field :first_name, :id=>'txtfirst_1_3',:class=>'txtfield',:size=>20 %> 
                                             <br/>&nbsp;
                                             <span class="error" id="txtfirst"></span> 
                                           </td>
                                           <td valign="top" align="left">
-                                            <input type="text" value="" id="txtlast_1_3" class="textfield" name="txtlast_1_3"/><br/>&nbsp;
+                                            <%= f.text_field :last_name, :id=>'txtfirst_1_3',:class=>'txtfield',:size=>20 %> 
+                                            <br/>&nbsp;
                                             <span class="error" id="txtlast"></span>
                                           </td>
                                         </tr>
@@ -567,4 +568,4 @@
     </table>
     <br/>
   <%#*</form>%>
-    
+<% end %>
