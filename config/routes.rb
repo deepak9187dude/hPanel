@@ -5,7 +5,6 @@ Vhpanel::Application.routes.draw do
   get "front/index"
   get "/:action"=>"front"
   
-  
   #clients points to users, pathname changed, 
   resources :users
   resources :clients, :controller=>'users',:path=>'reseller/clients' do 

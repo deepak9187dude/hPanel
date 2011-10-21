@@ -4,8 +4,13 @@ class UsersController < ApplicationController
   end
 
   def create #create a new
-    @user = User.create(params[:user])
+    @user = params[:user]
+    if params[:register_from_front]
+      redirect_to "/payoptionsh"
+    else
+      render :text=>"not set"
     redirect_to clients_path
+    end
   end
 
   def show #display a specific

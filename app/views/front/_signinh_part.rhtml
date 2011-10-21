@@ -8,7 +8,7 @@
         <tr>
           <td valign="middle" align="right">
             <div class="carttxt">
-              Your Shopping Cart : Plan A - $1.99 / month
+              Your Shopping Cart : <%= @plan.title %> - $<%= @plan_rate %> / <%= @plan_duration[@type] %>
             </div>
           </td>
         </tr>
@@ -23,7 +23,7 @@
         </tr>
         <tr>
           <td valign="top">
-            <table width="100%" cellspacing="0" cellpadding="0" border="0" style="border:1px solid #ccc;">
+            <table width="100%" cellspacing="0" cellpadding="0" border="0">
               <tbody>
                 <tr>
                   <td height="38" class="blkheadbg">
@@ -138,7 +138,7 @@
                 <!-- End of Existing Customer -->
                 <tr id="register_new" style="display: table-row;">
                   <td valign="top">
-                    <table width="100%" cellspacing="0" cellpadding="2" border="0" style="border:2px solid red;">
+                    <table width="100%" cellspacing="0" cellpadding="2" border="0">
                       <tbody>
                         <tr>
                           <td valign="top" align="left">
@@ -418,7 +418,7 @@
                                       <tbody>
                                         <tr valign="middle">
                                           <td width="23%" align="left">
-                                            <input type="text" value="" id="txtpost_6" class="textfield" name="txtpost_6"/>
+                                            <%= f.text_field :postal_code, :class=>'txtfield', :id=>'txtpost_6',:maxlength=>10 %>
                                           </td>
                                           <td width="77%" align="left"> &nbsp;
                                             <span class="error" id="txtpost"></span>
@@ -446,11 +446,14 @@
                                         <tr>
                                           <td valign="top" align="left">+</td>
                                           <td valign="top" align="left">
-                                            <input type="text" value="" id="txtcc_1_4" class="textfield" maxlength="4" name="txtcc_1_4"/> &nbsp;<span class="error" id="txtcc"></span></td>
+                                            <%= f.text_field :phccode,:class=>'txtfield2',:id=>'txtcc_1_4',:maxlength=>4 %> 
+                                            &nbsp;
+                                            <span class="error" id="txtcc"></span></td>
                                           <td valign="top" align="left">
-                                            <input type="text" value="" id="txtac_1_4" class="textfield" maxlength="4" name="txtac_1_4"/> &nbsp;<span class="error" id="txtac"></span> </td>
+                                            <%= f.text_field :phacode,:class=>'txtfield',:id=>'txtac_1_4',:maxlength=>4 %> 
+                                            &nbsp;<span class="error" id="txtac"></span> </td>
                                           <td valign="top" align="left">
-                                            <input type="text" value="" id="txtnum_1_4" class="textfield" maxlength="15" name="txtnum_1_4"/> 
+                                            <%= f.text_field :phnumber,:class=>'txtfield',:id=>'txtnum_1_4',:maxlength=>15 %>
                                             <br>&nbsp;
                                             <span class="error" id="txtnum"></span>
                                           </td>
@@ -478,11 +481,17 @@
                                         <tr>
                                           <td valign="top" align="left">+</td>
                                           <td valign="top" align="left">
-                                            <input type="text" value="" id="txtmcc_4" class="textfield" maxlength="4" name="txtmcc_4"/> 
+                                            <%= f.text_field :mccode,:maxlength=>4,:class=>'txtfield',:id=>'txtmcc_4' %>
                                             &nbsp;<span class="error" id="txtmcc"></span></td>
                                           <td valign="top" align="left">
-                                            <input type="text" value="" id="txtmac_4" class="textfield" maxlength="4" name="txtmac_4"/> &nbsp;<span class="error" id="txtmac"></span></td>
-                                          <td valign="top" align="left"><input type="text" value="" id="txtmnumber_4" class="textfield" maxlength="15" name="txtmnumber_4"><br> &nbsp;<span class="error" id="txtmnumber"></span></td>
+                                            <%= f.text_field :macode,:maxlength=>4,:class=>'txtfield2',:id=>'txtmac_4' %> 
+                                            &nbsp;
+                                            <span class="error" id="txtmac">                                              
+                                            </span>
+                                          </td>
+                                          <td valign="top" align="left">
+                                            <%= f.text_field :mnumber,:maxlength=>15,:id=>'txtmnumber_4',:size=>20 %>
+                                            <br/> &nbsp;<span class="error" id="txtmnumber"></span></td>
                                         </tr>
                                       </tbody>
                                     </table>
@@ -505,16 +514,17 @@
                                         <tr>
                                           <td valign="top" align="left">+</td>
                                           <td valign="top" align="left">
-                                            <input type="text" value="" id="txtfcc_4" class="textfield" name="txtfcc_4">&nbsp;
+                                            <%= f.text_field :fccode,:maxlength=>5,:class=>'textfield',:id=>'txtfcc_4'%>
+                                            &nbsp;
                                             <span class="error" id="txtfcc"></span>
                                           </td>
                                           <td valign="top" align="left">
-                                            <input type="text" value="" id="txtfac_4" class="textfield" name="txtfac_4"/>
+                                            <%= f.text_field :facode,:maxlength=>8,:class=>'textfield',:id=>'txtfac_4'%>
                                             &nbsp;
                                             <span class="error" id="txtfac"></span>
                                           </td>
                                           <td valign="top" align="left"> 
-                                            <input type="text" value="" id="txtfnumber_4" class="textfield" name="txtfnumber_4"/>
+                                            <%= f.text_field :fnumber,:maxlength=>10,:class=>'textfield',:id=>'txtfnumber_4',:size=>20 %> 
                                             <br>&nbsp;
                                             <span class="error" id="txtfnumber"></span>
                                           </td>
@@ -550,7 +560,7 @@
                                     <!--<input name="adduser" class="blk_button"
                 id="adduser" value="Register" onclick="return validateForms('frmucr');" 
                 type="submit">-->
-                                    <input type="submit" value="Register" id="adduser" class="blk_button" name="adduser"/>
+                                    <%= f.submit :value=>'Register',:id=>'adduser',:class=>'blk_button',:name=>'register_from_front'  %>
                                   </td>
                                 </tr>
                               </tbody>
