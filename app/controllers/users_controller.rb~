@@ -26,11 +26,7 @@ class UsersController < ApplicationController
   def new #return an HTML form for creating a new
     @user = User.new
   end
-  
-  def login
-    
-  end
-  
+
   def destroy #delete a specific
     @user = User.find(params[:id])
 #    @user.destroy

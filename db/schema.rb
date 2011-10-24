@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111019120922) do
+ActiveRecord::Schema.define(:version => 20111024073536) do
 
   create_table "country_masters", :force => true do |t|
     t.string   "country_name", :null => false
@@ -43,21 +43,6 @@ ActiveRecord::Schema.define(:version => 20111019120922) do
     t.datetime "updated_at"
   end
 
-  create_table "plan_billin_rates", :force => true do |t|
-    t.integer  "plan_id"
-    t.float    "rec_monthly"
-    t.float    "rec_quaterly"
-    t.float    "rec_semiyear"
-    t.float    "rec_yearly"
-    t.integer  "monthly"
-    t.integer  "quaterly"
-    t.integer  "semi"
-    t.integer  "yearly"
-    t.integer  "active_plan"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "plan_billing_rates", :force => true do |t|
     t.integer  "plan_id"
     t.float    "rec_monthly"
@@ -82,6 +67,16 @@ ActiveRecord::Schema.define(:version => 20111019120922) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "sessions", :force => true do |t|
+    t.string   "session_id", :null => false
+    t.text     "data"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "sessions", ["session_id"], :name => "index_sessions_on_session_id"
+  add_index "sessions", ["updated_at"], :name => "index_sessions_on_updated_at"
 
   create_table "subscriptions", :force => true do |t|
     t.string   "name"

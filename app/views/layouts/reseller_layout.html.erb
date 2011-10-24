@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Welcome to VMComplete</title>
+    <%= stylesheet_link_tag :all %>
+    <%= javascript_include_tag :defaults %>    
+    <%= javascript_include_tag "/javascripts/validate.js" %>
+<script type="text/javascript">
+var show_path = 'http://localhost/cpvmcomplete/asset/images/search_show.png';
+var hide_path = 'http://localhost/cpvmcomplete/asset/images/search_hide.png';
+</script>
+    <%= javascript_include_tag "/javascripts/common.js" %>
+    <%= javascript_include_tag "/javascripts/ajax.js" %>
+    <%= javascript_include_tag "/javascripts/pngfix.js" %>
+    <%= javascript_include_tag "/asset/tabbed_pages/tabbed_pages.js" %>
+</head>
+  <body>
+  <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
+    <tr>
+      <td valign="top">
+        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td align="left" valign="top" class="header">
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+              <td width="19%" height="75" valign="top">
+                <a href="../index.php">
+                  <img src="/images/logo.jpg" title="VM Complete" width="211" height="92" border="0" />
+                </a>
+              </td>
+              <td width="81%" height="75" valign="bottom" style="padding:0px 8px 0px 68px;">
+
+              </td>
+            </tr>
+          </table>          
+          </td>
+        </tr>
+        <tr>
+          <td align="left" valign="top" class="middle1">
+            <%= yield %>
+          </td>
+        </tr>
+      </table>
+      </td>
+    </tr>
+  </table>
+  </body>
+</html>

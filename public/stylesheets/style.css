@@ -1,0 +1,332 @@
+@charset "utf-8";
+/* CSS Document */
+
+body {margin:0px auto;}
+
+img {border:0px;}
+
+form {margin:0px ; padding:0px; display:inline;}
+
+ul {margin:0px 0px 0px 20px; padding:0px 0px 0px 20px; list-style-image:url(/images/bullet.gif);}
+
+.bgcolor1 {background:#e8e8e8; border:1px solid #ccc;}
+
+.bgcolor2 {background:#FFF;}
+
+.bgcolor3 {background:#ced1d3;}
+
+.bgcolor4 {background:#f6f6f6; font:normal 11px/22px Arial, Helvetica, sans-serif; color:#050303; text-decoration:none; padding-left:8px; text-align:left}
+.bgcolor4_center {background:#f6f6f6; font:normal 11px/22px Arial, Helvetica, sans-serif; color:#050303; text-decoration:none;  text-align:center}
+
+.Running {font:normal 11px/22px Arial, Helvetica, sans-serif; color: #009229; text-decoration:none; padding-left:5px; text-align:left}
+.Booting {font:normal 11px/22px Arial, Helvetica, sans-serif; color:#050303; text-decoration:none; padding-left:5px; text-align:left}
+.Stopped {font:normal 11px/22px Arial, Helvetica, sans-serif; color:#EF1010; text-decoration:none; padding-left:5px; text-align:left}
+.Pending {font:normal 11px/22px Arial, Helvetica, sans-serif; color:#E7DF29; text-decoration:none; padding-left:5px; text-align:left}
+.Restoring {font:normal 11px/22px Arial, Helvetica, sans-serif; color:#050303; text-decoration:none; padding-left:5px; text-align:left}
+.Rebuilding {font:normal 11px/22px Arial, Helvetica, sans-serif; color:#050303; text-decoration:none; padding-left:5px; text-align:left}
+.Suspending {font:normal 11px/22px Arial, Helvetica, sans-serif; color:#050303; text-decoration:none; padding-left:5px; text-align:left}
+.Unsuspending {font:normal 11px/22px Arial, Helvetica, sans-serif; color:#050303; text-decoration:none; padding-left:5px; text-align:left}
+.Suspended {font:normal 11px/22px Arial, Helvetica, sans-serif; color:#EF1010; text-decoration:none; padding-left:5px; text-align:left}
+.Rebooting {font:normal 11px/22px Arial, Helvetica, sans-serif; color:#050303; text-decoration:none; padding-left:5px; text-align:left}
+.PENDING {color:#050303;
+font-family:Arial,Helvetica,sans-serif;
+font-size:11px;
+font-size-adjust:none;
+font-stretch:normal;
+font-style:normal;
+font-variant:normal;
+font-weight:normal;
+line-height:22px;
+padding-left:5px;
+text-align:left;
+text-decoration:none;}
+.bgcolor5 {background:#e8e8e8;}
+.bgcolor6 {background:#999999;}
+
+
+.header { border-bottom:2px solid #fb570f; background: url(/images/innerpagebg.gif) repeat-x left top;}  
+
+.middle { padding:13px 22px 5px 9px;}
+
+.middle_list {background:#ffffff; padding:1px 5px 5px 5px; height:450px}
+
+/*.middle1 {background:#f7f8f7; padding:75px;}*/
+.middle1 {padding:75px;}
+
+
+.leftnav {background:#e5e3e3; border-left:1px solid #aeacac; border-right:1px solid #aeacac; width:206px; height:auto; padding:0px 12px; }
+
+.cate_top { height:24px; border:1px solid #777; font:bold 12px/24px Arial, Helvetica, sans-serif; color:#c40123; text-decoration:none; padding-left:6px;}
+
+.tdgap {padding-top:5px;}
+
+.tdgap1 {padding:10px;}
+
+.cate_head {background:url(/images/cate_bg.gif) no-repeat; height:28px; width:186px; font:bold 12px/28px Arial, Helvetica, sans-serif; color:#055677; text-decoration:none; padding-left:20px;}
+.cate_head a {color:#055677; text-decoration:none;}
+.cate_head a:hover {color:#00364c; text-decoration:none;}
+
+.txt_spac {font:normal 12px/20px Arial, Helvetica, sans-serif; color:#000000; padding-left:10px; text-decoration:none;}
+.txt_spac1 {font:normal 12px/20px Arial, Helvetica, sans-serif; color:#000000; padding-right:10px; text-decoration:none;}
+
+.category {background:#FFFFFF; padding:6px 20px;}
+
+.cate_border {border-bottom:1px solid #b6b3b3;}
+
+.left_nav {font:normal 12px/22px Arial, Helvetica, sans-serif; color:#3d3a3a; text-decoration:none; padding-left:7px;}
+.left_nav a {color:#3d3a3a; text-decoration:none;}
+.left_nav a:hover {color:#0b0b0b;}
+
+.middle_top {background:#eeeeee; border:1px solid #c6c6c6; padding:0px 0px 2px 7px;}
+
+.bodytext {font:normal 11px Arial, Helvetica, sans-serif; color:#050303; text-decoration:none; padding-left:8px; text-align:left;  }
+.bodytext_1 {font:normal 12px/22px Arial, Helvetica, sans-serif; color:#050303; text-decoration:none; line-height:25px}
+
+.bodylink {font:normal 12px/22px Arial, Helvetica, sans-serif; color:#050303; text-decoration:none; line-height:25px;}
+.bodylink:hover {font:normal 12px/22px Arial, Helvetica, sans-serif; color:#050303; text-decoration:underline; line-height:25px}
+
+.pagelink {font:normal 11px/22px Arial, Helvetica, sans-serif; color:#050303; text-decoration:underline;}
+.nopagelink {font:normal 11px/22px Arial, Helvetica, sans-serif; color:#050303; text-decoration:none; font-weight:bold}
+.bodytextB {font:bold 12px/22px Arial, Helvetica, sans-serif; color:#050303; text-decoration:none;}
+
+.txt_big_red {font:bold 14px/22px Arial, Helvetica, sans-serif; color:#c40123; text-decoration:none;}
+.txt_small_red {font:11px/12px Arial, Helvetica, sans-serif; color:#c40123; text-decoration:none;}
+
+.heading {font:bold 16px/22px Arial, Helvetica, sans-serif; color:#fb570f; text-decoration:none; padding-left:5px;}
+.sm_heading {font:bold 11px/18px Arial, Helvetica, sans-serif; color:#157cd7; text-decoration:none; padding-left:5px;}
+.sm_heading:hover {font:bold 11px/18px Arial, Helvetica, sans-serif; color:#157cd7; text-decoration:underline; padding-left:5px;}
+.btm_border {border-bottom:1px dotted #4993bd;}
+
+.txtdrop {border:1px solid #c0c3c5; background:#FFFFFF; width:125px; height:22px; font:normal 11px Arial, Helvetica, sans-serif; color:#000000;}
+
+.txtdrop1 {border:1px solid #c0c3c5; background:#FFFFFF; width:45px; height:22px; font:normal 11px Arial, Helvetica, sans-serif; color:#000000;}
+
+.txtfield {border:1px solid #c0c3c5; background:#FFFFFF; width:125px; height:20px; font:normal 11px Arial, Helvetica, sans-serif; color:#000000;}
+
+.txtfield1 {border:1px solid #c0c3c5; background:#FFFFFF; width:158px; height:20px; font:normal 11px Arial, Helvetica, sans-serif; color:#000000;}
+
+.txtfield2 {border:1px solid #c0c3c5; background:#FFFFFF; width:50px; height:20px; font:normal 11px Arial, Helvetica, sans-serif; color:#000000;}
+
+.cate_listing_head {background:url(/images/cate_listing_bg.gif) repeat-x; height:20px; font:normal 11px/26px Arial, Helvetica, sans-serif; text-align:left; color:#000000; padding-left:4px; font-weight:bold; vertical-align:top;}
+
+.cate_listing_head_1 {background:url(/images/cate_listing_bg.gif) repeat-x #f7f7f7; height:auto; font:normal 11px/26px Arial, Helvetica, sans-serif; text-align:left; color:#000000; padding-left:4px; font-weight:bold; vertical-align:top}
+
+.cate_listing_right {background:url(/images/cate_listing_bg.gif) repeat-x; height:20px; font:normal 11px/26px Arial, Helvetica, sans-serif;  vertical-align:middle; color:#000000; padding-left:4px; font-weight:bold}
+
+.cate_listing_center {background:url(/images/cate_listing_bg.gif) repeat-x; height:20px; font:normal 11px/26px Arial, Helvetica, sans-serif; text-align:left; color:#000000; text-align:center; font-weight:bold}
+
+.cate_listing { background-color:#ebebeb; height:20px; font:normal 11px/26px Arial, Helvetica, sans-serif; text-align:left; color:#000000; padding-left:4px; font-weight:bold}
+.cate_listing a {  background:none;}
+.cate_listing a:hover {  background:none; text-decoration:none;}
+.cate_title { height:20px; font:normal 11px/26px Arial, Helvetica, sans-serif; text-align:left; color:#000000; font-weight:bold}
+
+.mandotry {font:normal 12px Arial, Helvetica, sans-serif; color:#dd0a0a; text-decoration:none; padding-left:2px; padding-right:2px;}
+
+.button {background:url(/images/button.gif) no-repeat; width:81px; height:23px;font:normal 12px Arial, Helvetica, sans-serif; color:#dd0a0a; text-decoration:none; border:0px; cursor:pointer;}
+.button_log {background:url(/images/button_log.gif) no-repeat; width:83px; height:24px;font:normal 12px Arial, Helvetica, sans-serif; color:#dd0a0a; text-decoration:none; border:0px; cursor:pointer;}
+
+.button_hold {background:url(/images/button.gif) no-repeat; width:81px; height:23px;font:normal 12px Arial, Helvetica, sans-serif; color:#999; text-decoration:none; border:0px; }
+
+.button_big {background:url(/images/button_big.gif) no-repeat; width:125px; height:23px;font:normal 12px Arial, Helvetica, sans-serif; color:#dd0a0a; text-decoration:none; border:0px; cursor:pointer;}
+
+.button_big_hold {background:url(/images/button_big.gif) no-repeat; width:180px; height:23px;font:normal 12px Arial, Helvetica, sans-serif; color:#999;text-decoration:none; border:0px; }
+
+
+.textgrey {font:normal 12px/22px Arial, Helvetica, sans-serif; color:#3d3a3a; text-decoration:none;}
+
+/*.login_bg {background:#C6E9FA; border-left:3px solid #fff; border-right:3px solid #fff; padding:10px;}*/
+.login_bg {background:#e5e3e3; border-left:1px solid #aeacac; border-right:1px solid #aeacac; padding:10px;}
+
+
+/* left navigation */
+		/*
+			Vertical Accordions
+		*/
+		
+		.accordion_toggle {
+			display: block;
+			height: 28px;
+			width: 186px;
+			padding-left:20px;
+			background: url(/images/cate_bg.gif) no-repeat ;
+			line-height: 28px;
+			font-weight: bold;
+			text-decoration: none;
+			outline: none;
+			font-size: 12px;
+			color: #3d3a3a;
+			cursor: pointer;
+			margin: 0 0 0 0;
+			
+			font-family:Arial, Helvetica, sans-serif;
+		}
+		
+				
+		.accordion_logout {
+			display: block;
+			height: 28px;
+			width: 186px;
+			padding-left:20px;
+			background: url(/images/cate_bg.gif) no-repeat ;
+			line-height: 28px;
+			font-weight: bold;
+			text-decoration: none;
+			outline: none;
+			font-size: 12px;
+			color: #3d3a3a;
+			cursor: pointer;
+			margin: 0 0 0 0;
+			
+			font-family:Arial, Helvetica, sans-serif;
+		}
+		
+		.accordion_toggle_active {
+			background: url(/images/cate_bg.gif) no-repeat top right ;
+			color: #fb570f;
+			
+		}
+		
+		.accordion_content {
+			background:#FFFFFF; width:184px; padding:0px 0px 0px 20px;
+			overflow: hidden; border-left:1px solid #b5b2b5; border-right :1px solid #b5b2b5;
+		}
+					
+			
+			.accordion_content h2 {
+				margin: 15px 0 5px 10px;
+				color: #3d3a3a;
+				font:bold 12px/26px Arial, Helvetica, sans-serif;
+			}
+			
+						
+		.vertical_accordion_toggle {
+			display: block;
+			height: 30px;
+			width: 186px;
+			background: url(/images/cate_bg.gif) no-repeat;
+			padding: 0 10px 0 10px;
+			line-height: 30px;
+			color: #ffffff;
+			font-weight: normal;
+			text-decoration: none;
+			outline: none;
+			font-size: 12px;
+			color: #000000;
+			border-bottom: 1px solid #cde99f;
+			cursor: pointer;
+			margin: 0 0 0 0;
+		}
+
+		.vertical_accordion_toggle_active {
+			background: url(/images/cate_bg.gif) no-repeat;
+			color: #ffffff;
+			border-bottom: 1px solid #f68263;
+		}
+
+		.vertical_accordion_content {
+			background-color: #ffffff;
+			color: #444444;
+			overflow: hidden;
+			width:186px;
+		}
+
+			.vertical_accordion_content h2 {
+				margin: 15px 0 5px 10px;
+				color: #0099FF;
+				width:186px;
+			}
+
+			.vertical_accordion_content p {
+				line-height: 150%;
+				padding: 5px 10px 15px 10px;
+			}
+  			
+		/*
+			Horizontal Accordion
+		*/
+		
+		.horizontal_accordion_toggle {
+			float: left;
+			display: block;
+			width: 30px;
+			color: #ffffff;
+			text-decoration: none;
+			outline: none;
+			cursor: pointer;
+			margin: 0 0 0 0;
+		}
+		
+		.horizontal_accordion_toggle_active {
+			/*background: url(images/h_accordion_toggle_active.jpg) no-repeat top left #e0542f;*/
+			border-right: 1px solid #f68263;
+		}
+		
+		.horizontal_accordion_content {
+			/* REQUIRED */
+			height: 0PX;	/* We need to define a height for the accordion as it stretches the width */
+			float: left;	/* This make sure it stays horizontal */
+			/* REQUIRED */
+			
+			overflow: hidden;
+			background-color: #ffffff;
+			color: #444444;
+		}
+			
+			.horizontal_accordion_content p {
+				width: 186px;
+				/line-height: 150%;
+				padding: 5px 10px 15px 10px;
+			}
+					
+					
+    /* Container styling*/
+
+    
+    #vertical_nested_container {
+      margin: 20px auto 20px auto;
+      width: 186px;
+    }
+	
+	.bolderror{
+      font:11px tahoma;
+	  color:red; 
+      text-decoration:none;
+	  font-weight:bold;  
+}
+
+.bolderror2{
+      font:11px tahoma;
+	  color:green; 
+      text-decoration:none;
+	  font-weight:bold;  
+}
+.error{
+      font:12px tahoma;
+	  font-weight:bold;
+	  color:red; 
+      text-decoration:none;
+	  font-weight:normal;
+	  padding-left:1px;
+}
+
+.line_bg {
+	background:url(/images/line_bg.gif) repeat-x; 
+	height:22px; 
+	width:auto; 
+	margin-top:2px;
+}
+
+
+.det_link {font:normal 11px/22px Arial, Helvetica, sans-serif; color:#3d3a3a; text-decoration:underline; padding-left:4px; padding-right:7px}
+.det_link a {color:#3d3a3a; text-decoration:none;}
+.det_link a:hover {color:#0b0b0b; text-decoration:none;}
+
+.no_record{
+      font:12px tahoma;
+	  color:#000000; 
+      text-decoration:none;
+	  font-weight: bold;
+	
+}
+
+.message_head {font:bold 11px/18px Arial, Helvetica, sans-serif; color:#000000; text-decoration:none; }

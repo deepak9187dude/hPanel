@@ -3,6 +3,9 @@ Vhpanel::Application.routes.draw do
 
   get "reseller/index"
   get "front/index"
+  get "reseller/login"
+  
+  
   get "/:action"=>"front"
   
   #clients points to users, pathname changed, 
@@ -14,7 +17,10 @@ Vhpanel::Application.routes.draw do
   end
 #  resources :subscriptions, :controller=>'subscriptions',:path=>'reseller/subscriptions'
     
-  
+  resource :session
+  match '/login' => "sessions#new", :as => "login"
+  match '/logout' => "sessions#destroy", :as => "logout"
+
    root :to => "front#index"
 #   match ':controller(/:action(/:id(.:format)))'
 #   match ':controller(/:action(.:format))'
