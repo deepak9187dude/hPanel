@@ -15,7 +15,7 @@ class CreateUsers < ActiveRecord::Migration
       t.string    :state_other
       t.integer   :country
       t.string    :postal_code
-      t.string    :account_type
+      t.string    :account_type,:default=>"Client"
       t.string    :company
       t.string    :phccode
       t.string    :phacode
