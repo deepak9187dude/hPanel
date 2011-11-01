@@ -114,8 +114,11 @@
                                               <tr>
                                                 <td>
                                                   <%= image_tag("icon_hosting_plan_tn.png",:width=>16,:height=>20,:title=>"Plan Summary")  %>
-                                                  <img src="../asset/images/icon_hosting_plan_tn.png" title="Plan Summary" width="16" height="20" />
-                                                  <span class="left_nav"><a href="index.php?cid=20&action=CPS&left=0">Plan Summary</a></span></td></tr>
+                                                  <span class="left_nav">
+                                                    <%= link_to "Plan Summary",plan_summary_path %>
+                                                  </span>
+                                                </td>
+                                              </tr>
                                             </table>
                                           </div>
                                           <h1 class="accordion_toggle">LICENSE MANAGER</h1>                     

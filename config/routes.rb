@@ -14,12 +14,13 @@ Vhpanel::Application.routes.draw do
     end
   end
   scope 'reseller' do
-    match 'password/change' =>"reseller#change_password",:as=>'reseller_update_password'
     get "/index",:as => "reseller_index"
     get "/login",:as => "reseller_login"
     match '/edit' => 'reseller#edit', :via => [:get],:as=> 'reseller_edit'
-    match '/reset' => 'reseller#reset_password', :via => [:get],:as=> 'reseller_reset_password'
     match '/reseller_update' => 'reseller#reseller_update', :via => [:post,:put],:as=> 'reseller_update'
+    match 'password/change' =>"reseller#change_password",:as=>'reseller_update_password'
+    match '/new_password' =>"reseller#new_password",:as=>'reseller_new_password'
+    match 'plan/summary' =>"reseller#plan_summary",:as=>'plan_summary'
   end
 #  resources :subscriptions, :controller=>'subscriptions',:path=>'reseller/subscriptions'
     

@@ -1,0 +1,96 @@
+#gallery {
+	font:11px verdana, arial, sans-serif;
+	/*width:750px;*/
+	padding:15px 0 0 0;
+	line-height:15px;
+}
+#gallery div.offdiv {
+	color:#000;
+	height:25px;
+	margin-right:1px;
+	line-height:25px;
+	padding:0 20px;
+	float:left;
+	background:url(../images/tabs_0.gif) repeat-x left bottom;
+	border:1px solid #ddd;
+	border-bottom-color:#EFF8FD;
+	cursor:pointer;
+	position:relative;
+	z-index:20;
+}
+#gallery div.ondiv {
+	color:#FFFFFF;
+	padding:0 20px;
+	margin-right:1px;
+	margin-top:1px;
+	float:left;
+	background:url(../images/tabs_2.gif) repeat-x left bottom;
+	border:1px solid #EFF8FD;
+	cursor:pointer;
+	border-bottom:0;
+	height:25px;
+	line-height:25px;
+	position:relative;
+	z-index:100;
+}
+div.hide {
+	display:none;
+	width:0;
+	overflow:hidden;
+}
+div.show {
+	clear:left;
+	background:#fff;
+	/*width:750px;*/
+	margin-top:0;
+	top:-1px;
+	border:1px solid #EFF8FD;
+	padding:20px;
+	position:relative;
+	z-index:50;
+	font:11px verdana, arial, sans-serif;
+	line-height:18px;
+}
+/*
+div.show img {
+	float:left;
+	margin:0 10px 10px 0;
+}*/
+.clear {
+	clear:both;
+}
+#gallerycloud {
+	font:11px verdana, arial, sans-serif;
+	/*width:750px;*/
+	padding:15px 0 0 0;
+	line-height:15px;
+}
+#gallerycloud div.offdiv {
+	color:#000;
+	height:25px;
+	margin-right:1px;
+	line-height:25px;
+	padding:0 20px;
+	float:left;
+	background:url(../images/tabs_0.gif) repeat-x left bottom;
+	border:1px solid #ddd;
+	border-bottom-color:#EFF8FD;
+	cursor:pointer;
+	position:relative;
+	z-index:20;
+}
+#gallerycloud div.ondiv {
+	color:#FFFFFF;
+	padding:0 20px;
+	margin-right:1px;
+	margin-top:1px;
+	float:left;
+	background:url(../images/tabs_2.gif) repeat-x left bottom;
+	border:1px solid #EFF8FD;
+	cursor:pointer;
+	border-bottom:0;
+	height:25px;
+	line-height:25px;
+	position:relative;
+	z-index:100;
+}

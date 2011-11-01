@@ -241,3 +241,7 @@ a.blk_bt1:hover {background: transparent url(../images_new/blk_bt_rt.jpg) no-rep
 background:url(../images_new/paypal2_bt.jpg) no-repeat left top; border:none; height:23px; width:92px;
 text-indent:-9999px; cursor:pointer;
 }
+.boldinfo{
+    font-weight: bold;
+    color: #0f0;
+}
