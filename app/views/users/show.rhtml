@@ -1,1 +1,268 @@
-show
+<script type="text/javascript" language="javascript">
+  function ShowDiv(id1, id2)
+  {
+
+    window.document.getElementById(id1).style.display = "block";
+    window.document.getElementById(id2).style.display = "none";
+
+  }
+</script>
+<!-- action CMT-->
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td class="middle_top">
+      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td colspan="3">
+            <span class="bodytext_1">
+              <a href="index.php?cid=3" class="bodylink">Home</a> &gt; 
+              <a href="index.php?cid=9&action=CML&left=0" class="bodylink">Clients</a> &gt;  
+              Client Details 
+            </span>
+          </td>
+        </tr>
+        <tr>
+          <td width="3%">
+            <img src="#IMG_PATH#icon_view_client_big.png"  width="30" height="32" border="0" align="bottom" />
+          </td>
+          <td width="92%" valign="top" style="padding-top:2px; padding-left:7px">
+            <span class="txt_big_red"><%= @user.name %></span>
+          </td>
+          <td width="5%" valign="top" style="padding-top:2px">
+            
+            <img src="#IMG_PATH##STATUS_IMG#" title="#STATUS#" width="30" height="30" border="0" align="bottom" />
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+  <tr>
+    <td class="tdgap1">
+      <div id="gallery">
+        <a class="ondiv"  href="index.php?cid=9&action=CMT&userid=<?php echo $_SESSION['USERID'];?>&left=0">
+          <span>
+            <div class="ondiv" title="General Settings">
+              <span onclick="ShowDiv('divGS','divTmp')">General Settings</span>
+            </div>            
+          </span>
+        </a>
+        <!--<a class="offdiv"  href='index.php?cid=9&action=CMV&userid=<?php echo $_SESSION["USERID"];?>&left=0'><div class="offdiv" title="Containers"><span onclick="ShowDiv('divC','divTmp')">Containers</span></div> </a>
+        -->
+        <a class="offdiv"  href='index.php?cid=9&action=CMF&userid=<?php echo $_SESSION['USERID'];?>&left=0'>
+           <div class="offdiv" title="Anti-fraud status">
+            <span onclick="ShowDiv('divA','divTmp')">Anti-fraud status</span>
+          </div> 
+        </a>
+        <a class="offdiv"  href="index.php?cid=9&action=CMS&userid=<?php echo $_SESSION['USERID'];?>&left=0">
+          <div class="offdiv" title="Subscriptions">
+            <span onclick="ShowDiv('divS','divTmp')">Subscriptions</span>
+          </div> 
+        </a>
+        <a class="offdiv"  href='index.php?cid=9&action=CMB&userid=<?php echo $_SESSION['USERID']?>&left=0'>
+           <div class="offdiv" title="Billing History">
+            <span onclick="ShowDiv('divBH','divTmp')">Billing History</span>
+          </div> 
+        </a>
+        <a class="offdiv"  href='index.php?cid=9&action=CLL&userid=<?php echo $_SESSION['USERID']?>&left=0'>
+           <div class="offdiv" title="License Details">
+            <span onclick="ShowDiv('divLD','divTmp')">License Details</span>
+          </div>
+        </a>
+
+        <!--
+   <a class="offdiv"  href='index.php?cid=9&action=CMP&userid=<?php echo $_SESSION["USERID"];?>&left=0'><div class="offdiv" title="Payment settings"><span onclick="ShowDiv('divPS','divTmp')">Payment settings</span></div> </a>
+</div>-->
+        <div id="General Settings" style="height: 100%;" class="show">
+          <div id="divTmp">
+          </div>
+          <div id="divGS">
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tr>
+                <td class="btm_border">
+                  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                    <tr>
+                      <td>
+                        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                          <tr>
+                            <td width="7%">
+                              <span class="bodytext">Actions</span>
+                            </td>
+                            <td width="93%" class="line_bg">&nbsp;</td>
+                          </tr>
+                        </table>                        
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <table width="160"  border="0" cellspacing="0" cellpadding="0">
+                          <tr>
+                            <td width="12%" align="center" valign="top">
+                              <table width="100%"  border="0" cellspacing="1" cellpadding="1">
+                                <tr>
+                                  <td height="41" align="center">
+                                    <%= link_to(image_tag("icon_edit_client_big.png",:title=>"Edit Client",:width=>32,:height=>32,:border=>0,:align=>"absmiddle"),edit_client_path(@user)) %>                                    
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td align="center">
+                                    <%= link_to edit_client_path(@user), :class => "sm_heading" do %>                                      
+                                      <span class="sm_heading">Edit Profile</span>
+                                    <% end %>
+                                  </td>
+                                </tr>
+                              </table>
+                            </td>
+                            <td width="12%" align="center" valign="top">
+                              <table width="94%"  border="0" cellspacing="1" cellpadding="1">
+                                <tr>
+                                  <td height="41" align="center">
+                                    <%= link_to(image_tag('icon_delete_big.gif',:alt=>'delete'), @user, :confirm => 'Are you sure?', :method => :delete) %>                                    
+                                  </td>
+                                </tr>
+                                <tr>
+                                  <td height="20" align="center" valign="top">
+                                    <a class="sm_heading" onClick="if(chk_confirm('DELETE','User')!=false) location.href='index.php?cid=9&action=CMD&userid=#USERID#&left=0';" style="cursor:pointer">Delete </a>
+                                  </td>
+                                </tr>
+                              </table>
+                            </td>
+                          </tr>
+                        </table>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+              <tr>
+                <td class="tdgap1">
+                  <table width="50%" border="0" align="left" cellpadding="0" cellspacing="0">
+                    <tr>
+                      <td  class="bgcolor1">
+                        <table width="100%" border="0" align="left" cellpadding="0" cellspacing="1" class="bgcolor3">
+                          <tr>
+                            <td align="right" valign="top" class="cate_listing">
+                              <strong>Client ID  :</strong>
+                            </td>
+                            <td valign="top" class="bgcolor4">&nbsp;
+                              <span  class="bodytext"><%= @user.id %></span>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td width="40%" align="right" valign="top" class="cate_listing">
+                              <strong>Email :</strong>
+                            </td>
+                            <td width="60%" valign="top" class="bgcolor4">
+                              &nbsp;<span  class="bodytext"><%= @user.email %></span>
+                            </td>
+                          </tr>
+                          <!--  <tr>
+                              <td align="right" valign="top" class="cate_listing"><strong>Accounty Type :</strong></td>
+                              <td valign="top" class="bgcolor4">&nbsp;<span  class="bodytext">#ACT_TYPE#</span></td>
+                            </tr>
+                          -->
+                          <tr>
+                            <td width="40%" align="right" valign="top" class="cate_listing">
+                              <strong>Address Line 1 :</strong>
+                            </td>
+                            <td width="60%" valign="top" class="bgcolor4">
+                              &nbsp;<span  class="bodytext"><%= @user.address %></span>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td width="40%" align="right" valign="top" class="cate_listing">
+                              <strong>Address Line 2 :</strong>
+                            </td>
+                            <td width="60%" valign="top" class="bgcolor4">
+                              &nbsp;<span  class="bodytext"><%= @user.address2 %></span>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td width="40%" align="right" valign="top" class="cate_listing">
+                              <strong>City :</strong>
+                            </td>
+                            <td width="60%" valign="top" class="bgcolor4">
+                              &nbsp;<span  class="bodytext"><%= @user.city %></span>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td align="right" valign="top" class="cate_listing">
+                              <strong>State :</strong>
+                            </td>
+                            <td valign="top" class="bgcolor4">
+                              &nbsp;<span  class="bodytext"><%= @user.state %></span>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td width="40%" align="right" valign="top" class="cate_listing">
+                              <strong>Country :</strong>
+                            </td>
+                            <td width="60%" valign="top" class="bgcolor4">
+                              &nbsp;<span  class="bodytext"><%= @user.country %></span>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td width="40%" align="right" valign="top" class="cate_listing">
+                              <strong>Postal Code :</strong>
+                            </td>
+                            <td width="60%" valign="top" class="bgcolor4">
+                              &nbsp;<span  class="bodytext"><%= @user.postal_code %></span>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td width="40%" align="right" valign="top" class="cate_listing">
+                              <strong>Phone :</strong>
+                            </td>
+                            <td width="60%" valign="top" class="bgcolor4">
+                              &nbsp;<span  class="bodytext"><%= @user.phone %></span>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td width="40%" align="right" valign="top" class="cate_listing">
+                              <strong>Mobile :</strong>
+                            </td>
+                            <td width="60%" valign="top" class="bgcolor4">&nbsp;<span  class="bodytext"><%= @user.mobile %></span></td>
+                          </tr>
+                          <tr>
+                            <td width="40%" align="right" valign="top" class="cate_listing">
+                              <strong>Fax :</strong>
+                            </td>
+                            <td width="60%" valign="top" class="bgcolor4">
+                              &nbsp;<span  class="bodytext"><%= @user.fax %></span>
+                            </td>
+                          </tr>
+                        </table>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </div>
+        <!--<div id="Containers" style="height: 100%;" class="hide">
+
+        <div id="divC">
+        </div>
+        </div>-->
+        <div id="Anti-fraud status" style="height: 100%;" class="hide">
+          <div id="divA">
+          </div>
+        </div>
+        <!--<div id="Subscriptions" style="height: 100%;" class="hide">
+
+        <div id="divS">
+        </div>
+        </div>
+        <div id="Billing History" style="height: 100%;" class="hide">
+
+        <div id="divBH">
+        </div>
+        </div>
+        <div id="Payment settings" style="height: 100%;" class="hide">
+
+        <div id="divPS">
+        </div>
+        </div>-->
+    </td>
+  </tr>
+</table>

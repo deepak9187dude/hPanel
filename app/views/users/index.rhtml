@@ -169,7 +169,7 @@
                               </center>
                             </td>
                           <td height="26" class="bgcolor4">
-                            <%= link_to user.first_name, edit_client_path(user.id) %>
+                            <%= link_to user.first_name, client_path(user) %>
                           </td>
                           <td height="26" class="bgcolor4">
                             <%= user.email %>
@@ -181,9 +181,7 @@
                             <table width="70" border="0" cellspacing="0" cellpadding="0" align="center">
                               <tr>
                                 <td align="center" width="20">
-                                  <a href="index.php?cid=9&action=CME&userid=#USERID#&left=1">
-                                    <img src="/images/icon_edit_client.png" title="Edit" width="16" height="20" border="0" />
-                                  </a>
+                                  <%= link_to(image_tag("/images/icon_edit_client.png",:alt=>"",:title=>"Edit",:width=>'16',:height=>'20',:border=>0),edit_client_path(user)) %>                                  
                                 </td>
                                 <td align="center" width="20">
                                   <%= link_to(image_tag('icon_delete.gif',:alt=>'delete'), user, :confirm => 'Are you sure?', :method => :delete) %>                                    

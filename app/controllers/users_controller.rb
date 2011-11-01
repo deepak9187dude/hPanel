@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  layout 'backend'
   def index 
     @users = User.find(:all, :conditions => ["id != ?", 1])
   end
@@ -13,6 +14,7 @@ class UsersController < ApplicationController
   end
 
   def show #display a specific
+    @user = User.find(params[:id])
   end
 
   def update #update a specific

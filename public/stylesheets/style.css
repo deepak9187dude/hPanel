@@ -7,7 +7,10 @@ img {border:0px;}
 
 form {margin:0px ; padding:0px; display:inline;}
 
-ul {margin:0px 0px 0px 20px; padding:0px 0px 0px 20px; list-style-image:url(/images/bullet.gif);}
+ul {margin:0px 0px 0px 20px; padding:0px 0px 0px 20px; list-style-image:url(/images/bullet.gif);
+/*custom added*/
+margin-left:0px;padding-left:0px;
+}
 
 .bgcolor1 {background:#e8e8e8; border:1px solid #ccc;}
 

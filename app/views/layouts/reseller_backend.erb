@@ -75,7 +75,7 @@
                             <table width="100%" border="0" cellspacing="0" cellpadding="0">
                               <tr>
                                 <td class="cate_top">
-                                  <a href="index.php?cid=4&action=UVP" class="txt_big_red">HOME</a>
+                                  <%= link_to('HOME',reseller_index_path,:class=>'txt_big_red') %>
                                 </td>
                               </tr>
                               <tr>
@@ -90,7 +90,10 @@
                                               <tr>
                                                 <td class="cate_border">
                                                   <%= image_tag("icon_view_client.png",:width=>16,:height=>20)  %>
-                                                  <span class="left_nav"><a href="index.php?cid=4&action=UVP&left=0">View Profile</a></span></td>
+                                                  <span class="left_nav">
+                                                    <%= link_to('View Profile',reseller_index_path) %>
+                                                  </span>
+                                                </td>
                                               </tr>
 
                                               <!--<tr>
@@ -102,15 +105,17 @@
                                               <tr>
                                                 <td>
                                                   <%= image_tag("reset_password.png",:width=>16,:height=>20,:title=>"Reset Password")  %>
-                                                  <span class="left_nav"><a href="index.php?cid=4&action=URP&left=0">Reset Password</a></span></td>      
+                                                  <span class="left_nav">
+                                                    <%= link_to "Reset Password",reseller_update_password_path %>
+                                                  </span>
+                                                </td>      
                                               </tr>
 
                                               <tr>
                                                 <td>
-                                                  <%= image_tag("reset_password.png",:width=>16,:height=>20,:title=>"Plan Summary")  %>
+                                                  <%= image_tag("icon_hosting_plan_tn.png",:width=>16,:height=>20,:title=>"Plan Summary")  %>
                                                   <img src="../asset/images/icon_hosting_plan_tn.png" title="Plan Summary" width="16" height="20" />
                                                   <span class="left_nav"><a href="index.php?cid=20&action=CPS&left=0">Plan Summary</a></span></td></tr>
-                                              <? } ?>
                                             </table>
                                           </div>
                                           <h1 class="accordion_toggle">LICENSE MANAGER</h1>                     
@@ -231,11 +236,9 @@
                     </td>
                     <td valign="top" class="bgcolor2">
                       <table width="100%" border="0" cellspacing="0" cellpadding="0">
-                        <td width="11" valign="top"> </td>
                         <tr>
-                          <td class="tdgap1">
-                            <%= yield %>
-                          </td>
+                          <td width="11" valign="top"> </td>
+                          <%= yield %>
                         </tr>
                       </table>
                     </td>

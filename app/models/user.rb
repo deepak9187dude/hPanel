@@ -8,4 +8,24 @@ class User < ActiveRecord::Base
   def authenticated?(password)
     self.password == password
   end
+  
+  def name
+    self.first_name + " " + self.last_name
+  end
+  
+  def mobile
+    if @mobile = self.mccode + " " + self.macode + " " + self.mnumber
+      @mobile
+    else
+      @mobile=""
+    end
+  end
+  
+  def phone
+    @phone_number =  "#{self.phccode} #{self.phacode} #{self.phnumber}"
+  end
+  
+  def fax
+    @fax_number = "#{self.fccode} #{self.facode}  #{self.fnumber}"
+  end
 end

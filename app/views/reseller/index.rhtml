@@ -1,0 +1,163 @@
+<script type="text/javascript" language="javascript">
+  function ShowDiv(id1, id2)
+  {
+    window.document.getElementById(id1).style.display = "block";
+    window.document.getElementById(id2).style.display = "none";
+  }
+</script>
+<!-- action CMT--><td valign="top" class="bgcolor2">
+  <table width="100%" cellspacing="0" cellpadding="0" border="0">
+    <tbody><tr>
+        <td class="middle_top">
+          <table width="100%" cellspacing="0" cellpadding="0" border="0">
+            <tbody><tr>
+                <td colspan="2">
+                  <span class="bodytext_1"><a class="bodylink" href="index.php?cid=4&amp;action=UVP">Home</a> 
+                    &gt;<a class="bodylink" href="index.php?cid=4&amp;action=UVP&amp;left=0">  My Account </a>&gt; 
+                    View Profile
+                  </span>
+                </td>
+              </tr>
+              <tr>
+                <td width="44">
+                  <%= image_tag('icon_view_client_big.png',:align=>'bottom',:title=>"My Account",:border=>0,:width=>30,:height=>32) %>
+                </td>
+                <td width="1265" valign="top" style="padding-top:2px">
+                  <span class="txt_big_red">My Account</span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <td class="tdgap1">
+          <table width="100%" cellspacing="0" cellpadding="0" border="0">
+            <tbody>
+              <tr>
+                <td class="btm_border">
+                  <table width="100%" cellspacing="0" cellpadding="0" border="0">
+                    <tbody>
+                      <tr>
+                        <td>
+                          <table width="100%" cellspacing="0" cellpadding="0" border="0">
+                            <tbody>
+                              <tr>
+                                <td width="7%"><span class="bodytext">Actions</span></td>
+                                <td width="93%" class="line_bg">&nbsp;</td>
+                              </tr>
+                            </tbody>
+                          </table>                          
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <table width="14%" cellspacing="0" cellpadding="0" border="0">
+                            <tbody>
+                              <tr>
+                                <td align="center">
+                                  <%= link_to(image_tag('icon_edit_profile.gif',:align=>'absmiddle',:width=>'30',:height=>32,:title=>"Edit Profile"),reseller_edit_path) %>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td align="center">
+                                  <%= link_to reseller_edit_path do %>
+                                    <span class="sm_heading">Edit Profile </span>
+                                  <%  end %>
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>                   
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </td>
+              </tr>
+              <tr>
+                <td class="tdgap1">
+                  <table width="100%" cellspacing="0" cellpadding="0" border="0" align="center">
+                    <tbody>
+                      <tr>
+                        <td class="tdgap1">
+                          <table width="55%" cellspacing="0" cellpadding="0" border="0" align="left">
+                            <tbody>
+                              <tr>
+                                <td colspan="2" class="bgcolor1">
+                                  <table width="100%" cellspacing="1" cellpadding="4" border="0" class="bgcolor3">
+                                    <tbody>
+                                      <tr>
+                                        <td width="44%" valign="top" align="right" class="cate_listing">&nbsp;&nbsp;&nbsp;<strong>Name :</strong></td>
+                                        <td width="56%" valign="top" class="bgcolor4"><%= @user.name %></td>
+                                      </tr>
+                                      <tr>
+                                        <td width="44%" valign="top" align="right" class="cate_listing">&nbsp;&nbsp;&nbsp;<strong>Email :</strong></td>
+                                        <td width="56%" valign="top" class="bgcolor4"><%= @user.email %></td>
+                                      </tr>
+                                      <!-- <tr>
+                                         <td align="right" valign="top" class="cate_listing">&nbsp;&nbsp;&nbsp;<strong>Account Type :</strong></td>
+                                         <td valign="top" class="bgcolor4">&nbsp;</td>
+                                       </tr>
+                                      -->
+                                      <tr>
+                                        <td valign="top" align="right" class="cate_listing">&nbsp;&nbsp;&nbsp;<strong>Status :</strong></td>
+                                        <td valign="top" class="bgcolor4"><%= @user.status %></td>
+                                      </tr>
+                                      <tr>
+                                        <td width="44%" valign="top" align="right" class="cate_listing">&nbsp;&nbsp;&nbsp;<strong>Address Line 1 :</strong></td>
+                                        <td width="56%" valign="top" class="bgcolor4"><%= @user.address %></td>
+                                      </tr>
+                                      <tr>
+                                        <td width="44%" valign="top" align="right" class="cate_listing">&nbsp;&nbsp;&nbsp;<strong>Address Line 2 :</strong></td>
+                                        <td width="56%" valign="top" class="bgcolor4"><%= @user.address2 %></td>
+                                      </tr>
+                                      <tr>
+                                        <td width="44%" valign="top" align="right" class="cate_listing">&nbsp;&nbsp;&nbsp;<strong>City :</strong></td>
+                                        <td width="56%" valign="top" class="bgcolor4"><%= @user.city %></td>
+                                      </tr>
+                                      <tr>
+                                        <td valign="top" align="right" class="cate_listing">&nbsp;&nbsp;&nbsp;<strong>State :</strong></td>
+                                        <td valign="top" class="bgcolor4"><%= @user.state %></td>
+                                      </tr>
+                                      <tr>
+                                        <td width="44%" valign="top" align="right" class="cate_listing">&nbsp;&nbsp;&nbsp;<strong>Country :</strong></td>
+                                        <td width="56%" valign="top" class="bgcolor4"><%= @user.country %></td>
+                                      </tr>
+                                      <tr>
+                                        <td width="44%" valign="top" align="right" class="cate_listing">&nbsp;&nbsp;&nbsp;<strong>Postal Code :</strong></td>
+                                        <td width="56%" valign="top" class="bgcolor4"><%= @user.postal_code %></td>
+                                      </tr>
+                                      <tr>
+                                        <td width="44%" valign="top" align="right" class="cate_listing">&nbsp;&nbsp;&nbsp;<strong>Phone :</strong></td>
+                                        <td width="56%" valign="top" class="bgcolor4"><%= @user.phone %></td>
+                                      </tr>
+                                      <tr>
+                                        <td width="44%" valign="top" align="right" class="cate_listing">&nbsp;&nbsp;&nbsp;<strong>Mobile :</strong></td>
+                                        <td width="56%" valign="top" class="bgcolor4"><%= @user.mobile %> </td>
+                                      </tr>
+                                      <tr>
+                                        <td width="44%" valign="top" align="right" class="cate_listing">&nbsp;&nbsp;&nbsp;<strong>Fax :</strong></td>
+                                        <td width="56%" valign="top" class="bgcolor4"><%= @user.fax %>  </td>
+                                      </tr>
+                                    </tbody>
+                                  </table>                                  
+                                </td>
+                              </tr>
+                              <tr valign="middle">
+                                <td width="44%" height="40" align="right">&nbsp;</td>
+                                <td width="56%" height="40">&nbsp;</td>
+                              </tr>
+                            </tbody>
+                          </table>                          
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </td></tr>
+            </tbody>
+          </table>          
+        </td>
+      </tr>
+    </tbody>
+  </table>  
+</td>
