@@ -20,7 +20,7 @@
 			});
 			
 			// get the left id from querystring to know which menu should be open
-			var post = querySt("left");
+			var post = document.railslft
 			
 			function querySt(ji) {
 				hu = window.location.search.substring(1);

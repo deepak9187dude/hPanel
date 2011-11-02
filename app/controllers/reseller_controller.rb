@@ -41,4 +41,18 @@ class ResellerController < ApplicationController
     
   end
   
+  def licence_upgrade
+    
+  end
+  def licence_code
+    
+  end
+  def download
+    
+  end
+  def billing_history
+#    params[:left]=1
+#    render :text=>params.to_json
+  end
+  
 end
