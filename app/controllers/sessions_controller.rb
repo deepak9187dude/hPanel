@@ -5,7 +5,7 @@ class SessionsController < ApplicationController
       session[:user_type] = user.account_type
 #      render :text => "logged in"
       if user.account_type.downcase == "admin"
-        redirect_to clients_path, :notice => "Logged in successfully"
+        redirect_to reseller_index_path, :notice => "Logged in successfully"
       else
         redirect_to root_path, :notice => "Logged in successfully"
       end
