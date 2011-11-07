@@ -1,0 +1,12 @@
+<div class="clear"></div>
+  <ul style="width:100%" class="mid">
+    <li class="sect1">
+      <strong><%= plan_row['title'] %></strong>
+    </li>
+    <li class="sect2"> $<%= plan_row['rec_period'] %>/<%= plan_row['month'] %> month<%= plan_row['month']>1?"s":"" %></li>
+    <li class="sect2"> <%= plan_row['vps'] %> VPS</li>
+    <li class="sect3">
+      <%= link_to(image_tag("/images_new/purchase_bt.gif",:width=>'103',:border=>0,:height=>'25',:id=>'Purchase3',:alt=>'Purchase'),{:action=>'signinh',:plan_id=>plan_row['plan_id'],:plantype=>plan_row['period']}) %>              
+    </li>
+  </ul>
+<div class="clear"></div>

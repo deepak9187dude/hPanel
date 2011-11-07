@@ -61,20 +61,7 @@
           <%#*</ul>%>
         <%#*<div class="clear"></div>%>
       <%# end %>
-    <% for row in @rows %>
-        <div class="clear"></div>
-          <ul style="width:100%" class="mid">
-            <li class="sect1">
-              <strong><%= row['title'] %></strong>
-            </li>
-            <li class="sect2"> $<%= row['rec_period'] %>/<%= row['month'] %> month<%= row['month']>1?"s":"" %></li>
-            <li class="sect2"> <%= row['vps'] %> VPS</li>
-            <li class="sect3">
-              <%= link_to(image_tag("/images_new/purchase_bt.gif",:width=>'103',:border=>0,:height=>'25',:id=>'Purchase3',:alt=>'Purchase'),{:action=>'signinh',:plan_id=>row['plan_id'],:plantype=>row['period']}) %>              
-            </li>
-          </ul>
-        <div class="clear"></div>
-    <% end %>
+        <%= render :partial=>"plan_row",:collection => @plan_rows %>
       <div class="clear"></div>
     </div>
   </div>

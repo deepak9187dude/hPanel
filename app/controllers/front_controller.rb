@@ -9,7 +9,7 @@ class FrontController < ApplicationController
   def pricing
     @title = "Pricing"
     @plans = Plan.find(:all)
-    @rows = Array.new
+    @plan_rows = Array.new
    
     for plan in @plans
       plan_billing_rates = nil 
@@ -23,7 +23,7 @@ class FrontController < ApplicationController
         row['vps'] = plan.vps
         row['plan_id'] = plan.id
         row['period'] = "monthly"
-        @rows << row
+        @plan_rows << row
       end
       
       if plan_billing_rates.quaterly != 0
@@ -34,7 +34,7 @@ class FrontController < ApplicationController
         row['vps'] = plan.vps
         row['plan_id'] = plan.id
         row['period'] = "quaterly"
-        @rows << row
+        @plan_rows << row
       end
       
       if plan_billing_rates.semi != 0
@@ -45,7 +45,7 @@ class FrontController < ApplicationController
         row['vps'] =plan.vps
         row['plan_id'] =plan.id
         row['period'] ="semi"
-        @rows << row
+        @plan_rows << row
       end
       
       if plan_billing_rates.yearly != 0
@@ -56,7 +56,7 @@ class FrontController < ApplicationController
         row['vps'] =plan.vps
         row['plan_id'] =plan.id
         row['period'] ="yearly"
-        @rows << row
+        @plan_rows << row
       end
     end    
   end

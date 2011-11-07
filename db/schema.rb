@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111024073536) do
+ActiveRecord::Schema.define(:version => 20111103130223) do
 
   create_table "country_masters", :force => true do |t|
     t.string   "country_name", :null => false
@@ -91,6 +91,31 @@ ActiveRecord::Schema.define(:version => 20111024073536) do
     t.datetime "updated_at"
   end
 
+  create_table "ticket_details", :force => true do |t|
+    t.integer  "ticket_id"
+    t.integer  "replier_id"
+    t.text     "reply"
+    t.text     "comments"
+    t.string   "status"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "tickets", :force => true do |t|
+    t.integer  "user_id"
+    t.string   "priority"
+    t.string   "subject"
+    t.string   "category"
+    t.text     "comments"
+    t.string   "status"
+    t.boolean  "isdelete",   :default => false
+    t.string   "random"
+    t.integer  "replies"
+    t.string   "replier"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "user_plans", :force => true do |t|
     t.integer  "user_id"
     t.integer  "plan_id"
@@ -117,7 +142,7 @@ ActiveRecord::Schema.define(:version => 20111024073536) do
     t.string   "state_other"
     t.integer  "country"
     t.string   "postal_code"
-    t.string   "account_type"
+    t.string   "account_type",   :default => "Client"
     t.string   "company"
     t.string   "phccode"
     t.string   "phacode"

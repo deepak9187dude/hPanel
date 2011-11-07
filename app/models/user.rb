@@ -1,5 +1,8 @@
 class User < ActiveRecord::Base
-  has_one :user_plan   
+  has_one :user_plan 
+  has_many :tickets
+  has_many :ticket_details
+    
   def self.authenticate(username, password)
     user = find_by_username(username)
     return user if user && user.authenticated?(password)

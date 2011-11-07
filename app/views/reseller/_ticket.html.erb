@@ -1,0 +1,22 @@
+<tr>
+  <td height="26" align="center" class="bgcolor4_center">
+    <center>
+      <input type="checkbox" name="chkdel[]" id="chkdel" value="1">
+    </center>
+  </td>
+  <td height="26" class="bgcolor4">
+    <a href="index.php?cid=31&amp;action=ATD&amp;tid=1&amp;left=3" class="det_link"><%= ticket.id %></a>
+  </td>
+  <td height="26" class="bgcolor4">
+    <a href="index.php?cid=31&amp;action=ATD&amp;tid=1&amp;left=3" class="det_link"><%= ticket.subject %></a>
+  </td>
+  <td height="26" class="bgcolor4"><%= ticket.replies %></td>
+  <td height="26" class="bgcolor4">Deepak sharma</td>
+  <td height="26" class="bgcolor4">
+    <font color="#FF6600">00h49m22s</font>
+  </td>
+  <td height="26" align="center" class="bgcolor4">
+    <img src="../asset/images/icon_inprocess.png" title="In Progress">
+    <span class="Booting"><%= ticket.status %></span>
+  </td>
+</tr>

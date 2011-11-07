@@ -199,20 +199,21 @@
                                               <tr> 
                                                 <td class="cate_border">
                                                   <%= image_tag("support_th.png",:width=>16,:height=>20,:title=>"Support",:align=>'bottom')  %>
-                                                  <img src="../asset/images/support_th.png" title="Support" width="16" height="20" align="bottom" />
-                                                  <span class="left_nav"><a href="index.php?cid=31&action=CTM&cat=Support&left=3">Support (0)</a></span>
+                                                  <span class="left_nav">
+                                                    <%= link_to("Support (0)",reseller_all_support_tickets_path) %>
+                                                  </span>
                                                   <ul>
                                                     <li class="left_nav">
-                                                      <a href="index.php?cid=31&action=CTM&cat=Support&st=0&left=3">Open (0)</a>
+                                                      <%= link_to("Open (0)",reseller_open_support_tickets_path)%>
                                                     </li>
                                                     <li class="left_nav">
-                                                      <a href="index.php?cid=31&action=CTM&cat=Support&st=1&left=3">On Hold (0)</a>
+                                                      <%= link_to( "On Hold (0)",reseller_hold_support_tickets_path) %>
                                                     </li>
                                                     <li class="left_nav">
-                                                      <a href="index.php?cid=31&action=CTM&cat=Support&st=2&left=3">Closed (0)</a>
+                                                      <%= link_to( "Closed (0)",reseller_closed_support_tickets_path) %>
                                                     </li>
                                                     <li class="left_nav">
-                                                      <a href="index.php?cid=31&action=CTM&cat=Support&st=3&left=3">In-Progress (0)</a>
+                                                      <%= link_to( "In-Progress (0)",reseller_progress_support_tickets_path) %>
                                                     </li>
                                                   </ul>	
                                                 </td>
@@ -224,19 +225,20 @@
                                                   <%= image_tag("billing_th.png",:width=>16,:height=>20,:title=>"Billing",:align=>'bottom')  %>
                                                   <span class="left_nav"><a href="index.php?cid=31&action=CTM&cat=Billing&left=3">Billing (0)</a></span>
                                                   <ul>
-                                                    <li class="left_nav"><a href="index.php?cid=31&action=CTM&cat=Billing&st=0&left=3">Open (0)</a></li>
+                                                    <li class="left_nav">
+                                                      <a href="index.php?cid=31&action=CTM&cat=Billing&st=0&left=3">Open (0)</a>
+                                                    </li>
                                                     <li class="left_nav"><a href="index.php?cid=31&action=CTM&cat=Billing&st=1&left=3">On Hold (0)</a></li>
                                                     <li class="left_nav"><a href="index.php?cid=31&action=CTM&cat=Billing&st=2&left=3">Closed (0)</a></li>
-
                                                     <li class="left_nav"><a href="index.php?cid=31&action=CTM&cat=Billing&st=3&left=3">In-Progress (0)</a></li>
                                                   </ul>	
                                                 </td>
                                               </tr>
                                             </table>           
                                           </div>
-                                          <a href="index.php?cid=5" style="text-decoration:none">
+                                          <%= link_to logout_path,:style=>'text-decoration:none' do %>
                                             <h1 class="accordion_logout">LOGOUT</h1>
-                                          </a>
+                                          <%  end %>
                                           <div id="vertical_nested_container">                     
                                           </div>
                                         </div>
