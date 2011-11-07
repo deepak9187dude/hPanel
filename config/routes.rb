@@ -19,7 +19,6 @@ Vhpanel::Application.routes.draw do
   scope 'reseller' do
     get "/index",:as => "reseller_index"
     get "/login",:as => "reseller_login"
-    get "/perl",:as => "perl_test"
     match '/edit' => 'reseller#edit', :via => [:get],:as=> 'reseller_edit'
     match '/reseller_update' => 'reseller#reseller_update', :via => [:post,:put],:as=> 'reseller_update'
     match 'password/change' =>"reseller#change_password",:as=>'reseller_update_password'
@@ -31,13 +30,9 @@ Vhpanel::Application.routes.draw do
     match 'support/:left/:show' =>"reseller#support_tickets",:as=>'reseller_open_support_tickets',:defaults=>{:left=>3,:show=>"open"}
     match 'support/:left/:show' =>"reseller#support_tickets",:as=>'reseller_hold_support_tickets',:defaults=>{:left=>3,:show=>"hold"}
     match 'support/:left/:show' =>"reseller#support_tickets",:as=>'reseller_closed_support_tickets',:defaults=>{:left=>3,:show=>"closed"}
-    match 'support/:left/:show' =>"reseller#support_tickets",:as=>'reseller_progress_support_tickets',:defaults=>{:left=>3,:show=>"progress"}
-    
-    
+    match 'support/:left/:show' =>"reseller#support_tickets",:as=>'reseller_progress_support_tickets',:defaults=>{:left=>3,:show=>"progress"}    
     match '/new_password' =>"reseller#new_password",:as=>'reseller_new_password'
-    match 'plan/summary' =>"reseller#plan_summary",:as=>'plan_summary'
-    
-    
+    match 'plan/summary' =>"reseller#plan_summary",:as=>'plan_summary'    
     match '/perl' =>"reseller#perl_test",:as=>'perl_test'
   end
 #  resources :subscriptions, :controller=>'subscriptions',:path=>'reseller/subscriptions'
