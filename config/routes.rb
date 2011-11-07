@@ -26,11 +26,22 @@ Vhpanel::Application.routes.draw do
     match 'licence/code/:left' =>"reseller#licence_code",:as=>'reseller_licence_code',:defaults=>{:left=>1}
     match '/download/:left' =>"reseller#download",:as=>'reseller_download',:defaults=>{:left=>1}
     match 'billing/history/:left' =>"reseller#billing_history",:as=>'reseller_billing_history',:defaults=>{:left=>2}
+#    tickets
     match 'support/:left' =>"reseller#support_tickets",:as=>'reseller_all_support_tickets',:defaults=>{:left=>3}
     match 'support/:left/:show' =>"reseller#support_tickets",:as=>'reseller_open_support_tickets',:defaults=>{:left=>3,:show=>"open"}
     match 'support/:left/:show' =>"reseller#support_tickets",:as=>'reseller_hold_support_tickets',:defaults=>{:left=>3,:show=>"hold"}
     match 'support/:left/:show' =>"reseller#support_tickets",:as=>'reseller_closed_support_tickets',:defaults=>{:left=>3,:show=>"closed"}
-    match 'support/:left/:show' =>"reseller#support_tickets",:as=>'reseller_progress_support_tickets',:defaults=>{:left=>3,:show=>"progress"}    
+    match 'support/:left/:show' =>"reseller#support_tickets",:as=>'reseller_progress_support_tickets',:defaults=>{:left=>3,:show=>"progress"} 
+    
+    match 'billing/:left' =>"reseller#billing_tickets",:as=>'reseller_all_billing_tickets',:defaults=>{:left=>3}
+    match 'billing/:left/:show' =>"reseller#billing_tickets",:as=>'reseller_open_billing_tickets',:defaults=>{:left=>3,:show=>"open"}
+    match 'billing/:left/:show' =>"reseller#billing_tickets",:as=>'reseller_hold_billing_tickets',:defaults=>{:left=>3,:show=>"hold"}
+    match 'billing/:left/:show' =>"reseller#billing_tickets",:as=>'reseller_closed_billing_tickets',:defaults=>{:left=>3,:show=>"closed"}
+    match 'billing/:left/:show' =>"reseller#billing_tickets",:as=>'reseller_progress_billing_tickets',:defaults=>{:left=>3,:show=>"progress"} 
+    
+    match 'tickets/:left/new' => "reseller#new_ticket", :as => 'reseller_new_ticket',:defaults=>{:left=>3}
+    match 'tickets/create' => "reseller#create_ticket", :as => 'reseller_create_ticket', :via => [:post,:put]
+    
     match '/new_password' =>"reseller#new_password",:as=>'reseller_new_password'
     match 'plan/summary' =>"reseller#plan_summary",:as=>'plan_summary'    
     match '/perl' =>"reseller#perl_test",:as=>'perl_test'

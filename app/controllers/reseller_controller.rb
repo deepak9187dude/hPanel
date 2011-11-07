@@ -5,6 +5,19 @@ class ResellerController < ApplicationController
   def current_user    
     if session[:user_id]
       @current_user = User.find(session[:user_id])
+      @support_all = Ticket.support_tickets(@current_user)
+      @support_open = Ticket.support_opened(@current_user)
+      @support_hold = Ticket.support_hold(@current_user)
+      @support_closed = Ticket.support_closed(@current_user)
+      @support_progress = Ticket.support_progress(@current_user)
+
+      @billing_all = Ticket.billing_tickets(@current_user)
+      @billing_open = Ticket.billing_opened(@current_user)
+      @billing_hold = Ticket.billing_hold(@current_user)
+      @billing_closed = Ticket.billing_closed(@current_user)
+      @billing_progress = Ticket.billing_progress(@current_user)
+      
+      @ticket_priorities = ["Low","Medium","High","Urgent","Emergency","Critical"]
     else
       redirect_to root_path ,:message=>'Please log in'
     end
@@ -114,20 +127,44 @@ class ResellerController < ApplicationController
 #    render :text=>params.to_json
   end
   
-  def support_tickets  
+  def support_tickets      
     if !params[:show]
-      @tickets = @current_user.tickets
+      @tickets = @support_all
     elsif(params[:show]=="open")      
-      @tickets = Ticket.opened(@current_user)
+      @tickets = @support_open
     elsif(params[:show]=="hold")      
-      @tickets = Ticket.hold(@current_user)
+      @tickets = @support_hold
     elsif(params[:show]=="closed")      
-      @tickets = Ticket.closed(@current_user)
+      @tickets = @support_closed
     elsif(params[:show]=="progress")      
-      @tickets = Ticket.progress(@current_user)
-    end
-      @ticket_count = @tickets.count    
+      @tickets = @support_progress
+    end    
+    render "tickets"   
 #    render :text => params.to_json
+  end  
+  
+  def billing_tickets
+    
+    if !params[:show]
+      @tickets = @billing_all
+    elsif(params[:show]=="open")      
+      @tickets = @billing_open
+    elsif(params[:show]=="hold")      
+      @tickets = @billing_hold
+    elsif(params[:show]=="closed")      
+      @tickets = @billing_closed
+    elsif(params[:show]=="progress")      
+      @tickets = @billing_progress
+    end  
+    render "tickets"   
+  end
+  
+  def new_ticket
+    @ticket = Ticket.new
+  end
+  
+  def create_ticket
+    redirect_to reseller_all_support_tickets_path
   end
   
   def perl_test    

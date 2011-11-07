@@ -200,20 +200,20 @@
                                                 <td class="cate_border">
                                                   <%= image_tag("support_th.png",:width=>16,:height=>20,:title=>"Support",:align=>'bottom')  %>
                                                   <span class="left_nav">
-                                                    <%= link_to("Support (0)",reseller_all_support_tickets_path) %>
+                                                    <%= link_to("Support (#{@support_all.count})",reseller_all_support_tickets_path) %>
                                                   </span>
                                                   <ul>
                                                     <li class="left_nav">
-                                                      <%= link_to("Open (0)",reseller_open_support_tickets_path)%>
+                                                      <%= link_to("Open (#{@support_open.count})",reseller_open_support_tickets_path)%>
                                                     </li>
                                                     <li class="left_nav">
-                                                      <%= link_to( "On Hold (0)",reseller_hold_support_tickets_path) %>
+                                                      <%= link_to( "On Hold (#{@support_hold.count})",reseller_hold_support_tickets_path) %>
                                                     </li>
                                                     <li class="left_nav">
-                                                      <%= link_to( "Closed (0)",reseller_closed_support_tickets_path) %>
+                                                      <%= link_to( "Closed (#{@support_closed.count})",reseller_closed_support_tickets_path) %>
                                                     </li>
                                                     <li class="left_nav">
-                                                      <%= link_to( "In-Progress (0)",reseller_progress_support_tickets_path) %>
+                                                      <%= link_to( "In-Progress (#{@support_progress.count})",reseller_progress_support_tickets_path) %>
                                                     </li>
                                                   </ul>	
                                                 </td>
@@ -223,14 +223,22 @@
 
                                                 <td>
                                                   <%= image_tag("billing_th.png",:width=>16,:height=>20,:title=>"Billing",:align=>'bottom')  %>
-                                                  <span class="left_nav"><a href="index.php?cid=31&action=CTM&cat=Billing&left=3">Billing (0)</a></span>
+                                                  <span class="left_nav">
+                                                    <%= link_to("Billing (#{@billing_all.count})",reseller_all_billing_tickets_path) %>
+                                                  </span>
                                                   <ul>
                                                     <li class="left_nav">
-                                                      <a href="index.php?cid=31&action=CTM&cat=Billing&st=0&left=3">Open (0)</a>
+                                                      <%= link_to("Open (#{@billing_open.count})",reseller_open_billing_tickets_path)%>
                                                     </li>
-                                                    <li class="left_nav"><a href="index.php?cid=31&action=CTM&cat=Billing&st=1&left=3">On Hold (0)</a></li>
-                                                    <li class="left_nav"><a href="index.php?cid=31&action=CTM&cat=Billing&st=2&left=3">Closed (0)</a></li>
-                                                    <li class="left_nav"><a href="index.php?cid=31&action=CTM&cat=Billing&st=3&left=3">In-Progress (0)</a></li>
+                                                    <li class="left_nav">
+                                                      <%= link_to( "On Hold (#{@billing_hold.count})",reseller_hold_billing_tickets_path) %>
+                                                    </li>
+                                                    <li class="left_nav">
+                                                      <%= link_to( "Closed (#{@billing_closed.count})",reseller_closed_billing_tickets_path) %>
+                                                    </li>
+                                                    <li class="left_nav">
+                                                      <%= link_to( "In-Progress (#{@billing_progress.count})",reseller_progress_billing_tickets_path) %>
+                                                    </li>
                                                   </ul>	
                                                 </td>
                                               </tr>
