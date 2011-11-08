@@ -2,7 +2,7 @@
   <!--<form action="" name="frmucr" id="frmucr" method="post">-->
   <%#*<form onsubmit="return validateForms('frmucr');" method="post" id="frmucr" name="frmucr" action="">%>
 
-<%= form_for @user do |f| %>
+<%= form_for @user,:url=>users_path do |f| %>
     <table width="100%" cellspacing="0" cellpadding="0" border="0" align="center">
       <tbody>
         <tr>
@@ -446,7 +446,7 @@
                                         <tr>
                                           <td valign="top" align="left">+</td>
                                           <td valign="top" align="left">
-                                            <%= f.text_field :phccode,:class=>'txtfield2',:id=>'txtcc_1_4',:maxlength=>4 %> 
+                                            <%= f.text_field :phccode,:class=>'txtfield',:id=>'txtcc_1_4',:maxlength=>4 %> 
                                             &nbsp;
                                             <span class="error" id="txtcc"></span></td>
                                           <td valign="top" align="left">
@@ -484,13 +484,13 @@
                                             <%= f.text_field :mccode,:maxlength=>4,:class=>'txtfield',:id=>'txtmcc_4' %>
                                             &nbsp;<span class="error" id="txtmcc"></span></td>
                                           <td valign="top" align="left">
-                                            <%= f.text_field :macode,:maxlength=>4,:class=>'txtfield2',:id=>'txtmac_4' %> 
+                                            <%= f.text_field :macode,:maxlength=>4,:class=>'txtfield',:id=>'txtmac_4' %> 
                                             &nbsp;
                                             <span class="error" id="txtmac">                                              
                                             </span>
                                           </td>
                                           <td valign="top" align="left">
-                                            <%= f.text_field :mnumber,:maxlength=>15,:id=>'txtmnumber_4',:size=>20 %>
+                                            <%= f.text_field :mnumber,:maxlength=>15,:id=>'txtmnumber_4',:size=>20,:class=>'txtfield' %>
                                             <br/> &nbsp;<span class="error" id="txtmnumber"></span></td>
                                         </tr>
                                       </tbody>
@@ -514,17 +514,17 @@
                                         <tr>
                                           <td valign="top" align="left">+</td>
                                           <td valign="top" align="left">
-                                            <%= f.text_field :fccode,:maxlength=>5,:class=>'textfield',:id=>'txtfcc_4'%>
+                                            <%= f.text_field :fccode,:maxlength=>5,:class=>'txtfield',:id=>'txtfcc_4'%>
                                             &nbsp;
                                             <span class="error" id="txtfcc"></span>
                                           </td>
                                           <td valign="top" align="left">
-                                            <%= f.text_field :facode,:maxlength=>8,:class=>'textfield',:id=>'txtfac_4'%>
+                                            <%= f.text_field :facode,:maxlength=>8,:class=>'txtfield',:id=>'txtfac_4'%>
                                             &nbsp;
                                             <span class="error" id="txtfac"></span>
                                           </td>
                                           <td valign="top" align="left"> 
-                                            <%= f.text_field :fnumber,:maxlength=>10,:class=>'textfield',:id=>'txtfnumber_4',:size=>20 %> 
+                                            <%= f.text_field :fnumber,:maxlength=>10,:class=>'txtfield',:id=>'txtfnumber_4',:size=>20 %> 
                                             <br>&nbsp;
                                             <span class="error" id="txtfnumber"></span>
                                           </td>

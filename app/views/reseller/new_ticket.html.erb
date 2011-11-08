@@ -99,7 +99,7 @@
                               <span class="mandotry">*</span> Priority :
                             </td>
                             <td width="81%" valign="top" class="bgcolor4"> 
-                              <%=raw select_tag(:payment, "<option>-Select a payment method</option>" + options_for_select(@ticket_priorities)) %> 
+                              <%= select_tag(:payment, "<option>-Select a payment method</option>" + options_for_select(@ticket_priorities)) %> 
                               <select id="cmbpriority" class="txtdrop" name="cmbpriority"> 
                                 <option value="">-Select Priority-</option>
                                 <option value="Low">Low</option>
@@ -142,6 +142,9 @@
                           <tr>
                             <td align="right" valign="top" class="cate_listing"><span class="mandotry">*</span> Comments :</td>
                             <td valign="top" class="bgcolor4">
+                              <textarea>
+
+                              </textarea>
                               <script type="text/javascript"></script>
                             </td>
                           </tr>					  

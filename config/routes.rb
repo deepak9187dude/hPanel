@@ -1,13 +1,14 @@
 Vhpanel::Application.routes.draw do
   get "clients/index"
-
   get "front/index"
+  match '/users' => "users#create", :via=>[:put,:post]
   
   resource :session
   match '/login' => "sessions#new", :as => "login"
   match '/logout' => "sessions#destroy", :as => "logout"
   
-  get "/:action"=>"front"
+  match "/signinh/:plan_id/:plantype" => "front#signinh"
+  match "/:action"=>"front"
   
   #clients points to users, pathname changed, 
   resources :users
@@ -18,13 +19,14 @@ Vhpanel::Application.routes.draw do
   end
   scope 'reseller' do
     get "/index",:as => "reseller_index"
-    get "/login",:as => "reseller_login"
+    match "/login",:as => "reseller_login",:via=>[:get,:post,:put]
     match '/edit' => 'reseller#edit', :via => [:get],:as=> 'reseller_edit'
     match 'password/forgot' => 'reseller#forgot_password',:as=> 'reseller_forgot_password'
     
     match '/reseller_update' => 'reseller#reseller_update', :via => [:post,:put],:as=> 'reseller_update'
     match 'password/change' =>"reseller#change_password",:as=>'reseller_update_password'
     match 'licence/upgrade/:left' =>"reseller#licence_upgrade",:as=>'reseller_licence_upgrade',:defaults=>{:left=>1}
+    match 'licence/payment/selection/:left/:plan_id/:plantype' =>"reseller#payment_selection",:as=>'reseller_payment_selection',:defaults=>{:left=>1}
     match 'licence/code/:left' =>"reseller#licence_code",:as=>'reseller_licence_code',:defaults=>{:left=>1}
     match '/download/:left' =>"reseller#download",:as=>'reseller_download',:defaults=>{:left=>1}
     match 'billing/history/:left' =>"reseller#billing_history",:as=>'reseller_billing_history',:defaults=>{:left=>2}
