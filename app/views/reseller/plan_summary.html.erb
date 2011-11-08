@@ -17,11 +17,21 @@
             <table width="100%" cellspacing="0" cellpadding="0" border="0">
               <tbody>
                 <tr>
-                  <td colspan="2"><span class="bodytext_1"><a class="bodylink" href="index.php?cid=4&amp;action=UVP">Home</a> &gt; <a class="bodylink" href="index.php?cid=4&amp;action=UVP&amp;left=0">My Account</a> &gt; Plan Summary  </span></td>
+                  <td colspan="2">
+                    <span class="bodytext_1">
+                      <a class="bodylink" href="index.php?cid=4&amp;action=UVP">Home</a> 
+                      &gt; <a class="bodylink" href="index.php?cid=4&amp;action=UVP&amp;left=0">My Account</a> 
+                      &gt; Plan Summary  
+                    </span>
+                  </td>
                 </tr>
                 <tr>
-                  <td width="4%"><img width="30" height="32" border="0" align="bottom" title="Plan Summary" src="../asset/images/icon_hosting_plan.png"></td>
-                  <td width="96%" valign="top" style="padding-top:2px"><span class="txt_big_red">Plan Summary</span></td>
+                  <td width="4%">
+                    <img width="30" height="32" border="0" align="bottom" title="Plan Summary" src="../asset/images/icon_hosting_plan.png">
+                  </td>
+                  <td width="96%" valign="top" style="padding-top:2px">
+                    <span class="txt_big_red">Plan Summary</span>
+                  </td>
                 </tr>
               </tbody>
             </table>
@@ -38,8 +48,10 @@
         <table width="60%" cellspacing="1" cellpadding="0" border="0">
           <tbody>
             <tr>
-              <td width="27%" align="left" class="txt_small_red" colspan="2">You have not purchase any plan. 
-                <a href="index.php?cid=36&amp;action=RUP&amp;left=1">Click here</a> to purchase.
+              <td width="27%" align="left" class="txt_small_red" colspan="2">
+                You have not purchase any plan. 
+                <%= link_to "Click here",reseller_licence_upgrade_path %> 
+                to purchase.
               </td>
             </tr>
           </tbody>

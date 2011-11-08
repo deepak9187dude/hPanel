@@ -20,6 +20,8 @@ Vhpanel::Application.routes.draw do
     get "/index",:as => "reseller_index"
     get "/login",:as => "reseller_login"
     match '/edit' => 'reseller#edit', :via => [:get],:as=> 'reseller_edit'
+    match 'password/forgot' => 'reseller#forgot_password',:as=> 'reseller_forgot_password'
+    
     match '/reseller_update' => 'reseller#reseller_update', :via => [:post,:put],:as=> 'reseller_update'
     match 'password/change' =>"reseller#change_password",:as=>'reseller_update_password'
     match 'licence/upgrade/:left' =>"reseller#licence_upgrade",:as=>'reseller_licence_upgrade',:defaults=>{:left=>1}

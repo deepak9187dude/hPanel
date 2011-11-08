@@ -17,14 +17,12 @@
       var show_path = 'http://localhost/cpvmcomplete/asset/images/search_show.png';
       var hide_path = 'http://localhost/cpvmcomplete/asset/images/search_hide.png';
     </script>
-    <script type="text/javascript" src="../includes/js/common.js"></script>
-
-    <script type="text/javascript" src="../includes/js/ajax.js"></script>
-    <script type="text/javascript" src="../includes/js/pngfix.js"></script>
-    <script type="text/javascript" language="javascript" src="../asset/tabbed_pages/tabbed_pages.js"></script>
+    <%= javascript_include_tag 'common.js' %>
+    <%= javascript_include_tag 'ajax.js' %>
+    <%= javascript_include_tag 'pngfix.js' %>
+    <%= javascript_include_tag 'tabbed_pages/tabbed_pages.js' %>
     <link rel="stylesheet" href="../asset/tabbed_pages/tabbed_pages.css" type="text/css" />
   </head>
-
   <body>
     <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
       <tr>
@@ -47,7 +45,7 @@
                         <tr>
                           <td align="left">&nbsp;</td>
                           <td align="right" valign="bottom" width="397">
-                            <%= link_to(image_tag("btn_logout.gif",:title=>"Logout",:width=>"139",:height=>'35',:border=>0),"index.php?cid=5") %>
+                            <%= link_to(image_tag("btn_logout.gif",:title=>"Logout",:width=>"139",:height=>'35',:border=>0),logout_path) %>
                           </td>
                         </tr>
                         <tr>
@@ -72,7 +70,6 @@
                             <%= image_tag("left_top.gif",:width=>236,:height=>16) %>
                           </td>
                         </tr>
-
                         <tr>
                           <td valign="top" class="leftnav">
                             <table width="100%" border="0" cellspacing="0" cellpadding="0">
@@ -98,7 +95,6 @@
                                                   </span>
                                                 </td>
                                               </tr>
-
                                               <!--<tr>
                                                    <td class="cate_border"><img src="../asset/images/icon_edit_client.png" title="Edit Profile" width="16" height="20" /><span class="left_nav"><a href="index.php?cid=4&action=UEP&left=0">Edit Profile</a></span></td>                              </tr>
                                                  <tr>-->
@@ -113,7 +109,6 @@
                                                   </span>
                                                 </td>      
                                               </tr>
-
                                               <tr>
                                                 <td>
                                                   <%= image_tag("icon_hosting_plan_tn.png",:width=>16,:height=>20,:title=>"Plan Summary")  %>
@@ -124,10 +119,8 @@
                                               </tr>
                                             </table>
                                           </div>
-                                          <h1 class="accordion_toggle">LICENSE MANAGER</h1>                     
-
+                                          <h1 class="accordion_toggle">LICENSE MANAGER</h1>
                                           <div id="content_width" class="accordion_content">
-
                                             <table width="90%" border="0" cellspacing="0" cellpadding="0">
                                               <tr>
                                                 <td class="cate_border">
@@ -146,7 +139,6 @@
                                                 </td>
                                               </tr>
                                               <tr>
-
                                                 <td class="cate_border">
                                                   <%= image_tag("icon_hosting_plan_tn.png",:width=>16,:height=>20,:title=>"Download")  %>
                                                   <span class="left_nav">
@@ -190,11 +182,8 @@
                                               </tr>
                                             </table>
                                           </div>
-
                                           <h1 class="accordion_toggle">TICKET MANAGER</h1>
-
                                           <div id="content_width" class="accordion_content">
-
                                             <table width="90%" border="0" cellspacing="0" cellpadding="0"> 
                                               <tr> 
                                                 <td class="cate_border">
@@ -218,9 +207,7 @@
                                                   </ul>	
                                                 </td>
                                               </tr>
-
                                               <tr>
-
                                                 <td>
                                                   <%= image_tag("billing_th.png",:width=>16,:height=>20,:title=>"Billing",:align=>'bottom')  %>
                                                   <span class="left_nav">
@@ -283,5 +270,3 @@
     </table>
   </body>
 </html>
-
-

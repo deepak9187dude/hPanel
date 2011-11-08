@@ -33,18 +33,21 @@
           <tr>
             <td align="right" valign="top" class="bodytextB">&nbsp;</td>
             <td>
-              <a href="http://localhost/cpvmcomplete/reseller/index.php?cid=23&action=CFP" class="bodylink">
-                Forgot your password?
-              </a>
+              <%= link_to("Forgot Your Password",reseller_forgot_password_path,:class=>'bodylink') %>
             </td>
           </tr>
           <tr>
             <td width="35%" align="right">&nbsp;</td>
             <td width="65%">
-
               <input name="btnlogin" type="submit" class="button_log" id="btnlogin" value="Login" />
               <br>
-              <!--<span class="textgrey"><a href="#" class="textgrey">Forgot Password                </a></span>--></td>
+              <!--
+              <span class="textgrey">
+                <a href="#" class="textgrey">Forgot Password                
+                </a>
+              </span>
+              -->
+            </td>
           </tr>
         </table>
       </td>

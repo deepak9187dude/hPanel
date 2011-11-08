@@ -1,6 +1,6 @@
 class ResellerController < ApplicationController
   layout 'reseller_backend'
-  before_filter :current_user, :except=>[:login]
+  before_filter :current_user, :except=>[:login,:forgot_password]
   
   def current_user    
     if session[:user_id]
@@ -19,7 +19,7 @@ class ResellerController < ApplicationController
       
       @ticket_priorities = ["Low","Medium","High","Urgent","Emergency","Critical"]
     else
-      redirect_to root_path ,:message=>'Please log in'
+      redirect_to reseller_login_path ,:message=>'Please log in'
     end
   end
   def index
@@ -27,6 +27,19 @@ class ResellerController < ApplicationController
 #    render :text=>session.to_json
   end
   def login
+    render :layout => 'reseller_layout'
+  end
+  
+  def forgot_password
+    if params[:email_1_2]
+      if @current_user = User.find_by_email(params[:email_1_2])
+        Mails.forgot_password(@current_user).deliver
+        redirect_to reseller_login_path
+      else
+        redirect_to root_path
+      end
+      return
+    end
     render :layout => 'reseller_layout'
   end
   
