@@ -1,6 +1,5 @@
 Vhpanel::Application.routes.draw do
   get "perl/index"
-
   get "clients/index"
   get "front/index"
   match '/users' => "users#create", :via=>[:put,:post]
