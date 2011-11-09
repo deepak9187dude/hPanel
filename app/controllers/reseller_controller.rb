@@ -156,8 +156,7 @@ class ResellerController < ApplicationController
 #    render :text => params.to_json
   end  
   
-  def billing_tickets
-    
+  def billing_tickets    
     if !params[:show]
       @tickets = @billing_all
     elsif(params[:show]=="open")      
@@ -176,12 +175,21 @@ class ResellerController < ApplicationController
     
   end
   
-  def new_ticket
+  def new_ticket 
     @ticket = Ticket.new
   end
   
   def create_ticket
     redirect_to reseller_all_support_tickets_path
+  end
+  def ticket_details
+    if params[:page]=='general'
+      render '_ticket_general_details'
+    elsif params[:page]=='reply'
+      render '_ticket_post_reply'
+    elsif params[:page]=='history'
+      render '_ticket_history'        
+    end
   end
   
 end

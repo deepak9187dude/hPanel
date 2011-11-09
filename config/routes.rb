@@ -48,6 +48,7 @@ Vhpanel::Application.routes.draw do
     
     match 'tickets/:left/new' => "reseller#new_ticket", :as => 'reseller_new_ticket',:defaults=>{:left=>3}
     match 'tickets/create' => "reseller#create_ticket", :as => 'reseller_create_ticket', :via => [:post,:put]
+    match 'tickets/:left/:page(/:id)' => "reseller#ticket_details", :as => 'reseller_ticket_details',:defaults=>{:left=>3,:page=>'general'}
     
     match '/new_password' =>"reseller#new_password",:as=>'reseller_new_password'
     match 'plan/summary' =>"reseller#plan_summary",:as=>'plan_summary'    

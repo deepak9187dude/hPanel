@@ -5,10 +5,10 @@
     </center>
   </td>
   <td height="26" class="bgcolor4">
-    <a href="" class="det_link"><%= ticket.id %></a>
+    <%= link_to ticket.id,reseller_ticket_details_path(ticket),:page=>'new',:class=>'det_link' %>
   </td>
   <td height="26" class="bgcolor4">
-    <a href="" class="det_link"><%= ticket.subject %></a>
+    <%= link_to ticket.subject,reseller_ticket_details_path(ticket),:class=>'det_link' %>
   </td>
   <td height="26" class="bgcolor4"><%= ticket.replies %></td>
   <td height="26" class="bgcolor4">Deepak sharma</td>

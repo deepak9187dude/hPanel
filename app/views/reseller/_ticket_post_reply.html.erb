@@ -1,0 +1,127 @@
+<td valign="top" class="bgcolor2"><script src="../fckeditor/fckeditor.js" type="text/javascript"></script>
+<script type="text/javascript">
+function valPost()
+{
+  var err=0;
+  if(document.getElementById("cmbstatus").value=="")
+  {
+    document.getElementById("errstatus").innerHTML = "Please select status" ;
+  	//return false;
+	err=1;
+  }
+  else 
+   {
+     document.getElementById("errstatus").innerHTML = "" ;
+  	 //return true;
+   }  
+   
+   if(err==1)
+     return false;
+   else
+     return true;	 
+}
+</script>
+<script language="javascript" type="text/javascript">
+function ShowDiv(id1, id2)
+{
+ 
+window.document.getElementById(id1).style.display = "block";
+window.document.getElementById(id2).style.display = "none";
+window.document.getElementById('divGSedit').style.display = "none";
+ 
+}
+</script>
+<div style="height: 100%;" id="content">
+<table cellspacing="0" cellpadding="0" border="0" width="100%">
+              <tbody><tr>
+			  <td class="middle_top"><table cellspacing="0" cellpadding="0" border="0" width="100%">
+                  <tbody><tr>
+                    <td colspan="2"><span class="bodytext_1"><a class="bodylink" href="index.php?cid=4&amp;action=UVP">Home</a> &gt; <a class="bodylink" href="index.php?cid=31&amp;action=CTM&amp;left=3">Ticket Manager</a> &gt; <a class="bodylink" href="index.php?cid=31&amp;action=CTM&amp;cat=Support&amp;st=0&amp;left=3">Support Ticket</a>  &gt;  Post Reply</span></td>
+                </tr>
+                  <tr>
+                    <td width="4%"><img border="0" align="bottom" width="30" height="32" title="View VM" src="../asset/images/mail_reply_b.png"></td>
+                    <td width="96%" valign="top" style="padding-top:2px"><span class="txt_big_red">Ticket ID #8</span></td>
+                  </tr>
+				  
+				    <tr>
+                    <td width="4%">&nbsp;</td>
+                    <td width="96%" valign="top" style="padding-top:2px"><span class="bodytext_1"><a class="bodylink" href="index.php?cid=4&amp;action=UVP&amp;left=0">Deepak sharma</a></span> 
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="txt_big_red">Support Ticket</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<img title="In Progress" src="../asset/images/icon_inprocess.png"><span class="Booting">Open</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="txt_big_red">Medium</span>					</td>
+                  </tr>
+                </tbody></table></td>
+                
+              </tr>
+			  </tbody></table>
+                                  <div id="gallery">
+								  <a href="index.php?cid=31&amp;action=ATD&amp;left=3&amp;tid=8" class="offdiv"><span><div title="General" class="offdiv"><span onclick="ShowDiv('divGS','divGSedit')">General</span></div></span></a>
+								   <a href="index.php?cid=31&amp;action=APR&amp;left=3&amp;tid=8" class="ondiv"><div title="Post Reply" class="ondiv"><span onclick="ShowDiv('divRes','divEditRes')">Post Reply</span></div> </a> 
+									 <a href="index.php?cid=31&amp;action=ATH&amp;left=3&amp;tid=8" class="offdiv"><div title="Ticket History" class="offdiv"><span onclick="ShowDiv('divHist','divEditHist')">Ticket History</span></div> </a>
+                                  </div>
+                                  <div class="hide" style="height: 100%;" id="General">
+								 		<div id="divGS">
+										</div>  
+										<div style="display: none;" id="divGSedit">															 
+										</div>
+										 
+                                  </div>
+								   <div class="show" style="height: 100%;" id="Post Reply"> 
+										<div id="divRes">
+										  <form method="post" id="frmucr" name="frmucr">
+										 <table cellspacing="1" cellpadding="4" border="0" width="85%" class="bgcolor3"> 
+										  <tbody><tr>
+										    <td align="right" width="20%" class="cate_listing"><span class="mandotry">*</span>Status :</td>
+										    <td width="80%" height="26" class="bgcolor4">
+											<select class="txtdrop" id="cmbstatus" name="cmbstatus">											
+											<option value="">-Select Status-</option>
+											<option selected="selected" value="0">Open</option><option value="1">On Hold</option><option value="2">Closed</option><option value="3">In Progress</option>
+											</select>&nbsp;&nbsp;<span class="error" id="errstatus"></span></td>
+										  </tr>	 
+										  <tr>
+										    <td align="right" width="20%" valign="top" class="cate_listing"><span class="mandotry">*</span>Contents :</td>
+										    <td width="80%" height="26" class="bgcolor4">&nbsp;&nbsp;<span class="bolderror" id="errfck"></span>
+											<br>
+											<span><input type="checkbox" value="jeff@vpsland.com" checked="checked" name="chkSend" id="chkSend">&nbsp;Send Email</span>
+											<input type="hidden" value="Jeff Moncrief" name="hidcustomername" id="hidcustomername">
+											<input type="hidden" value="test ticket to check the lenght to show in view." name="hidsubject" id="hidsubject">
+											</td>
+										  </tr>	
+										  
+										</tbody></table> 
+										<br>
+										 <table cellspacing="1" cellpadding="4" border="0" width="85%"> 
+										 <tbody><tr><td align="right" width="141"><input type="button" onclick="history.back()" value="Cancel" id="btncancel" class="button" name="btncancel">&nbsp;</td>
+			  <td align="left" width="598" height="40">
+			   
+			  <input type="submit" onclick="return valPost();" value="Submit" id="save" class="button" name="save">
+			  &nbsp;&nbsp;</td>
+			  </tr>
+										</tbody></table>
+										</form>
+										</div> 
+										<div style="display: none;" id="divEditRes">
+										</div>
+									</div>
+									<div class="hide" style="height: 100%;" id="Add Notes">
+									
+									<div id="divNotes">
+									</div>
+									
+									<div style="display: none;" id="divEditNotes">
+									</div>
+									</div>
+									
+									<div class="hide" style="height: 100%;" id="Ticket History">
+									
+									<div id="divHist">
+									</div>
+									
+									<div style="display: none;" id="divEditHist">
+									</div>
+									</div>
+									
+								   
+                                   
+                                </div>
+                                </td>
