@@ -5,7 +5,7 @@ img {border:0px;}
 
 #masterdiv { width:186px; height:auto;}
 
-ul {margin:0px 0px 0px 20px; padding:0px 0px 0px 20px; list-style-image:url(../../asset/images/bullet.gif);}
+ul {margin:0px 0px 0px 20px; padding:0px 0px 0px 20px; list-style-image:url(/images/bullet.gif);}
 
 .menutitle, menutitle:active {
 	cursor:pointer;

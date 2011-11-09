@@ -172,17 +172,16 @@ class ResellerController < ApplicationController
     render "tickets"   
   end
   
+  def billing_subscriptions
+    
+  end
+  
   def new_ticket
     @ticket = Ticket.new
   end
   
   def create_ticket
     redirect_to reseller_all_support_tickets_path
-  end
-  
-  def perl_test    
-    render :text=> `perl #{Rails.root}/perls/datetime.pl`
-#    `perl ~/rails/cpvm/vhpanel/public/perls/datetime.pl`
   end
   
 end

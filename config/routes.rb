@@ -1,4 +1,6 @@
 Vhpanel::Application.routes.draw do
+  get "perl/index"
+
   get "clients/index"
   get "front/index"
   match '/users' => "users#create", :via=>[:put,:post]
@@ -30,6 +32,7 @@ Vhpanel::Application.routes.draw do
     match 'licence/code/:left' =>"reseller#licence_code",:as=>'reseller_licence_code',:defaults=>{:left=>1}
     match '/download/:left' =>"reseller#download",:as=>'reseller_download',:defaults=>{:left=>1}
     match 'billing/history/:left' =>"reseller#billing_history",:as=>'reseller_billing_history',:defaults=>{:left=>2}
+    match 'billing/subscriptions/:left' =>"reseller#billing_subscriptions",:as=>'reseller_billing_subscriptions',:defaults=>{:left=>2}
 #    tickets
     match 'support/:left' =>"reseller#support_tickets",:as=>'reseller_all_support_tickets',:defaults=>{:left=>3}
     match 'support/:left/:show' =>"reseller#support_tickets",:as=>'reseller_open_support_tickets',:defaults=>{:left=>3,:show=>"open"}

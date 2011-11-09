@@ -36,4 +36,15 @@ class Ticket < ActiveRecord::Base
   def self.billing_progress(user)
     where("status = ? AND category=? AND user_id = ?","progress","billing",user)
   end
+  
+  def status_image
+    if self.status.downcase.strip == "open"
+      @icon = 'icon_inprocess.png'
+    elsif self.status.downcase.strip == "hold"
+      @icon = 'offline.png'
+    else
+      @icon = 'offline.png'      
+    end
+  end
+  
 end
