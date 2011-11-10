@@ -45,7 +45,7 @@ class ResellerController < ApplicationController
   
   def edit
     @user = User.find(session[:user_id])
-    render '_reseller_edit'
+    render 'old_reseller_edit'
   end
   
   def reseller_update
@@ -72,8 +72,7 @@ class ResellerController < ApplicationController
     end
   end
   
-  def plan_summary
-    
+  def plan_summary    
   end
   
   def licence_upgrade
@@ -184,12 +183,14 @@ class ResellerController < ApplicationController
   end
   def ticket_details
     if params[:page]=='general'
+      @ticket = Ticket.find(params[:id])
       render '_ticket_general_details'
     elsif params[:page]=='reply'
+      @ticket = Ticket.find(params[:id])
       render '_ticket_post_reply'
     elsif params[:page]=='history'
+      @ticket = Ticket.find(params[:id])
       render '_ticket_history'        
     end
-  end
-  
+  end  
 end

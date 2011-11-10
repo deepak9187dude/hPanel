@@ -2,6 +2,9 @@ class Ticket < ActiveRecord::Base
   belongs_to :user
   has_many :ticket_details
     
+  def ticket_type
+    self.category.downcase == "support"?"Support Ticket":"Billing Ticket"
+  end
 #support tickets
   def self.support_tickets(user)
     where("category=? AND user_id = ?","support",user)
@@ -45,6 +48,5 @@ class Ticket < ActiveRecord::Base
     else
       @icon = 'offline.png'      
     end
-  end
-  
+  end  
 end

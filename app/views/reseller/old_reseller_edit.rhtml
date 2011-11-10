@@ -1,0 +1,277 @@
+
+<td valign="top" class="bgcolor2"><script type="text/javascript">
+
+
+  function checkCountry(country) {
+    if(country == 225) {
+        
+      document.getElementById('stateid').style.display= "block";
+           
+    } else {
+      document.getElementById('stateid').style.display= "none";
+         
+    }
+
+  }
+  </script>
+  <table width="100%" cellspacing="0" cellpadding="0" border="0">
+    <tbody>
+      <tr>
+        <td class="middle_top">
+          <table width="100%" cellspacing="0" cellpadding="0" border="0">
+            <tbody>
+              <tr>
+                <td colspan="2">
+                  <span class="bodytext_1">
+                    <a class="bodylink" href="index.php?cid=4&amp;action=UVP">Home</a> 
+                    &gt; <a class="bodylink" href="index.php?cid=4&amp;action=UVP&amp;left=0">My Account </a> 
+                    &gt; Edit Profile 
+                  </span>
+                </td>
+              </tr>
+              <tr>
+                <td width="44">
+                  <img width="30" height="32" border="0" align="bottom" title="Edit Profile" src="../asset/images/icon_edit_client_big.png">
+                </td>
+                <td width="1265" valign="top" style="padding-top:2px">
+                  <span class="txt_big_red">Edit Profile </span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <td class="tdgap1">
+          <table width="100%" cellspacing="0" cellpadding="0" border="0" align="center">
+            <tbody>
+              <tr>
+                <td class="tdgap1">                  
+                  <%= form_for @user, :as => :user, :url => reseller_update_path do |f| %>
+                    <table width="80%" border="0" align="left" cellpadding="0" cellspacing="0">
+                      <tr><td class="mandotry" align="center" colspan="2"><span class="bolderror"></span></td></tr>
+                      <tr>
+                        <td class="bgcolor1" colspan="2">
+                          <table width="100%" border="0" cellspacing="1" cellpadding="4" class="bgcolor3">
+                            <tr>
+                              <td width="38%" align="right" valign="top" class="cate_listing"><br><span class="mandotry">*</span> Name :</td>
+                              <td width="62%" valign="top" class="bgcolor4">
+                                <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                  <tr>
+                                    <td width="18%" align="left">Title</td>
+                                    <td width="33%">First Name</td>
+                                    <td width="49%">Last Name</td>
+                                  </tr>
+                                  <tr>
+                                    <td valign="top"> 
+                                      <select name="cmbtitle_1" class="txtdrop1" id="cmbtitle_1">
+                                        
+                                      </select>                                     
+                                    </td>
+                                    <td valign="top">
+                                      <%= f.text_field :first_name, :id=>'txtfirst_1',:class=>'txtfield',:size=>20 %>                    
+                                    </td>
+                                    <td valign="top">
+                                      <%= f.text_field :last_name, :id=>'txtlast_1',:class=>'txtfield',:size=>20 %>                   
+                                    </td>
+                                  </tr>
+                                </table>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td width="38%" align="right" valign="top" class="cate_listing"><span class="mandotry">*</span> Email :</td>
+                              <td width="62%" valign="top" class="bgcolor4">
+                                <%= f.text_field :email, :class=>"txtfield",:id=>"txtemail_1_2",:size=>20 %>                                                             #txtemail#
+                              </td>
+                            </tr>
+                            <tr>
+                              <td align="right" valign="top" class="cate_listing"><span class="mandotry">*</span> Password :</td>
+                              <td valign="top" class="bgcolor4"> 
+                                 <%= f.text_field :password, :class=>"txtfield1",:id=>"txtpwd_1",:size=>20 %> 
+                              </td>
+                            </tr>
+                            <tr>
+                              <td align="right" valign="top" class="cate_listing"><span class="mandotry">*</span> Retype Password:</td>
+                              <td valign="top" class="bgcolor4">        
+                                 <%= f.text_field :password, :class=>"txtfield1",:id=>"txtrpwd_1",:size=>20 %>  
+                              </td>
+                            </tr>
+                            <%#*<tr>%>
+                              <%#*<td align="right" valign="top" class="cate_listing">&nbsp;&nbsp;&nbsp;Account Type :</td>%>
+                              <%#*<td valign="top" class="bgcolor4">%>
+                                <%#*<table width="100%" border="0" cellspacing="0" cellpadding="0">%>
+                                  <%#*<tr>%>
+                                    <%#*<td width="7%">%>                              
+                                      <%#*<input type="radio" name="rdaccount" id="rdaccount" value="Business"  #BCHECKED#/>%>                          
+                                    <%#*</td>%>
+                                    <%#*<td width="93%" ><span class="bodytext">Business Account</span></td>%>
+                                  <%#*</tr>%>
+                                  <%#*<tr>%>
+                                    <%#*<td>&nbsp;</td>%>
+                                    <%#*<td>%>
+                                      <%#*<span class="bodytext">Company Name</span><br />&nbsp;%>
+                                      <%#*<input name="txtcompany" type="text" class="txtfield1" id="txtcompany" value="#COMPANY#"/>%>                                                                                              
+                                    <%#*</td>%>
+                                  <%#*</tr>%>
+                                  <%#*<tr>%>
+                                    <%#*<td>%>
+                                      <%#*<input type="radio" name="rdaccount" id="rdaccount"  value="Personal"  #CCHECKED#/>%>                              
+                                    <%#*</td>%>
+                                    <%#*<td class="bgcolor4">Personal Account</td>%>
+                                  <%#*</tr>%>
+                                <%#*</table>%>              
+                              <%#*</td>%>
+                            <%#*</tr>%>
+                            <tr>
+                              <td align="right" valign="top" class="cate_listing"><span class="mandotry">*</span> Status :</td>
+                              <td valign="top" class="bgcolor4">
+                                <%= select_tag "user[title]", options_for_select([ "Mr.", "Mrs.", "Ms." ]),:class=>'txtdrop',:id=>'cmbstatus_1' %>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td width="38%" align="right" valign="top" class="cate_listing"><span class="mandotry">*</span> Address Line 1 :</td>
+                              <td width="62%" valign="top" class="bgcolor4">   
+                                <%= f.text_field :address,:class=>'txtfield1',:id=>'txtaddr1_1',:size=>20 %>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td width="38%" align="right" valign="top" class="cate_listing">&nbsp;&nbsp;&nbsp;Address Line 2 :</td>
+                              <td width="62%" valign="top" class="bgcolor4"> 
+                                <%= f.text_field :address2,:class=>'txtfield1',:id=>'txtaddr2',:size=>20 %>                                       
+                              </td>
+                            </tr>
+                            <tr>
+                              <td width="38%" align="right" valign="top" class="cate_listing">&nbsp;&nbsp;&nbsp;<span class="mandotry">*</span> City :</td>
+                              <td width="62%" valign="top" class="bgcolor4">  
+                                <%= f.text_field :city,:class=>'txtfield1',:id=>'txtcity',:size=>20 %>                 
+                              </td>
+                            </tr>
+                            <tr>
+                              <td width="38%" align="right" valign="top" class="cate_listing">&nbsp;&nbsp;&nbsp;<span class="mandotry">*</span> Country :</td>
+                              <td width="62%" valign="top" class="bgcolor4"> 
+                                <%= select_tag :country, :id=>'cmbcountry',:class=>'txtdrop',:onchange=>'checkCountry(this.value);'  %>
+                                <%#*<select name="cmbcountry" class="txtdrop" id="cmbcountry"  onchange="checkCountry(this.value);">%>
+                                  <%#*#SELCOUNTRY#%>   
+                                <%#*</select>%>                    
+                              </td>
+                            </tr>
+                          </table>
+                          <div  id="stateid" #HIDESTATE#>
+                            <table width="100%" border="0" cellspacing="1" cellpadding="4" class="bgcolor3">
+                              <tr>
+                                <td width="38%" align="right" valign="top" class="cate_listing">&nbsp;&nbsp;&nbsp;State (US):</td>
+                                <td width="62%" valign="top" class="bgcolor4">                
+                                  <select name="cmbstate" class="txtdrop" id="cmbstate">
+                                    #SELSTATE#
+                                  </select>                    
+                                </td>
+                              </tr>
+                            </table>
+                          </div>
+                          <table width="100%" border="0" cellspacing="1" cellpadding="4" class="bgcolor3">
+                            <tr>
+                              <td width="38%" align="right" valign="top" class="cate_listing">&nbsp;&nbsp;&nbsp;State Other(other countries) :</td>
+                              <td width="62%" valign="top" class="bgcolor4">
+                                <%= f.text_field :state_other, :class=>'txtfield1',:id=>'txtstother',:size=>20 %>                 
+                              </td>
+                            </tr>
+                            <tr>
+                              <td width="38%" align="right" valign="top" class="cate_listing">&nbsp;&nbsp;&nbsp;Postal Code :</td>
+                              <td width="62%" valign="top" class="bgcolor4">
+                                <%= f.text_field :postal_code, :class=>'txtfield1', :id=>'txtpost_6',:maxlength=>10 %>
+                                #txtpost#
+                              </td>
+                            </tr>
+                            <tr>
+                              <td width="38%" align="right" valign="top" class="cate_listing"><br><span class="mandotry">*</span> Phone :</td>
+                              <td width="62%" valign="top" class="bgcolor4">
+                                <table width="100%" border="0" cellspacing="0" cellpadding="0" class="bgcolor4">
+                                  <tr>
+                                    <td width="28%">Country Code</td>
+                                    <td width="24%">Area Code</td>
+                                    <td width="48%">Number</td>
+                                  </tr>
+                                  <tr>
+                                    <td>                            +
+                                      <label>
+                                        <%= f.text_field :phccode,:class=>'txtfield2',:id=>'txtcc',:maxlength=>5 %>                              
+                                      </label>                            
+                                    </td>
+                                    <td>                    
+                                      <%= f.text_field :phacode,:class=>'txtfield2',:id=>'txtac',:maxlength=>8 %>                               
+                                    </td>
+                                    <td>
+                                      <%= f.text_field :phnumber,:class=>'txtfield',:id=>'txtnumber',:size=>20,:maxlength=>10 %>                             </td>
+                                  </tr>
+                                </table>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td width="38%" align="right" valign="top" class="cate_listing"><br>&nbsp;&nbsp;&nbsp;Mobile :</td>
+                              <td width="62%" valign="top" class="bgcolor4">
+                                <table width="100%" border="0" cellspacing="0" cellpadding="0" class="bgcolor4">
+                                  <tr>
+                                    <td width="28%">Country Code</td>
+                                    <td width="24%">Area Code</td>
+                                    <td width="48%">Number</td>
+                                  </tr>
+                                  <tr>
+                                    <td>                            +
+                                      <label>
+                                        <%= f.text_field :mccode,:maxlength=>5,:class=>'txtfield2',:id=>'txtmcc' %>                              
+                                      </label>                            </td>
+                                    <td>
+                                      <%= f.text_field :macode,:maxlength=>8,:class=>'txtfield2',:id=>'textfield11' %>                           
+                                    </td>
+                                    <td>
+                                      <%= f.text_field :mnumber,:maxlength=>10,:id=>'textfield11',:size=>20 %>
+                                    </td>
+                                  </tr>
+                                </table>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td width="38%" align="right" valign="top" class="cate_listing"><br>&nbsp;&nbsp;&nbsp;Fax :</td>
+                              <td width="62%" valign="top" class="bgcolor4"><table width="100%" border="0" cellspacing="0" cellpadding="0" class="bgcolor4">
+                                  <tr>
+                                    <td width="28%">Country Code</td>
+                                    <td width="24%">Area Code</td>
+                                    <td width="48%">Number</td>
+                                  </tr>
+                                  <tr>
+                                    <td>                            +
+                                      <label>
+                                        <%= f.text_field :fccode,:maxlength=>5,:class=>'txtfield2',:id=>'textfield12'%>
+                                      </label>                            
+                                    </td>
+                                    <td>
+                                      <%= f.text_field :facode,:maxlength=>8,:class=>'txtfield2',:id=>'textfield12'%>                          
+                                    </td>
+                                    <td>
+                                      <%= f.text_field :fnumber,:maxlength=>10,:class=>'txtfield2',:id=>'textfield12',:size=>20 %>                             
+                                    </td>
+                                  </tr>
+                                </table>
+                              </td>
+                            </tr>
+                          </table>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td width="296" align="right">
+                          <input name="btncancel" type="button" class="button" id="btncancel" value="Cancel" onClick="history.back()" />&nbsp;</td>
+                        <td width="489" height="40" align="left">
+                          <%= f.submit "Submit",:class=>'button',:id=>'adduser',:name=>'adduser' %>
+                        </td>
+                      </tr>
+                    </table>
+                  <% end %>  
+                </td>
+              </tr>
+            </tbody>
+          </table>          
+        </td>
+      </tr>
+    </tbody>
+  </table>  
+</td>
