@@ -17,7 +17,8 @@ class ResellerController < ApplicationController
       @billing_closed = Ticket.billing_closed(@current_user)
       @billing_progress = Ticket.billing_progress(@current_user)
       
-      @ticket_priorities = ["Low","Medium","High","Urgent","Emergency","Critical"]
+      @ticket_priority = {'-Select Priority-' => '','Low' => 'Low', 'Medium' => 'Medium','High'=>'High','Urgent'=>'Urgent','Emergency'=>'Emergency','Critical'=>'Critical'}
+      @ticket_type = {'-Select Category-' => '', 'Support' => 'Support','Billing'=>'Billing'}
     else
       redirect_to reseller_login_path ,:message=>'Please log in'
     end
@@ -176,9 +177,12 @@ class ResellerController < ApplicationController
   
   def new_ticket 
     @ticket = Ticket.new
-  end
+  end 
   
   def create_ticket
+    @ticket = Ticket.new
+    @ticket = params[:ticket]
+#    render :text => @ticket.to_json
     redirect_to reseller_all_support_tickets_path
   end
   def ticket_details
