@@ -45,7 +45,7 @@ class ResellerController < ApplicationController
   
   def edit
     @user = User.find(session[:user_id])
-    render 'old_reseller_edit'
+    render '_reseller_edit'
   end
   
   def reseller_update
