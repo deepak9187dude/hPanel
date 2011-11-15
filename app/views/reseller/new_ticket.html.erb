@@ -136,7 +136,7 @@
                               <span class="mandotry">*</span> Priority :
                             </td>
                             <td width="81%" valign="top" class="bgcolor4"> 
-                              <%= select_tag 'priority', options_for_select(@ticket_priority),:id=>'cmbpriority',:class=>'txtdrop'%>
+                              <%= select_tag 'ticket[priority]', options_for_select(@ticket_priority),:id=>'cmbpriority',:class=>'txtdrop'%>
                               &nbsp;&nbsp;
                               <span class="error" id="errpriority"></span>
                             </td>
@@ -147,7 +147,7 @@
                               <span class="mandotry">*</span> Category :
                             </td>
                             <td width="81%" valign="top" class="bgcolor4">   
-                             <%= select_tag 'type', options_for_select(@ticket_type),:id=>'cmbpriority',:class=>'txtdrop'%>
+                             <%= select_tag 'ticket[category]', options_for_select(@ticket_category),:id=>'cmbpriority',:class=>'txtdrop'%>
                               &nbsp;&nbsp;
                               <span class="error" id="errcategory"></span>
                             </td>

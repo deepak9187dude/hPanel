@@ -1,0 +1,395 @@
+<%#*<form onsubmit="return validateForms('frmucr');" method="post" id="frmucr" name="frmucr" action="">%>
+<%= form_for @user,:url=>users_path do |f| %>
+  <table width="100%" cellspacing="0" cellpadding="0" border="0" align="center">
+    <tbody>
+      <tr>
+        <td valign="middle" align="right">          
+          <div class="carttxt">
+             Your Shopping Cart : <%= @plan.title %> - $<%= @plan_rate %> / <%= @plan_duration[@type] %>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td valign="middle" height="44" align="center"><input type="hidden" value="Plan E" name="hidTitle">
+          <!--<input name="hidTotal" value="" type="hidden">-->
+          <span class="bolderror">
+            <br>
+          </span>
+        </td>
+      </tr>
+      <tr>
+        <td valign="top">
+          <table width="100%" cellspacing="0" cellpadding="0" border="0" style="border:1px solid #ccc;">
+            <tbody>
+              <tr>
+                <td height="38" class="blkheadbg">
+                  <p>
+                    <input type="Radio" checked="checked" onclick="change_rdo_action(this.value);" value="register_new" name="sign_in_action">
+                    I'm a New Client
+                    <!-- <input name="sign_in_action" value="signed_in"
+   onclick="change_rdo_action(this.value);"  type="Radio">
+                     I'm an Existing Client--></p>
+                </td>
+              </tr>
+              <tr>
+                <td height="26">
+                  &nbsp;&nbsp;&nbsp;&nbsp;Fields marked with <span class="mand">*</span> are mandatory.
+                </td>
+              </tr>
+              <tr id="register_new" style="display: table-row;">
+                <td valign="top">
+                  <table width="100%" cellspacing="0" cellpadding="2" border="0">
+                    <tbody>
+                      <tr>
+                        <td valign="top" align="left">
+                          <table width="100%" cellspacing="0" cellpadding="4" border="0" style="background: none repeat scroll 0% 0% rgb(255, 255, 255);">
+                            <tbody>
+                              <tr>
+                                <td width="28%" valign="middle" align="left" class="graybg1">
+                                  <span class="mand">*</span><strong>Name:</strong>
+                                </td>
+                                <td width="72%" valign="middle" align="left" class="grayborder">
+                                  <table width="100%" cellspacing="0" cellpadding="4" border="0">
+                                    <tbody>
+                                      <tr>
+                                        <td width="21%" valign="top" align="left">Title</td>
+                                        <td width="35%" valign="top" align="left">First 
+                                          Name</td>
+                                        <td width="44%" valign="top" align="left">Last Name</td>
+                                      </tr>
+                                      <tr>
+                                        <td valign="top" align="left">
+                                          <%= select_tag 'user[title]', options_for_select(@user_title),:id=>'cmbtitle',:class=>'textfield'%>
+                                        </td>
+                                        <td valign="top" align="left">
+                                          <input type="text" value="" id="txtfirst_1_3" class="textfield" name="txtfirst_1_3">
+                                          <br>&nbsp;
+                                          <span class="error" id="txtfirst"></span> 
+                                        </td>
+                                        <td valign="top" align="left">
+                                          <input type="text" value="" id="txtlast_1_3" class="textfield" name="txtlast_1_3">
+                                          <br>&nbsp;
+                                          <span class="error" id="txtlast"></span>
+                                        </td>
+                                      </tr>
+                                    </tbody>
+                                  </table>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td class="graybg2">
+                                  <p>
+                                    <span class="mand">*</span><strong>Email</strong><br>
+                                  </p>                      
+                                </td>
+                                <td class="grayborder">
+                                  <table width="100%" cellspacing="0" cellpadding="4" border="0">
+                                    <tbody>
+                                      <tr valign="middle">
+                                        <td width="23%" align="left"> 
+                                          <input type="text" value="" id="txtemail_1_2" class="textfield" name="txtemail_1_2">
+                                        </td>
+                                        <td width="77%" align="left">
+                                          <div class="error"><span id="txtemail"></span>
+                                          </div>
+                                        </td>
+                                      </tr>
+                                    </tbody>
+                                  </table>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td class="graybg1">
+                                  <span class="mand">*</span><strong>Password :</strong>
+                                </td>
+                                <td class="grayborder">
+                                  <table width="100%" cellspacing="0" cellpadding="4" border="0">
+                                    <tbody>
+                                      <tr valign="middle">
+                                        <td width="23%" align="left">
+                                          <input type="password" value="" id="txtpwd_1_37" class="textfield" name="txtpwd_1_37%6">
+                                        </td>
+                                        <td width="77%" align="left">
+                                          <div class="error"><span id="txtpwd"></span></div>
+                                        </td>
+                                      </tr>
+                                    </tbody>
+                                  </table>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td class="graybg2">
+                                  <span class="mand">*</span>
+                                  <strong>Retyp Password:</strong>
+                                </td>
+                                <td class="grayborder">
+                                  <table width="100%" cellspacing="0" cellpadding="4" border="0">
+                                    <tbody>
+                                      <tr valign="middle">
+                                        <td width="23%" align="left">
+                                          <input type="password" id="txtrpwd_1" class="textfield" name="txtrpwd_1">
+                                        </td>
+                                        <td width="77%" align="left">
+                                          <div class="error"><span id="txtrpwd"></span></div>
+                                        </td>
+                                      </tr>
+                                    </tbody>
+                                  </table>
+                                </td>
+                              </tr>                                
+                              <tr>
+                                <td class="graybg2">
+                                  <span class="mand">*</span>
+                                  <strong>Address Line 1 :</strong>
+                                </td>
+                                <td class="grayborder">
+                                  <table width="100%" cellspacing="0" cellpadding="4" border="0">
+                                    <tbody>
+                                      <tr valign="middle">
+                                        <td width="23%" align="left">
+                                          <input type="text" value="" id="txtaddr1_1" class="textfield" name="txtaddr1_1">
+                                        </td>
+                                        <td width="77%" align="left">
+                                          &nbsp;<span class="error" id="txtaddr1">
+                                          </span>
+                                        </td>
+                                      </tr>
+                                    </tbody>
+                                  </table>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td class="graybg1">
+                                  <strong>Address Line 2 :</strong>
+                                </td>
+                                <td class="grayborder">
+                                  <table width="100%" cellspacing="0" cellpadding="4" border="0">
+                                    <tbody>
+                                      <tr valign="middle">
+                                        <td width="23%" align="left">
+                                          <input type="text" value="" id="txtaddr2" class="textfield" name="txtaddr2">
+                                        </td>
+                                        <td width="77%" align="left">
+                                          &nbsp;</td>
+                                      </tr>
+                                    </tbody>
+                                  </table>                                    
+                                </td>
+                              </tr>
+                              <tr>
+                                <td class="graybg2">
+                                  <span class="mand">*</span>
+                                  <strong><strong>City :</strong></strong>
+                                </td>
+                                <td class="grayborder">
+                                  <table width="100%" cellspacing="0" cellpadding="4" border="0">
+                                    <tbody>
+                                      <tr valign="middle">
+                                        <td width="23%" align="left">
+                                          <input type="text" value="" id="txtcity_1_19" class="textfield" name="txtcity_1_19">
+                                        </td>
+                                        <td width="77%" align="left">
+                                          &nbsp;<span class="error" id="txtcity"></span>
+                                        </td>
+                                      </tr>
+                                    </tbody>
+                                  </table>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td class="graybg1">
+                                  <span class="mand">*</span><strong><strong>Country :</strong></strong>
+                                </td>
+                                <td class="grayborder">
+                                  <table width="100%" cellspacing="0" cellpadding="4" border="0">
+                                    <tbody>
+                                      <tr valign="middle">
+                                        <td width="23%" align="left">
+                                          <select onchange="checkCountry(this.value);" id="cmbcountry" class="textfield" name="cmbcountry">
+                                            <!--<option value="">--Select--</option>-->
+                                            <option value=""> - Select - </option><option value="1">Afghanistan</option><option value="2">Albania</option><option value="3">Algeria</option>
+                                          </select> 
+                                        </td>
+                                        <td width="77%" align="left">&nbsp;</td>
+                                      </tr>
+                                    </tbody>
+                                  </table>                                    
+                                </td>
+                              </tr>
+                              <tr>
+                                <td class="graybg1" id="usstates">
+                                  <span class="mand">*</span>
+                                  <strong><strong>State (US):</strong></strong>
+                                </td>
+                                <td class="grayborder">
+                                  <table width="100%" cellspacing="0" cellpadding="4" border="0" id="usstates2">
+                                    <tbody>
+                                      <tr valign="middle">
+                                        <td width="23%" align="left">
+                                          <select id="cmbstate" class="textfield" name="cmbstate">
+                                            <option value="0"> - Select - </option><option value="1">Alabama</option><option value="2">Alaska</option><option value="3">American Somoa</option>
+                                          </select>  
+                                        </td>
+                                        <td width="77%" align="left">
+
+                                        </td>
+                                      </tr>
+                                    </tbody>
+                                  </table>                                    
+                                </td>
+                              </tr>
+                              <tr>
+                                <td class="graybg2">
+                                  <strong>State Other(other 
+                                    countries) :</strong>
+                                </td>
+                                <td class="grayborder">
+                                  <table width="100%" cellspacing="0" cellpadding="4" border="0">
+                                    <tbody>
+                                      <tr valign="middle">
+                                        <td width="23%" align="left">
+                                          <input type="text" value="" id="txtstother_3" class="textfield" name="txtstother_3">
+                                        </td>
+                                        <td width="77%" align="left">
+                                          &nbsp;<span class="error" id="txtstother"></span>
+                                        </td>
+                                      </tr>
+                                    </tbody>
+                                  </table>
+                                </td>
+                              </tr>                  
+                              <tr>
+                                <td class="graybg2">
+                                  <strong>Postal Code :</strong>
+                                </td>
+                                <td class="grayborder">
+                                  <table width="100%" cellspacing="0" cellpadding="4" border="0">
+                                    <tbody><tr valign="middle">
+                                        <td width="23%" align="left"><input type="text" value="" id="txtpost_6" class="textfield" name="txtpost_6"></td>
+                                        <td width="77%" align="left"> &nbsp;<span class="error" id="txtpost"></span></td>
+                                      </tr>
+                                    </tbody>
+                                  </table>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td class="graybg1">
+                                  <span class="mand">*</span>
+                                  <strong><strong>Phone :</strong></strong>
+                                </td>
+                                <td class="grayborder">
+                                  <table width="100%" cellspacing="0" cellpadding="4" border="0">
+                                    <tbody>
+                                      <tr>
+                                        <td width="1%" valign="top" align="left">&nbsp;</td>
+                                        <td width="25%" valign="top" align="left">Country
+                                          Code</td>
+                                        <td width="25%" valign="top" align="left">Area 
+                                          Code</td>
+                                        <td width="47%" valign="top" align="left">Number</td>
+                                      </tr>
+                                      <tr>
+                                        <td valign="top" align="left">+</td>
+                                        <td valign="top" align="left">
+                                          <input type="text" value="" id="txtcc_1_4" class="textfield" maxlength="4" name="txtcc_1_4"> &nbsp;<span class="error" id="txtcc"></span></td>
+                                        <td valign="top" align="left">
+                                          <input type="text" value="" id="txtac_1_4" class="textfield" maxlength="4" name="txtac_1_4"> &nbsp;<span class="error" id="txtac"></span> </td>
+                                        <td valign="top" align="left"><input type="text" value="" id="txtnum_1_4" class="textfield" maxlength="15" name="txtnum_1_4"> <br>&nbsp;<span class="error" id="txtnum"></span></td>
+                                      </tr>
+                                    </tbody>
+                                  </table>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td class="graybg2">
+                                  <strong>Mobile :</strong>
+                                </td>
+                                <td class="grayborder">
+                                  <table width="100%" cellspacing="0" cellpadding="4" border="0">
+                                    <tbody>
+                                      <tr>
+                                        <td width="1%" valign="top" align="left">&nbsp;</td>
+                                        <td width="25%" valign="top" align="left">Country
+                                          Code</td>
+                                        <td width="25%" valign="top" align="left">Area 
+                                          Code</td>
+                                        <td width="47%" valign="top" align="left">Number</td>
+                                      </tr>
+                                      <tr>
+                                        <td valign="top" align="left">+</td>
+                                        <td valign="top" align="left">
+                                          <input type="text" value="" id="txtmcc_4" class="textfield" maxlength="4" name="txtmcc_4"> &nbsp;<span class="error" id="txtmcc"></span></td>
+                                        <td valign="top" align="left"><input type="text" value="" id="txtmac_4" class="textfield" maxlength="4" name="txtmac_4"> &nbsp;<span class="error" id="txtmac"></span></td>
+                                        <td valign="top" align="left"><input type="text" value="" id="txtmnumber_4" class="textfield" maxlength="15" name="txtmnumber_4"><br> &nbsp;<span class="error" id="txtmnumber"></span></td>
+                                      </tr>
+                                    </tbody>
+                                  </table>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td class="graybg1">
+                                  <strong>Fax :</strong>
+                                </td>
+                                <td class="grayborder">
+                                  <table width="100%" cellspacing="0" cellpadding="4" border="0">
+                                    <tbody><tr>
+                                        <td width="1%" valign="top" align="left">&nbsp;</td>
+                                        <td width="25%" valign="top" align="left">Country
+                                          Code</td>
+                                        <td width="25%" valign="top" align="left">Area 
+                                          Code</td>
+                                        <td width="47%" valign="top" align="left">Number</td>
+                                      </tr>
+                                      <tr>
+                                        <td valign="top" align="left">+</td>
+                                        <td valign="top" align="left"><input type="text" value="" id="txtfcc_4" class="textfield" name="txtfcc_4">&nbsp;<span class="error" id="txtfcc"></span></td>
+                                        <td valign="top" align="left"><input type="text" value="" id="txtfac_4" class="textfield" name="txtfac_4">&nbsp;<span class="error" id="txtfac"></span></td>
+                                        <td valign="top" align="left">  <input type="text" value="" id="txtfnumber_4" class="textfield" name="txtfnumber_4"><br>&nbsp;<span class="error" id="txtfnumber"></span>
+                                        </td>
+                                      </tr>
+                                    </tbody>
+                                  </table>
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td valign="top" align="left"><table width="100%" cellspacing="0" cellpadding="6" border="0">
+                            <tbody>
+                              <tr>
+                                <td width="239">&nbsp;</td>
+                                <td width="561" valign="middle">
+                                  <span class="style3">
+                                    <input type="checkbox" id="agreement" name="agreement"> 
+                                    <a target="_blank" class="bodylink" href="terms.php">
+                                      <span class="style2">I accept the terms of this User Agreement.</span>
+                                    </a>                                      
+                                  </span>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>&nbsp;</td>
+                                <td>
+                                  <!--<input name="adduser" class="blk_button"
+                id="adduser" value="Register" onclick="return validateForms('frmucr');"                   type="submit">-->
+                                  <input type="submit" value="Register" id="adduser" class="blk_button" name="adduser">
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <br>
+<% end %>

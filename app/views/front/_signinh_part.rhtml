@@ -40,101 +40,100 @@
                     &nbsp;&nbsp;&nbsp;&nbsp;Fields marked with <span class="mand">*</span> are mandatory.
                   </td>
                 </tr>
-                <!-- Existing Customer -->
-                <tr style="display: none;" id="signed_in">
-                  <td valign="top">
-                    <table width="100%" cellspacing="0" cellpadding="0" border="0">
-                      <tbody>
-                        <tr>
-                          <td valign="top" align="left">
-                            <table width="100%" cellspacing="0" cellpadding="4" border="0">
-                              <tbody>
-                                <tr>
-                                  <td bgcolor="#f7f7f7" height="28" class="subheadg">
-                                    For
-                                    existing subscribers, please enter your e-mail address and password.</td>
-                                </tr>
-                              </tbody>
-                            </table>
-                            <table width="100%" cellspacing="0" cellpadding="2" border="0" bgcolor="#ffffff">
-                              <tbody>
-                                <tr>
-                                  <td width="193" class="graybg2">
-                                    <p>
-                                      <span class="mand">
-                                        *
-                                      </span>
-                                      <strong>
-                                        Email
-                                      </strong>
-                                      <br/>
-                                    </p>
-                                  </td>
-                                  <td width="480" bgcolor="#ffffff" class="grayborder">
-                                    <table width="100%" cellspacing="0" cellpadding="4" border="0">
-                                      <tbody>
-                                        <tr valign="middle">
-                                          <td width="23%" align="left">                                            
-                                            <input type="text" size="30" id="txtexistingemail1" class="textfield" name="txtexistingemail1"/>
-                                          </td>
-                                          <td width="47%" align="left"> &nbsp;
-                                            <span class="error" id="txtexistingemail">
+                <%#*<!-- Existing Customer -->%>
+                <%#*<tr style="display: none;" id="signed_in">%>
+                  <%#*<td valign="top">%>
+                    <%#*<table width="100%" cellspacing="0" cellpadding="0" border="0">%>
+                      <%#*<tbody>%>
+                        <%#*<tr>%>
+                          <%#*<td valign="top" align="left">%>
+                            <%#*<table width="100%" cellspacing="0" cellpadding="4" border="0">%>
+                              <%#*<tbody>%>
+                                <%#*<tr>%>
+                                  <%#*<td bgcolor="#f7f7f7" height="28" class="subheadg">%>
+                                    <%#*For existing subscribers, please enter your e-mail address and password.</td>%>
+                                <%#*</tr>%>
+                              <%#*</tbody>%>
+                            <%#*</table>%>
+                            <%#*<table width="100%" cellspacing="0" cellpadding="2" border="0" bgcolor="#ffffff">%>
+                              <%#*<tbody>%>
+                                <%#*<tr>%>
+                                  <%#*<td width="193" class="graybg2">%>
+                                    <%#*<p>%>
+                                      <%#*<span class="mand">%>
+                                        <%#**%>
+                                      <%#*</span>%>
+                                      <%#*<strong>%>
+                                        <%#*Email%>
+                                      <%#*</strong>%>
+                                      <%#*<br/>%>
+                                    <%#*</p>%>
+                                  <%#*</td>%>
+                                  <%#*<td width="480" bgcolor="#ffffff" class="grayborder">%>
+                                    <%#*<table width="100%" cellspacing="0" cellpadding="4" border="0">%>
+                                      <%#*<tbody>%>
+                                        <%#*<tr valign="middle">%>
+                                          <%#*<td width="23%" align="left">%>                                            
+                                            <%#*<input type="text" size="30" id="txtexistingemail1" class="textfield" name="txtexistingemail1"/>%>
+                                          <%#*</td>%>
+                                          <%#*<td width="47%" align="left"> &nbsp;%>
+                                            <%#*<span class="error" id="txtexistingemail">%>
                                               
-                                            </span>
-                                          </td>
-                                        </tr>
-                                      </tbody>
-                                    </table>
-                                  </td>
-                                </tr>
-                                <tr>
-                                  <td class="graybg1">
-                                    <span class="mand">
-                                      *
-                                    </span>
-                                    <strong>
-                                      Password:
-                                    </strong>
-                                  </td>
-                                  <td bgcolor="#ffffff" class="grayborder">
-                                    <table width="100%" cellspacing="0" cellpadding="4" border="0" bgcolor="#ffffff">
-                                      <tbody>
-                                        <tr valign="middle">
-                                          <td width="23%" align="left">
-                                            <input type="password" size="30" id="txtexistingpwd1" class="textfield" name="txtexistingpwd1"/>
-                                          </td>
-                                          <td width="77%" align="left">
-                                            &nbsp;
-                                            <span class="error" id="txtexistingpwd"></span>
-                                          </td>
-                                        </tr>
-                                      </tbody>
-                                    </table>
-                                  </td>
-                                </tr>
-                              </tbody>
-                            </table>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td valign="top" align="left">
-                            <table width="100%" cellspacing="0" cellpadding="6" border="0">
-                              <tbody>
-                                <tr>
-                                  <td width="187">&nbsp;</td>
-                                  <td width="470">
-                                    <input type="submit" onclick="return 
-                                    funcValidatesignedIn('frmucr');" value="Sign In" id="signedin" class="blk_button" name="signedin">
-                                  </td>
-                                </tr>
-                              </tbody>
-                            </table>
-                          </td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </td>
-                </tr>
+                                            <%#*</span>%>
+                                          <%#*</td>%>
+                                        <%#*</tr>%>
+                                      <%#*</tbody>%>
+                                    <%#*</table>%>
+                                  <%#*</td>%>
+                                <%#*</tr>%>
+                                <%#*<tr>%>
+                                  <%#*<td class="graybg1">%>
+                                    <%#*<span class="mand">%>
+                                      <%#**%>
+                                    <%#*</span>%>
+                                    <%#*<strong>%>
+                                      <%#*Password:%>
+                                    <%#*</strong>%>
+                                  <%#*</td>%>
+                                  <%#*<td bgcolor="#ffffff" class="grayborder">%>
+                                    <%#*<table width="100%" cellspacing="0" cellpadding="4" border="0" bgcolor="#ffffff">%>
+                                      <%#*<tbody>%>
+                                        <%#*<tr valign="middle">%>
+                                          <%#*<td width="23%" align="left">%>
+                                            <%#*<input type="password" size="30" id="txtexistingpwd1" class="textfield" name="txtexistingpwd1"/>%>
+                                          <%#*</td>%>
+                                          <%#*<td width="77%" align="left">%>
+                                            <%#*&nbsp;%>
+                                            <%#*<span class="error" id="txtexistingpwd"></span>%>
+                                          <%#*</td>%>
+                                        <%#*</tr>%>
+                                      <%#*</tbody>%>
+                                    <%#*</table>%>
+                                  <%#*</td>%>
+                                <%#*</tr>%>
+                              <%#*</tbody>%>
+                            <%#*</table>%>
+                          <%#*</td>%>
+                        <%#*</tr>%>
+                        <%#*<tr>%>
+                          <%#*<td valign="top" align="left">%>
+                            <%#*<table width="100%" cellspacing="0" cellpadding="6" border="0">%>
+                              <%#*<tbody>%>
+                                <%#*<tr>%>
+                                  <%#*<td width="187">&nbsp;</td>%>
+                                  <%#*<td width="470">%>
+                                    <%#*<input type="submit" onclick="return%> 
+                                    <%#*funcValidatesignedIn('frmucr');" value="Sign In" id="signedin" class="blk_button" name="signedin">%>
+                                  <%#*</td>%>
+                                <%#*</tr>%>
+                              <%#*</tbody>%>
+                            <%#*</table>%>
+                          <%#*</td>%>
+                        <%#*</tr>%>
+                      <%#*</tbody>%>
+                    <%#*</table>%>
+                  <%#*</td>%>
+                <%#*</tr>%>
                 <!-- End of Existing Customer -->
                 <tr id="register_new" style="display: table-row;">
                   <td valign="top">
@@ -213,7 +212,7 @@
                                       <tbody>
                                         <tr valign="middle">
                                           <td width="23%" align="left">
-                                            <%= f.text_field :password, :class=>"txtfield",:id=>"txtpwd_1_37",:size=>20 %> 
+                                            <%= f.text_field :password,:type=>'password', :class=>"txtfield",:id=>"txtpwd_1_37",:size=>20 %> 
                                           </td>
                                           <td width="77%" align="left">
                                             <div class="error">
@@ -237,61 +236,18 @@
                                       <tbody>
                                         <tr valign="middle">
                                           <td width="23%" align="left">                                            
-                                            <%= f.text_field :password, :class=>"txtfield",:id=>"txtrpwd_1",:size=>20 %> 
+                                            <%= f.text_field :password,:type=>'password', :class=>"txtfield",:id=>"txtrpwd_1",:size=>20 %> 
                                           </td>
                                           <td width="77%" align="left">
-                                            <div class="error"><span id="txtrpwd"></span></div>
+                                            <div class="error">
+                                              <span id="txtrpwd"></span>
+                                            </div>
                                           </td>
                                         </tr>
                                       </tbody>
                                     </table>
                                   </td>
                                 </tr>
-                                <!--
-
-                <tr>
-
-                  <td class="graybg1"><strong>Accounty Type :</strong></td>
-
-                  <td class="grayborder"><table width="100%" border="0" cellspacing="0" cellpadding="4">
-
-                    <tr>
-
-                      <td width="5%" align="left" valign="top"><input type="radio" name="rdaccount" id="rdaccount" value="Business"/></td>
-
-                      <td width="95%" align="left" valign="top"> Bussiness Account</td>
-
-                      </tr>
-
-                    <tr>
-
-                      <td align="left" valign="top"></td>
-
-                      <td align="left" valign="top">Company Name</td>
-
-                      </tr>
-
-                    <tr>
-
-                      <td align="left" valign="top">&nbsp;</td>
-
-                      <td align="left" valign="top">
-
-                                              <input name="txtcompany" type="text" class="txtfld" id="txtcompany"  value=""/></td>
-
-                      </tr>
-
-                    <tr>
-
-                      <td align="left" valign="top"><input type="radio" name="rdaccount" id="rdaccount"  value="Personal"  /></td>
-
-                      <td align="left" valign="top">Personal Account</td>
-
-                      </tr>
-
-                  </table></td>
-
-                </tr>-->
                                 <tr>
                                   <td class="graybg2">
                                     <span class="mand">*</span>
@@ -299,7 +255,8 @@
                                       Address Line 1 :
                                     </strong>
                                   </td>
-                                  <td class="grayborder"><table width="100%" cellspacing="0" cellpadding="4" border="0">
+                                  <td class="grayborder">
+                                    <table width="100%" cellspacing="0" cellpadding="4" border="0">
                                       <tbody>
                                         <tr valign="middle">
                                           <td width="23%" align="left">
@@ -556,10 +513,7 @@
                                 </tr>
                                 <tr>
                                   <td>&nbsp;</td>
-                                  <td>
-                                    <!--<input name="adduser" class="blk_button"
-                id="adduser" value="Register" onclick="return validateForms('frmucr');" 
-                type="submit">-->
+                                  <td>                                    
                                     <%= f.submit :value=>'Register',:id=>'adduser',:class=>'blk_button',:name=>'register_from_front'  %>
                                   </td>
                                 </tr>
@@ -578,5 +532,4 @@
       </tbody>
     </table>
     <br/>
-  <%#*</form>%>
 <% end %>

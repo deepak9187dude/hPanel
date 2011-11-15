@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111103130223) do
+ActiveRecord::Schema.define(:version => 20111115050853) do
 
   create_table "country_masters", :force => true do |t|
     t.string   "country_name", :null => false
@@ -107,7 +107,7 @@ ActiveRecord::Schema.define(:version => 20111103130223) do
     t.string   "subject"
     t.string   "category"
     t.text     "comments"
-    t.string   "status"
+    t.string   "status",     :default => "Open"
     t.boolean  "isdelete",   :default => false
     t.string   "random"
     t.integer  "replies"

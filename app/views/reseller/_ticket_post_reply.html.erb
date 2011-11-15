@@ -9,23 +9,23 @@
         //return false;
         err=1;
       }
-      else 
+      else
       {
         document.getElementById("errstatus").innerHTML = "" ;
         //return true;
-      }     
+      }
       if(err==1)
         return false;
       else
-        return true;	 
+        return true;
     }
   </script>
   <script language="javascript" type="text/javascript">
     function ShowDiv(id1, id2)
-    { 
+    {
       window.document.getElementById(id1).style.display = "block";
       window.document.getElementById(id2).style.display = "none";
-      window.document.getElementById('divGSedit').style.display = "none"; 
+      window.document.getElementById('divGSedit').style.display = "none";
     }
   </script>
   <script type="text/javascript" src="/javascripts/tiny_mce/tiny_mce.js"></script>
@@ -69,21 +69,42 @@
 
   <div style="height: 100%;" id="content">
     <table cellspacing="0" cellpadding="0" border="0" width="100%">
-      <tbody><tr>
-          <td class="middle_top"><table cellspacing="0" cellpadding="0" border="0" width="100%">
-              <tbody><tr>
-                  <td colspan="2"><span class="bodytext_1"><a class="bodylink" href="index.php?cid=4&amp;action=UVP">Home</a> &gt; <a class="bodylink" href="index.php?cid=31&amp;action=CTM&amp;left=3">Ticket Manager</a> &gt; <a class="bodylink" href="index.php?cid=31&amp;action=CTM&amp;cat=Support&amp;st=0&amp;left=3">Support Ticket</a>  &gt;  Post Reply</span></td>
+      <tbody>
+        <tr>
+          <td class="middle_top">
+            <table cellspacing="0" cellpadding="0" border="0" width="100%">
+              <tbody>
+                <tr>
+                  <td colspan="2">
+                    <span class="bodytext_1">
+                      <a class="bodylink" href="index.php?cid=4&amp;action=UVP">Home</a>
+                      &gt; <a class="bodylink" href="index.php?cid=31&amp;action=CTM&amp;left=3">Ticket Manager</a>
+                      &gt; <a class="bodylink" href="index.php?cid=31&amp;action=CTM&amp;cat=Support&amp;st=0&amp;left=3">Support Ticket</a>
+                      &gt;  Post Reply</span>
+                  </td>
                 </tr>
                 <tr>
-                  <td width="4%"><img border="0" align="bottom" width="30" height="32" title="View VM" src="/images/mail_reply_b.png"></td>
-                  <td width="96%" valign="top" style="padding-top:2px"><span class="txt_big_red">Ticket ID #8</span></td>
+                  <td width="4%">
+                    <img border="0" align="bottom" width="30" height="32" title="View VM" src="/images/mail_reply_b.png">
+                  </td>
+                  <td width="96%" valign="top" style="padding-top:2px">
+                    <span class="txt_big_red">Ticket ID #8</span>
+                  </td>
                 </tr>
                 <tr>
                   <td width="4%">&nbsp;</td>
-                  <td width="96%" valign="top" style="padding-top:2px"><span class="bodytext_1"><a class="bodylink" href="index.php?cid=4&amp;action=UVP&amp;left=0">Deepak sharma</a></span> 
-                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="txt_big_red">Support Ticket</span>
-                    &nbsp;&nbsp;&nbsp;&nbsp;<img title="In Progress" src="/images/icon_inprocess.png"><span class="Booting">Open</span>
-                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="txt_big_red">Medium</span>					</td>
+                  <td width="96%" valign="top" style="padding-top:2px">
+                    <span class="bodytext_1">
+                      <a class="bodylink" href="index.php?cid=4&amp;action=UVP&amp;left=0">Deepak sharma</a>
+                    </span>
+                    &nbsp;&nbsp;&nbsp;&nbsp;
+                    <span class="txt_big_red">Support Ticket</span>
+                    &nbsp;&nbsp;&nbsp;&nbsp;
+                    <img title="In Progress" src="/images/icon_inprocess.png">
+                    <span class="Booting">Open</span>
+                    &nbsp;&nbsp;&nbsp;&nbsp;
+                    <span class="txt_big_red">Medium</span>
+                  </td>
                 </tr>
               </tbody>
             </table>
@@ -94,47 +115,46 @@
     <%= render :partial=>'ticket_tabs' %>
     <div class="hide" style="height: 100%;" id="General">
       <div id="divGS">
-      </div>  
-      <div style="display: none;" id="divGSedit">															 
+      </div>
+      <div style="display: none;" id="divGSedit">
       </div>
     </div>
-    <div class="show" style="height: 100%;" id="Post Reply"> 
+    <div class="show" style="height: 100%;" id="Post Reply">
       <div id="divRes">
-        <form method="post" id="frmucr" name="frmucr">
-          <table cellspacing="1" cellpadding="4" border="0" width="85%" class="bgcolor3"> 
+        <%#*<form method="post" id="frmucr" name="frmucr">%>
+        <%= form_for @ticket_detail,:url=>create_reply_path(params[:id]) do |f| %>
+          <table cellspacing="1" cellpadding="4" border="0" width="85%" class="bgcolor3">
             <tbody>
-              <tr>
-                <td align="right" width="20%" class="cate_listing"><span class="mandotry">*</span>Status :</td>
+                <tr>
+                  <td align="right" width="20%" class="cate_listing"><span class="mandotry">*</span>Status :</td>
                 <td width="80%" height="26" class="bgcolor4">
-                  <select class="txtdrop" id="cmbstatus" name="cmbstatus">											
-                    <option value="">-Select Status-</option>
-                    <option selected="selected" value="0">Open</option>
-                    <option value="1">On Hold</option>
-                    <option value="2">Closed</option>
-                    <option value="3">In Progress</option>
-                  </select>&nbsp;&nbsp;
-                  <span class="error" id="errstatus"></span></td>
-              </tr>	 
+                  <%= select_tag 'ticket_detail[status]', options_for_select(@ticket_status),:id=>'cmbstatus',:class=>'txtdrop'%>
+                  <span class="error" id="errstatus"></span>
+                </td>
+              </tr>
               <tr>
                 <td align="right" width="20%" valign="top" class="cate_listing">
                   <span class="mandotry">*</span>Contents :
                 </td>
                 <td width="80%" height="26" class="bgcolor4">
-                  &nbsp;&nbsp;<span class="bolderror" id="errfck"></span>
+                  &nbsp;&nbsp;
+                  <span class="bolderror" id="errfck"></span>
                   <br>
-                  <textarea name="tinymce_content" >bingo</textarea>
+                  <%= text_area(:ticket_detail, :comments,:rows=>10,:cols=>60) %>
                   <br>
                   <span>
-                    <input type="checkbox" value="jeff@vpsland.com" checked="checked" name="chkSend" id="chkSend">&nbsp;Send Email
+                    <%= check_box("email", "send",:checked=>'checked',:value=>'jeff@vpsland.com') %>
+                    <%#*<input type="checkbox" value="jeff@vpsland.com" checked="checked" name="chkSend" id="chkSend">%>
+                    &nbsp;Send Email
                   </span>
-                  <input type="hidden" value="Jeff Moncrief" name="hidcustomername" id="hidcustomername">
-                  <input type="hidden" value="test ticket to check the lenght to show in view." name="hidsubject" id="hidsubject">
+                  <%#*<input type="hidden" value="Jeff Moncrief" name="hidcustomername" id="hidcustomername">%>
+                  <%#*<input type="hidden" value="test ticket to check the lenght to show in view." name="hidsubject" id="hidsubject">%>
                 </td>
               </tr>
             </tbody>
-          </table> 
+          </table>
           <br>
-          <table cellspacing="1" cellpadding="4" border="0" width="85%"> 
+          <table cellspacing="1" cellpadding="4" border="0" width="85%">
             <tbody>
               <tr>
                 <td align="right" width="141">
@@ -147,8 +167,8 @@
               </tr>
             </tbody>
           </table>
-        </form>
-      </div> 
+        <% end %>
+      </div>
       <div style="display: none;" id="divEditRes">
       </div>
     </div>

@@ -1,0 +1,17 @@
+<tr>
+  <td align="left" width="20%" valign="top" class="bgcolor4"><strong><%= ticket_detail.user.name %></strong></td>
+  <td align="right" width="80%" height="26" class="bgcolor4">
+    <table cellspacing="1" cellpadding="0" border="0" width="100%"> 
+      <tbody>
+        <tr>
+          <td align="left" class="btm_border">Posted on: <%= ticket_detail.created_at.strftime("%d/%m/%Y") %></td> 
+        </tr>	
+        <tr>
+          <td align="left">
+            <p><%=raw ticket_detail.comments %></p>
+          </td> 
+        </tr>	
+      </tbody>
+    </table>
+  </td>
+</tr>

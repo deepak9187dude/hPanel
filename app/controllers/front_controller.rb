@@ -60,7 +60,9 @@ class FrontController < ApplicationController
       end
     end    
   end
+  
   def signinh
+    @user_title = {"Mr."=>"Mr.","Mrs."=>"Mrs.","Ms."=>"Ms."}
     @user = User.new    
     @type = params[:plantype]
     @plan_duration = Hash.new
@@ -70,8 +72,6 @@ class FrontController < ApplicationController
     @plan_duration['quaterly'] = '3 Months'
     @plan = Plan.find(params[:plan_id],:include=>:plan_billing_rate)    
     @plan_rate = @plan.plan_billing_rate.current_plan_price(@type)
-  
-    
-#    render :text => @plan_rate.to_json
+#    render :text => params.to_json
   end
 end
