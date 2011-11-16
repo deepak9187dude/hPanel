@@ -1,5 +1,6 @@
+<script type="text/javascript" src="/javascripts/validate.js"></script>
+<% form_tag(session_path ,{:id=>"frmlogin",:onSubmit => "return validateForms('frmlogin')"}) do %>  
 
-<% form_tag session_path do %>
 <%#*<form name="frmlogin" action="http://localhost/cpvmcomplete/reseller/index.php?cid=2" method="post" onSubmit="return validateForms('frmlogin');" id="frmlogin">%>
   <table width="341" border="0" align="center" cellpadding="0" cellspacing="0">
     <tr>
@@ -17,7 +18,7 @@
             <td width="65%">
               <label>
                 <%#= text_field_tag :email,:id=>'txtuser_1',:class=>'txtfield1' %>
-                <%= text_field_tag :username %>
+                <%= text_field_tag :username ,nil, :id=>"txtuser_1" %>
                 <br /><span id="txtuser" class="error"></span></label>         </td>
           </tr>
           <tr>
@@ -25,7 +26,7 @@
             <td>
               <label>
                 <%#*<input name="txtpwd_1" type="password" class="txtfield1" id="txtpwd_1" />%>
-                <%= password_field_tag :password %>
+                <%= password_field_tag :password ,nil, :id=>"txtpwd_1"%>
                 <br /><span id="txtpwd" class="error"></span>	
               </label>
             </td>
