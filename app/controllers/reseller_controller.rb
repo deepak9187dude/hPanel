@@ -204,7 +204,10 @@ class ResellerController < ApplicationController
     ticket_reply = TicketDetail.new(params[:ticket_detail])
     ticket_reply.replier_id = @current_user.id
     ticket_reply.ticket_id=params[:id]
-    ticket_reply.status='open'
+#    ticket_reply.ticket.status = ticket_reply.status
+    ticket = Ticket.find(ticket_reply.ticket_id)
+    ticket.status = ticket_reply.status
+    ticket.save
     ticket_reply.save
     redirect_to reseller_ticket_details_path(params[:id])
   end
