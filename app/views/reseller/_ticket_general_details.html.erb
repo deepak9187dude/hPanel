@@ -52,37 +52,7 @@
     </table>
     <%= render :partial=>'ticket_tabs' %>    
     <div class="show" style="height: 100%;" id="General">
-      <div id="divGS">
-        <table cellspacing="1" cellpadding="0" border="0" width="70%" class="bgcolor3"> 
-          <tbody>
-            <tr>
-              <td align="left" width="20%" class="cate_listing_head">User</td>
-              <td align="right" width="80%" height="26" class="cate_listing_head">Contents</td>
-            </tr>	
-            <tr>
-              <td align="left" width="20%" valign="top" class="bgcolor4"><strong><%= @ticket.user.name %></strong></td>
-              <td align="right" width="80%" height="26" class="bgcolor4">
-                <table cellspacing="1" cellpadding="0" border="0" width="100%"> 
-                  <tbody>
-                    <tr>
-                      <td align="left" class="btm_border">Posted on: <%= @ticket.created_at.strftime("%d/%m/%Y") %></td> 
-                    </tr>	
-                    <tr>
-                      <td align="left">
-                        <p><%= @ticket.subject %></p>
-                      </td> 
-                    </tr>	
-                  </tbody>
-                </table>
-              </td>
-            </tr>
-            <%= render :partial=>'ticket_detail',:collection=>@ticket.ticket_details%>
-          </tbody>
-        </table> 
-        <br>
-        <div style="display: none;" id="divGSedit">															 
-        </div>
-      </div>
+        <%= render :partial=>'ticket_detail',:collection=>@ticket.ticket_details%> 
       <div class="hide" style="height: 100%;" id="Post Reply"> 
         <div id="divRes">
         </div> 
