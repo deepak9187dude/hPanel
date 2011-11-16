@@ -223,6 +223,7 @@ class ResellerController < ApplicationController
 
     elsif params[:page] == 'history'
       @ticket = Ticket.find(params[:id])
+      @ticket_history = @ticket.ticket_details
       render '_ticket_history'
     end
   end
