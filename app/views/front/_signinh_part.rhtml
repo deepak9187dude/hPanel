@@ -1,8 +1,9 @@
-
+<script type="text/javascript" src="/javascripts/validate.js"></script>
   <!--<form action="" name="frmucr" id="frmucr" method="post">-->
   <%#*<form onsubmit="return validateForms('frmucr');" method="post" id="frmucr" name="frmucr" action="">%>
 
-<%= form_for @user,:url=>users_path do |f| %>
+<%= form_for @user,:url=>users_path,:html=>{:onsubmit=>"return validateForms('frmucr');",:id=>"frmucr"} do |f| %>
+
     <table width="100%" cellspacing="0" cellpadding="0" border="0" align="center">
       <tbody>
         <tr>
