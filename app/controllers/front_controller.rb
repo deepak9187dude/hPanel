@@ -3,8 +3,7 @@ class FrontController < ApplicationController
   @show_slider = false
   def index
     @show_slider = true
-    @title = ""
-    
+    @title = ""    
   end
   def pricing
     @title = "Pricing"
@@ -72,6 +71,13 @@ class FrontController < ApplicationController
     @plan_duration['quaterly'] = '3 Months'
     @plan = Plan.find(params[:plan_id],:include=>:plan_billing_rate)    
     @plan_rate = @plan.plan_billing_rate.current_plan_price(@type)
-#    render :text => params.to_json
+    
+    session[:plan_id]=params[:plan_id]
+    session[:plan_type]=@type
+#    render :text => @plan_billing_rate.to_json
+  end
+  
+  def payoptionsh
+#    render :text => session.to_json
   end
 end

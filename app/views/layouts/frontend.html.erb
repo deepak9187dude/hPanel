@@ -34,6 +34,7 @@
     <%#= csrf_meta_tags %>
   </head>
   <body>
+    <% flash.to_json %>
     <div class="<%= request.fullpath == "/"?"homebg":"innerbg" %>">
       <div class="home-topcontainer">
         <!--header section start-->

@@ -5,8 +5,17 @@ class UsersController < ApplicationController
   end
 
   def create #create a new
-    @user = User.create(params[:user])    
+    user = User.create(params[:user])    
     if params[:register_from_front]
+      if session[:plan_id] && session[:plan_type]
+        plan = Plan.find(session[:plan_id])
+        plan_type = session[:plan_type]
+        user_plan = UserPlan.new
+        user_plan.plan_id = plan.id
+        user_plan.plan_current_status = 0
+        user_plan.user_id = user.id
+        user_plan.save
+      end
       redirect_to "/payoptionsh"
     else
     	redirect_to clients_path
