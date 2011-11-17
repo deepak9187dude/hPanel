@@ -230,4 +230,8 @@ class ResellerController < ApplicationController
       render '_ticket_history'
     end
   end
+  
+  def subscription_details
+    @subscription = Subscription.find(params[:id])
+  end
 end

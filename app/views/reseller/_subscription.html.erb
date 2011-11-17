@@ -1,7 +1,9 @@
 <tr class="bgcolor4">                            
-  <td align="left" class="bgcolor4"><a class="det_link" href="index.php?cid=20&amp;action=SSM&amp;left=2&amp;id=9">9</a></td>                           
-  <td height="26" class="bgcolor4">9PLan X</td>
-  <td align="left" class="bgcolor4"><img title="Stopped" src="/images/offline.png"> <span class="Stopped">Failed</span></td>                          
-  <td align="center" class="bgcolor4">PLan X</td>
-  <td align="center" class="bgcolor4"></td>
+  <td align="left" class="bgcolor4"><a class="det_link" href="<%= reseller_subscriptions_details_path(subscription) %>"><%= subscription.id %></a></td>                           
+  <td height="26" class="bgcolor4"><%= subscription.name %></td>
+  <td align="left" class="bgcolor4">
+    <img title="Stopped" src="/images/offline.png"> <span class="Stopped"><%= subscription.status %></span>
+  </td>                          
+  <td align="center" class="bgcolor4"><%= subscription.plan.title %></td>
+  <td align="center" class="bgcolor4"><%= subscription.end_date %></td>
 </tr>

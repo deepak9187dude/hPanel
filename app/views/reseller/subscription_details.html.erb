@@ -1,0 +1,109 @@
+<td valign="top" class="bgcolor2"><script language="javascript" type="text/javascript">
+  function ShowDiv(id1, id2)
+  { 
+    window.document.getElementById(id1).style.display = "block";
+    window.document.getElementById(id2).style.display = "none";
+    window.document.getElementById('divGSedit').style.display = "none";	
+  }
+  </script>
+  <div id="content">
+    <table width="100%" cellspacing="0" cellpadding="0" border="0">
+      <tbody>
+        <tr>
+          <td class="middle_top">
+            <table width="100%" cellspacing="0" cellpadding="0" border="0">
+              <tbody>
+                <tr>
+                  <td colspan="2">
+                    <span class="bodytext_1">
+                      <a class="bodylink" href="index.php?cid=4&amp;action=UVP">Home</a> 
+                      &gt; <a class="bodylink" href="index.php?cid=4&amp;action=UVP&amp;left=0">My Account</a> 
+                      &gt; Plan Summary  
+                    </span>
+                  </td>
+                </tr>
+                <tr>
+                  <td width="4%">
+                    <img width="30" height="32" border="0" align="bottom" title="Plan Summary" src="/images/icon_hosting_plan.png">
+                  </td>
+                  <td width="96%" valign="top" style="padding-top:2px">
+                    <span class="txt_big_red">Plan Summary</span>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="show" style="height: 100%;" id="Summary">
+      <div id="divGS">
+        <table width="60%" cellspacing="1" cellpadding="0" border="0" class="bgcolor3">
+          <tbody>
+            <tr>
+              <td width="35%" align="left" class="cate_listing_head">Subscription</td>
+              <td width="65%" height="26" align="right" class="bgcolor4">#<%= @subscription.id %>&nbsp;&nbsp;</td>
+            </tr>
+            <tr>
+              <td width="35%" align="left" class="cate_listing_head">Subscription status</td>
+              <td height="26" align="right" class="bgcolor4"> <span class=""><%= @subscription.status %></span></td>
+            </tr>
+            <tr>
+              <td width="35%" align="left" class="cate_listing_head">Plan Name</td>
+              <td height="26" align="right" class="bgcolor4"><%= @subscription.plan.title %></td>
+            </tr>
+            <tr>
+              <td width="35%" align="left" class="cate_listing_head">No. of VPS</td>
+              <td height="26" align="right" class="bgcolor4"><%= @subscription.plan.vps %></td>
+            </tr>								
+
+            <tr>
+              <td width="35%" align="left" class="cate_listing_head_1">Renewal order generation</td>
+              <td height="26" align="right" class="bgcolor4">Generate renewal orders automatically. I agree that renewal orders are to be paid automatically by my payment methods selected for recurring billing</td>
+            </tr>
+            <tr>
+              <td width="35%" align="left" class="cate_listing_head">Start date</td>
+              <td height="26" align="right" class="bgcolor4"><%= @subscription.created_at %></td>
+            </tr>
+            <tr>
+              <td width="35%" align="left" class="cate_listing_head">Expiration date </td>
+              <td height="26" align="right" class="bgcolor4"><%= @subscription.end_date %></td>
+            </tr>
+            <tr>
+              <td width="35%" align="left" class="cate_listing_head">Billing period</td>
+              <td height="26" align="right" class="bgcolor4">12 month(s)</td>
+            </tr>
+            <tr>
+              <td width="35%" align="left" class="cate_listing_head">Next billing period</td>
+              <td height="26" align="right" class="bgcolor4">12 month(s)</td>
+            </tr>										
+            <tr>
+              <td width="35%" align="left" class="cate_listing_head">Yearly fee
+              </td>
+              <td height="26" align="right" class="bgcolor4">$3.00</td>
+            </tr>																				
+          </tbody>
+        </table>
+      </div>
+      <table width="60%" cellspacing="1" cellpadding="0" border="0">
+        <tbody>
+          <tr>
+            <td width="27%" align="left">&nbsp;</td>
+          </tr>
+          <tr>
+            <td width="27%" height="40" align="left" class="bodytext_1">&nbsp;</td>
+          </tr>
+        </tbody>
+      </table>									
+      <div>        
+      </div>
+      <div style="display: none;" id="divGSedit"> 
+      </div>
+      <div style="display: none;" id="divChangeAcc">
+      </div>
+      <div style="display: none;" id="divChangedate">
+      </div>
+      <br>
+    </div>
+  </div>
+</td>
