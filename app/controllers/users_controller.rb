@@ -5,8 +5,7 @@ class UsersController < ApplicationController
   end
 
   def create #create a new
-    if isuserexist(params[:user][:email])
-      
+    if user = isuserexist(params[:user][:email])      
     else
       user = User.create(params[:user])
     end
@@ -55,7 +54,7 @@ class UsersController < ApplicationController
   end
   
   def isuserexist(email)
-    user = User.find_by_email(email)
+    user = User.find_by_email(email)    
   end
   
   def destroy #delete a specific
