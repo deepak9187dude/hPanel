@@ -171,7 +171,7 @@ class ResellerController < ApplicationController
   end
 
   def billing_subscriptions
-
+    @subscriptions = @current_user.subscriptions
   end
 
   def new_ticket
