@@ -79,7 +79,7 @@ class ResellerController < ApplicationController
     @plans = Plan.find(:all)
     @plan_rows = Array.new
 
-    for plan in @plans
+    @plans.each do |plan|
       plan_billing_rates = nil
 
       plan_billing_rates = plan.plan_billing_rate
@@ -90,7 +90,7 @@ class ResellerController < ApplicationController
         row['month'] = plan_billing_rates.monthly
         row['vps'] = plan.vps
         row['plan_id'] = plan.id
-        row['period'] = "monthly"
+        row['period'] = "month"
         @plan_rows << row
       end
 
@@ -98,10 +98,10 @@ class ResellerController < ApplicationController
         row = Hash.new
         row['title'] =  plan.title
         row['rec_period'] = plan_billing_rates.rec_quaterly
-        row['month'] = plan_billing_rates.quaterly
+        row['month'] = 3
         row['vps'] = plan.vps
         row['plan_id'] = plan.id
-        row['period'] = "quaterly"
+        row['period'] = "months"
         @plan_rows << row
       end
 
@@ -109,10 +109,10 @@ class ResellerController < ApplicationController
         row = Hash.new
         row['title'] =  plan.title
         row['rec_period'] = plan_billing_rates.rec_semiyear
-        row['month'] = plan_billing_rates.semi
+        row['month'] = 6
         row['vps'] =plan.vps
         row['plan_id'] =plan.id
-        row['period'] ="semi"
+        row['period'] ="months"
         @plan_rows << row
       end
 
@@ -120,14 +120,16 @@ class ResellerController < ApplicationController
         row = Hash.new
         row['title'] =  plan.title
         row['rec_period'] = plan_billing_rates.rec_yearly
-        row['month'] = plan_billing_rates.yearly
+        row['month'] = 1
         row['vps'] =plan.vps
         row['plan_id'] =plan.id
-        row['period'] ="yearly"
+        row['period'] ="year"
         @plan_rows << row
       end
     end
   end
+  
+  
   def licence_code
 
   end
@@ -191,7 +193,59 @@ class ResellerController < ApplicationController
     ticket_details=ticket.ticket_details.new
     ticket_details.comments = ticket.comments
     ticket_details.replier_id = @current_user.id
-    ticket_details.save
+    ticket_ddef licence_upgrade
+    @plans = Plan.find(:all)
+    @plan_rows = Array.new
+
+    @plans.each do |plan|
+      plan_billing_rates = nil
+
+      plan_billing_rates = plan.plan_billing_rate
+      if plan_billing_rates.monthly != 0
+        row = Hash.new
+        row['title'] =  plan.title
+        row['rec_period'] =  plan_billing_rates.rec_monthly
+        row['month'] = plan_billing_rates.monthly
+        row['vps'] = plan.vps
+        row['plan_id'] = plan.id
+        row['period'] = "month"
+        @plan_rows << row
+      end
+
+      if plan_billing_rates.quaterly != 0
+        row = Hash.new
+        row['title'] =  plan.title
+        row['rec_period'] = plan_billing_rates.rec_quaterly
+        row['month'] = 3
+        row['vps'] = plan.vps
+        row['plan_id'] = plan.id
+        row['period'] = "months"
+        @plan_rows << row
+      end
+
+      if plan_billing_rates.semi != 0
+        row = Hash.new
+        row['title'] =  plan.title
+        row['rec_period'] = plan_billing_rates.rec_semiyear
+        row['month'] = 6
+        row['vps'] =plan.vps
+        row['plan_id'] =plan.id
+        row['period'] ="months"
+        @plan_rows << row
+      end
+
+      if plan_billing_rates.yearly != 0
+        row = Hash.new
+        row['title'] =  plan.title
+        row['rec_period'] = plan_billing_rates.rec_yearly
+        row['month'] = 1
+        row['vps'] =plan.vps
+        row['plan_id'] =plan.id
+        row['period'] ="year"
+        @plan_rows << row
+      end
+    end
+  endetails.save
     if ticket.category =="Support"
       redirect_to reseller_all_support_tickets_path
     elsif ticket.category =="Billing"

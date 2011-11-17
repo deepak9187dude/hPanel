@@ -9,7 +9,7 @@
     <table width="100%" cellspacing="0" cellpadding="0" border="0">
       <tbody>
         <tr valign="middle" align="left">
-          <td>$<%= plan_row['rec_period'] %>/<%= plan_row['month'] %> month<%= plan_row['month']>1?"s":"" %></td> 
+          <td>$<%= plan_row['rec_period'] %> / <%= plan_row['month'] if plan_row['month'] > 1 %> <%= plan_row['period'] %></td> 
           <td align="right">
             <%= link_to(image_tag("/images_new/purchase_bt.gif",:width=>103,:height=>25,:border=>0,:id=>"Purchase3",:name=>"purchase2"),{:action=>'payment_selection',:plan_id=>plan_row['plan_id'],:plantype=>plan_row['period']}) %>
             <%#*<a href="index.php?cid=36&amp;left=1&amp;action=RPP&amp;id=MTQ=&amp;rid=Mw==">%>
