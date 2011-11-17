@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111115050853) do
+ActiveRecord::Schema.define(:version => 20111117073823) do
 
   create_table "country_masters", :force => true do |t|
     t.string   "country_name", :null => false
@@ -80,13 +80,10 @@ ActiveRecord::Schema.define(:version => 20111115050853) do
 
   create_table "subscriptions", :force => true do |t|
     t.string   "name"
-    t.integer  "hosting_id"
-    t.integer  "hosting_plan_id"
-    t.string   "account_name"
-    t.string   "status",          :default => "Active"
-    t.datetime "start_date",      :default => '2011-10-19 06:45:03'
+    t.string   "status"
+    t.integer  "plan_id"
+    t.integer  "user_id"
     t.datetime "end_date"
-    t.integer  "grace_period",    :default => 15
     t.datetime "created_at"
     t.datetime "updated_at"
   end

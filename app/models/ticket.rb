@@ -17,7 +17,7 @@ class Ticket < ActiveRecord::Base
     where("status = ? AND category=? AND user_id = ?","hold","support",user)
   end
   def self.support_closed(user)
-    where("status = ? AND category=? AND user_id = ?","closed","support",user)
+    where("status = ? AND category=? AND user_id = ?","close","support",user)
   end
   def self.support_progress(user)
     where("status = ? AND category=? AND user_id = ?","progress","support",user)
@@ -34,7 +34,7 @@ class Ticket < ActiveRecord::Base
     where("status = ? AND category=? AND user_id = ?","hold","billing",user)
   end
   def self.billing_closed(user)
-    where("status = ? AND category=? AND user_id = ?","closed","billing",user)
+    where("status = ? AND category=? AND user_id = ?","close","billing",user)
   end
   def self.billing_progress(user)
     where("status = ? AND category=? AND user_id = ?","progress","billing",user)
