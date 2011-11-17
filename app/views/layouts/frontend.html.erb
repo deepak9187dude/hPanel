@@ -34,7 +34,6 @@
     <%#= csrf_meta_tags %>
   </head>
   <body>
-    <% flash.to_json %>
     <div class="<%= request.fullpath == "/"?"homebg":"innerbg" %>">
       <div class="home-topcontainer">
         <!--header section start-->
@@ -42,8 +41,8 @@
           <div class="logo"><a href="/"><img src="/images_new/logo.jpg" width="211" height="92" alt="VM Complete" /></a></div>
           <div class="top-navigation">
             <ul class="navigation">
-              <li><a href="<%= "/" %>" title="Home" class="current" ><span>Home</span></a></li>
-              <li><a href="/pricing" title="Pricing" ><span>Pricing</span></a></li>
+              <li><a href="<%= "/" %>" title="Home" <%= (params[:action]=="index")?"class='current'":'' %> ><span>Home</span></a></li>
+              <li><a href="/pricing" title="Pricing" <%= (params[:action]=="pricing")?"class='current'":'' %>><span>Pricing</span></a></li>
               <li><a href="#" title="Features"><span>Features</span></a></li>
               <li><a href="#" title="Demo"><span>Demo</span></a></li>
               <li><a href="#" title="About Us" ><span>About Us</span></a></li>

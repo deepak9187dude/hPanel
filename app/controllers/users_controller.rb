@@ -5,7 +5,11 @@ class UsersController < ApplicationController
   end
 
   def create #create a new
-    user = User.create(params[:user])    
+    if isuserexist(params[:user][:email])
+      
+    else
+      user = User.create(params[:user])
+    end
     if params[:register_from_front]
       if session[:plan_id] && session[:plan_type]
         plan = Plan.find(session[:plan_id])
@@ -15,6 +19,14 @@ class UsersController < ApplicationController
         user_plan.plan_current_status = 0
         user_plan.user_id = user.id
         user_plan.save
+        subscription = Subscription.new
+        subscription.status = 'failed'
+        subscription.plan_id = plan.id
+        subscription.end_date = Time.now
+        subscription.user_id = user.id
+        subscription.save
+#        subscription.name = subscription.id.to_s+""+subscription.plan.title
+#        subscription.save
       end
       redirect_to "/payoptionsh"
     else
@@ -40,6 +52,10 @@ class UsersController < ApplicationController
   
   def login
     
+  end
+  
+  def isuserexist(email)
+    user = User.find_by_email(email)
   end
   
   def destroy #delete a specific
