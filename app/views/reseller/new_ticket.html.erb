@@ -3,6 +3,7 @@
     function valTicket()
     {
       var err=0;
+
       if(document.getElementById("cmbpriority").value=="")
       {
         document.getElementById("errpriority").innerHTML = "Please select priority" ;
@@ -14,6 +15,7 @@
         document.getElementById("errpriority").innerHTML = "" ;
         //return true;
       }
+
    
       if(document.getElementById("cmbcategory").value=="")
       {
@@ -27,6 +29,7 @@
         document.getElementById("errcategory").innerHTML = "" ;
         //return true;
       } 
+
    
       if(document.getElementById("txtsub").value=="")
       {
@@ -40,7 +43,7 @@
         document.getElementById("errsub").innerHTML = "" ;
         //return true;
       } 
-   
+
       if(err==1)
         return false;
       else
@@ -118,7 +121,8 @@
       <tbody>
         <tr>
           <td class="tdgap1">
-            <%= form_for @ticket, :as => :ticket,:id=>'frmucr', :url => reseller_create_ticket_path do |f| %>
+	    <%= form_for @ticket, :as => :ticket, :html=>{:onsubmit=>"return valTicket();",:id=>"frmucr"} ,:url => reseller_create_ticket_path do |f| %>
+            
               <table cellspacing="0" cellpadding="0" border="0" align="left" width="85%">
                 <tbody>
                   <tr>
@@ -147,7 +151,7 @@
                               <span class="mandotry">*</span> Category :
                             </td>
                             <td width="81%" valign="top" class="bgcolor4">   
-                             <%= select_tag 'ticket[category]', options_for_select(@ticket_category),:id=>'cmbpriority',:class=>'txtdrop'%>
+                             <%= select_tag 'ticket[category]', options_for_select(@ticket_category),:id=>'cmbcategory',:class=>'txtdrop'%>
                               &nbsp;&nbsp;
                               <span class="error" id="errcategory"></span>
                             </td>
@@ -179,7 +183,7 @@
                     <input type="button" onclick="history.back()" value="Cancel" id="btncancel" class="button" name="btncancel">&nbsp;
                   </td>
                   <td align="left" width="598" height="40">
-                    <input type="submit" onclick="return valTicket();" value="Submit" id="save" class="button" name="save">
+                    <input type="submit" value="Submit" id="save" class="button" name="save">
                     &nbsp;&nbsp;
                   </td>
                   </tr>
