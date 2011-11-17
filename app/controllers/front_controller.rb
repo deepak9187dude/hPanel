@@ -10,54 +10,54 @@ class FrontController < ApplicationController
     @plans = Plan.find(:all)
     @plan_rows = Array.new
    
-    for plan in @plans
-      plan_billing_rates = nil 
-      
+    @plans.each do |plan|
+      plan_billing_rates = nil
+
       plan_billing_rates = plan.plan_billing_rate
       if plan_billing_rates.monthly != 0
         row = Hash.new
-        row['title'] =  plan.title      
-        row['rec_period'] =  plan_billing_rates.rec_monthly 
+        row['title'] =  plan.title
+        row['rec_period'] =  plan_billing_rates.rec_monthly
         row['month'] = plan_billing_rates.monthly
         row['vps'] = plan.vps
         row['plan_id'] = plan.id
-        row['period'] = "monthly"
+        row['period'] = "month"
         @plan_rows << row
       end
-      
+
       if plan_billing_rates.quaterly != 0
         row = Hash.new
         row['title'] =  plan.title
-        row['rec_period'] = plan_billing_rates.rec_quaterly 
-        row['month'] = plan_billing_rates.quaterly
+        row['rec_period'] = plan_billing_rates.rec_quaterly
+        row['month'] = 3
         row['vps'] = plan.vps
         row['plan_id'] = plan.id
-        row['period'] = "quaterly"
+        row['period'] = "months"
         @plan_rows << row
       end
-      
+
       if plan_billing_rates.semi != 0
         row = Hash.new
         row['title'] =  plan.title
-        row['rec_period'] = plan_billing_rates.rec_semiyear 
-        row['month'] = plan_billing_rates.semi
+        row['rec_period'] = plan_billing_rates.rec_semiyear
+        row['month'] = 6
         row['vps'] =plan.vps
         row['plan_id'] =plan.id
-        row['period'] ="semi"
+        row['period'] ="months"
         @plan_rows << row
       end
-      
+
       if plan_billing_rates.yearly != 0
         row = Hash.new
         row['title'] =  plan.title
-        row['rec_period'] = plan_billing_rates.rec_yearly 
-        row['month'] = plan_billing_rates.yearly
+        row['rec_period'] = plan_billing_rates.rec_yearly
+        row['month'] = 1
         row['vps'] =plan.vps
         row['plan_id'] =plan.id
-        row['period'] ="yearly"
+        row['period'] ="year"
         @plan_rows << row
       end
-    end    
+    end
   end
   
   def signinh
