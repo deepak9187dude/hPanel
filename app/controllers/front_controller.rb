@@ -22,6 +22,7 @@ class FrontController < ApplicationController
         row['vps'] = plan.vps
         row['plan_id'] = plan.id
         row['period'] = "month"
+        row['plan_type'] = "monthly"
         @plan_rows << row
       end
 
@@ -33,6 +34,7 @@ class FrontController < ApplicationController
         row['vps'] = plan.vps
         row['plan_id'] = plan.id
         row['period'] = "months"
+        row['plan_type'] = "quaterly"
         @plan_rows << row
       end
 
@@ -44,6 +46,7 @@ class FrontController < ApplicationController
         row['vps'] =plan.vps
         row['plan_id'] =plan.id
         row['period'] ="months"
+        row['plan_type'] = "semi"
         @plan_rows << row
       end
 
@@ -55,6 +58,7 @@ class FrontController < ApplicationController
         row['vps'] =plan.vps
         row['plan_id'] =plan.id
         row['period'] ="year"
+        row['plan_type'] = "yearly"
         @plan_rows << row
       end
     end

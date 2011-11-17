@@ -6,7 +6,7 @@
     <li class="sect2"> $<%= plan_row['rec_period'] %> / <%= plan_row['month'] if plan_row['month'] > 1 %> <%= plan_row['period'] %></li>
     <li class="sect2"> <%= plan_row['vps'] %> VPS</li>
     <li class="sect3">
-      <%= link_to(image_tag("/images_new/purchase_bt.gif",:width=>'103',:border=>0,:height=>'25',:id=>'Purchase3',:alt=>'Purchase'),{:action=>'signinh',:plan_id=>plan_row['plan_id'],:plantype=>plan_row['period']}) %>              
+      <%= link_to(image_tag("/images_new/purchase_bt.gif",:width=>'103',:border=>0,:height=>'25',:id=>'Purchase3',:alt=>'Purchase'),{:action=>'signinh',:plan_id=>plan_row['plan_id'],:plantype=>plan_row['plan_type']}) %>              
     </li>
   </ul>
 <div class="clear"></div>

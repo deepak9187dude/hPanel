@@ -4,13 +4,13 @@ class PlanBillingRate < ActiveRecord::Base
   def current_plan_price(test)
     test=test.strip.to_s.strip
     if test=='monthly'
-      self.monthly
+      self.rec_monthly
     elsif test=='yearly'
-      self.yearly
+      self.rec_yearly
     elsif test== 'semi'
-      self.semi
+      self.rec_semiyear
     elsif test== 'quaterly'
-      self.quaterly
+      self.rec_quaterly
     end
   end
 end

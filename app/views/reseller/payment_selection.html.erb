@@ -57,14 +57,14 @@
                             <table cellspacing="1" cellpadding="4" border="0" width="100%" class="cate_listing">
                               <tbody>
                                 <tr>
-                                  <td align="left" width="42%" class="graybg2">Plan A</td>
-                                  <td bgcolor="#ffffff" align="left" width="29%" class="grayborder">$1.99   / month </td>
-                                  <td bgcolor="#ffffff" align="left" width="29%" class="grayborder">1 VPS</td>
+                                  <td align="left" width="42%" class="graybg2"><%=@plan_title%></td>
+                                  <td bgcolor="#ffffff" align="left" width="29%" class="grayborder">$<%=@plan_billing_rate%>  / <%=@plan_period%> </td>
+                                  <td bgcolor="#ffffff" align="left" width="29%" class="grayborder"><%=@no_of_vps%> VPS</td>
                                 </tr>
                                 <tr>
                                   <td align="left" class="graybg1"><strong>Total Amount</strong></td>
-                                  <td bgcolor="#ffffff" align="left" class="grayborder">$1.99  / month</td>
-                                  <td bgcolor="#ffffff" align="left" width="78%" class="grayborder">1 VPS</td>
+                                  <td bgcolor="#ffffff" align="left" class="grayborder">$<%=@plan_billing_rate%>  / <%=@plan_period%></td>
+                                  <td bgcolor="#ffffff" align="left" width="78%" class="grayborder"><%=@no_of_vps%> VPS</td>
                                 </tr>
                                 <tr>
                                   <td bgcolor="#ffffff" align="right" width="80%" valign="bottom" height="25" colspan="2">

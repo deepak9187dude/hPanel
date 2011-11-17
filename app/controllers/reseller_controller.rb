@@ -91,6 +91,7 @@ class ResellerController < ApplicationController
         row['vps'] = plan.vps
         row['plan_id'] = plan.id
         row['period'] = "month"
+        row['plan_type'] = "monthly"
         @plan_rows << row
       end
 
@@ -102,6 +103,7 @@ class ResellerController < ApplicationController
         row['vps'] = plan.vps
         row['plan_id'] = plan.id
         row['period'] = "months"
+        row['plan_type'] = "quaterly"
         @plan_rows << row
       end
 
@@ -113,6 +115,7 @@ class ResellerController < ApplicationController
         row['vps'] =plan.vps
         row['plan_id'] =plan.id
         row['period'] ="months"
+        row['plan_type'] = "semi"
         @plan_rows << row
       end
 
@@ -124,11 +127,39 @@ class ResellerController < ApplicationController
         row['vps'] =plan.vps
         row['plan_id'] =plan.id
         row['period'] ="year"
+        row['plan_type'] = "yearly"
         @plan_rows << row
       end
     end
   end
   
+  def payment_selection
+      plan = Plan.find(params[:plan_id]) if params[:plan_id]
+      if plan
+          @plan_title = plan.title
+          @no_of_vps  = plan.vps
+      end
+      if params[:plantype] and plan
+          billing_plan = plan.plan_billing_rate
+          @plan_billing_rate = billing_plan.current_plan_price(params[:plantype].to_s) 
+          @plan_period = period(params[:plantype].to_s)
+      end   
+  end
+ 
+  def period(p)
+      p = p.downcase
+      if p == "monthly"
+         p = "month"
+      elsif p == "quaterly"
+         p = "3 months"
+      elsif p == "yearly"
+         p= "year"
+      elsif p == "semi"
+         p = "6 months"
+      end
+      
+      return p
+  end
   
   def licence_code
 
