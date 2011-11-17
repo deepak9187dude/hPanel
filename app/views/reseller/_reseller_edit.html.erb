@@ -1,3 +1,4 @@
+<script type="text/javascript" src="/javascripts/validate.js"></script>
 <td valign="top" class="bgcolor2">
   <script type="text/javascript">
   function checkCountry(country) {
@@ -42,7 +43,8 @@
             <tbody>
               <tr>
                 <td class="tdgap1">
-                  <%= form_for @user, :as => :user, :url => reseller_update_path do |f| %>
+                  <%= form_for @user, :as => :user, :url => reseller_update_path,:html=>{:onsubmit=>"return validateForms('frmusr_edit');",:id=>"frmusr_edit"} do |f| %>
+
                     <table cellspacing="0" cellpadding="0" border="0" width="80%">
                       <tbody>
                         <tr>
@@ -68,14 +70,19 @@
                                         </tr>
                                         <tr align="left">
                                           <td>
-                                            <%= select_tag "user[title]", options_for_select([ "Mr.", "Mrs.", "Ms." ]),:class=>'txtdrop',:id=>'cmbstatus_1' %>
+                                            <%= select_tag "user[title]", options_for_select([ "Mr.", "Mrs.", "Ms." ]),:class=>'txtdrop',:id=>'cmbstatus' %>
+					    <br/>&nbsp;
                                           </td>
                                           <td>
-                                            <%= f.text_field :first_name, :id=>'txtfirst_1',:class=>'txtfield',:size=>20 %> 
+                                            <%= f.text_field :first_name, :id=>'txtfirst_1_3',:class=>'txtfield',:size=>20 %>
+					    <br/>&nbsp;
+                                            <span class="error" id="txtfirst"></span> 
                                           </td>
                                           <td>
-                                            <%= f.text_field :last_name, :id=>'txtlast_1',:class=>'txtfield',:size=>20 %>  
-                                          </td>
+                                            <%= f.text_field :last_name, :id=>'txtlast_1_3',:class=>'txtfield',:size=>20 %>  
+		                            <br/>&nbsp;
+				            <span class="error" id="txtlast"></span>                   
+		                          </td>
                                         </tr>
                                       </tbody>
                                     </table>
@@ -86,7 +93,9 @@
                                     <span class="mandotry">*</span> Email :
                                   </td>
                                   <td width="65%" valign="top" class="bgcolor4"> 
-                                    <%= f.text_field :email, :class=>"txtfield",:id=>"txtemail_1_2",:size=>20 %> 
+                                    <%= f.text_field :email, :class=>"txtfield",:id=>"txtemail_1_2",:size=>20 %>
+				    <br/>&nbsp;
+				    <span class="error" id="txtemail"></span>
                                   </td>
                                 </tr>
                                 <tr>
@@ -94,6 +103,8 @@
                                     <span class="mandotry">*</span> Address Line 1 :</td>
                                   <td width="65%" valign="top" class="bgcolor4">   
                                     <%= f.text_field :address,:class=>'txtfield1',:id=>'txtaddr1_1',:size=>20 %>
+				    <br/>&nbsp;
+				    <span class="error" id="txtaddr1"></span>
                                   </td>
                                 </tr>
                                 <tr>
@@ -101,7 +112,8 @@
                                     &nbsp;&nbsp;&nbsp;Address Line 2 :
                                   </td>
                                   <td width="65%" valign="top" class="bgcolor4">  
-                                    <%= f.text_field :address2,:class=>'txtfield1',:id=>'txtaddr2',:size=>20 %>              
+                                    <%= f.text_field :address2,:class=>'txtfield1',:id=>'txtaddr2',:size=>20 %> 
+				    <br/>&nbsp;             
                                   </td>
                                 </tr>
                                 <tr>
@@ -109,7 +121,9 @@
                                     <span class="mandotry">*</span> City :
                                   </td>
                                   <td width="65%" valign="top" class="bgcolor4"> 
-                                    <%= f.text_field :city,:class=>'txtfield1',:id=>'txtcity',:size=>20 %> 
+                                    <%= f.text_field :city,:class=>'txtfield1',:id=>'txtcity_1_19',:size=>20 %>
+ 				    <br/>&nbsp;
+				    <span class="error" id="txtcity"></span>
                                   </td>
                                 </tr>
                                 <tr>
@@ -230,7 +244,9 @@
                                 <tr>
                                   <td align="right" width="38%" valign="top" class="cate_listing">&nbsp;&nbsp;&nbsp;State Other(other countries) :</td>
                                   <td width="65%" valign="top" class="bgcolor4">      
-                                    <%= f.text_field :state_other, :class=>'txtfield1',:id=>'txtstother',:size=>20 %>          
+                                    <%= f.text_field :state_other, :class=>'txtfield1',:id=>'txtstother_3',:size=>20 %>   
+				    <br/>&nbsp;
+				    <span class="error" id="txtstother"></span>       
                                   </td>
                                 </tr>                    
                                 <tr>
@@ -238,6 +254,8 @@
                                     <span class="mandotry">*</span> Postal Code :</td>
                                   <td width="65%" valign="top" class="bgcolor4">           
                                     <%= f.text_field :postal_code, :class=>'txtfield1', :id=>'txtpost_6',:maxlength=>10 %>
+				    <br/>&nbsp;
+				    <span class="error" id="txtpost"></span>
                                   </td>
                                 </tr>
                                 <tr>
@@ -253,13 +271,19 @@
                                         </tr>
                                         <tr>
                                           <td>                            +
-                                            <%= f.text_field :phccode,:class=>'txtfield2',:id=>'txtcc',:maxlength=>5 %>       
+                                            <%= f.text_field :phccode,:class=>'txtfield',:id=>'txtcc_1_4',:maxlength=>5 %>
+					    <br/>&nbsp;
+					    <span class="error" id="txtcc"></span>       
                                           </td>
                                           <td>
-                                            <%= f.text_field :phacode,:class=>'txtfield2',:id=>'txtac',:maxlength=>8 %>       
+                                            <%= f.text_field :phacode,:class=>'txtfield',:id=>'txtac_1_4',:maxlength=>8 %>
+					    <br/>&nbsp;
+					    <span class="error" id="txtac"></span>       
                                           </td>
                                           <td>
-                                            <%= f.text_field :phnumber,:class=>'txtfield',:id=>'txtnumber',:size=>20,:maxlength=>10 %>
+                                            <%= f.text_field :phnumber,:class=>'txtfield',:id=>'txtnumber_1_4',:size=>20,:maxlength=>10 %>
+					    <br/>&nbsp;
+					    <span class="error" id="txtnumber"></span>
                                           </td>
                                         </tr>
                                       </tbody>
@@ -277,13 +301,19 @@
                                         </tr>
                                         <tr>
                                           <td>                            +
-                                            <%= f.text_field :mccode,:maxlength=>5,:class=>'txtfield2',:id=>'txtmcc' %>
+                                            <%= f.text_field :mccode,:maxlength=>5,:class=>'txtfield',:id=>'txtmcc_4' %>
+					    <br/>&nbsp;
+					    <span class="error" id="txtmcc"></span>
                                           </td>
                                           <td>
-                                            <%= f.text_field :macode,:maxlength=>8,:class=>'txtfield2',:id=>'textfield11' %>
+                                            <%= f.text_field :macode,:maxlength=>8,:class=>'txtfield',:id=>'txtmac_4' %>
+					    <br/>&nbsp;
+					    <span class="error" id="txtmac"></span>
                                           </td>
                                           <td>
-                                            <%= f.text_field :mnumber,:maxlength=>10,:id=>'textfield11',:size=>20 %>
+                                            <%= f.text_field :mnumber,:maxlength=>10,:class=>'txtfield' ,:id=>'txtmnumber_4',:size=>20 %>
+					    <br/>&nbsp;
+					    <span class="error" id="txtmnumber"></span>
                                           </td>
                                         </tr>
                                       </tbody>
@@ -302,13 +332,19 @@
                                         </tr>
                                         <tr>
                                           <td>                            +
-                                             <%= f.text_field :fccode,:maxlength=>5,:class=>'txtfield2',:id=>'textfield12'%>
+                                             <%= f.text_field :fccode,:maxlength=>5,:class=>'txtfield',:id=>'txtfcc_4'%>
+					    <br/>&nbsp;
+					    <span class="error" id="txtfcc"></span>
                                           </td>
                                           <td>
-                                            <%= f.text_field :facode,:maxlength=>8,:class=>'txtfield2',:id=>'textfield12'%> 
+                                            <%= f.text_field :facode,:maxlength=>8,:class=>'txtfield',:id=>'txtfac_4'%> 
+					    <br/>&nbsp;
+					    <span class="error" id="txtfac"></span>
                                           </td>
                                           <td>
-                                            <%= f.text_field :fnumber,:maxlength=>10,:class=>'txtfield2',:id=>'textfield12',:size=>20 %> 
+                                            <%= f.text_field :fnumber,:maxlength=>10,:class=>'txtfield',:id=>'txtfnumber',:size=>20 %> 
+					    <br/>&nbsp;
+					    <span class="error" id="txtfnumber"></span>
                                           </td>
                                         </tr>
                                       </tbody>
