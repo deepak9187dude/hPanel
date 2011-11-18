@@ -28,6 +28,7 @@ Vhpanel::Application.routes.draw do
     match 'password/change' =>"reseller#change_password",:as=>'reseller_update_password'
     match 'licence/upgrade/:left' =>"reseller#licence_upgrade",:as=>'reseller_licence_upgrade',:defaults=>{:left=>1}
     match 'licence/payment/selection/:left/:plan_id/:plantype' =>"reseller#payment_selection",:as=>'reseller_payment_selection',:defaults=>{:left=>1}
+    match 'licence/payment/upgrade/:left/:type' =>"reseller#upgrade_plan",:as=>'reseller_upgrade_plan',:defaults=>{:left=>1}
     match 'licence/code/:left' =>"reseller#licence_code",:as=>'reseller_licence_code',:defaults=>{:left=>1}
     match '/download/:left' =>"reseller#download",:as=>'reseller_download',:defaults=>{:left=>1}
     match 'billing/history/:left' =>"reseller#billing_history",:as=>'reseller_billing_history',:defaults=>{:left=>2}

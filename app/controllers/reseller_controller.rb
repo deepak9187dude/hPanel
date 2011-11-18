@@ -138,6 +138,8 @@ class ResellerController < ApplicationController
       if plan
           @plan_title = plan.title
           @no_of_vps  = plan.vps
+          session[:plan_id] = params[:plan_id] if params[:plan_id]
+          session[:plan_type] = params[:plantype].to_s  if params[:plantype]
       end
       if params[:plantype] and plan
           billing_plan = plan.plan_billing_rate
@@ -155,11 +157,25 @@ class ResellerController < ApplicationController
       elsif p == "yearly"
          p= "year"
       elsif p == "semi"
-         p = "6 months"
+         p = "6 months" 
       end
       
       return p
   end
+ 
+  def upgrade_plan
+      plan = Plan.find(session[:plan_id]) if session[:plan_id]
+      if plan
+          @plan_title = plan.title
+          @no_of_vps  = plan.vps
+      end
+      if  session[:plan_type] and plan
+          billing_plan = plan.plan_billing_rate
+          @plan_billing_rate = billing_plan.current_plan_price(session[:plan_type].to_s) 
+          @plan_period = period(session[:plan_type].to_s)
+      end   
+  end 
+  
   
   def licence_code
 
