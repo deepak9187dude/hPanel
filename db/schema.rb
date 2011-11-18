@@ -10,11 +10,55 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111117073823) do
+ActiveRecord::Schema.define(:version => 20111118075749) do
 
   create_table "country_masters", :force => true do |t|
     t.string   "country_name", :null => false
     t.string   "code_two",     :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "gateways", :force => true do |t|
+    t.string   "gateway"
+    t.string   "gateway_login"
+    t.string   "gateway_key"
+    t.boolean  "isEnabled"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "invoice_details", :force => true do |t|
+    t.integer  "plan_id"
+    t.integer  "user_id"
+    t.integer  "cc_id"
+    t.string   "gateway_trans_type"
+    t.string   "gateway_pay_status"
+    t.datetime "gateway_trans_time"
+    t.string   "gateway_description"
+    t.string   "cc_trans_id"
+    t.integer  "profile_id"
+    t.float    "amount_Credited"
+    t.datetime "payment_date"
+    t.string   "payment_description"
+    t.integer  "payment_status"
+    t.integer  "invoice_type_id"
+    t.datetime "next_due_date"
+    t.float    "amount_debited"
+    t.float    "additional_credit"
+    t.string   "subscription_status"
+    t.string   "transaction_type"
+    t.datetime "pay_success_date"
+    t.integer  "gateway_id"
+    t.integer  "basic_invoice"
+    t.integer  "pay_mode"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "invoice_types", :force => true do |t|
+    t.string   "invoice_type"
+    t.string   "invoice_description"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -78,6 +122,14 @@ ActiveRecord::Schema.define(:version => 20111117073823) do
   add_index "sessions", ["session_id"], :name => "index_sessions_on_session_id"
   add_index "sessions", ["updated_at"], :name => "index_sessions_on_updated_at"
 
+  create_table "state_masters", :force => true do |t|
+    t.string   "state_name",      :null => false
+    t.string   "code_two",        :null => false
+    t.integer  "state_contry_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "subscriptions", :force => true do |t|
     t.string   "name"
     t.string   "status"
@@ -109,6 +161,23 @@ ActiveRecord::Schema.define(:version => 20111117073823) do
     t.string   "random"
     t.integer  "replies"
     t.string   "replier"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "user_billing_addresses", :force => true do |t|
+    t.integer  "user_id"
+    t.text     "address"
+    t.text     "address2"
+    t.string   "city"
+    t.integer  "state"
+    t.string   "state_other"
+    t.integer  "country"
+    t.string   "postal_code"
+    t.string   "phccode"
+    t.string   "phacode"
+    t.string   "phnumber"
+    t.string   "phextension"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

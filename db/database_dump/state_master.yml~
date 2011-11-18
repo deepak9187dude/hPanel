@@ -1,0 +1,319 @@
+%YAML 1.1
+---
+
+-
+  id: 1
+  state_name: "Alabama"
+  code_two: "AL"
+  state_country_id: 225
+-
+  id: 2
+  state_name: "Alaska"
+  code_two: "AK"
+  state_country_id: 225
+-
+  id: 3
+  state_name: "American Somoa"
+  code_two: "AS"
+  state_country_id: 225
+-
+  id: 4
+  state_name: "Arizona"
+  code_two: "AZ"
+  state_country_id: 225
+-
+  id: 5
+  state_name: "Arkansas"
+  code_two: "AR"
+  state_country_id: 225
+-
+  id: 6
+  state_name: "Armed Forces Africa"
+  code_two: "AE"
+  state_country_id: 225
+-
+  id: 7
+  state_name: "Armed Forces Americas"
+  code_two: "AA"
+  state_country_id: 225
+-
+  id: 8
+  state_name: "Armed Forces Pacific"
+  code_two: "AP"
+  state_country_id: 225
+-
+  id: 9
+  state_name: "California"
+  code_two: "CA"
+  state_country_id: 225
+-
+  id: 10
+  state_name: "Colorado"
+  code_two: "CO"
+  state_country_id: 225
+-
+  id: 11
+  state_name: "Connecticut"
+  code_two: "CT"
+  state_country_id: 225
+-
+  id: 12
+  state_name: "Delaware"
+  code_two: "DE"
+  state_country_id: 225
+-
+  id: 13
+  state_name: "District of Columbia"
+  code_two: "DC"
+  state_country_id: 225
+-
+  id: 14
+  state_name: "Fed.States of Micronesia"
+  code_two: "FM"
+  state_country_id: 225
+-
+  id: 15
+  state_name: "Florida"
+  code_two: "FL"
+  state_country_id: 225
+-
+  id: 16
+  state_name: "Georgia"
+  code_two: "GA"
+  state_country_id: 225
+-
+  id: 17
+  state_name: "Guam"
+  code_two: "GU"
+  state_country_id: 225
+-
+  id: 18
+  state_name: "Hawaii"
+  code_two: "HI"
+  state_country_id: 225
+-
+  id: 19
+  state_name: "Idaho"
+  code_two: "ID"
+  state_country_id: 225
+-
+  id: 20
+  state_name: "Illinois"
+  code_two: "IL"
+  state_country_id: 225
+-
+  id: 21
+  state_name: "Indiana"
+  code_two: "IN"
+  state_country_id: 225
+-
+  id: 22
+  state_name: "Iowa"
+  code_two: "IA"
+  state_country_id: 225
+-
+  id: 23
+  state_name: "Kansas"
+  code_two: "KS"
+  state_country_id: 225
+-
+  id: 24
+  state_name: "Kentucky"
+  code_two: "KY"
+  state_country_id: 225
+-
+  id: 25
+  state_name: "Louisiana"
+  code_two: "LA"
+  state_country_id: 225
+-
+  id: 26
+  state_name: "Maine"
+  code_two: "ME"
+  state_country_id: 225
+-
+  id: 27
+  state_name: "Marshall Islands"
+  code_two: "MH"
+  state_country_id: 225
+-
+  id: 28
+  state_name: "Maryland"
+  code_two: "MD"
+  state_country_id: 225
+-
+  id: 29
+  state_name: "Massachusetts"
+  code_two: "MA"
+  state_country_id: 225
+-
+  id: 30
+  state_name: "Michigan"
+  code_two: "MI"
+  state_country_id: 225
+-
+  id: 31
+  state_name: "Minnesota"
+  code_two: "MN"
+  state_country_id: 225
+-
+  id: 32
+  state_name: "Mississippi"
+  code_two: "MS"
+  state_country_id: 225
+-
+  id: 33
+  state_name: "Missouri"
+  code_two: "MO"
+  state_country_id: 225
+-
+  id: 34
+  state_name: "Montana"
+  code_two: "MT"
+  state_country_id: 225
+-
+  id: 35
+  state_name: "Nebraska"
+  code_two: "NE"
+  state_country_id: 225
+-
+  id: 36
+  state_name: "Nevada"
+  code_two: "NV"
+  state_country_id: 225
+-
+  id: 37
+  state_name: "New Hampshire"
+  code_two: "NH"
+  state_country_id: 225
+-
+  id: 38
+  state_name: "New Jersey"
+  code_two: "NJ"
+  state_country_id: 225
+-
+  id: 39
+  state_name: "New Mexico"
+  code_two: "NM"
+  state_country_id: 225
+-
+  id: 40
+  state_name: "New York"
+  code_two: "NY"
+  state_country_id: 225
+-
+  id: 41
+  state_name: "North Carolina"
+  code_two: "NC"
+  state_country_id: 225
+-
+  id: 42
+  state_name: "North Dakota"
+  code_two: "ND"
+  state_country_id: 225
+-
+  id: 43
+  state_name: "Northern Mariana Islands"
+  code_two: "MP"
+  state_country_id: 225
+-
+  id: 44
+  state_name: "Ohio"
+  code_two: "OH"
+  state_country_id: 225
+-
+  id: 45
+  state_name: "Oklahoma"
+  code_two: "OK"
+  state_country_id: 225
+-
+  id: 46
+  state_name: "Oregon"
+  code_two: "OR"
+  state_country_id: 225
+-
+  id: 47
+  state_name: "Palua"
+  code_two: "PW"
+  state_country_id: 225
+-
+  id: 48
+  state_name: "Pennsylvania"
+  code_two: "PA"
+  state_country_id: 225
+-
+  id: 49
+  state_name: "Puerto Rico"
+  code_two: "PR"
+  state_country_id: 225
+-
+  id: 50
+  state_name: "Rhode Island"
+  code_two: "RI"
+  state_country_id: 225
+-
+  id: 51
+  state_name: "South Carolina"
+  code_two: "SC"
+  state_country_id: 225
+-
+  id: 52
+  state_name: "South Dakota"
+  code_two: "SD"
+  state_country_id: 225
+-
+  id: 53
+  state_name: "Tennessee"
+  code_two: "TN"
+  state_country_id: 225
+-
+  id: 54
+  state_name: "Texas"
+  code_two: "TX"
+  state_country_id: 225
+-
+  id: 55
+  state_name: "Trust Territories"
+  code_two: "TT"
+  state_country_id: 225
+-
+  id: 56
+  state_name: "Utah"
+  code_two: "UT"
+  state_country_id: 225
+-
+  id: 57
+  state_name: "Vermont"
+  code_two: "VT"
+  state_country_id: 225
+-
+  id: 58
+  state_name: "Virginia"
+  code_two: "VA"
+  state_country_id: 225
+-
+  id: 59
+  state_name: "Virgin Islands"
+  code_two: "VI"
+  state_country_id: 225
+-
+  id: 60
+  state_name: "Washington"
+  code_two: "WA"
+  state_country_id: 225
+-
+  id: 61
+  state_name: "West Virginia"
+  code_two: "WV"
+  state_country_id: 225
+-
+  id: 62
+  state_name: "Wisconsin"
+  code_two: "WI"
+  state_country_id: 225
+-
+  id: 63
+  state_name: "Wyoming"
+  code_two: "WY"
+  state_country_id: 225
+...

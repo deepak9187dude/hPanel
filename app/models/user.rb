@@ -5,11 +5,8 @@ class User < ActiveRecord::Base
   has_many :subscriptions
 
   def self.authenticate(username, password)
-    if !user = find_by_username(username)
-      user = find_by_email(username)
-    end
-    
-    return user if user && user.authenticated?(password)
+      user = find_by_email(username) if !user = find_by_username(username)
+      return user if user && user.authenticated?(password)
   end
 
   def authenticated?(password)

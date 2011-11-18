@@ -1,0 +1,955 @@
+%YAML 1.1
+---
+# vmcomplete_sadmin.country_master
+-
+  country_id: 1
+  country_name: "Afghanistan"
+  code_two: "AF"
+-
+  country_id: 2
+  country_name: "Albania"
+  code_two: "AL"
+-
+  country_id: 3
+  country_name: "Algeria"
+  code_two: "DZ"
+-
+  country_id: 4
+  country_name: "American Samoa"
+  code_two: "AS"
+-
+  country_id: 5
+  country_name: "Andorra"
+  code_two: "AD"
+-
+  country_id: 6
+  country_name: "Angola"
+  code_two: "AO"
+-
+  country_id: 7
+  country_name: "Anguilla"
+  code_two: "AI"
+-
+  country_id: 8
+  country_name: "Antarctica"
+  code_two: "AQ"
+-
+  country_id: 9
+  country_name: "Antigua and Barbuda"
+  code_two: "AG"
+-
+  country_id: 10
+  country_name: "Argentina"
+  code_two: "AR"
+-
+  country_id: 11
+  country_name: "Armenia"
+  code_two: "AM"
+-
+  country_id: 12
+  country_name: "Aruba"
+  code_two: "AW"
+-
+  country_id: 13
+  country_name: "Australia"
+  code_two: "AU"
+-
+  country_id: 14
+  country_name: "Austria"
+  code_two: "AT"
+-
+  country_id: 15
+  country_name: "Azerbaijan"
+  code_two: "AZ"
+-
+  country_id: 16
+  country_name: "Bahamas"
+  code_two: "BS"
+-
+  country_id: 17
+  country_name: "Bahrain"
+  code_two: "BH"
+-
+  country_id: 18
+  country_name: "Bangladesh"
+  code_two: "BD"
+-
+  country_id: 19
+  country_name: "Barbados"
+  code_two: "BB"
+-
+  country_id: 20
+  country_name: "Belarus"
+  code_two: "BY"
+-
+  country_id: 21
+  country_name: "Belgium"
+  code_two: "BE"
+-
+  country_id: 22
+  country_name: "Belize"
+  code_two: "BZ"
+-
+  country_id: 23
+  country_name: "Benin"
+  code_two: "BJ"
+-
+  country_id: 24
+  country_name: "Bermuda"
+  code_two: "BM"
+-
+  country_id: 25
+  country_name: "Bhutan"
+  code_two: "BT"
+-
+  country_id: 26
+  country_name: "Bolivia"
+  code_two: "BO"
+-
+  country_id: 27
+  country_name: "Bosnia and Herzegovina"
+  code_two: "BA"
+-
+  country_id: 28
+  country_name: "Botswana"
+  code_two: "BW"
+-
+  country_id: 29
+  country_name: "Bouvet Island"
+  code_two: "BV"
+-
+  country_id: 30
+  country_name: "Brazil"
+  code_two: "BR"
+-
+  country_id: 31
+  country_name: "British Indian Ocean Trtry"
+  code_two: "IO"
+-
+  country_id: 32
+  country_name: "Brunei Darussalam"
+  code_two: "BN"
+-
+  country_id: 33
+  country_name: "Bulgaria"
+  code_two: "BG"
+-
+  country_id: 34
+  country_name: "Burkina Faso"
+  code_two: "BF"
+-
+  country_id: 35
+  country_name: "Burundi"
+  code_two: "BI"
+-
+  country_id: 36
+  country_name: "Cambodia"
+  code_two: "KH"
+-
+  country_id: 37
+  country_name: "Cameroon"
+  code_two: "CM"
+-
+  country_id: 38
+  country_name: "Canada"
+  code_two: "CA"
+-
+  country_id: 39
+  country_name: "Cap Verde"
+  code_two: "CV"
+-
+  country_id: 40
+  country_name: "Cayman Islands"
+  code_two: "KY"
+-
+  country_id: 41
+  country_name: "Central African Republic"
+  code_two: "CF"
+-
+  country_id: 42
+  country_name: "Chad"
+  code_two: "TD"
+-
+  country_id: 43
+  country_name: "Chile"
+  code_two: "CL"
+-
+  country_id: 44
+  country_name: "China"
+  code_two: "CN"
+-
+  country_id: 45
+  country_name: "Christmas Island"
+  code_two: "CX"
+-
+  country_id: 46
+  country_name: "Cocos (Keeling) Islands"
+  code_two: "CC"
+-
+  country_id: 47
+  country_name: "Colombia"
+  code_two: "CO"
+-
+  country_id: 48
+  country_name: "Comoros"
+  code_two: "KM"
+-
+  country_id: 49
+  country_name: "Congo, Dem. Rep. of"
+  code_two: "CG"
+-
+  country_id: 50
+  country_name: "Congo, Republic of"
+  code_two: "CD"
+-
+  country_id: 51
+  country_name: "Cook Islands"
+  code_two: "CK"
+-
+  country_id: 52
+  country_name: "Costa Rica"
+  code_two: "CR"
+-
+  country_id: 53
+  country_name: "Cote d'Ivoire"
+  code_two: "CI"
+-
+  country_id: 54
+  country_name: "Croatia/Hrvatska"
+  code_two: "HR"
+-
+  country_id: 55
+  country_name: "Cuba"
+  code_two: "CU"
+-
+  country_id: 56
+  country_name: "Cyprus"
+  code_two: "CY"
+-
+  country_id: 57
+  country_name: "Czech Republic"
+  code_two: "CZ"
+-
+  country_id: 58
+  country_name: "Denmark"
+  code_two: "DK"
+-
+  country_id: 59
+  country_name: "Djibouti"
+  code_two: "DJ"
+-
+  country_id: 60
+  country_name: "Dominica"
+  code_two: "DM"
+-
+  country_id: 61
+  country_name: "Dominican Republic"
+  code_two: "DO"
+-
+  country_id: 62
+  country_name: "Timor-Leste"
+  code_two: "TP"
+-
+  country_id: 63
+  country_name: "Ecuador"
+  code_two: "EC"
+-
+  country_id: 64
+  country_name: "Egypt"
+  code_two: "EG"
+-
+  country_id: 65
+  country_name: "El Salvador"
+  code_two: "SV"
+-
+  country_id: 66
+  country_name: "Equatorial Guinea"
+  code_two: "GQ"
+-
+  country_id: 67
+  country_name: "Eritrea"
+  code_two: "ER"
+-
+  country_id: 68
+  country_name: "Estonia"
+  code_two: "EE"
+-
+  country_id: 69
+  country_name: "Ethiopia"
+  code_two: "ET"
+-
+  country_id: 70
+  country_name: "Falkland Islands (Malvinas)"
+  code_two: "FK"
+-
+  country_id: 71
+  country_name: "Faroe Islands"
+  code_two: "FO"
+-
+  country_id: 72
+  country_name: "Fiji"
+  code_two: "FJ"
+-
+  country_id: 73
+  country_name: "Finland"
+  code_two: "FI"
+-
+  country_id: 74
+  country_name: "France"
+  code_two: "FR"
+-
+  country_id: 75
+  country_name: "France, Metropolitan"
+  code_two: "FX"
+-
+  country_id: 76
+  country_name: "French Guiana"
+-
+  country_id: 77
+  country_name: "French Polynesia"
+  code_two: "PF"
+-
+  country_id: 78
+  country_name: "French Southern Trtries"
+  code_two: "TF"
+-
+  country_id: 79
+  country_name: "Gabon"
+  code_two: "GA"
+-
+  country_id: 80
+  country_name: "Gambia"
+  code_two: "GM"
+-
+  country_id: 81
+  country_name: "Georgia"
+  code_two: "GE"
+-
+  country_id: 82
+  country_name: "Germany"
+  code_two: "DE"
+-
+  country_id: 83
+  country_name: "Ghana"
+  code_two: "GH"
+-
+  country_id: 84
+  country_name: "Gibraltar"
+  code_two: "GI"
+-
+  country_id: 85
+  country_name: "Greece"
+  code_two: "GR"
+-
+  country_id: 86
+  country_name: "Greenland"
+  code_two: "GL"
+-
+  country_id: 87
+  country_name: "Grenada"
+  code_two: "GD"
+-
+  country_id: 88
+  country_name: "Guadeloupe"
+-
+  country_id: 89
+  country_name: "Guam"
+  code_two: "GU"
+-
+  country_id: 90
+  country_name: "Guatemala"
+  code_two: "GT"
+-
+  country_id: 91
+  country_name: "Guinea"
+  code_two: "GN"
+-
+  country_id: 92
+  country_name: "Guinea-Bissau"
+  code_two: "GW"
+-
+  country_id: 93
+  country_name: "Guyana"
+  code_two: "GY"
+-
+  country_id: 94
+  country_name: "Haiti"
+  code_two: "HT"
+-
+  country_id: 95
+  country_name: "Heard & McDonald Islands"
+  code_two: "HM"
+-
+  country_id: 96
+  country_name: "Vatican City State"
+  code_two: "VA"
+-
+  country_id: 97
+  country_name: "Honduras"
+  code_two: "HN"
+-
+  country_id: 98
+  country_name: "Hong Kong"
+  code_two: "HK"
+-
+  country_id: 99
+  country_name: "Hungary"
+  code_two: "HU"
+-
+  country_id: 100
+  country_name: "Iceland"
+  code_two: "IS"
+-
+  country_id: 101
+  country_name: "India"
+  code_two: "IN"
+-
+  country_id: 102
+  country_name: "Indonesia"
+  code_two: "ID"
+-
+  country_id: 103
+  country_name: "Iran (Islamic Republic of)"
+  code_two: "IR"
+-
+  country_id: 104
+  country_name: "Iraq"
+  code_two: "IQ"
+-
+  country_id: 105
+  country_name: "Ireland"
+  code_two: "IE"
+-
+  country_id: 106
+  country_name: "Israel"
+  code_two: "IL"
+-
+  country_id: 107
+  country_name: "Italy"
+  code_two: "IT"
+-
+  country_id: 108
+  country_name: "Jamaica"
+  code_two: "JM"
+-
+  country_id: 109
+  country_name: "Japan"
+  code_two: "JP"
+-
+  country_id: 110
+  country_name: "Jordan"
+  code_two: "JO"
+-
+  country_id: 111
+  country_name: "Kazakhstan"
+  code_two: "KZ"
+-
+  country_id: 112
+  country_name: "Kenya"
+  code_two: "KE"
+-
+  country_id: 113
+  country_name: "Kiribati"
+  code_two: "KI"
+-
+  country_id: 114
+  country_name: "Korea, Dem. Ppl's Rep."
+  code_two: "KP"
+-
+  country_id: 115
+  country_name: "Korea, Republic of"
+  code_two: "KR"
+-
+  country_id: 116
+  country_name: "Kuwait"
+  code_two: "KW"
+-
+  country_id: 117
+  country_name: "Kyrgyzstan"
+  code_two: "KG"
+-
+  country_id: 118
+  country_name: "Lao Peoples Democratic Republic"
+-
+  country_id: 119
+  country_name: "Latvia"
+  code_two: "LV"
+-
+  country_id: 120
+  country_name: "Lebanon"
+  code_two: "LB"
+-
+  country_id: 121
+  country_name: "Lesotho"
+  code_two: "LS"
+-
+  country_id: 122
+  country_name: "Liberia"
+  code_two: "LR"
+-
+  country_id: 123
+  country_name: "Libyan Arab Jamahiriya"
+  code_two: "LY"
+-
+  country_id: 124
+  country_name: "Liechtenstein"
+  code_two: "LI"
+-
+  country_id: 125
+  country_name: "Lithuania"
+  code_two: "LT"
+-
+  country_id: 126
+  country_name: "Luxembourg"
+  code_two: "LU"
+-
+  country_id: 127
+  country_name: "Macao"
+  code_two: "MO"
+-
+  country_id: 128
+  country_name: "Macedonia"
+  code_two: "MK"
+-
+  country_id: 129
+  country_name: "Madagascar"
+  code_two: "MG"
+-
+  country_id: 130
+  country_name: "Malawi"
+  code_two: "MW"
+-
+  country_id: 131
+  country_name: "Malaysia"
+  code_two: "MY"
+-
+  country_id: 132
+  country_name: "Maldives"
+  code_two: "MV"
+-
+  country_id: 133
+  country_name: "Mali"
+  code_two: "ML"
+-
+  country_id: 134
+  country_name: "Malta"
+  code_two: "MT"
+-
+  country_id: 135
+  country_name: "Marshall Islands"
+  code_two: "MH"
+-
+  country_id: 136
+  country_name: "Martinique"
+  code_two: "MQ"
+-
+  country_id: 137
+  country_name: "Mauritania"
+  code_two: "MR"
+-
+  country_id: 138
+  country_name: "Mauritius"
+  code_two: "MU"
+-
+  country_id: 139
+  country_name: "Mayotte"
+  code_two: "YT"
+-
+  country_id: 140
+  country_name: "Mexico"
+  code_two: "MX"
+-
+  country_id: 141
+  country_name: "Micronesia Fed. States of"
+  code_two: "FM"
+-
+  country_id: 142
+  country_name: "Moldova, Republic Of"
+  code_two: "MD"
+-
+  country_id: 143
+  country_name: "Monaco"
+  code_two: "MC"
+-
+  country_id: 144
+  country_name: "Mongolia"
+  code_two: "MN"
+-
+  country_id: 145
+  country_name: "Montserrat"
+  code_two: "MS"
+-
+  country_id: 146
+  country_name: "Morocco"
+  code_two: "MA"
+-
+  country_id: 147
+  country_name: "Mozambique"
+  code_two: "MZ"
+-
+  country_id: 148
+  country_name: "Myanmar"
+  code_two: "MM"
+-
+  country_id: 149
+  country_name: "Namibia"
+  code_two: "NA"
+-
+  country_id: 150
+  country_name: "Nauru"
+  code_two: "NR"
+-
+  country_id: 151
+  country_name: "Nepal"
+  code_two: "NP"
+-
+  country_id: 152
+  country_name: "Netherlands (Holland)"
+  code_two: "NL"
+-
+  country_id: 153
+  country_name: "Netherlands Antilles"
+  code_two: "AN"
+-
+  country_id: 154
+  country_name: "New Caledonia"
+  code_two: "NC"
+-
+  country_id: 155
+  country_name: "New Zealand"
+  code_two: "NZ"
+-
+  country_id: 156
+  country_name: "Nicaragua"
+  code_two: "NI"
+-
+  country_id: 157
+  country_name: "Niger"
+  code_two: "NE"
+-
+  country_id: 158
+  country_name: "Nigeria"
+  code_two: "NG"
+-
+  country_id: 159
+  country_name: "Niue"
+  code_two: "NU"
+-
+  country_id: 160
+  country_name: "Norfolk Island"
+  code_two: "NF"
+-
+  country_id: 161
+  country_name: "Northern Mariana Islands"
+  code_two: "MP"
+-
+  country_id: 162
+  country_name: "Norway"
+  code_two: "NO"
+-
+  country_id: 163
+  country_name: "Oman"
+  code_two: "OM"
+-
+  country_id: 164
+  country_name: "Pakistan"
+  code_two: "PK"
+-
+  country_id: 165
+  country_name: "Palau"
+  code_two: "PW"
+-
+  country_id: 166
+  country_name: "Panama"
+  code_two: "PA"
+-
+  country_id: 167
+  country_name: "Papua New Guinea"
+  code_two: "PG"
+-
+  country_id: 168
+  country_name: "Paraguay"
+  code_two: "PY"
+-
+  country_id: 169
+  country_name: "Peru"
+  code_two: "PE"
+-
+  country_id: 170
+  country_name: "Philippines"
+  code_two: "PH"
+-
+  country_id: 171
+  country_name: "Pitcairn Islands"
+  code_two: "PN"
+-
+  country_id: 172
+  country_name: "Poland"
+  code_two: "PL"
+-
+  country_id: 173
+  country_name: "Portugal"
+  code_two: "PT"
+-
+  country_id: 174
+  country_name: "Puerto Rico"
+  code_two: "PR"
+-
+  country_id: 175
+  country_name: "Qatar"
+  code_two: "QA"
+-
+  country_id: 176
+  country_name: "Reunion Island"
+-
+  country_id: 177
+  country_name: "Romania"
+  code_two: "RO"
+-
+  country_id: 178
+  country_name: "Russian Federation"
+  code_two: "RU"
+-
+  country_id: 179
+  country_name: "Rwanda"
+  code_two: "RW"
+-
+  country_id: 180
+  country_name: "St. Helena"
+  code_two: "SH"
+-
+  country_id: 181
+  country_name: "Saint Kitts And Nevis"
+  code_two: "KN"
+-
+  country_id: 182
+  country_name: "Saint Lucia"
+  code_two: "LC"
+-
+  country_id: 183
+  country_name: "St.Pierre & Miquelon"
+  code_two: "PM"
+-
+  country_id: 184
+  country_name: "St Vincent and Grenadines"
+  code_two: "VC"
+-
+  country_id: 185
+  country_name: "Samoa"
+  code_two: "WS"
+-
+  country_id: 186
+  country_name: "San Marino"
+  code_two: "SM"
+-
+  country_id: 187
+  country_name: "Sao Tome and Principe"
+  code_two: "ST"
+-
+  country_id: 188
+  country_name: "Saudi Arabia"
+  code_two: "SA"
+-
+  country_id: 189
+  country_name: "Senegal"
+  code_two: "SN"
+-
+  country_id: 190
+  country_name: "Seychelles"
+  code_two: "SC"
+-
+  country_id: 191
+  country_name: "Sierra Leone"
+  code_two: "SL"
+-
+  country_id: 192
+  country_name: "Singapore"
+  code_two: "SG"
+-
+  country_id: 193
+  country_name: "Slovakia"
+  code_two: "SK"
+-
+  country_id: 194
+  country_name: "Slovenia"
+  code_two: "SI"
+-
+  country_id: 195
+  country_name: "Solomon Islands"
+  code_two: "SB"
+-
+  country_id: 196
+  country_name: "Somalia"
+  code_two: "SO"
+-
+  country_id: 197
+  country_name: "South Africa"
+  code_two: "ZA"
+-
+  country_id: 198
+  country_name: "S Georgia and S Sandwich Is."
+-
+  country_id: 199
+  country_name: "Spain"
+  code_two: "ES"
+-
+  country_id: 200
+  country_name: "Sri Lanka"
+  code_two: "LK"
+-
+  country_id: 201
+  country_name: "Sudan"
+  code_two: "SD"
+-
+  country_id: 202
+  country_name: "Suriname"
+  code_two: "SR"
+-
+  country_id: 203
+  country_name: "Svalbard and Jan Mayen Is."
+  code_two: "SJ"
+-
+  country_id: 204
+  country_name: "Swaziland"
+  code_two: "SZ"
+-
+  country_id: 205
+  country_name: "Sweden"
+  code_two: "SE"
+-
+  country_id: 206
+  country_name: "Switzerland"
+  code_two: "CH"
+-
+  country_id: 207
+  country_name: "Syrian Arab Republic"
+  code_two: "SY"
+-
+  country_id: 208
+  country_name: "Taiwan, Province Of China"
+  code_two: "TW"
+-
+  country_id: 209
+  country_name: "Tajikistan"
+  code_two: "TJ"
+-
+  country_id: 210
+  country_name: "Tanzania, United Republic of"
+  code_two: "TZ"
+-
+  country_id: 211
+  country_name: "Thailand"
+  code_two: "TH"
+-
+  country_id: 212
+  country_name: "Togo"
+  code_two: "TG"
+-
+  country_id: 213
+  country_name: "Tokelau"
+  code_two: "TK"
+-
+  country_id: 214
+  country_name: "Tonga"
+  code_two: "TO"
+-
+  country_id: 215
+  country_name: "Trinidad and Tobago"
+  code_two: "TT"
+-
+  country_id: 216
+  country_name: "Tunisia"
+  code_two: "TN"
+-
+  country_id: 217
+  country_name: "Turkey"
+  code_two: "TR"
+-
+  country_id: 218
+  country_name: "Turkmenistan"
+  code_two: "TM"
+-
+  country_id: 219
+  country_name: "Turks and Caicos Islands"
+  code_two: "TC"
+-
+  country_id: 220
+  country_name: "Tuvalu"
+  code_two: "TV"
+-
+  country_id: 221
+  country_name: "Uganda"
+  code_two: "UG"
+-
+  country_id: 222
+  country_name: "Ukraine"
+  code_two: "UA"
+-
+  country_id: 223
+  country_name: "United Arab Emirates"
+  code_two: "AE"
+-
+  country_id: 224
+  country_name: "United Kingdom"
+  code_two: "UK"
+-
+  country_id: 225
+  country_name: "United States"
+  code_two: "US"
+-
+  country_id: 226
+  country_name: "US Minor Outlying Islands"
+  code_two: "UM"
+-
+  country_id: 227
+  country_name: "Uruguay"
+  code_two: "UY"
+-
+  country_id: 228
+  country_name: "Uzbekistan"
+  code_two: "UZ"
+-
+  country_id: 229
+  country_name: "Vanuatu"
+  code_two: "VU"
+-
+  country_id: 230
+  country_name: "Venezuela"
+  code_two: "VE"
+-
+  country_id: 231
+  country_name: "Vietnam"
+  code_two: "VN"
+-
+  country_id: 232
+  country_name: "Virgin Islands (British)"
+  code_two: "VG"
+-
+  country_id: 233
+  country_name: "Virgin Islands (USA)"
+  code_two: "VI"
+-
+  country_id: 234
+  country_name: "Wallis and Futuna Islands"
+  code_two: "WF"
+-
+  country_id: 235
+  country_name: "Western Sahara"
+  code_two: "EH"
+-
+  country_id: 236
+  country_name: "Yemen"
+  code_two: "YE"
+-
+  country_id: 237
+  country_name: "Yugoslavia"
+  code_two: "YU"
+-
+  country_id: 238
+  country_name: "Zambia"
+  code_two: "ZM"
+-
+  country_id: 239
+  country_name: "Zimbabwe"
+  code_two: "ZW"
+...

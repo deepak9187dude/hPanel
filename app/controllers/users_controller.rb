@@ -26,6 +26,8 @@ class UsersController < ApplicationController
         subscription.save
 #        subscription.name = subscription.id.to_s+""+subscription.plan.title
 #        subscription.save
+        session[:plan_id] = nil
+        session[:plan_type] = nil
       end
       redirect_to "/payoptionsh"
     else
