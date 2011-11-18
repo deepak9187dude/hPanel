@@ -1,0 +1,224 @@
+<table width="100%" cellspacing="0" cellpadding="0" border="0">
+     <tbody><tr>
+                <td class="middle_top"><table width="100%" cellspacing="0" cellpadding="0" border="0">
+                  <tbody><tr>
+                    <td colspan="2"><span class="bodytext_1"><a class="bodylink" href="index.php?cid=4&amp;action=UVP">Home</a> &gt;<a class="bodylink" href="index.php?cid=36&amp;action=RUP&amp;left=1">   License Manager</a>&gt; Upgrade License</span></td>
+                  </tr>
+                  <tr>
+                    <td width="44"><img align="bottom" width="30" height="32" border="0" title="Upgrade License" src="../asset/images/icon_hosting_plan.png"></td>
+                    <td width="1265" valign="top" style="padding-top:2px"><span class="txt_big_red">Upgrade License</span></td>
+                  </tr>
+                </tbody></table></td>
+              </tr>
+      
+    <tr>
+                <td class="tdgap1"><table align="center" width="100%" cellspacing="0" cellpadding="0" border="0">
+                          <tbody><tr>
+                            <td class="tdgap1">
+                                <form id="DoDirectPaymentForm" name="DoDirectPaymentForm" action="" method="POST">
+                                <table width="90%" cellspacing="0" cellpadding="0" border="0">
+<tbody><tr><td align="center" colspan="2" class="mandotry">&nbsp;<!--<span class="bolderror"></span>--></td>
+</tr>
+<tr>
+  <td colspan="2"><table width="100%" cellspacing="1" cellpadding="4" border="0" style=" border-top:none " class="">
+<tbody><tr><td class="cate_listing" colspan="3">Your Order details :</td></tr>
+                                <tr>
+                                  <td align="left" width="42%" class="graybg2"><%=@plan_title%></td>
+                                  <td bgcolor="#ffffff" align="left" width="29%" class="grayborder">$<%=@plan_billing_rate%>  / <%=@plan_period%> </td>
+                                  <td bgcolor="#ffffff" align="left" width="29%" class="grayborder"><%=@no_of_vps%> VPS</td>
+                                </tr>
+                                <tr>
+                                  <td align="left" class="graybg1"><strong>Total Amount</strong></td>
+                                  <td bgcolor="#ffffff" align="left" class="grayborder">$<%=@plan_billing_rate%>  / <%=@plan_period%></td>
+                                  <td bgcolor="#ffffff" align="left" width="78%" class="grayborder"><%=@no_of_vps%> VPS</td>
+                                </tr>
+                                <tr>
+</tbody></table></td>
+</tr>
+<tr>
+  <td colspan="2" class="bgcolor1"></td>
+</tr>
+<tr>
+  <td height="35" colspan="2">&nbsp;</td>
+</tr>
+<tr>
+<td colspan="2" class="bgcolor1">
+        <table width="100%" cellspacing="1" cellpadding="4" border="0" class="bgcolor3">
+<tbody><tr>
+<td align="right" width="40%" valign="top" class="cate_listing"><br>
+<span class="mandotry">*</span>Name :</td>
+<td width="60%" valign="top" class="bgcolor4"><table width="100%" cellspacing="0" cellpadding="0" border="0">
+  <tbody><tr align="left">
+    <td width="33%">First Name</td>
+    <td width="49%">Last Name</td>
+  </tr>
+  <tr align="left">
+    <td><input type="text" value="" id="txtfirst_1_3" class="txtfield" name="txtfirst_1_3"><br>
+<span class="error" id="txtfirst"></span></td>
+    <td><input type="text" value="" id="txtlast_1_3" class="txtfield" name="txtlast_1_3"><br>
+<span class="error" id="txtlast"></span> </td>
+  </tr>
+</tbody></table></td>
+</tr>
+
+<tr>
+<td align="right" width="40%" valign="top" class="cate_listing"><span class="mandotry">*</span>Card Type :</td>
+<td width="60%" valign="top" class="bgcolor4">
+  <select id="creditCardType" class="txtdrop" name="creditCardType">
+<option selected="selected" value="Visa">Visa</option>
+<option value="MasterCard">MasterCard</option>
+<option value="Discover">Discover</option>
+<option value="Amex">American Express</option>
+  </select></td>
+</tr>
+
+<tr>
+<td align="right" width="40%" valign="top" class="cate_listing"><span class="mandotry">*</span>Card Number :</td>
+<td width="60%" valign="top" class="bgcolor4">
+  <input type="text" value="" id="txtcardnum_1_4" class="txtfield1" name="txtcardnum_1_4">
+<span class="error" id="txtcardnum"></span></td>
+</tr>
+
+
+<tr>
+<td class="cate_listing"><span class="mandotry">*</span>Expiration
+date:</td>
+<td bgcolor="#ffffff" class="bgcolor4" colspan="2"><table width="100%" cellspacing="0" cellpadding="4" border="0">
+<tbody>
+  <tr>
+    <td align="left" width="11%" valign="top"><select class="txtdrop" name="exp_month" id="exp_month">
+      <option selected="selected" value="01">01</option>
+      <option value="02">02</option>
+      <option value="03">03</option>
+      <option value="04">04</option>
+      <option value="05">05</option>
+      <option value="06">06</option>
+      <option value="07">07</option>
+      <option value="08">08</option>
+      <option value="09">09</option>
+      <option value="10">10</option>
+      <option value="11">11</option>
+      <option value="12">12</option>
+    </select>
+      &nbsp;/&nbsp;
+
+      <select class="txtdrop" name="exp_year" id="exp_year">
+      <option value="11">2011</option><option value="12">2012</option><option value="13">2013</option><option value="14">2014</option><option value="15">2015</option><option value="16">2016</option><option value="17">2017</option><option value="18">2018</option><option value="19">2019</option><option value="20">2020</option>      </select></td>
+  </tr>
+</tbody>
+</table></td>
+</tr>
+
+<tr>
+<td align="right" width="40%" valign="top" class="cate_listing"><span class="mandotry">*</span>CVV2
+or CVC2 code:</td>
+<td width="60%" valign="top" class="bgcolor4">
+  <input type="text" onkeydown="return extracheck(this)" onkeypress="return extracheck(this)" maxlength="4" size="10" value="" id="card_code" class="txtfield1" name="card_code">
+<span class="error" id="txtcardnum"></span></td>
+</tr>
+
+<tr>
+<td align="right" valign="top" class="cate_listing">&nbsp;&nbsp;&nbsp;Credit
+Card Billing Address and Phone :</td>
+<td valign="top" class="bgcolor4"><table width="100%" cellspacing="0" cellpadding="0" border="0">
+  <tbody><tr>
+    <td align="left" width="7%">
+        <input type="radio" checked="#Status1#" onclick="showDivAddr(this.value);" value="0" name="new_address">    </td>
+    <td align="left" width="93%">Use Account address</td>
+  </tr>
+  <tr>
+    <td align="left">
+        <input type="radio" onclick="showDivAddr(this.value);" value="1" name="new_address">     </td>
+    <td align="left">New Billing Address</td>
+  </tr>
+</tbody></table></td>
+</tr>
+</tbody></table></td></tr>
+
+<tr style="display: block;" id="addr1">
+<td colspan="2" class="bgcolor1">
+    <table width="100%" cellspacing="1" cellpadding="4" border="0" style=" border-top:none " class="bgcolor3">
+    <tbody><tr>
+      <td class="cate_listing" colspan="2">New Billing Address :</td>
+    </tr>
+    </tbody></table>
+        <table width="100%" cellspacing="1" cellpadding="4" border="0" style=" border-top:none " class="bgcolor3">
+        <tbody><tr>
+<td align="right" width="40%" valign="top" class="cate_listing"><span class="mandotry">*</span>Address Line 1 :</td>
+<td width="60%" valign="top" class="bgcolor4">                        <input type="text" value="" id="txtnewaddress1" class="txtfield1" name="txtnewaddress1">
+<span class="error" id="txtnewaddress1"></span></td>
+</tr>
+<tr>
+<td align="right" width="40%" valign="top" class="cate_listing">&nbsp;&nbsp;&nbsp;Address Line 2 :</td>
+<td width="60%" valign="top" class="bgcolor4">                        <input type="text" value="" id="txtnewaddress2" class="txtfield1" name="txtnewaddress2">                    </td>
+</tr>
+<tr>
+<td align="right" width="40%" valign="top" class="cate_listing"><span class="mandotry">*</span>City :</td>
+<td width="60%" valign="top" class="bgcolor4"><input type="text" value="" id="txtcity1" class="txtfield1" name="txtcity1"> 
+<span class="error" id="txtcity1"></span> </td>
+</tr>
+<tr>
+<td align="right" width="40%" valign="top" class="cate_listing"><span class="mandotry">*</span>Country :</td>
+<td width="60%" valign="top" class="bgcolor4">                        <select id="cmbcountry" class="txtdrop" name="cmbcountry">
+<option value=""> - Select - </option>  </select>                    </td>
+</tr>
+<tr>
+<td align="right" valign="top" class="cate_listing">&nbsp;&nbsp;&nbsp;State(US) :</td>
+<td valign="top" class="bgcolor4">                        <select id="cmbstate" class="txtdrop" name="cmbstate">
+                  <option value="0"> - Select - </option><option value="1">Alabama</option><option value="2">Alaska</option>
+  </select>                    </td>
+</tr>
+
+<tr>
+<td align="right" width="40%" valign="top" class="cate_listing">&nbsp;&nbsp;&nbsp;State Other(other countries) :</td>
+<td width="60%" valign="top" class="bgcolor4">                        <input type="text" value="" id="txtstateother" class="txtfield" name="txtstateother"><span class="error" id="txtstateother"> </span>                   </td>
+</tr>
+
+
+
+<tr>
+<td align="right" width="40%" valign="top" class="cate_listing"><span class="mandotry">*</span>Postal Code :</td>
+<td width="60%" valign="top" class="bgcolor4">                        <input type="text" value="" id="txtzip1" class="txtfield1" name="txtzip1">
+<span class="error" id="txtpost"></span></td>
+</tr>
+
+
+<tr>
+<td align="right" class="cate_listing">&nbsp;&nbsp;&nbsp;&nbsp;Phone:</td>
+<td bgcolor="#ffffff" class="bgcolor4" colspan="2"><table width="100%" cellspacing="0" cellpadding="4" border="0">
+<tbody>
+  <tr>
+    <td align="left" valign="top"><span class="mandotry">*</span>Country
+      Code </td>
+    <td align="left" valign="top">Area code</td>
+    <td align="left" valign="top"><span class="mandotry">*</span> Number </td>
+    <td align="left" valign="top">Extension</td>
+  </tr>
+  <tr>
+    <td align="left" valign="top"><input type="text" value="" maxlength="4" size="10" id="txtcntCode" class="textfield" name="txtcntCode"><br>&nbsp;<span class="error" id="txtcntCode"></span></td>
+    <td align="left" valign="top"><input type="text" value="" maxlength="4" size="10" id="txtareacode" class="textfield" name="txtareacode"><br>&nbsp;<span class="error" id="txtareacode"></span></td>
+    <td align="left" valign="top"><input type="text" value="" maxlength="4" size="10" id="txtnum" class="textfield" name="txtnum"><br>&nbsp;<span class="error" id="txtnum"></span></td>
+    <td align="left" valign="top"><input type="text" value="" maxlength="4" size="10" id="txtexten" class="textfield" name="txtexten"><br>&nbsp;<span class="error" id="txtexten"></span></td>
+  </tr>
+</tbody>
+</table></td>
+</tr>
+        </tbody></table></td>
+                              </tr>
+
+<tr>
+<td valign="top">&nbsp;</td>
+</tr>
+<tr>
+<td align="right" valign="top">
+    <input type="button" onclick="history.back()" value="Cancel" id="btncancel" class="button" name="btncancel">&nbsp;
+    <input type="submit" onclick="return
+validateForms('DoDirectPaymentForm');" class="button" value="Continue" name="btnbluepay"></td>
+</tr>
+                                </tbody></table>
+                                </form>
+                            </td>
+                          </tr>
+                      </tbody></table></td>
+              </tr>
+</tbody></table>
