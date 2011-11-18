@@ -1,0 +1,18 @@
+%YAML 1.1
+---
+# vmcomplete_sadmin.tbl_gateways
+-
+  gatewayid: 1
+  gateway: "Paypal"
+  gatewaylogin: "seller_1293082801_biz@gmail.com"
+  gatewaykey: 432224243
+  isEnabled: 1
+  insertTS: "2010-12-08 22:17:19"
+-
+  gatewayid: 3
+  gateway: "BluePay"
+  gatewaylogin: 100055017580
+  gatewaykey: "X403IXYR3M2Q2DNEZQ56CWOOF4XMOJQK"
+  isEnabled: 1
+  insertTS: "2010-12-21 20:41:58"
+...
