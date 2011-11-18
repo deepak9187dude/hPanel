@@ -23,6 +23,8 @@ class UsersController < ApplicationController
         subscription.plan_id = plan.id
         subscription.end_date = Time.now
         subscription.user_id = user.id
+        subscription.billing_period = 12
+        subscription.next_billing_period = 12
         subscription.save
 #        subscription.name = subscription.id.to_s+""+subscription.plan.title
 #        subscription.save

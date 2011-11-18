@@ -71,11 +71,11 @@
             </tr>
             <tr>
               <td width="35%" align="left" class="cate_listing_head">Billing period</td>
-              <td height="26" align="right" class="bgcolor4">12 month(s)</td>
+              <td height="26" align="right" class="bgcolor4"><%= (@subscription.billing_period.nil?) ?"0":@subscription.billing_period %> month(s)</td>
             </tr>
             <tr>
               <td width="35%" align="left" class="cate_listing_head">Next billing period</td>
-              <td height="26" align="right" class="bgcolor4">12 month(s)</td>
+              <td height="26" align="right" class="bgcolor4"><%= (@subscription.next_billing_period.nil?) ?"0":@subscription.next_billing_period %> month(s)</td>
             </tr>										
             <tr>
               <td width="35%" align="left" class="cate_listing_head">Yearly fee
