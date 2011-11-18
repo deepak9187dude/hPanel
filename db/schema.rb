@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111118075749) do
+ActiveRecord::Schema.define(:version => 20111118082633) do
 
   create_table "country_masters", :force => true do |t|
     t.string   "country_name", :null => false
@@ -138,6 +138,8 @@ ActiveRecord::Schema.define(:version => 20111118075749) do
     t.datetime "end_date"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "billing_period"
+    t.integer  "next_billing_period"
   end
 
   create_table "ticket_details", :force => true do |t|
