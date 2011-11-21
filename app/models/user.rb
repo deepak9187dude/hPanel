@@ -3,7 +3,6 @@ class User < ActiveRecord::Base
   has_many :tickets
   has_many :ticket_details
   has_many :subscriptions
-  has_many :user_billing_addresses
   
   def self.authenticate(username, password)
       user = find_by_email(username) if !user = find_by_username(username)

@@ -18,6 +18,7 @@ class ResellerController < ApplicationController
       @billing_progress = Ticket.billing_progress(@current_user)
       @ticket_priority = {'-Select Priority-' => '','Low' => 'Low', 'Medium' => 'Medium','High'=>'High','Urgent'=>'Urgent','Emergency'=>'Emergency','Critical'=>'Critical'}
       @ticket_category = {'-Select Category-' => '', 'Support' => 'Support','Billing'=>'Billing'}
+      @cc_type = {'Visa' => 'Visa', 'MasterCard' => 'MasterCard','Discover'=>'Discover','American Express'=>'American Express'}
     else
       redirect_to reseller_login_path ,:message=>'Please log in'
     end
@@ -59,6 +60,8 @@ class ResellerController < ApplicationController
   def change_password
 #    if params[:password]
   end
+  
+  
   def new_password
     @user = User.find(session[:user_id])
     if params[:resetpassword] && params[:password]==params[:re_password]
@@ -173,9 +176,20 @@ class ResellerController < ApplicationController
           billing_plan = plan.plan_billing_rate
           @plan_billing_rate = billing_plan.current_plan_price(session[:plan_type].to_s) 
           @plan_period = period(session[:plan_type].to_s)
-      end   
+      end 
+      @cc_data = Ccdata.new
   end 
   
+  def gateway_payment
+    if params[:ccdata]
+      @ccdata = Ccdata.new(params[:ccdata])
+      @ccdata.save
+#      render :text=>params.to_json
+      redirect_to reseller_index_path
+      return
+    end
+    redirect_to reseller_index_path ,:message=>'payment successful'
+  end
   
   def licence_code
 

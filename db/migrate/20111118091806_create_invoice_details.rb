@@ -1,4 +1,4 @@
-class CreateInvoiceDetails < ActiveRecord::Migration
+class CreateInvoiceDetails< ActiveRecord::Migration
   def self.up
     create_table :invoice_details do |t|
       t.integer     :plan_id
