@@ -36,17 +36,17 @@ Vhpanel::Application.routes.draw do
     match 'billing/subscriptions/:left' =>"reseller#billing_subscriptions",:as=>'reseller_billing_subscriptions',:defaults=>{:left=>2}
     match 'subscription/:id/:left' =>"reseller#subscription_details",:as=>'reseller_subscriptions_details',:defaults=>{:left=>2}
 #    tickets
-    match 'support/:left' =>"reseller#support_tickets",:as=>'reseller_all_support_tickets',:defaults=>{:left=>3}
-    match 'support/:left/:show' =>"reseller#support_tickets",:as=>'reseller_open_support_tickets',:defaults=>{:left=>3,:show=>"open"}
-    match 'support/:left/:show' =>"reseller#support_tickets",:as=>'reseller_hold_support_tickets',:defaults=>{:left=>3,:show=>"hold"}
-    match 'support/:left/:show' =>"reseller#support_tickets",:as=>'reseller_closed_support_tickets',:defaults=>{:left=>3,:show=>"closed"}
-    match 'support/:left/:show' =>"reseller#support_tickets",:as=>'reseller_progress_support_tickets',:defaults=>{:left=>3,:show=>"progress"} 
+    match 'support/:left' =>"reseller#support_tickets",:via => [:get,:post,:put],:as=>'reseller_all_support_tickets',:defaults=>{:left=>3}
+    match 'support/:left/:show' =>"reseller#support_tickets",:via => [:get,:post,:put],:as=>'reseller_open_support_tickets',:defaults=>{:left=>3,:show=>"open"}
+    match 'support/:left/:show' =>"reseller#support_tickets",:via => [:get,:post,:put],:as=>'reseller_hold_support_tickets',:defaults=>{:left=>3,:show=>"hold"}
+    match 'support/:left/:show' =>"reseller#support_tickets",:via => [:get,:post,:put],:as=>'reseller_closed_support_tickets',:defaults=>{:left=>3,:show=>"closed"}
+    match 'support/:left/:show' =>"reseller#support_tickets",:via => [:get,:post,:put],:as=>'reseller_progress_support_tickets',:defaults=>{:left=>3,:show=>"progress"} 
     
-    match 'billing/:left' =>"reseller#billing_tickets",:as=>'reseller_all_billing_tickets',:defaults=>{:left=>3}
-    match 'billing/:left/:show' =>"reseller#billing_tickets",:as=>'reseller_open_billing_tickets',:defaults=>{:left=>3,:show=>"open"}
-    match 'billing/:left/:show' =>"reseller#billing_tickets",:as=>'reseller_hold_billing_tickets',:defaults=>{:left=>3,:show=>"hold"}
-    match 'billing/:left/:show' =>"reseller#billing_tickets",:as=>'reseller_closed_billing_tickets',:defaults=>{:left=>3,:show=>"closed"}
-    match 'billing/:left/:show' =>"reseller#billing_tickets",:as=>'reseller_progress_billing_tickets',:defaults=>{:left=>3,:show=>"progress"} 
+    match 'billing/:left' =>"reseller#billing_tickets",:via => [:get,:post,:put],:as=>'reseller_all_billing_tickets',:defaults=>{:left=>3}
+    match 'billing/:left/:show' =>"reseller#billing_tickets",:via => [:get,:post,:put],:as=>'reseller_open_billing_tickets',:defaults=>{:left=>3,:show=>"open"}
+    match 'billing/:left/:show' =>"reseller#billing_tickets",:via => [:get,:post,:put],:as=>'reseller_hold_billing_tickets',:defaults=>{:left=>3,:show=>"hold"}
+    match 'billing/:left/:show' =>"reseller#billing_tickets",:via => [:get,:post,:put],:as=>'reseller_closed_billing_tickets',:defaults=>{:left=>3,:show=>"closed"}
+    match 'billing/:left/:show' =>"reseller#billing_tickets",:via => [:get,:post,:put],:as=>'reseller_progress_billing_tickets',:defaults=>{:left=>3,:show=>"progress"} 
     
     match 'tickets/:left/new' => "reseller#new_ticket", :as => 'reseller_new_ticket',:defaults=>{:left=>3}
     match 'tickets/create' => "reseller#create_ticket", :as => 'reseller_create_ticket', :via => [:post,:put]

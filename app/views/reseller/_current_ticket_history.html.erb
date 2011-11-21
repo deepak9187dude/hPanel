@@ -1,9 +1,9 @@
 <tr>                                  
   <td height="26" class="bgcolor4">
-    <a class="det_link" href="index.php?cid=31&amp;action=ATD&amp;tid=9&amp;left=3"><%= current_ticket_history.id %></a>
+    <a class="det_link" href="<%= reseller_ticket_details_path(current_ticket_history.ticket) %>"><%= current_ticket_history.id %></a>
   </td>
   <td height="26" class="bgcolor4">
-    <a class="det_link" href="index.php?cid=31&amp;action=ATD&amp;tid=9&amp;left=3"><%= current_ticket_history.ticket.subject %></a>
+    <a class="det_link" href="<%= reseller_ticket_details_path(current_ticket_history.ticket) %>"><%= current_ticket_history.ticket.subject %></a>
   </td>
   <td height="26" class="bgcolor4"> <%= current_ticket_history.created_at.strftime("%d/%m/%Y") %> </td>                                     
   <td align="center" height="26" class="bgcolor4">

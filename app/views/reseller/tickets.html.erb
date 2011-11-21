@@ -133,7 +133,7 @@
                               </tr>
                               <tr id="trS33">
                                 <td width="96%">
-                                  <form id="frmsearch" method="post" name="frmsearch">
+                                 <%=  form_tag("", :method=>'post', :multipart => true,:name=>"frmsearch",:id=>"frmsearch",:action=>'') do %>
                                     <table width="75%" cellspacing="2" cellpadding="2" border="0">
                                       <tbody>
                                         <tr>
@@ -177,7 +177,7 @@
                                         </tr>
                                       </tbody>
                                     </table>
-                                  </form>
+                                 <% end %>
                                 </td>
                                 <td width="4%" valign="bottom" class="bodytext">&nbsp;</td>
                               </tr>

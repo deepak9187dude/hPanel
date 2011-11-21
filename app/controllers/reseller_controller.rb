@@ -205,6 +205,9 @@ class ResellerController < ApplicationController
   def support_tickets
     if !params[:show]
       @tickets = @support_all
+      if params[:limit]
+#        render :text =>'hi'
+      end
     elsif(params[:show]=="open")
       @tickets = @support_open
     elsif(params[:show]=="hold")
@@ -213,6 +216,9 @@ class ResellerController < ApplicationController
       @tickets = @support_closed
     elsif(params[:show]=="progress")
       @tickets = @support_progress
+    end
+    if params[:limit]
+      @tickets = @tickets.find(:all, :order => "id desc", :limit => params[:limit])
     end
     render "tickets"
 #    render :text => params.to_json
@@ -229,6 +235,9 @@ class ResellerController < ApplicationController
       @tickets = @billing_closed
     elsif(params[:show]=="progress")
       @tickets = @billing_progress
+    end
+     if params[:limit]
+      @tickets = @tickets.find(:all, :order => "id desc", :limit => params[:limit])
     end
     render "tickets"
   end
@@ -254,59 +263,7 @@ class ResellerController < ApplicationController
     ticket_details=ticket.ticket_details.new
     ticket_details.comments = ticket.comments
     ticket_details.replier_id = @current_user.id
-    ticket_ddef licence_upgrade
-    @plans = Plan.find(:all)
-    @plan_rows = Array.new
-
-    @plans.each do |plan|
-      plan_billing_rates = nil
-
-      plan_billing_rates = plan.plan_billing_rate
-      if plan_billing_rates.monthly != 0
-        row = Hash.new
-        row['title'] =  plan.title
-        row['rec_period'] =  plan_billing_rates.rec_monthly
-        row['month'] = plan_billing_rates.monthly
-        row['vps'] = plan.vps
-        row['plan_id'] = plan.id
-        row['period'] = "month"
-        @plan_rows << row
-      end
-
-      if plan_billing_rates.quaterly != 0
-        row = Hash.new
-        row['title'] =  plan.title
-        row['rec_period'] = plan_billing_rates.rec_quaterly
-        row['month'] = 3
-        row['vps'] = plan.vps
-        row['plan_id'] = plan.id
-        row['period'] = "months"
-        @plan_rows << row
-      end
-
-      if plan_billing_rates.semi != 0
-        row = Hash.new
-        row['title'] =  plan.title
-        row['rec_period'] = plan_billing_rates.rec_semiyear
-        row['month'] = 6
-        row['vps'] =plan.vps
-        row['plan_id'] =plan.id
-        row['period'] ="months"
-        @plan_rows << row
-      end
-
-      if plan_billing_rates.yearly != 0
-        row = Hash.new
-        row['title'] =  plan.title
-        row['rec_period'] = plan_billing_rates.rec_yearly
-        row['month'] = 1
-        row['vps'] =plan.vps
-        row['plan_id'] =plan.id
-        row['period'] ="year"
-        @plan_rows << row
-      end
-    end
-  endetails.save
+    ticket_details.save
     if ticket.category =="Support"
       redirect_to reseller_all_support_tickets_path
     elsif ticket.category =="Billing"
