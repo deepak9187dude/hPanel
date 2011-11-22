@@ -1,0 +1,24 @@
+class BluePayBasic
+        require "BluePay"
+        
+        def DoBluePayPayment
+            accountId = get_gateway_settings('gatewaylogin', 3) //ACCOUNT_ID
+            secretKey = get_gateway_settings('gatewaykey', 3) //SECRET_KEY
+            MODE = 'Test'
+            
+            //create blue pay object
+            bp = Bluepay.new(accountId, secretKey, MODE)
+                        
+            render :text=>bp.to_json
+        end
+ 
+        def get_gateway_settings(field,gateway_id)
+            gateway_field = Gateway.find(gateway_id,:select=>field)
+            return gateway_field
+        end
+
+end
+
+#class Gateway
+   
+#end
