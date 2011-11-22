@@ -197,6 +197,10 @@ class ResellerController < ApplicationController
   def download
 
   end
+  
+  def ssh_demo
+    
+  end
   def billing_history
 #    params[:left]=1
 #    render :text=>params.to_json

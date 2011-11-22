@@ -1,5 +1,6 @@
 Vhpanel::Application.routes.draw do
   get "perl/index"
+  get "perl/paypal"
   get "clients/index"
   get "front/index"
   match '/users' => "users#create", :via=>[:put,:post]
@@ -31,6 +32,7 @@ Vhpanel::Application.routes.draw do
     match 'licence/payment/upgrade/:left/:type' =>"reseller#upgrade_plan",:as=>'reseller_upgrade_plan',:defaults=>{:left=>1}
     match 'licence/gateway/payment/:left/:type' =>"reseller#gateway_payment",:as=>'gateway_payment',:defaults=>{:left=>1}
     match 'licence/code/:left' =>"reseller#licence_code",:as=>'reseller_licence_code',:defaults=>{:left=>1}
+    match 'ssh/demo/:left' =>"reseller#ssh_demo",:as=>'ssh_demo',:defaults=>{:left=>1}
     match '/download/:left' =>"reseller#download",:as=>'reseller_download',:defaults=>{:left=>1}
     match 'billing/history/:left' =>"reseller#billing_history",:as=>'reseller_billing_history',:defaults=>{:left=>2}
     match 'billing/subscriptions/:left' =>"reseller#billing_subscriptions",:as=>'reseller_billing_subscriptions',:defaults=>{:left=>2}
