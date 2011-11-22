@@ -226,8 +226,14 @@
                               <td width="15%" class="cate_listing">
                                 <a class="cate_listing_head" href="index.php?cid=31&amp;action=CTM&amp;orderby=status&amp;left=3&amp;sort=ASC&amp;searchfield=&amp;searchval= &amp;limit=20&amp;page=">Status</a>  
                               </td>
-                            </tr>                                
-                            <%= render :partial=> "ticket",:collection=>@tickets %>                                
+                            </tr>
+                            <% if !@tickets.empty? %>
+                            <%= render :partial=> "ticket",:collection=>@tickets %>     
+                            <% else %>
+                            <tr style="display:table-row">
+                              <td align="center" height="50" bgcolor="#FFFFFF" class="no_record" colspan="7">Tickets are not available</td>
+                            </tr>
+                            <% end %>
                             <tr style="display:none">
                               <td height="50" bgcolor="#FFFFFF" align="center" class="no_record" colspan="7"> </td>
                             </tr>
