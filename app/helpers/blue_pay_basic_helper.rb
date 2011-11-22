@@ -1,0 +1,2 @@
+module BluePayBasicHelper
+end

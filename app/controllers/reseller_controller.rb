@@ -176,20 +176,29 @@ class ResellerController < ApplicationController
           billing_plan = plan.plan_billing_rate
           @plan_billing_rate = billing_plan.current_plan_price(session[:plan_type].to_s) 
           @plan_period = period(session[:plan_type].to_s)
+          session[:amount_to_charge] = @plan_billing_rate
       end 
       @cc_data = Ccdata.new
   end 
   
   def gateway_payment
-    if params[:ccdata]
-      @ccdata = Ccdata.new(params[:ccdata])
-      @ccdata.save
-#      render :text=>params.to_json
-      redirect_to reseller_index_path
-      return
-    end
-    redirect_to reseller_index_path ,:message=>'payment successful'
+      if request.post?
+         if params[:ccdata]
+            @ccdata = Ccdata.new(params[:ccdata])
+            @ccdata.save
+
+            @invoice = @current_user.invoice_details.new
+            @invoice.plan_id = session[:plan_id].to_s
+            @invoice.cc_id = @ccdata.id
+            @invoice.save
+
+            render :text => 'payment successful'
+            return
+         end
+      end
+      redirect_to reseller_index_path ,:message=>'payment successful'
   end
+  
   
   def licence_code
 
@@ -201,6 +210,7 @@ class ResellerController < ApplicationController
   def ssh_demo
     
   end
+  
   def billing_history
 #    params[:left]=1
 #    render :text=>params.to_json

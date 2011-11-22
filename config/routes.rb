@@ -3,6 +3,7 @@ Vhpanel::Application.routes.draw do
   get "perl/paypal"
   get "clients/index"
   get "front/index"
+  get "BluePayBasic/DoBluePayPayment"
   match '/users' => "users#create", :via=>[:put,:post]
   
   resource :session
