@@ -218,7 +218,9 @@ class ResellerController < ApplicationController
             subscription.user_id = @current_user.id
             invoice.plan_id = plan.id
             invoice.cc_id = @ccdata.id
-    
+            invoice.transaction_type = 'Sale'     
+            invoice.payment_date = Time.now          
+            invoice.amount_Credited = plan_billing_rate
             
             #payment using bluepay payment gateway
             if params[:type].to_s.downcase == 'bluepay'
@@ -234,10 +236,11 @@ class ResellerController < ApplicationController
                    msg = bpApi.get_message() + bpApi.get_trans_id()
                    invoice.cc_trans_id = bpApi.get_trans_id().to_s
                    invoice.gateway_pay_status = "Approved"
-                   invoice.amount_Credited = plan_billing_rate
-                   invoice.payment_date = Time.now
                    invoice.gateway_trans_type = 'Sale'
                    invoice.gateway_trans_time = Time.now
+                   invoice.pay_success_date = Time.now
+                   invoice.pay_mode = 'Bluepay'
+                   invoice.payment_status = 'Approved'
                    subscription.status = "Approved"
 #                   subscription.end_date
 #                  subscription.billing_period = 
@@ -246,7 +249,7 @@ class ResellerController < ApplicationController
                    flash[:notice] = msg
                 else
                    msg = bpApi.get_message()
-                   invoice.gateway_pay_status = "Error"
+                   invoice.gateway_pay_status = "Pending"
                    subscription.status = "failed"
                    flash[:error] = msg
                 end
@@ -327,6 +330,7 @@ class ResellerController < ApplicationController
   end
   
   def billing_history
+      @billings = @current_user.invoice_details
 #    params[:left]=1
 #    render :text=>params.to_json
   end

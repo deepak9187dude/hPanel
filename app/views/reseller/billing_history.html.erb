@@ -113,11 +113,7 @@
                                 <td width="14%" class="cate_listing"><a class="cate_listing" href="index.php?cid=20&amp;left=2&amp;action=BMH&amp;orderby=total&amp;sort=ASC&amp;searchval1=&amp;searchval2=&amp;searchval3=&amp;limit=20&amp;page=">Total</a>  </td>
                               </tr>
                               <tr class="bgcolor4">                            
-                                <td width="4%" height="26" align="left" class="bgcolor4"><a class="det_link" href="index.php?cid=20&amp;action=BMD&amp;left=2&amp;id=5">5</a></td>                            <td height="26" class="bgcolor4">5Plan G</td>
-                                <td height="26" class="bgcolor4"><a class="det_link" href="index.php?cid=20&amp;action=BMD&amp;left=2&amp;id=5">Purchase</a></td>
-                                <td height="26" align="left" class="bgcolor4"><img title="Stopped" src="../asset/images/icon_inprocess.png"> <span class="Booting">Pending</span></td>                          
-                                <td height="26" align="center" class="bgcolor4">31-Oct-2011</td>
-                                <td height="26" align="center" class="bgcolor4">2.00</td>
+                               <%= render :partial=>'billing',:collection=>@billings %>
                               </tr>
                               <tr style="display:none"><td height="50" bgcolor="#FFFFFF" align="center" class="no_record" colspan="8"> </td>
                               </tr>

@@ -5,4 +5,14 @@ class InvoiceDetail < ActiveRecord::Base
       belongs_to    :ccdata
       belongs_to    :profile
       belongs_to    :gateway
+      
+   def status_image
+    if self.gateway_pay_status.downcase.strip == "failed"
+      @icon = 'offline.png'
+    elsif self.gateway_pay_status.downcase.strip == "approved"
+      @icon = 'online.png'
+    else
+      @icon = 'offline.png'      
+    end
+  end
 end

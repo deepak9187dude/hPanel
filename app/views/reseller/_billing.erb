@@ -1,0 +1,11 @@
+<tr class="bgcolor4">                            
+  <td align="left" class="bgcolor4"><a class="det_link" href="<%= reseller_subscriptions_details_path(billing) %>"><%= billing.id %></a></td>                           
+  <td height="26" class="bgcolor4"><%= billing.plan.title %></td>
+  <td align="left" class="bgcolor4">
+    <img src="/images/<%= billing.transaction_type %>" title="In Progress">
+    <span class="Booting"><%= billing.transaction_type %></span>
+  </td>                          
+  <td align="center" class="bgcolor4"><img src="/images/<%= billing.status_image %>" title="In Progress"></td>
+  <td align="center" class="bgcolor4"><%= billing.payment_date.strftime("%d-%m-%Y") %></td>
+  <td align="center" class="bgcolor4"><%= billing.amount_Credited.to_f %></td>
+</tr>
