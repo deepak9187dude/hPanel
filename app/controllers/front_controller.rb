@@ -12,7 +12,6 @@ class FrontController < ApplicationController
    
     @plans.each do |plan|
       plan_billing_rates = nil
-
       plan_billing_rates = plan.plan_billing_rate
       if plan_billing_rates.monthly != 0
         row = Hash.new
@@ -74,8 +73,7 @@ class FrontController < ApplicationController
     @plan_duration['semi'] = '6 Month'
     @plan_duration['quaterly'] = '3 Months'
     @plan = Plan.find(params[:plan_id],:include=>:plan_billing_rate)    
-    @plan_rate = @plan.plan_billing_rate.current_plan_price(@type)
-    
+    @plan_rate = @plan.plan_billing_rate.current_plan_price(@type)    
     session[:plan_id]=params[:plan_id]
     session[:plan_type]=@type
 #    render :text => @plan_billing_rate.to_json

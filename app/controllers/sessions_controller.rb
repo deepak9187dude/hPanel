@@ -10,13 +10,14 @@ class SessionsController < ApplicationController
         redirect_to root_path, :notice => "Logged in successfully"
       end
     else
-      flash.now[:alert] = "Invalid login/password combination" 
-      render 'new'
+      flash.now[:alert] = "Invalid login/password combination"
+      redirect_to reseller_login_path,:notice => "Incorrect Username or password"
+#      render 'new'
 #       render :text => "not a valid user"
     end
   end  
   def destroy
     reset_session
-    redirect_to root_path, :notice => "You successfully logged out"
+    redirect_to reseller_login_path, :notice => "You successfully logged out"
   end
 end
