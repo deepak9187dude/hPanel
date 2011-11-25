@@ -7,7 +7,7 @@ gem 'rails', '3.0.9'
 
 gem 'mysql2'
 gem 'jquery-rails'
-gem "paypal_adaptive", "~> 0.2.5"
+gem 'activemerchant'
 gem 'bluepay' ,"~> 1.0.1"
 # Use unicorn as the web server
 # gem 'unicorn'
