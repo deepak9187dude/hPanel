@@ -1,5 +1,8 @@
 class ResellerController < ApplicationController
-  layout 'reseller_backend'
+  layout 'reseller_backend'  
+  require 'Bluepay'
+  include ActiveMerchant::Billing
+  
   before_filter :current_user, :except=>[:login,:forgot_password]
 
   def current_user
@@ -180,19 +183,78 @@ class ResellerController < ApplicationController
       end 
       @cc_data = Ccdata.new
   end 
-  
-  def gateway_payment
+  ############################################################################
+  ###                       payment methods                              #####
+  ############################################################################
+  def gateway_payment  
+
+      plan = Plan.find(session[:plan_id]) if session[:plan_id]
+      if  session[:plan_type] and plan
+          billing_plan = plan.plan_billing_rate
+          plan_billing_rate = billing_plan.current_plan_price(session[:plan_type].to_s) 
+      end      
+      
       if request.post?
          if params[:ccdata]
             @ccdata = Ccdata.new(params[:ccdata])
+            
+            if @ccdata.isUserAccAddress == 1 then
+               @ccdata.address = @current_user.address
+               @ccdata.address2 = @current_user.address2
+               @ccdata.city = @current_user.city
+               @ccdata.state = @current_user.state
+               @ccdata.state_other = @current_user.state_other
+               @ccdata.country = @current_user.country
+               @ccdata.postal_code = @current_user.postal_code
+               @ccdata.phccode = @current_user.phccode
+               @ccdata.phacode = @user_current.phacode
+               @ccdata.phnumber = @current_user.phnumber
+            end
             @ccdata.save
-
-            @invoice = @current_user.invoice_details.new
-            @invoice.plan_id = session[:plan_id].to_s
-            @invoice.cc_id = @ccdata.id
-            @invoice.save
-
-            render :text => 'payment successful'
+            
+            invoice = @current_user.invoice_details.new
+            subscription = plan.subscriptions.new
+            subscription.name = plan.title
+            subscription.user_id = @current_user.id
+            invoice.plan_id = session[:plan_id].to_s
+            invoice.cc_id = @ccdata.id
+    
+            
+            #payment using bluepay payment gateway
+            if params[:type].to_s.downcase == 'bluepay'
+                bpApi = Bluepay.new(BP_ACCOUNT_ID.to_s, BP_SECRET_KEY.to_s)
+                bpApi.customer_data(@ccdata.first_name.to_s,@ccdata.last_name.to_s,@ccdata.address.to_s,@ccdata.address2.to_s,@ccdata.state.to_s,@ccdata.postal_code.to_s)
+                exp_date = @ccdata.exp_month.to_s + @ccdata.exp_year.to_s
+                bpApi.use_card(@ccdata.card_num.to_s, exp_date , @ccdata.cvv.to_s)
+                #bpApi.easy_sale(plan_billing_rate)
+                bpApi.easy_sale("1.00")
+                bpApi.process()
+                
+                if bpApi.get_status() == '1' then
+                   msg = bpApi.get_message() + bpApi.get_trans_id()
+                   invoice.cc_trans_id = bpApi.get_trans_id()
+                   invoice.gateway_pay_status = "Approved"
+                   invoice.amount_Credited = plan_billing_rate
+                   invoice.payment_date = Date
+                   invoice.gateway_trans_type = 'Sale'
+                   invoice.gateway_trans_time = Time.now
+                   subscription.status = "Approved"
+#                   subscription.end_date
+#                  subscription.billing_period = 
+#                  subscription.next_billing_period =
+                   msg = "Payment Successfull" 
+                else
+                   msg = bpApi.get_message()
+                   invoice.gateway_pay_status = "Error"
+                   subscription.status = "failed"
+                end
+                invoice.save  
+                subscription.save
+            elsif params[:type].to_s.downcase == 'paypal'
+                redirect_to paypal_checkout_path(plan_billing_rate)
+                return
+            end
+            render :text => msg.to_s
             return
          end
       end
@@ -200,9 +262,61 @@ class ResellerController < ApplicationController
   end
   
   
+  def checkout
+#    render :text => params.to_json
+#    return
+    if params[:amount] then
+       session[:amount] = params[:amount]
+        setup_response = gateway.setup_purchase(params[:amount],
+        :ip => request.remote_ip,
+        :return_url => url_for(:action => 'confirm', :only_path => false),
+        :cancel_return_url => url_for(:action => 'index', :only_path => false)
+        ) 
+    end
+      redirect_ to gateway.redirect_url_for(setup_response.token)
+  end
+  
+  def confirm
+      redirect_to :action => 'index' unless params[:token]
+      details_response = gateway.details_for(params[:token])
+      if !details_response.success?
+          @message = details_response.message
+          render :action => 'error'
+          return
+      end
+      @address = details_response.address
+      #     render :text=> details_response.to_json
+  end
+
+   def complete
+     purchase = gateway.purchase(session[:amount],
+       :ip       => request.remote_ip,
+       :payer_id => params[:payer_id],
+       :token    => params[:token]
+     ) if session[:amount]
+     
+     if !purchase.success?
+       @message = purchase.message
+       render :action => 'error'
+       return
+     end
+   end
+
+ private
+   def gateway
+     @gateway ||= PaypalExpressGateway.new(
+       :login => PP_LOGIN,
+       :password => PP_PASSWORD,
+       :signature => PP_SIGNATURE
+     )
+   end
+  ######################   end payment methods #################################
+ public
+  
   def licence_code
 
   end
+  
   def download
 
   end

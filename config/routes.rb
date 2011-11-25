@@ -3,6 +3,12 @@ Vhpanel::Application.routes.draw do
   get "perl/paypal"
   get "clients/index"
   get "front/index"
+  get "reseller/confirm"
+  
+  get "reseller/confirm"
+  get "reseller/error"
+  match "reseller/complete"=>"reseller#complete"
+  
   get "BluePayBasic/DoBluePayPayment"
   match '/users' => "users#create", :via=>[:put,:post]
   
@@ -25,6 +31,7 @@ Vhpanel::Application.routes.draw do
     match "/login",:as => "reseller_login",:via=>[:get,:post,:put]
     match '/edit' => 'reseller#edit', :via => [:get],:as=> 'reseller_edit'
     match 'password/forgot' => 'reseller#forgot_password',:as=> 'reseller_forgot_password'
+    match 'paypal/checkout(/:amount)' => 'reseller#checkout', :via => [:get,:post,:put],:as=> 'paypal_checkout'
     
     match '/reseller_update' => 'reseller#reseller_update', :via => [:post,:put],:as=> 'reseller_update'
     match 'password/change' =>"reseller#change_password",:as=>'reseller_update_password'

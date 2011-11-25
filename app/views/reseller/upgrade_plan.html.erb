@@ -88,7 +88,11 @@
                               <tr>
                                 <td align="right" width="40%" valign="top" class="cate_listing"><span class="mandotry">*</span>Card Type :</td>
                                 <td width="60%" valign="top" class="bgcolor4">
+                                  <% if params[:type]=='paypal' %>
+                                  Not Applicable
+                                  <% else %>
                                   <%= select_tag 'ccdata[cc_type]', options_for_select(@cc_type),:id=>'creditCardType',:class=>'txtdrop'%>
+                                  <% end %>
                                 </td>
                               </tr>
 
@@ -97,7 +101,11 @@
                                   <span class="mandotry">*</span>Card Number :
                                 </td>
                                 <td width="60%" valign="top" class="bgcolor4">
+                                  <% if params[:type]=='paypal' %>
+                                  Not Applicable
+                                  <% else %>
                                   <%= f.text_field :card_num, :id=>"txtcardnum_1_4",:class=>"txtfield1" %>
+                                  <% end %>
                                   <span class="error" id="txtcardnum"></span>
                                 </td>
                               </tr>
@@ -110,23 +118,21 @@
                                     <tbody>
                                       <tr>
                                         <td align="left" width="11%" valign="top">
-                                          <select class="txtdrop" name="exp_month" id="exp_month">
-                                            <option selected="selected" value="01">01</option>
-                                            <option value="02">02</option>
-                                            <option value="03">03</option>
-                                            <option value="04">04</option>
-                                            <option value="05">05</option>
-                                            <option value="06">06</option>
-                                            <option value="07">07</option>
-                                            <option value="08">08</option>
-                                            <option value="09">09</option>
-                                            <option value="10">10</option>
-                                            <option value="11">11</option>
-                                            <option value="12">12</option>
+                                          <% if params[:type]=='paypal' %>
+                                          Not Applicable
+                                          <% else %>
+                                          <select class="txtdrop" name="ccdata[exp_month]" id="exp_month">
+                                            <% (1..12).each do |month| %>
+                                            <option value="<%= "%02d" % month %>"><%= "%02d" % month %></option>
+                                            <% end %>
                                           </select>
-                                          <select class="txtdrop" name="exp_year" id="exp_year">
-                                            <option value="11">2011</option><option value="12">2012</option><option value="13">2013</option><option value="14">2014</option><option value="15">2015</option><option value="16">2016</option><option value="17">2017</option><option value="18">2018</option><option value="19">2019</option><option value="20">2020</option>   
+                                          <select class="txtdrop" name="ccdata[exp_year]" id="exp_year">
+                                            <% (Time.now.strftime('%Y').to_i + 10).downto(Time.now.strftime('%Y').to_i) do |year| %>
+                                                    <option value="<%="%02d" % (year%100) %>"><%= year %></option>
+                                            <% end %>
+
                                           </select>
+                                          <% end %>
                                         </td>
                                       </tr>
                                     </tbody>
@@ -139,8 +145,12 @@
                                   or CVC2 code:
                                 </td>
                                 <td width="60%" valign="top" class="bgcolor4">
+                                  <% if params[:type]=='paypal' %>
+                                  Not Applicable
+                                  <% else %>
                                   <%= f.text_field :cvv, :id=>"card_code",:class=>"txtfield1",:onkeydown=>"return extracheck(this)",:onkeypress=>"return extracheck(this)",:maxlength=>4,:size=>10 %>
                                   <span class="error" id="txtcardnum"></span>
+                                  <% end %>
                                 </td>
                               </tr>
 
