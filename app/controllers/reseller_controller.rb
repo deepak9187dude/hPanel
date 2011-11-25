@@ -211,12 +211,12 @@ class ResellerController < ApplicationController
                @ccdata.phnumber = @current_user.phnumber
             end
             @ccdata.save
-            
-            invoice = @current_user.invoice_details.new
+            invoice = InvoiceDetail.new
+            invoice.user_id = @current_user.id
             subscription = plan.subscriptions.new
             subscription.name = plan.title
             subscription.user_id = @current_user.id
-            invoice.plan_id = session[:plan_id].to_s
+            invoice.plan_id = plan.id
             invoice.cc_id = @ccdata.id
     
             
@@ -232,10 +232,10 @@ class ResellerController < ApplicationController
                 
                 if bpApi.get_status() == '1' then
                    msg = bpApi.get_message() + bpApi.get_trans_id()
-                   invoice.cc_trans_id = bpApi.get_trans_id()
+                   invoice.cc_trans_id = bpApi.get_trans_id().to_s
                    invoice.gateway_pay_status = "Approved"
                    invoice.amount_Credited = plan_billing_rate
-                   invoice.payment_date = Date
+                   invoice.payment_date = Time.now
                    invoice.gateway_trans_type = 'Sale'
                    invoice.gateway_trans_time = Time.now
                    subscription.status = "Approved"
@@ -243,22 +243,23 @@ class ResellerController < ApplicationController
 #                  subscription.billing_period = 
 #                  subscription.next_billing_period =
                    msg = "Payment Successfull" 
+                   flash[:notice] = msg
                 else
                    msg = bpApi.get_message()
                    invoice.gateway_pay_status = "Error"
                    subscription.status = "failed"
+                   flash[:error] = msg
                 end
-                invoice.save  
-                subscription.save
+               
             elsif params[:type].to_s.downcase == 'paypal'
                 redirect_to paypal_checkout_path(plan_billing_rate)
                 return
             end
-            render :text => msg.to_s
-            return
+            invoice.save
+            subscription.save
          end
       end
-      redirect_to reseller_index_path ,:message=>'payment successful'
+      redirect_to reseller_index_path ,:message=>msg
   end
   
   
