@@ -5,6 +5,7 @@ class InvoiceDetail < ActiveRecord::Base
       belongs_to    :ccdata
       belongs_to    :profile
       belongs_to    :gateway
+      belongs_to    :subscription
       
    def status_image
     if self.gateway_pay_status.downcase.strip == "failed"

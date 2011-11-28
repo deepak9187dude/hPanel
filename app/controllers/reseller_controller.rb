@@ -186,18 +186,15 @@ class ResellerController < ApplicationController
   ############################################################################
   ###                       payment methods                              #####
   ############################################################################
-  def gateway_payment  
-
+  def gateway_payment 
       plan = Plan.find(session[:plan_id]) if session[:plan_id]
       if  session[:plan_type] and plan
           billing_plan = plan.plan_billing_rate
           plan_billing_rate = billing_plan.current_plan_price(session[:plan_type].to_s) 
-      end      
-      
+      end
       if request.post?
          if params[:ccdata]
-            @ccdata = Ccdata.new(params[:ccdata])
-            
+            @ccdata = Ccdata.new(params[:ccdata])            
             if @ccdata.isUserAccAddress == 1 then
                @ccdata.address = @current_user.address
                @ccdata.address2 = @current_user.address2
@@ -220,8 +217,7 @@ class ResellerController < ApplicationController
             invoice.cc_id = @ccdata.id
             invoice.transaction_type = 'Sale'     
             invoice.payment_date = Time.now          
-            invoice.amount_credited = plan_billing_rate
-            
+            invoice.amount_credited = plan_billing_rate            
             #payment using bluepay payment gateway
             if params[:type].to_s.downcase == 'bluepay'
                 bpApi = Bluepay.new(BP_ACCOUNT_ID.to_s, BP_SECRET_KEY.to_s)
@@ -230,8 +226,7 @@ class ResellerController < ApplicationController
                 bpApi.use_card(@ccdata.card_num.to_s, exp_date , @ccdata.cvv.to_s)
                 #bpApi.easy_sale(plan_billing_rate)
                 bpApi.easy_sale("1.00")
-                bpApi.process()
-                
+                bpApi.process()                
                 if bpApi.get_status() == '1' then
                    msg = bpApi.get_message() + bpApi.get_trans_id()
                    invoice.cc_trans_id = bpApi.get_trans_id().to_s
@@ -253,13 +248,13 @@ class ResellerController < ApplicationController
                    subscription.status = "failed"
                    flash[:error] = msg
                 end
-               
             elsif params[:type].to_s.downcase == 'paypal'
-                redirect_to paypal_checkout_path(plan_billing_rate)
+                redirect_to paypal_checkout_path(plan_billing_rate.to_i)
                 return
             end
-            invoice.save
             subscription.save
+            invoice.subscription_id=subscription.id
+            invoice.save
          end
       end
       redirect_to reseller_index_path ,:message=>msg
@@ -270,14 +265,15 @@ class ResellerController < ApplicationController
 #    render :text => params.to_json
 #    return
     if params[:amount] then
-       session[:amount] = params[:amount]
-        setup_response = gateway.setup_purchase(params[:amount],
+       amount = params[:amount]
+       session[:amount] = amount
+        setup_response = gateway.setup_purchase(amount.to_i,
         :ip => request.remote_ip,
         :return_url => url_for(:action => 'confirm', :only_path => false),
         :cancel_return_url => url_for(:action => 'index', :only_path => false)
         ) 
     end
-      redirect_ to gateway.redirect_url_for(setup_response.token)
+      redirect_to gateway.redirect_url_for(setup_response.token)
   end
   
   def confirm
@@ -293,7 +289,7 @@ class ResellerController < ApplicationController
   end
 
    def complete
-     purchase = gateway.purchase(session[:amount],
+     purchase = gateway.purchase(session[:amount].to_i,
        :ip       => request.remote_ip,
        :payer_id => params[:payer_id],
        :token    => params[:token]

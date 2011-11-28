@@ -1,6 +1,7 @@
 class Subscription < ActiveRecord::Base
   belongs_to :user
   belongs_to :plan
+  has_one    :invoice_detail
   after_create :set_name
   
   def set_name
