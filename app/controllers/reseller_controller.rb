@@ -220,7 +220,7 @@ class ResellerController < ApplicationController
             invoice.cc_id = @ccdata.id
             invoice.transaction_type = 'Sale'     
             invoice.payment_date = Time.now          
-            invoice.amount_Credited = plan_billing_rate
+            invoice.amount_credited = plan_billing_rate
             
             #payment using bluepay payment gateway
             if params[:type].to_s.downcase == 'bluepay'

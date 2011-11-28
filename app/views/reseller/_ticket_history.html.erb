@@ -15,7 +15,14 @@
             <table cellspacing="0" cellpadding="0" border="0" width="100%">
               <tbody>
                 <tr>
-                  <td colspan="2"><span class="bodytext_1"><a class="bodylink" href="index.php?cid=4&amp;action=UVP">Home</a> &gt; <a class="bodylink" href="index.php?cid=31&amp;action=CTM&amp;left=3">Ticket Manager</a> &gt; <a class="bodylink" href="index.php?cid=31&amp;action=CTM&amp;cat=Support&amp;st=1&amp;left=3">Support Ticket</a>  &gt;  Ticket History  </span></td>
+                  <td colspan="2">
+                    <span class="bodytext_1">
+                      <%= link_to "Home", reseller_index_path,:class=>'bodylink' %>
+                      &gt; <%= link_to "Ticket Manager", reseller_all_support_tickets_path,:class=>'bodylink' %>
+                      &gt; <%= link_to "Support Ticket", reseller_all_support_tickets_path,:class=>'bodylink' %>
+                      &gt;  Ticket History  
+                    </span>
+                  </td>
                 </tr>
                 <tr>
                   <td width="4%">
