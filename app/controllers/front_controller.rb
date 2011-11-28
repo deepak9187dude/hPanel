@@ -8,8 +8,7 @@ class FrontController < ApplicationController
   def pricing
     @title = "Pricing"
     @plans = Plan.find(:all)
-    @plan_rows = Array.new
-   
+    @plan_rows = Array.new   
     @plans.each do |plan|
       plan_billing_rates = nil
       plan_billing_rates = plan.plan_billing_rate

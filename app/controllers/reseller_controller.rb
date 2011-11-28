@@ -330,7 +330,15 @@ class ResellerController < ApplicationController
 #    params[:left]=1
 #    render :text=>params.to_json
   end
-
+  
+  def order_details
+    @order_details = InvoiceDetail.find(params[:id])
+    @total = @order_details.amount_credited
+  end
+  def order_history
+    @order_history = InvoiceDetail.find(params[:id])
+  end
+  
   def support_tickets
     if !params[:show]
       @tickets = @support_all

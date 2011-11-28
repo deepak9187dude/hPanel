@@ -1,0 +1,206 @@
+<td valign="top" class="bgcolor2"><script language="javascript" type="text/javascript">
+  function ShowDiv(id1, id2)
+  {
+ 
+    window.document.getElementById(id1).style.display = "block";
+    window.document.getElementById(id2).style.display = "none";
+    window.document.getElementById('divGSedit').style.display = "none";
+  }
+  </script>
+  <div id="content">
+    <table width="100%" cellspacing="0" cellpadding="0" border="0">
+      <tbody>
+        <tr>
+          <td class="middle_top">
+            <table width="100%" cellspacing="0" cellpadding="0" border="0">
+              <tbody>
+                <tr>
+                  <td colspan="2">
+                    <span class="bodytext_1">
+                      <a class="bodylink" href="index.php?cid=4&amp;action=UVP">Home</a> 
+                      &gt; <a class="bodylink" href="index.php?cid=20&amp;action=BMG&amp;left=2">Billing Manager</a> 
+                      &gt; <a class="bodylink" href="index.php?cid=20&amp;action=BMH&amp;left=2">Billing History</a> 
+                      &gt; Payment History  
+                    </span>
+                  </td>
+                </tr>
+                <tr>
+                  <td width="4%">
+                    <img align="bottom" width="30" height="32" border="0" title="View VM" src="/images/Payment-history_larg.png">
+                  </td>
+                  <td width="96%" valign="top" style="padding-top:2px">
+                    <span class="txt_big_red">Order # </span>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <div id="gallery">
+      <a href="<%= billing_order_details_path(params[:id]) %>" class="offdiv">
+        <span>
+          <div title="Details" class="offdiv">
+            <span onclick="ShowDiv('divGS','divChangedate')">Order Details</span>
+          </div>          
+        </span>
+      </a>
+      <a href="<%= billing_order_history_path(params[:id]) %>" class="ondiv">
+        <div title="Payment History" class="ondiv">
+          <span onclick="ShowDiv('divRes','divEditRes')">Payment History</span>
+        </div> 
+      </a>
+    </div>
+    <div class="hide" style="height: 100%;" id="Details">
+      <div id="divGS">
+      </div>
+      <div id="divChangedate">
+      </div>
+    </div>
+    <div class="show" style="height: 100%;" id="Payment History">
+      <div id="divPH">
+        <table width="100%" cellspacing="0" cellpadding="0" border="0">
+          <tbody>
+            <tr>
+              <td style="padding:10px;">
+                <table width="100%" cellspacing="0" cellpadding="0" border="0">
+                  <tbody>
+                    <tr>
+                      <td>
+                        <table width="100%" cellspacing="0" cellpadding="0" border="0">
+                          <tbody>
+                            <tr>
+                              <td class="tdgap">
+                                <table width="87%" cellspacing="0" cellpadding="0" border="0">
+                                  <tbody>
+                                    <tr class="cate_listing_head">
+                                      <td width="90%" valign="middle">&nbsp; Payment History Search</td>
+                                      <td align="center" width="4%" valign="middle">
+                                        <img align="bottom" onclick="javascript:ShowHideHR('S33');" src="/images/search_show.png" id="imgS33">
+                                      </td>
+                                    </tr>
+                                    <tr id="trS33">
+                                      <td align="left" width="79%">
+                                        <form id="frmsearch" method="post" action="index.php?cid=20&amp;action=BPH&amp;left=2&amp;id=15" name="frmsearch">
+                                          <table width="90%" cellspacing="2" cellpadding="2" border="0">
+                                            <tbody>
+                                              <tr>
+                                                <td width="9%" class="bodytext">ID<br>
+                                                  <label>
+                                                    <input type="text" size="6" value="" id="txtid" name="txtid">
+                                                  </label>
+                                                </td>
+                                                <td width="14%" class="bodytext">Document Type<br>
+                                                  <select id="cmbtype" name="cmbtype">											
+                                                    <option value="All">All</option>
+                                                    <option value="Renew">Renew</option><option value="Purchase">Purchase</option><option value="Upgrade">Upgrade</option><option value="Refund">Refund</option>
+                                                  </select>
+                                                  <input type="hidden" value="" name="hidid" id="hidid">
+                                                </td>							
+                                                <td width="4%">
+                                                  <input width="31" type="image" height="33" name="go" id="go" title="Search" src="../asset/images/icon_search.gif"></td>
+                                                <td width="5%" valign="bottom" class="bodytext">Show</td>
+                                                <td width="68%" valign="bottom" class="bodytext">
+                                                  <select onchange="document.frmsearch.submit()" id="limit" class="limit" name="limit">
+                                                    <option value="5">5</option><option value="10">10</option><option selected="" value="20">20</option><option value="40">40</option><option value="80">80</option><option value="160">160</option><option value="320">320</option>
+                                                  </select>
+                                                </td>
+                                              </tr>
+                                            </tbody>
+                                          </table>
+                                        </form>
+                                      </td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                              </td>
+                            </tr>
+                          <form action="index.php?cid=11&amp;action=UVD" method="post" name="frmvm" id="frmvm"></form>
+                          <tr>
+                            <td>
+                              <table align="left" width="87%" cellspacing="1" cellpadding="0" border="0">
+                                <tbody>
+                                  <tr>
+                                    <td align="right" valign="middle" colspan="8"> 
+                                      &nbsp;
+                                      <a href="downloadxls.php?key=PH" class="det_link">
+                                        <img title="Export to Excel" src="../asset/images/excel.jpg">
+                                      </a>
+                                    </td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <div align="center" id="chldpar2">
+                                <table align="left" width="87%" cellspacing="1" cellpadding="0" border="0" class="bgcolor3">
+                                  <tbody>
+                                    <tr>
+                                      <td align="left" width="10%" class="cate_listing">
+                                        <a class="cate_listing" href="index.php?cid=20&amp;id=&amp;left=2&amp;action=BPH&amp;orderby=id&amp;sort=ASC&amp;searchfield= &amp;searchval=">ID</a>   
+                                      </td>
+                                      <td width="15%" class="cate_listing">
+                                        <a class="cate_listing" href="index.php?cid=20&amp;id=&amp;left=2&amp;action=BPH&amp;orderby=type&amp;sort=ASC&amp;searchfield= &amp;searchval=">Document Type</a>  
+                                      </td>
+                                      <td align="left" width="14%" class="cate_listing">
+                                        <a class="cate_listing" href="index.php?cid=20&amp;id=&amp;left=2&amp;action=BPH&amp;orderby=docdate&amp;sort=ASC&amp;searchfield= &amp;searchval=">Doc. Date</a> 
+                                      </td>
+                                      <td align="left" width="14%" class="cate_listing">
+                                        <a class="cate_listing" href="index.php?cid=20&amp;id=&amp;left=2&amp;action=BPH&amp;orderby=total&amp;sort=ASC&amp;searchfield= &amp;searchval=">Amount</a> 
+                                      </td>
+                                    </tr>
+                                    <tr class="bgcolor4">                            
+                                      <td align="left" class="bgcolor4">15</td>                           
+                                      <td height="26" class="bgcolor4">Purchase</td>                                          
+                                      <td align="center" class="bgcolor4">21-Nov-2011</td>
+                                      <td align="center" class="bgcolor4">14.99</td>							 
+                                    </tr>
+                                    <tr style="display:none">
+                                      <td align="center" height="50" bgcolor="#FFFFFF" class="no_record" colspan="8"> </td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                              </div>                              
+                            </td>
+                          </tr>
+                          <tr>
+                            <td class="bodytext">
+                              <table width="80%" cellspacing="1" cellpadding="1" border="0">
+                                <tbody>
+                                  <tr>
+                                    <td width="70%">
+                                      <table align="left" width="227" cellspacing="0" cellpadding="0" border="0">
+                                        <tbody>
+                                          <tr align="left" valign="middle">
+                                            <td width="74">&nbsp;</td>
+                                            <td width="233"></td>
+                                          </tr>
+                                        </tbody>
+                                      </table></td>
+                                    <td align="right" width="30%">
+                                      
+                                    </td>
+                                  </tr>
+                                </tbody>
+                              </table>                              
+                            </td>
+                          </tr>                  
+                        </tbody>
+                </table>
+                        
+                      </td>
+            </tr>
+          </tbody>
+                </table>
+
+        </td>
+        </tr>
+        </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</td>

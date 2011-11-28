@@ -1,6 +1,6 @@
 <tr class="bgcolor4">                            
-  <td align="left" class="bgcolor4"><a class="det_link" href="<%= reseller_subscriptions_details_path(billing) %>"><%= billing.id %></a></td>                           
-  <td height="26" class="bgcolor4"><%= billing.plan.title %></td>
+  <td align="left" class="bgcolor4"><a class="det_link" href="<%= billing_order_details_path(billing) %>"><%= billing.id %></a></td>                           
+  <td height="26" class="bgcolor4"><%=  billing.subscription ? billing.subscription.name : billing.plan.title %></td>
   <td align="left" class="bgcolor4">
     <img src="/images/<%= billing.transaction_type %>" title="In Progress">
     <span class="Booting"><%= billing.transaction_type %></span>

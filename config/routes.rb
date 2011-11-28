@@ -43,6 +43,8 @@ Vhpanel::Application.routes.draw do
     match 'ssh/demo/:left' =>"reseller#ssh_demo",:as=>'ssh_demo',:defaults=>{:left=>1}
     match '/download/:left' =>"reseller#download",:as=>'reseller_download',:defaults=>{:left=>1}
     match 'billing/history/:left' =>"reseller#billing_history",:as=>'reseller_billing_history',:defaults=>{:left=>2}
+    match 'billing/order/details/:left/:id' =>"reseller#order_details",:as=>'billing_order_details',:defaults=>{:left=>2}
+    match 'billing/order/history/:left/:id' =>"reseller#order_history",:as=>'billing_order_history',:defaults=>{:left=>2}
     match 'billing/subscriptions/:left' =>"reseller#billing_subscriptions",:as=>'reseller_billing_subscriptions',:defaults=>{:left=>2}
     match 'subscription/:id/:left' =>"reseller#subscription_details",:as=>'reseller_subscriptions_details',:defaults=>{:left=>2}
 #    tickets

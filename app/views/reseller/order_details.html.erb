@@ -1,0 +1,185 @@
+<td valign="top" class="bgcolor2"><script language="javascript" type="text/javascript">
+  function ShowDiv(id1, id2)
+  { 
+    window.document.getElementById(id1).style.display = "block";
+    window.document.getElementById(id2).style.display = "none";
+    window.document.getElementById('divGSedit').style.display = "none";
+    if(id1=="divGS")
+      window.document.getElementById("trbtn").style.display = "block";
+    else
+      window.document.getElementById("trbtn").style.display = "none";	
+  }
+  </script>
+  <div style="height: 100%;" id="content">
+    <table width="100%" cellspacing="0" cellpadding="0" border="0">
+      <tbody>
+        <tr>
+          <td class="middle_top">
+            <table width="100%" cellspacing="0" cellpadding="0" border="0">
+              <tbody>
+                <tr>
+                  <td colspan="2">
+                    <span class="bodytext_1">
+                      <a class="bodylink" href="index.php?cid=4&amp;action=UVP">Home</a> 
+                      &gt; <a class="bodylink" href="index.php?cid=20&amp;action=BMG&amp;left=2">Billing Manager</a> 
+                      &gt; <a class="bodylink" href="index.php?cid=20&amp;action=BMH&amp;left=2">Billing History</a> 
+                      &gt; Order Details  
+                    </span>
+                  </td>
+                </tr>
+                <tr>
+                  <td width="4%">
+                    <img align="bottom" width="30" height="32" border="0" title="View VM" src="/images/Orders-Details_larg.png">
+                  </td>
+                  <td width="96%" valign="top" style="padding-top:2px">
+                    <span class="txt_big_red">Order #15</span>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <div id="gallery">
+      <a href="<%= billing_order_details_path(params[:id]) %>" class="offdiv">
+        <span>
+          <div title="Details" class="ondiv">
+            <span onclick="ShowDiv('divGS','divChangedate')">Order Details</span>
+          </div>          
+        </span>
+      </a>
+      <a href="<%= billing_order_history_path(params[:id]) %>" class="ondiv">
+        <div title="Payment History" class="offdiv">
+          <span onclick="ShowDiv('divRes','divEditRes')">Payment History</span>
+        </div> 
+      </a>
+    </div>
+    <div class="show" style="height: 100%;" id="Details">
+      <div id="divGS">
+        <table width="60%" cellspacing="1" cellpadding="0" border="0" class="bgcolor3">
+          <tbody>
+            <tr>
+              <td align="left" width="27%" class="cate_listing_head">Subscription</td>
+              <td align="right" width="73%" height="26" class="bgcolor4">
+                <a href="<%= @order_details.subscription ? reseller_subscriptions_details_path(@order_details.subscription):"#" %>" class="det_link">
+                  #<%=  @order_details.subscription ? @order_details.subscription.id : @order_details.id %>
+                </a>
+                &nbsp;&nbsp;
+              </td>
+            </tr>
+            <!-- <tr><td class="cate_listing_head" width="27%" align="left">Document Number</td>
+            <td class="bgcolor4" align="right" height="26">15</td>
+            </tr> -->
+            <tr>
+              <td align="left" width="27%" class="cate_listing_head">Document date</td>
+              <td align="right" height="26" class="bgcolor4"><%= @order_details.created_at %></td>
+            </tr>
+            <tr>
+              <td align="left" width="27%" class="cate_listing_head">Status</td>
+              <td align="right" height="26" class="bgcolor4">
+                <img src="/images/<%= @order_details.status_image %>" title="In Progress">
+                <span class="Stopped"> 
+                </span>
+              </td>
+            </tr>
+            <tr>
+              <td align="left" width="27%" class="cate_listing_head">Total</td>
+              <td align="right" height="26" class="bgcolor4">$<%= @order_details.amount_credited %></td>
+            </tr>										
+            <tr>
+              <td align="left" width="27%" class="cate_listing_head">Comment
+              </td>
+              <td align="right" height="26" class="bgcolor4">Subscription renewal on </td>
+            </tr>
+          </tbody>
+        </table>
+        <div style="height:10">
+          &nbsp;
+        </div>
+        <div align="center" id="chldpar2">
+          <table align="left" width="60%" cellspacing="1" cellpadding="0" border="0" class="bgcolor3">
+            <tbody>
+              <tr>
+                <td align="left" width="33%" class="cate_listing">
+                  <a class="cate_listing" href="">Item</a> 
+                </td>
+                <td width="23%" class="cate_listing">
+                  <a class="cate_listing" href="">Unit Price</a> 
+                </td>
+                <td align="left" width="25%" class="cate_listing">
+                  <a class="cate_listing" href="">Time Interval</a>  
+                </td>
+                <td align="left" width="19%" class="cate_listing">
+                  <a class="cate_listing" href="">Total</a> 
+                </td>  							  
+              </tr>
+              <tr class="bgcolor4">                            
+                <td align="left" class="bgcolor4"> <%= @order_details.plan.title %> hosting plan subscription fee</td>                           
+                <td height="26" class="bgcolor4_center">$<%= @order_details.amount_credited %></td>                                          
+                <td align="center" class="bgcolor4">6 month(s)</td>
+                <td align="center" class="bgcolor4">$<%= @order_details.amount_credited %></td>
+              </tr>
+              <tr>
+                <td align="center" class="bgcolor4" colspan="3">Total</td>
+                <td align="center" width="10%" class="bgcolor4"><%= @total %></td>
+              </tr>
+              <tr style="display:none">
+                <td align="center" height="50" bgcolor="#FFFFFF" class="no_record" colspan="8"> </td>
+              </tr>
+            </tbody>
+          </table>
+          <br>
+        </div>
+        <div style="display: none;" id="divGSedit"> 
+        </div>
+        <div style="display: none;" id="divChangeAcc">
+        </div>
+        <div style="display: none;" id="divChangedate">
+        </div>
+        <br>
+      </div>
+      <div class="hide" style="height: 100%;" id="Payment History">
+        <div id="divRes">
+        </div>
+        <div style="display: none;" id="divEditRes">
+        </div>
+      </div>
+      <div class="hide" style="height: 100%;" id="Orders">
+        <div id="divOr">										
+        </div>
+        <div style="display: none;" id="divOrEdit">										
+        </div>
+      </div>
+      <table width="60%" cellspacing="0" cellpadding="0" border="0">
+        <tbody>
+          <tr>
+            <td>&nbsp;</td>
+          </tr>
+          <tr id="trbtn">
+            <td valign="middle">
+              <table width="100%">
+                <tbody>
+                  <tr>
+                    <td width="20%">
+                      <!--<input type="button" value="Cancel" class="button"  name="btnordcancel" onclick="javascript:window.document.location='index.php?cid=20&action=BMH&left=2';" width="64" height="25" border="0" id="btnordcancel" />-->
+                      <input width="64" type="button" height="25" border="0" id="btnordcancel" onclick="javascript:window.document.location='index.php?cid=20&amp;action=BMH&amp;left=2';" name="btnordcancel" class="button" value="Cancel">
+                    </td>
+                    <td align="center" width="18%"> <!--<a class="det_link" href="../client/exportpdf.php?rptFormat=P&id=15&uplnid=15">Download PDF</a>-->
+                      <input width="100%" type="button" height="25" border="0" id="btnordpdf" onclick="history.go(-1)" name="btnordpdf" class="button_big" value="Download Pdf">
+                    </td>
+                    <td align="right" width="25%">
+                      <form method="post" name="frmorder" id="frmorder">
+                        <input type="button" height="25" border="0" id="btnprint" onclick="window_printopen('../reseller/exportpdf.php?rptFormat=Print&amp;id=15&amp;uplnid=15');" name="btnprint" value="Show for Printing" style="display:block" class="button_big">
+                      </form>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</td>
