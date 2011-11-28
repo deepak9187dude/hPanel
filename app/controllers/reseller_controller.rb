@@ -336,7 +336,7 @@ class ResellerController < ApplicationController
     @total = @order_details.amount_credited
   end
   def order_history
-    @order_history = InvoiceDetail.find(params[:id])
+    @order_history = InvoiceDetail.find_all_by_id(params[:id])
   end
   
   def support_tickets

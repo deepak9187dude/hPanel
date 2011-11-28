@@ -92,18 +92,27 @@
                                                   </label>
                                                 </td>
                                                 <td width="14%" class="bodytext">Document Type<br>
-                                                  <select id="cmbtype" name="cmbtype">											
+                                                  <select id="cmbtype" name="cmbtype">									
                                                     <option value="All">All</option>
-                                                    <option value="Renew">Renew</option><option value="Purchase">Purchase</option><option value="Upgrade">Upgrade</option><option value="Refund">Refund</option>
+                                                    <option value="Renew">Renew</option>
+                                                    <option value="Purchase">Purchase</option>
+                                                    <option value="Upgrade">Upgrade</option>
+                                                    <option value="Refund">Refund</option>
                                                   </select>
                                                   <input type="hidden" value="" name="hidid" id="hidid">
                                                 </td>							
                                                 <td width="4%">
-                                                  <input width="31" type="image" height="33" name="go" id="go" title="Search" src="../asset/images/icon_search.gif"></td>
+                                                  <input width="31" type="image" height="33" name="go" id="go" title="Search" src="/images/icon_search.gif"></td>
                                                 <td width="5%" valign="bottom" class="bodytext">Show</td>
                                                 <td width="68%" valign="bottom" class="bodytext">
                                                   <select onchange="document.frmsearch.submit()" id="limit" class="limit" name="limit">
-                                                    <option value="5">5</option><option value="10">10</option><option selected="" value="20">20</option><option value="40">40</option><option value="80">80</option><option value="160">160</option><option value="320">320</option>
+                                                    <option value="5">5</option>
+                                                    <option value="10">10</option>
+                                                    <option selected="" value="20">20</option>
+                                                    <option value="40">40</option>
+                                                    <option value="80">80</option>
+                                                    <option value="160">160</option>
+                                                    <option value="320">320</option>
                                                   </select>
                                                 </td>
                                               </tr>
@@ -125,7 +134,7 @@
                                     <td align="right" valign="middle" colspan="8"> 
                                       &nbsp;
                                       <a href="downloadxls.php?key=PH" class="det_link">
-                                        <img title="Export to Excel" src="../asset/images/excel.jpg">
+                                        <img title="Export to Excel" src="/images/excel.jpg">
                                       </a>
                                     </td>
                                   </tr>
@@ -140,24 +149,19 @@
                                   <tbody>
                                     <tr>
                                       <td align="left" width="10%" class="cate_listing">
-                                        <a class="cate_listing" href="index.php?cid=20&amp;id=&amp;left=2&amp;action=BPH&amp;orderby=id&amp;sort=ASC&amp;searchfield= &amp;searchval=">ID</a>   
+                                        <a class="cate_listing" href="">ID</a>   
                                       </td>
                                       <td width="15%" class="cate_listing">
-                                        <a class="cate_listing" href="index.php?cid=20&amp;id=&amp;left=2&amp;action=BPH&amp;orderby=type&amp;sort=ASC&amp;searchfield= &amp;searchval=">Document Type</a>  
+                                        <a class="cate_listing" href="">Document Type</a>  
                                       </td>
                                       <td align="left" width="14%" class="cate_listing">
-                                        <a class="cate_listing" href="index.php?cid=20&amp;id=&amp;left=2&amp;action=BPH&amp;orderby=docdate&amp;sort=ASC&amp;searchfield= &amp;searchval=">Doc. Date</a> 
+                                        <a class="cate_listing" href="">Doc. Date</a> 
                                       </td>
                                       <td align="left" width="14%" class="cate_listing">
-                                        <a class="cate_listing" href="index.php?cid=20&amp;id=&amp;left=2&amp;action=BPH&amp;orderby=total&amp;sort=ASC&amp;searchfield= &amp;searchval=">Amount</a> 
+                                        <a class="cate_listing" href="">Amount</a> 
                                       </td>
                                     </tr>
-                                    <tr class="bgcolor4">                            
-                                      <td align="left" class="bgcolor4">15</td>                           
-                                      <td height="26" class="bgcolor4">Purchase</td>                                          
-                                      <td align="center" class="bgcolor4">21-Nov-2011</td>
-                                      <td align="center" class="bgcolor4">14.99</td>							 
-                                    </tr>
+                                    <%= render :partial=>"order_history",:collection=>@order_history %>
                                     <tr style="display:none">
                                       <td align="center" height="50" bgcolor="#FFFFFF" class="no_record" colspan="8"> </td>
                                     </tr>
@@ -179,9 +183,9 @@
                                             <td width="233"></td>
                                           </tr>
                                         </tbody>
-                                      </table></td>
-                                    <td align="right" width="30%">
-                                      
+                                      </table>                                      
+                                    </td>
+                                    <td align="right" width="30%">                                      
                                     </td>
                                   </tr>
                                 </tbody>
