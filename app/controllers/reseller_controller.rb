@@ -234,7 +234,7 @@ class ResellerController < ApplicationController
                    invoice.gateway_trans_type = 'Sale'
                    invoice.gateway_trans_time = Time.now
                    invoice.pay_success_date = Time.now
-                   invoice.pay_mode = 'Bluepay'
+                   invoice.pay_mode = 1 #'Bluepay'
                    invoice.payment_status = 'Approved'
                    subscription.status = "Approved"
 #                   subscription.end_date
@@ -285,21 +285,60 @@ class ResellerController < ApplicationController
           return
       end
       @address = details_response.address
+      session[:address] = @address
       #     render :text=> details_response.to_json
   end
 
    def complete
-     purchase = gateway.purchase(session[:amount].to_i,
-       :ip       => request.remote_ip,
-       :payer_id => params[:payer_id],
-       :token    => params[:token]
-     ) if session[:amount]
+       plan = Plan.find(session[:plan_id]) if session[:plan_id]
+        if  session[:plan_type] and plan
+            billing_plan = plan.plan_billing_rate
+            plan_billing_rate = billing_plan.current_plan_price(session[:plan_type].to_s) 
+        end
+        
+        @ccdata = Ccdata.new
+        @address = session[:address] if session[:address]
+        if @addressthen
+           @ccdata.address = @address.address1
+           @ccdata.address2 = @address.address2 
+           @ccdata.city = @address.city
+           @ccdata.state = @address.state
+           @ccdata.country = @address.country
+           @ccdata.postal_code = @address.zip
+           @ccdata.save
+        end
+         purchase = gateway.purchase(session[:amount].to_i,
+           :ip       => request.remote_ip,
+           :payer_id => params[:payer_id],
+           :token    => params[:token]
+         ) if session[:amount]
      
-     if !purchase.success?
-       @message = purchase.message
-       render :action => 'error'
-       return
-     end
+         if !purchase.success?
+           @message = purchase.message
+           render :action => 'error'
+           return
+         end
+    
+        invoice = InvoiceDetail.new
+        invoice.user_id = @current_user.id
+        subscription = plan.subscriptions.new
+        subscription.name = plan.title
+        subscription.user_id = @current_user.id
+        invoice.plan_id = plan.id
+        invoice.cc_id = @ccdata.id
+        invoice.transaction_type = 'Sale'     
+        invoice.payment_date = Time.now          
+        invoice.amount_credited = plan_billing_rate   
+      #  invoice.cc_trans_id = bpApi.get_trans_id().to_s
+        invoice.gateway_pay_status = "Approved"
+        invoice.gateway_trans_type = 'Sale'
+        invoice.gateway_trans_time = Time.now
+        invoice.pay_success_date = Time.now
+        invoice.pay_mode = 2 #'paypal'
+        invoice.payment_status = 'Approved'
+        subscription.status = "Approved"
+        invoice.save
+        subscription.save
    end
 
  private
