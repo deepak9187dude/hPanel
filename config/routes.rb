@@ -46,6 +46,7 @@ Vhpanel::Application.routes.draw do
     match 'billing/order/details/:left/:id' =>"reseller#order_details",:as=>'billing_order_details',:defaults=>{:left=>2}
     match 'billing/order/history/:left/:id' =>"reseller#order_history",:as=>'billing_order_history',:defaults=>{:left=>2}
     match 'billing/subscriptions/:left' =>"reseller#billing_subscriptions",:as=>'reseller_billing_subscriptions',:defaults=>{:left=>2}
+    match 'billing/termination/:left' =>"reseller#billing_termination",:as=>'reseller_billing_termination',:defaults=>{:left=>2}
     match 'subscription/:id/:left' =>"reseller#subscription_details",:as=>'reseller_subscriptions_details',:defaults=>{:left=>2}
     
     

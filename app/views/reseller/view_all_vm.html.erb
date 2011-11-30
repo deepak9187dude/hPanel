@@ -224,7 +224,7 @@ you want between page reloads: 1 minute = 60000 milliseconds. */
                                 <td align="center" height="50" bgcolor="#FFFFFF" class="no_record" colspan="8">VM are not available</td>
                               </tr>
                               <% else %>
-                                <%= render :partial=>'vm' %>
+                                <%= render :partial=>'vm',:collection => @vms %>
                               <% end %>
                             </tbody>
                           </table>

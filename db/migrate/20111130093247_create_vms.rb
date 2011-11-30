@@ -4,7 +4,7 @@ class CreateVms < ActiveRecord::Migration
       t.integer   :server_id
       t.integer   :ip_id
       t.integer   :user_id
-      t.integer   :invoice_details_id
+      t.integer   :invoice_detail_id
       t.string    :name
       t.string    :display_name
       t.string    :template
@@ -21,7 +21,7 @@ class CreateVms < ActiveRecord::Migration
       t.integer   :cpu_units
       t.string    :contact_email
       t.string    :status
-      t.string    :type
+      t.string    :vm_type
       t.string    :creation_status
       t.timestamps
     end

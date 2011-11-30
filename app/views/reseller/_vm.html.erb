@@ -1,1 +1,56 @@
-bing
+<tr class="bgcolor4">
+  <td align="center" height="26">
+    <input type="checkbox" value="1" id="chkdel" name="chkdel[]">
+  </td>
+  <td align="left" class="bgcolor4">
+    <a class="det_link" href="index.php?cid=11&amp;action=UVT&amp;vmid=1&amp;left=1"><%= vm.id %></a>
+  </td>
+  <td align="left" class="bgcolor4">
+    <a class="det_link" href="index.php?cid=11&amp;action=UVT&amp;vmid=1&amp;left=1"><%= vm.name %></a>
+  </td>
+  <td height="26" class="bgcolor4">
+    <img align="absmiddle" width="16" height="16" title="OpenVZ" src="/images/oenvz_sm.png"> &nbsp;<%= vm.vm_type %>
+  </td>
+  <td align="left" class="bgcolor4">
+    <%= vm.ip_id %>
+  </td>
+  <td align="center" class="bgcolor4">
+    <%= vm.server_id %>
+  </td>
+  <td align="center" class="bgcolor4">
+    <img title="Stopped" src="/images/offline.png"><span class="Stopped"><%= vm.status %></span>
+  </td>
+  <td align="center" height="26" class="bgcolor4_center">
+    <table align="center" width="150" cellspacing="6" cellpadding="0" border="0">
+      <tbody>
+        <tr>
+          <td align="center">
+            <a style="cursor:pointer" onclick="if(chk_vm_confirm('DELETE','VM','Stopped')!=false) { funshowchild('index.php?cid=11&amp;action=UVD&amp;vmid=1&amp;left=1',this.value,'chldpar2','index.php?cid=11&amp;action=UVL&amp;left=1')};">
+              <img width="18" height="16" border="0" title="Delete" src="/images/icon_delete.gif">
+            </a>
+          </td>
+          <td align="center">
+            <a href="index.php?cid=11&amp;action=UVR&amp;vmid=1&amp;left=1">
+              <img width="16" height="20" border="0" title="Reset Password" src="/images/reset_password.png">
+            </a>
+          </td>
+          <td align="center">
+            <a style="cursor:pointer " onclick="if(chk_vm_confirm('BOOT','VM','Stopped')!=false) funshowchild('index.php?cid=11&amp;action=UVB&amp;vmid=1&amp;left=1',this.value,'chldpar2','index.php?cid=11&amp;action=UVL');">
+              <img width="18" height="16" border="0" title="Boot" src="/images//icon_boot.png">
+            </a>
+          </td>
+          <td align="center">
+            <a style="cursor:pointer " onclick="if(chk_vm_shutdown('SHUTDOWN','VM','Stopped')!=false) funshowchild('index.php?cid=11&amp;action=UVH&amp;vmid=1&amp;left=1',this.value,'chldpar2','index.php?cid=11&amp;action=UVL');">
+              <img width="18" height="16" border="0" title="Shut Down" src="/images/icon_shut_down.png">
+            </a>
+          </td>
+          <td align="center">
+            <a style="cursor:pointer " onclick="if(chk_vm_reboot('REBOOT','VM','Stopped')!=false) funshowchild('index.php?cid=11&amp;action=UVS&amp;vmid=1&amp;left=2',this.value,'chldpar2','index.php?cid=11&amp;action=UVL');">
+              <img width="18" height="16" border="0" title="Reboot" src="/images/icon_reboot.png">
+            </a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </td>
+</tr>
