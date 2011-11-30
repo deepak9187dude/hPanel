@@ -89,6 +89,17 @@ class ResellerController < ApplicationController
   def view_all_vm
     @vms = @current_user.vms
   end
+  def del_vm
+    
+  end
+  
+  def billing_termination
+    
+  end
+  def payment_methods
+    
+  end
+  
   def licence_upgrade
     @plans = Plan.find(:all)
     @plan_rows = Array.new
