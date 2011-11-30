@@ -1,0 +1,289 @@
+<td valign="top" class="bgcolor2"><script language="javascript" type="text/javascript">
+  function reFresh() {	
+    location.reload(true)
+    /* Set the number below to the amount of delay, in milliseconds,
+you want between page reloads: 1 minute = 60000 milliseconds. */  
+  }
+  window.setInterval("reFresh()",300000);
+  </script>
+  <table width="100%" cellspacing="0" cellpadding="0" border="0">
+    <tbody>
+      <tr>
+        <td class="middle_top">
+          <table width="100%" cellspacing="0" cellpadding="0" border="0">
+            <tbody>
+              <tr>
+                <td colspan="2">
+                  <span class="bodytext_1">
+                    <a class="bodylink" href="index.php?cid=4&amp;action=UVP">Home</a>
+                    &gt; <a class="bodylink" href="index.php?cid=11&amp;action=UVL&amp;left=1">VM Manager</a>
+                    &gt; VMs
+                  </span>
+                </td>
+              </tr>
+              <tr>
+                <td width="4%">
+                  <img align="bottom" width="30" height="32" border="0" title="View VM" src="/images/icon_view_vm_big.png">
+                </td>
+                <td width="96%" valign="top" style="padding-top:2px">
+                  <span class="txt_big_red">VM Manager</span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <td style="padding:10px;">
+          <table width="100%" cellspacing="0" cellpadding="0" border="0">
+            <tbody>
+              <tr>
+                <td>
+                  <table width="100%" cellspacing="0" cellpadding="0" border="0">
+                    <tbody>
+                      <tr>
+                        <td>
+                          <table width="100%" cellspacing="0" cellpadding="0" border="0">
+                            <tbody>
+                              <tr>
+                                <td>
+                                  <table width="100%" cellspacing="0" cellpadding="0" border="0">
+                                    <tbody>
+                                      <tr>
+                                        <td width="7%">
+                                          <span class="bodytext">Actions</span>
+                                        </td>
+                                        <td width="93%" class="line_bg">&nbsp;</td>
+                                      </tr>
+                                    </tbody>
+                                  </table>                                  
+                                </td>
+                              </tr>
+                              <tr>
+                                <td class="btm_border">
+                                  <table width="160" cellspacing="0" cellpadding="0" border="0">
+                                    <tbody>
+                                      <tr>
+                                        <td align="center">
+                                          <table width="100%" cellspacing="1" cellpadding="1" border="0">
+                                            <tbody>
+                                              <tr>
+                                                <td align="center" height="30">
+                                                  <a href="#">
+                                                    <input align="absmiddle" width="26" type="image" height="29" border="0" onclick="if(chkdel(document.frmvm,'DELETE','Selected VM')!=false) { document.frmvm.action ='index.php?cid=11&amp;action=UVD&amp;left=1'; document.frmvm.submit();}" name="vmdel" title="Delete VM" src="/images/icon_delete_big.gif">
+                                                  </a>
+                                                </td>
+                                              </tr>
+                                              <tr>
+                                                <td align="center" valign="top" height="20"><a onclick="if(chkdel(document.frmvm,'DELETE','Selected VM')!=false) { document.frmvm.action ='index.php?cid=11&amp;action=UVD&amp;left=1'; document.frmvm.submit();}" class="sm_heading" href="#">Delete </a></td>
+                                              </tr>
+                                            </tbody>
+                                          </table>
+                                        </td>
+                                        <td align="center">
+                                          <table width="100%" cellspacing="1" cellpadding="1" border="0">
+                                            <tbody>
+                                              <tr>
+                                                <td align="center" height="30">
+                                                  <a href="">
+                                                    <img align="absmiddle" width="27" height="24" border="0" title="Refresh" src="/images/icon_refresh.gif">
+                                                  </a>
+                                                </td>
+                                              </tr>
+                                              <tr>
+                                                <td align="center" valign="top" height="20">
+                                                  <a class="sm_heading" href="">Refresh</a>
+                                                </td>
+                                              </tr>
+                                            </tbody>
+                                          </table>
+                                        </td>
+                                      </tr>
+                                    </tbody>
+                                  </table>
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <table width="100%" cellspacing="0" cellpadding="0" border="0">
+                    <tbody>
+                      <tr>
+                        <td class="tdgap">
+                          <table width="100%" cellspacing="0" cellpadding="0" border="0">
+                            <tbody>
+                              <tr class="cate_listing_head">
+                                <td valign="middle">&nbsp; VM Search</td>
+                                <td align="center" width="3%" valign="middle">
+                                  <img align="bottom" onclick="javascript:ShowHideHR('S33');" src="/images/search_show.png" id="imgS33">
+                                </td>
+                              </tr>
+                              <tr id="trS33">
+                                <td width="95%">
+                                  <form id="frmsearch" method="post" action="index.php?cid=11&amp;action=UVL&amp;left=1" name="frmsearch">
+                                    <table width="50%" cellspacing="2" cellpadding="2" border="0">
+                                      <tbody>
+                                        <tr>
+                                          <td width="24%" class="bodytext">SEARCH BY</td>
+                                          <td width="38%">
+                                            <label>
+                                              <select id="cmbsearch" class="txtdrop" name="cmbsearch">
+                                                <option value="">-Search by-</option>
+                                                <option value="vm_name">VM ID</option>
+                                                <option value="vm_display_name">VM Name</option>
+                                                <option value="server_type">OS Type</option>
+                                                <option value="server_hostname">Server</option>
+                                              </select>
+                                            </label>
+                                          </td>
+                                          <td width="28%">
+                                            <label>
+                                              <input type="text" value=" " id="txtsearch" class="txtfield" name="txtsearch">
+                                            </label>
+                                          </td>
+                                          <td width="5%">
+                                            <input width="31" type="image" height="33" name="go" id="go" title="Search" src="/images/icon_search.gif">
+                                          </td>
+                                          <td width="5%" valign="middle" class="bodytext">Show</td>
+                                          <td width="10%" valign="middle" class="bodytext">
+                                            <select onchange="document.frmsearch.submit()" id="limit" class="limit" name="limit">
+                                              <option value="5">5</option>
+                                              <option selected="" value="10">10</option>
+                                              <option value="20">20</option>
+                                              <option value="40">40</option>
+                                              <option value="80">80</option>
+                                              <option value="160">160</option>
+                                              <option value="320">320</option>
+                                            </select>
+                                          </td>
+                                        </tr>
+                                      </tbody>
+                                    </table>
+                                  </form>
+                                </td>
+                                <td width="5%" valign="bottom" class="bodytext">&nbsp;</td>
+                              </tr>
+                            </tbody>
+                          </table>                          
+                        </td>
+                      </tr>
+                    <form action="index.php?cid=11&amp;action=UVD" method="post" name="frmvm" id="frmvm"></form>
+                    <tr>
+                      <td>
+                        <table align="left" width="100%" cellspacing="0" cellpadding="0" border="0">
+                          <tbody>
+                            <tr>
+                              <td align="right" valign="middle"> &nbsp;
+                                <a href="csv_download.php?id=VM&amp;searchfield=&amp;searchval= " class="det_link">
+                                  <img title="Export to Excel" src="/images/excel.jpg">
+                                </a>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div align="center" id="chldpar2">
+                          <table align="left" width="100%" cellspacing="1" cellpadding="0" border="0" class="bgcolor3">
+                            <tbody>
+                              <tr>
+                                <td align="center" width="2%" class="cate_listing_head">
+                                  <input type="checkbox" onclick="javascript:selectall(checked, document.frmvm, 'chkdel[]')" id="checkbox" name="checkbox">
+                                </td>
+                                <td align="left" width="11%" class="cate_listing">
+                                  <a class="cate_listing" href="index.php?cid=11&amp;action=UVL&amp;orderby=vm_name&amp;sort=ASC&amp;searchfield=&amp;searchval= &amp;left=1">VM ID</a>  
+                                </td>
+                                <td align="left" width="15%" class="cate_listing">
+                                  <a class="cate_listing" href="index.php?cid=11&amp;action=UVL&amp;orderby=vm_display_name&amp;sort=ASC&amp;searchfield=&amp;searchval= &amp;left=1">VM Name</a> 
+                                </td>
+                                <td width="11%" class="cate_listing">
+                                  <a class="cate_listing" href="index.php?cid=11&amp;action=UVL&amp;orderby=type&amp;sort=ASC&amp;searchfield=&amp;searchval= &amp;left=1">Os Type</a> 
+                                </td>
+                                <td align="left" width="16%" class="cate_listing">
+                                  <a class="cate_listing" href="index.php?cid=11&amp;action=UVL&amp;orderby=vm_ip_id&amp;sort=ASC&amp;searchfield=&amp;searchval= &amp;left=1">IP</a>
+                                </td>
+                                <td width="14%" class="cate_listing">
+                                  <a class="cate_listing" href="index.php?cid=11&amp;action=UVL&amp;orderby=server_name&amp;sort=ASC&amp;searchfield=&amp;searchval= &amp;left=1">Server</a>
+                                </td>
+                                <td align="left" width="15%" class="cate_listing">
+                                  <a class="cate_listing" href="index.php?cid=11&amp;action=UVL&amp;orderby=vm_status&amp;sort=ASC&amp;searchfield=&amp;searchval= &amp;left=1">Status</a>  
+                                </td>
+                                <td width="16%" class="cate_listing">Actions</td>
+                              </tr>
+                              <% if @vms.empty? %>
+                              <tr style="display:table-row">
+                                <td align="center" height="50" bgcolor="#FFFFFF" class="no_record" colspan="8">VM are not available</td>
+                              </tr>
+                              <% else %>
+                                <%= render :partial=>'vm' %>
+                              <% end %>
+                            </tbody>
+                          </table>
+                        </div>                        
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="bodytext">
+                        <table width="100%" cellspacing="1" cellpadding="1" border="0">
+                          <tbody>
+                            <tr>
+                              <td width="50%">
+                                <table align="left" width="500" cellspacing="0" cellpadding="0" border="0">
+                                  <tbody>
+                                    <tr align="left" valign="middle">
+                                      <td width="74">
+                                        <img align="absmiddle" width="18" height="16" border="0" title="Delete" src="/images/icon_delete.gif">&nbsp;Delete
+                                      </td>
+                                      <td width="100">
+                                        <img align="absmiddle" width="16" height="20" border="0" title="Reset Password" src="/images/reset_password.png">&nbsp;Reset Password
+                                      </td>
+                                      <td width="23">
+                                        <img align="absmiddle" width="18" height="16" border="0" title="Boot" src="/images/icon_boot.png">&nbsp;
+                                      </td>
+                                      <td width="37">
+                                        Boot
+                                      </td>
+                                      <td width="24">
+                                        <img align="absmiddle" width="18" height="16" border="0" title="Shut Down" src="/images/icon_shut_down.png">
+                                      </td>
+                                      <td width="69">
+                                        Shut Down
+                                      </td>
+                                      <td width="24">
+                                        <img align="absmiddle" width="18" height="16" border="0" title="Reboot" src="/images/icon_reboot.png">
+                                        &nbsp;
+                                      </td>
+                                      <td width="61">Reboot</td>
+                                    </tr>
+                                  </tbody>
+                                </table>                                
+                              </td>
+                              <td align="right" width="46%"></td>
+                            </tr>
+                          </tbody>
+                        </table>                        
+                      </td>
+                    </tr>
+            </tbody>
+          </table>
+                  
+                </td>
+      </tr>
+    </tbody>
+          </table>
+
+</td>
+</tr>
+</tbody>
+  </table>
+  
+</td>

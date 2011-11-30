@@ -67,20 +67,28 @@ class ResellerController < ApplicationController
   
   def new_password
     @user = User.find(session[:user_id])
-    if params[:resetpassword] && params[:password]==params[:re_password]
-      @user.password = params[:password]
-      @user.save
-      flash[:info_msg] = "password updated successfully"
-      redirect_to reseller_update_password_path
+    if params[:old_password]==@user.password
+      if params[:resetpassword] && params[:password]==params[:re_password]
+        @user.password = params[:password]
+        @user.save
+        flash[:info_msg] = "password updated successfully"
+        redirect_to reseller_update_password_path
+      else
+        flash[:error_msg] = "password no not match"
+        redirect_to reseller_update_password_path
+      end
     else
-      flash[:error_msg] = "password no not match"
+      flash[:error_msg] = "Incorrect old password"
       redirect_to reseller_update_password_path
     end
+        
   end
 
   def plan_summary
   end
-
+  def view_all_vm
+    @vms = @current_user.vms
+  end
   def licence_upgrade
     @plans = Plan.find(:all)
     @plan_rows = Array.new

@@ -97,6 +97,14 @@
                                                   </span>
                                                 </td>
                                               </tr>
+                                              <tr>
+                                                <td>
+                                                  <%= image_tag("icon_hosting_plan_tn.png",:width=>16,:height=>20,:title=>"Edit Profile")  %>
+                                                  <span class="left_nav">
+                                                    <%= link_to "Edit Profile",reseller_edit_path %>
+                                                  </span>
+                                                </td>
+                                              </tr>
                                               <!--<tr>
                                                    <td class="cate_border"><img src="../asset/images/icon_edit_client.png" title="Edit Profile" width="16" height="20" /><span class="left_nav"><a href="index.php?cid=4&action=UEP&left=0">Edit Profile</a></span></td>                              </tr>
                                                  <tr>-->
@@ -111,51 +119,51 @@
                                                   </span>
                                                 </td>      
                                               </tr>
-                                              <tr>
-                                                <td>
-                                                  <%= image_tag("icon_hosting_plan_tn.png",:width=>16,:height=>20,:title=>"Plan Summary")  %>
-                                                  <span class="left_nav">
-                                                    <%= link_to "Plan Summary",plan_summary_path %>
-                                                  </span>
-                                                </td>
-                                              </tr>
                                             </table>
                                           </div>
-                                          <h1 class="accordion_toggle">LICENSE MANAGER</h1>
+                                          <h1 class="accordion_toggle">VM MANAGER</h1>
                                           <div id="content_width" class="accordion_content">
                                             <table width="90%" border="0" cellspacing="0" cellpadding="0">
+                                              <%#*<tr>%>
+                                                <%#*<td class="cate_border">%>
+                                                  <%#= image_tag("icon_hosting_plan_tn.png",:width=>16,:height=>20,:title=>"Upgrade License")  %>
+                                                  <%#*<span class="left_nav">%>
+                                                    <%#= link_to "Upgrade Licence", reseller_licence_upgrade_path %>
+                                                  <%#*</span>%>
+                                                <%#*</td>%>
+                                              <%#*</tr>%>
+                                              <%#*<tr>%>
+                                                <%#*<td class="cate_border">%>
+                                                  <%#= image_tag("icon_license_s.png",:width=>16,:height=>20,:title=>"View License Code")  %>
+                                                  <%#*<span class="left_nav">%>
+                                                    <%#= link_to("View Licence Code",reseller_licence_code_path) %>
+                                                  <%#*</span>%>
+                                                <%#*</td>%>
+                                              <%#*</tr>%>
+                                              <%#*<tr>%>
+                                                <%#*<td class="cate_border">%>
+                                                  <%#= image_tag("icon_hosting_plan_tn.png",:width=>16,:height=>20,:title=>"Download")  %>
+                                                  <%#*<span class="left_nav">%>
+                                                    <%#= link_to("Download",reseller_download_path) %>
+                                                  <%#*</span>%>
+                                                <%#*</td>%>
+                                              <%#*</tr>%>
+                                              <%#*<tr>%>
+                                                <%#*<td class="cate_border">%>
+                                                  <%#= image_tag("icon_hosting_plan_tn.png",:width=>16,:height=>20,:title=>"Download")  %>
+                                                  <%#*<span class="left_nav">%>
+                                                    <%#= link_to("ssh",ssh_demo_path) %>
+                                                  <%#*</span>%>
+                                                <%#*</td>%>
+                                              <%#*</tr>%>                                              
                                               <tr>
                                                 <td class="cate_border">
-                                                  <%= image_tag("icon_hosting_plan_tn.png",:width=>16,:height=>20,:title=>"Upgrade License")  %>
+                                                  <%= image_tag("icon_view_vm.png",:width=>16,:height=>20,:title=>"View VM")  %>
                                                   <span class="left_nav">
-                                                    <%= link_to "Upgrade Licence", reseller_licence_upgrade_path %>
+                                                    <%= link_to "View All VM", vm_path %>
                                                   </span>
                                                 </td>
                                               </tr>
-                                              <tr>
-                                                <td class="cate_border">
-                                                  <%= image_tag("icon_license_s.png",:width=>16,:height=>20,:title=>"View License Code")  %>
-                                                  <span class="left_nav">
-                                                    <%= link_to("View Licence Code",reseller_licence_code_path) %>
-                                                  </span>
-                                                </td>
-                                              </tr>
-                                              <tr>
-                                                <td class="cate_border">
-                                                  <%= image_tag("icon_hosting_plan_tn.png",:width=>16,:height=>20,:title=>"Download")  %>
-                                                  <span class="left_nav">
-                                                    <%= link_to("Download",reseller_download_path) %>
-                                                  </span>
-                                                </td>
-                                              </tr>
-                                              <tr>
-                                                <td class="cate_border">
-                                                  <%= image_tag("icon_hosting_plan_tn.png",:width=>16,:height=>20,:title=>"Download")  %>
-                                                  <span class="left_nav">
-                                                    <%= link_to("ssh",ssh_demo_path) %>
-                                                  </span>
-                                                </td>
-                                              </tr>                                              
                                             </table>
                                           </div>
                                           <!--
