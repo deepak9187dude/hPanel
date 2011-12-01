@@ -1,0 +1,142 @@
+<td valign="top" class="bgcolor2">
+  <table width="100%" cellspacing="0" cellpadding="0" border="0">
+    <tbody>
+      <tr>
+        <td class="middle_top">
+          <table width="100%" cellspacing="0" cellpadding="0" border="0">
+            <tbody>
+              <tr>
+                <td colspan="2">
+                  <span class="bodytext_1">
+                    <a class="bodylink" href="index.php?cid=4&amp;action=UVP">Home</a> 
+                    &gt; <a class="bodylink" href="index.php?cid=11&amp;action=UVL&amp;left=1">VM Manager</a>
+                    &gt; <a class="bodylink" href="index.php?cid=11&amp;action=UVT&amp;vmid=0&amp;left=1"></a> 
+                    &gt; Services 
+                  </span>
+                </td>
+              </tr>
+              <tr>
+                <td width="46">
+                  <img align="bottom" width="30" height="32" border="0" title="Add Server" src="/images/icon_view_server_big.png">
+                </td>
+                <td width="1263" valign="top" style="padding-top:2px">
+                  <span class="txt_big_red">   - Services </span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <td style="padding:10px;">
+          <table width="100%" cellspacing="0" cellpadding="0" border="0">				
+            <tbody>
+              <tr>
+                <td class="btm_border">
+                  <table width="100%" cellspacing="0" cellpadding="0" border="0">
+                    <tbody>
+                      <tr>
+                        <td>
+                          <table width="100%" cellspacing="0" cellpadding="0" border="0">
+                            <tbody>
+                              <tr>
+                                <td width="7%"><span class="bodytext">Actions</span></td>
+                                <td width="93%" class="line_bg">&nbsp;</td>
+                              </tr>
+                            </tbody>
+                          </table>                          
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <table width="90" cellspacing="0" cellpadding="0" border="0">
+                            <tbody>
+                              <tr><!--
+                              <td align="center"><table width="100%"  border="0" cellspacing="1" cellpadding="1">
+                                <tr>
+                                  <td height="30" align="center"><a href="#">
+                                    <input type="image" src="/images/icon_delete_big.gif" title="Delete Server" width="26" height="29" border="0" align="absmiddle" name="serverdel"  onClick="if(chkdel(document.frmserver,'KILL','Selected Process')!=false)  { document.getElementById('action_type').value='KILL';document.frmserver.submit();}"/>
+                                  </a></td>
+                                </tr>
+                                <tr>
+                                  <td height="20" align="center"><a href="#" class="sm_heading"  onClick="if(chkdel(document.frmserver,'KILL','Selected Process')!=false) { document.getElementById('action_type').value='KILL';document.frmserver.submit();}">Delete</a></td>
+                                </tr>
+                              </table></td>-->    
+                                <td align="left">
+                                  <table width="100%" cellspacing="1" cellpadding="1" border="0">
+                                    <tbody>
+                                      <tr>
+                                        <td align="center" height="30">
+                                          <a href="index.php?cid=11&amp;action=USL&amp;vmid=0&amp;left=1">
+                                            <img align="absmiddle" width="30" height="29" border="0" title="Refresh" src="/images/icon_refresh.gif">
+                                          </a>
+                                        </td>
+                                      </tr>
+                                      <tr>
+                                        <td align="center" height="20">
+                                          <a class="sm_heading" href="index.php?cid=11&amp;action=USL&amp;vmid=0&amp;left=1">Refresh</a>
+                                        </td>
+                                      </tr>
+                                    </tbody>
+                                  </table>
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>                   
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div align="center" style="width:950px;" id="chldpar2">
+                    <table width="93%" cellspacing="0" cellpadding="0" border="0">
+                      <tbody>
+                        <tr>
+                          <td class="tdgap">&nbsp;</td>
+                        </tr>
+                      <form action="index.php?cid=16&amp;action=SPK&amp;sid=&amp;left=1" method="post" name="frmserver" id="frmserver"></form>
+                      <input type="hidden" id="action_type" name="action_type">
+                      <tr>
+                        <td align="left">
+                      <service_loop></service_loop>
+                      <table width="74%" cellspacing="1" cellpadding="0" border="0" class="bgcolor3">
+                        <tbody>
+                          <tr>
+                            <!--<td width="12%" class="cate_listing_head">Sb</td>-->
+                            <td width="12%" class="cate_listing_head">State</td>
+                            <!-- index.php?cid=16&action=SSL&list=1&sid=1&&orderby=service_name&left=1&sort=#SORT#-->
+                            <td width="53%" class="cate_listing_head">Name</td>
+                          </tr>
+                          <tr style="">
+                            <td align="left" height="50" bgcolor="#FFFFFF" class="no_record" colspan="5">#MESSAGE#</td>
+                          </tr>
+                        </tbody>
+                      </table>                      
+                    </td>
+                      </tr>
+                      <tr>
+                        <td class="bodytext">
+                          <table width="90%" cellspacing="1" cellpadding="1" border="0">
+                            <tbody>
+                              <tr>
+                                <td align="right"></td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </td>
+                      </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</td>

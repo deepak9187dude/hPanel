@@ -110,8 +110,22 @@ class ResellerController < ApplicationController
     @vm = Vm.find(params[:id])
   end
   
+  def vm_processes
+    @vm = Vm.find(params[:id])
+    @ps = `ps -eo pid,stat,pmem,user,command h`
+  end
+  
+  def vm_services
+    @vm = Vm.find(params[:id])
+  end
+  
+  def vm_ssh
+    @vm = Vm.find(params[:id])
+  end
+  
   def plan_summary
   end
+  
   def view_all_vm
     @vms = @current_user.vms
   end

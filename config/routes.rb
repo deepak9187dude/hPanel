@@ -60,6 +60,9 @@ Vhpanel::Application.routes.draw do
     match 'vm/:id/:left' =>"reseller#vm_details",:as=>'vm_details',:defaults=>{:left=>1}
     match 'vm/:id/password/:left' =>"reseller#vm_change_password",:as=>'vm_change_password',:defaults=>{:left=>1}
     match 'vm/:id/new/:left' =>"reseller#vm_new_password",:as=>'vm_new_password',:defaults=>{:left=>1}
+    match 'vm/:id/processes/:left' =>"reseller#vm_processes",:as=>'vm_processes',:defaults=>{:left=>1}
+    match 'vm/:id/services/:left' =>"reseller#vm_services",:as=>'vm_services',:defaults=>{:left=>1}
+    match 'vm/:id/ssh/:left' =>"reseller#vm_ssh",:as=>'vm_ssh',:defaults=>{:left=>1}
     
 #    tickets
     match 'support/:left' =>"reseller#support_tickets",:via => [:get,:post,:put],:as=>'reseller_all_support_tickets',:defaults=>{:left=>3}

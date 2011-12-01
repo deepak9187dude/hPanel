@@ -2,8 +2,7 @@
   function reFresh() {	
     location.reload(true)
     /* Set the number below to the amount of delay, in milliseconds,
-you want between page reloads: 1 minute = 60000 milliseconds. */  
-  }
+you want between page reloads: 1 minute = 60000 milliseconds. */    }
   window.setInterval("reFresh()",300000);
   </script>
   <table width="100%" cellspacing="0" cellpadding="0" border="0">
@@ -102,7 +101,7 @@ you want between page reloads: 1 minute = 60000 milliseconds. */
                                     <tbody>
                                       <tr>
                                         <td align="center" height="41">
-                                          <a href="index.php?cid=11&amp;action=UPR&amp;vmid=0&amp;left=1">
+                                          <a href="<%= vm_processes_path(@vm) %>">
                                             <img align="absmiddle" width="30" height="32" border="0" title="Processlist" src="/images/processlist.png">
                                           </a>
                                         </td>
@@ -110,7 +109,7 @@ you want between page reloads: 1 minute = 60000 milliseconds. */
                                       <tr>
                                         <!-- onClick="funshowchild('index.php?cid=17&action=VPR&vmid=0&left=2',this.value,'chldpar2','index.php?cid=17&action=VPR&vmid=0&left=2&list=1');"-->
                                         <td align="center" valign="top" height="20">
-                                          <a class="sm_heading" href="index.php?cid=11&amp;action=UPR&amp;vmid=0&amp;left=1">Processlist</a>
+                                          <a class="sm_heading" href="<%= vm_processes_path(@vm) %>">Processlist</a>
                                         </td>
                                       </tr>
                                     </tbody>
@@ -120,14 +119,14 @@ you want between page reloads: 1 minute = 60000 milliseconds. */
                                     <tbody>
                                       <tr>
                                         <td align="center" height="41">
-                                          <a href="index.php?cid=11&amp;action=USL&amp;vmid=0&amp;left=1">
+                                          <a href="<%= vm_services_path(@vm) %>">
                                             <img align="absmiddle" width="30" height="32" border="0" title="Services" src="/images/services.png">
                                           </a>
                                         </td>
                                       </tr>
                                       <tr>
                                         <td align="center" valign="top" height="20">
-                                          <a class="sm_heading" href="index.php?cid=11&amp;action=USL&amp;vmid=0&amp;left=1">Services</a>
+                                          <a class="sm_heading" href="<%= vm_services_path(@vm) %>">Services</a>
                                         </td>
                                       </tr>
                                     </tbody>
@@ -138,14 +137,14 @@ you want between page reloads: 1 minute = 60000 milliseconds. */
                                     <tbody>
                                       <tr>
                                         <td align="center" height="41">
-                                          <a href="index.php?cid=11&amp;action=UVC&amp;vmid=0&amp;left=1">
+                                          <a href="<%= vm_ssh_path(@vm) %>">
                                             <img align="absmiddle" width="30" height="32" border="0" title="SSH Terminal" src="/images/command_center.png">
                                           </a>
                                         </td>
                                       </tr>
                                       <tr>
                                         <td align="center" valign="top" height="20">
-                                          <a class="sm_heading" href="index.php?cid=11&amp;action=UVC&amp;vmid=0&amp;left=1">SSH Terminal</a>
+                                          <a class="sm_heading" href="<%= vm_ssh_path(@vm) %>">SSH Terminal</a>
                                         </td>
                                       </tr>
                                     </tbody>
