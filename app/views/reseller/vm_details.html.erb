@@ -1,0 +1,299 @@
+<td valign="top" class="bgcolor2"><script language="javascript" type="text/javascript">
+  function reFresh() {	
+    location.reload(true)
+    /* Set the number below to the amount of delay, in milliseconds,
+you want between page reloads: 1 minute = 60000 milliseconds. */  
+  }
+  window.setInterval("reFresh()",300000);
+  </script>
+  <table width="100%" cellspacing="0" cellpadding="0" border="0">
+    <tbody>
+      <tr>
+        <td class="middle_top">
+          <table width="100%" cellspacing="0" cellpadding="0" border="0">
+            <tbody>
+              <tr>
+                <td colspan="4">
+                  <span class="bodytext_1">
+                    <a class="bodylink" href="">Home</a> 
+                    &gt; <a class="bodylink" href="">VM Manager</a> 
+                    &gt; VM Details </span>
+                </td>
+              </tr>
+              <tr>
+                <td width="45">#TYPE#</td>
+                <td width="45">
+                  <img align="bottom" width="30" height="32" border="0" src="/images/icon_view_vm_big.png"></td>
+                <td width="90%" valign="top" style="padding-top:2px"><span class="txt_big_red"></span></td>
+                <td align="left" width="45"><img align="bottom" width="30" height="30" border="0" title="Stopped" src="/images/offline_big.gif"></td>
+              </tr>
+            </tbody>
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <td class="tdgap1">
+          <table width="100%" cellspacing="0" cellpadding="0" border="0">
+            <tbody>
+              <tr>
+                <td colspan="2" class="btm_border">
+                  <table width="100%" cellspacing="0" cellpadding="0" border="0">
+                    <tbody>
+                      <tr>
+                        <td>
+                          <table width="100%" cellspacing="0" cellpadding="0" border="0">
+                            <tbody>
+                              <tr>
+                                <td width="7%"><span class="bodytext">Actions</span></td>
+                                <td width="93%" class="line_bg">&nbsp;</td>
+                              </tr>
+                            </tbody>
+                          </table>                          
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>                     
+                          <table width="550" cellspacing="0" cellpadding="0" border="0">
+                            <tbody>
+                              <tr>
+                                <!--<td width="10%" align="center" valign="top"><table width="100%"  border="0" cellspacing="1" cellpadding="1">
+                                  <tr>
+                                    <td height="41" align="center"><a onClick="if(chk_vm_confirm('DELETE','VM','#STATUS#')!=false)funshowchild('index.php?cid=11&action=UVD&vmid=0&left=1',this.value,'chldpar2','index.php?cid=11&action=UVL&left=1');" style="cursor:pointer"> <img src="/images/icon_delete_big.gif" title="Delete Server" width="26" height="29" border="0" align="absmiddle" name="serverdel"/> </a></td>
+                                  </tr>
+                                  <tr>
+                                    <td height="20" align="center" valign="top"><a class="sm_heading" onClick="if(chk_vm_confirm('DELETE','VM','#STATUS#')!=false)funshowchild('index.php?cid=11&action=UVD&vmid=0&left=1',this.value,'chldpar2','index.php?cid=11&action=UVL');" style="cursor:pointer">Delete </a></td>
+                                  </tr>
+                                </table></td>-->
+                                <td align="center" width="10%" valign="top">
+                                  <table width="87%" cellspacing="1" cellpadding="1" border="0">
+                                    <tbody>
+                                      <tr>
+                                        <td align="center" height="41">
+                                          <a href="index.php?cid=11&amp;action=UVR&amp;vmid=0&amp;left=1">
+                                            <img align="absmiddle" width="30" height="30" border="0" title="Refresh" src="/images/reset_password_big.png">
+                                          </a>
+                                        </td>
+                                      </tr>
+                                      <tr>
+                                        <td align="center" valign="top" height="20">
+                                          <a class="sm_heading" href="index.php?cid=11&amp;action=UVR&amp;vmid=0&amp;left=1">Reset Password </a>
+                                        </td>
+                                      </tr>
+                                    </tbody>
+                                  </table>
+                                </td>
+                                <!--
+    <td width="10%" align="center" valign="top"><table width="88%"  border="0" cellspacing="1" cellpadding="1">
+      <tr>
+        <td height="41" align="center"><a href="#"><img src="/images/quota.png" title="Refresh" width="30" height="32" border="0" align="absmiddle" /></a></td>
+      </tr>
+      <tr>
+        <td height="20" align="center" valign="top"><a href="#" class="sm_heading">Quota</a></td>
+      </tr>
+    </table></td>-->
+                                <td align="center" width="10%" valign="top">
+                                  <table width="89%" cellspacing="1" cellpadding="1" border="0">
+                                    <tbody>
+                                      <tr>
+                                        <td align="center" height="41">
+                                          <a href="index.php?cid=11&amp;action=UPR&amp;vmid=0&amp;left=1">
+                                            <img align="absmiddle" width="30" height="32" border="0" title="Processlist" src="/images/processlist.png">
+                                          </a>
+                                        </td>
+                                      </tr>
+
+                                      <tr>
+                                        <!-- onClick="funshowchild('index.php?cid=17&action=VPR&vmid=0&left=2',this.value,'chldpar2','index.php?cid=17&action=VPR&vmid=0&left=2&list=1');"-->
+
+                                        <td align="center" valign="top" height="20">
+                                          <a class="sm_heading" href="index.php?cid=11&amp;action=UPR&amp;vmid=0&amp;left=1">Processlist</a>
+                                        </td>
+                                      </tr>
+                                    </tbody>
+                                  </table>							  </td>
+                                <td align="center" width="10%" valign="top">
+                                  <table width="89%" cellspacing="1" cellpadding="1" border="0">
+                                    <tbody>
+                                      <tr>
+                                        <td align="center" height="41">
+                                          <a href="index.php?cid=11&amp;action=USL&amp;vmid=0&amp;left=1">
+                                            <img align="absmiddle" width="30" height="32" border="0" title="Services" src="/images/services.png">
+                                          </a>
+                                        </td>
+                                      </tr>
+                                      <tr>
+                                        <td align="center" valign="top" height="20">
+                                          <a class="sm_heading" href="index.php?cid=11&amp;action=USL&amp;vmid=0&amp;left=1">Services</a>
+                                        </td>
+                                      </tr>
+                                    </tbody>
+                                  </table>
+                                </td>							  
+                                <td align="center" width="10%" valign="top">
+                                  <table width="89%" cellspacing="1" cellpadding="1" border="0">
+                                    <tbody>
+                                      <tr>
+                                        <td align="center" height="41">
+                                          <a href="index.php?cid=11&amp;action=UVC&amp;vmid=0&amp;left=1">
+                                            <img align="absmiddle" width="30" height="32" border="0" title="SSH Terminal" src="/images/command_center.png">
+                                          </a>
+                                        </td>
+                                      </tr>
+                                      <tr>
+                                        <td align="center" valign="top" height="20">
+                                          <a class="sm_heading" href="index.php?cid=11&amp;action=UVC&amp;vmid=0&amp;left=1">SSH Terminal</a>
+                                        </td>
+                                      </tr>
+                                    </tbody>
+                                  </table>
+                                </td>
+                                <!--<td width="10%" align="center" valign="top"><table width="94%"  border="0" cellspacing="1" cellpadding="1">
+                                  <tr>
+                                    <td height="41" align="center"><a class="sm_heading" onClick="if(chk_vm_confirm('Backup','VM','#STATUS#')!=false)funshowchild('index.php?cid=11&action=UBU&vmid=0&left=2',this.value,'chldpar2','index.php?cid=11&action=UVT&vmid=0&left=2&msg=Backup');" style="cursor:pointer"><img src="/images/icon_backup_big.png" title="Backup" width="30" height="32" border="0" align="absmiddle" /></a></td>
+                                  </tr>
+                                  <tr>
+                                    <td height="20" align="center" valign="top"><a onClick="if(chk_vm_confirm('Backup','VM','#STATUS#')!=false)funshowchild('index.php?cid=11&action=UBU&vmid=0&left=2',this.value,'chldpar2','index.php?cid=11&action=UVT&vmid=0&left=2&msg=Backup');" style="cursor:pointer" class="sm_heading">Backup</a></td>
+                                  </tr>
+                                </table></td>-->                              
+                              </tr>
+                            </tbody>
+                          </table>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </td>
+              </tr>
+              <tr>
+                <td colspan="2">
+                  <div align="center" style="width:700px;" id="chldpar2">
+                    <table width="100%" cellspacing="0" cellpadding="0" border="0">
+                      <tbody>
+                        <tr align="center" valign="middle">
+                          <td align="center" height="30" class="message_head" colspan="2">&nbsp;</td>
+                        </tr>
+                        <tr>
+                          <td valign="top">&nbsp;</td>
+                          <td align="center" valign="top" id="errmsg">
+                            <span class="bolderror">Server Connection Failed</span>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td align="left" width="420" valign="top" class="tdgap1">
+                            <table align="left" width="100%" cellspacing="0" cellpadding="0" border="0">
+                              <tbody>
+                                <tr>
+                                  <td width="100%" valign="top" class="bgcolor1">
+                                    <table width="100%" height="121" cellspacing="1" cellpadding="0" border="0" class="bgcolor3">                                
+                                      <tbody>
+                                        <tr>
+                                          <td align="right" valign="top" class="cate_listing">VM Name :</td>
+                                          <td valign="top" class="bgcolor4"><%= @vm.name %>
+                                            <span class="bodytext"></span>
+                                          </td>
+                                        </tr>
+                                        <tr> 
+                                          <td align="right" valign="top" class="cate_listing">Kernel  :</td> 
+                                          <td valign="top" id="kernel" class="bgcolor4">
+                                            <span class="bodytext"></span>
+                                          </td>
+                                        </tr>
+                                        <tr> 
+                                          <td align="right" valign="top" class="cate_listing">Hardware Platform  :</td> 
+                                          <td valign="top" id="platform" class="bgcolor4">&nbsp;
+                                            <span class="bodytext"></span>
+                                          </td>
+                                        </tr>
+                                        <tr>
+                                          <td align="right" width="38%" valign="top" class="cate_listing">OS Template :</td>
+                                          <td width="62%" valign="top" class="bgcolor4">&nbsp;
+                                            <span class="bodytext"></span>
+                                          </td>
+                                        </tr>
+                                        <tr>
+                                          <td align="right" valign="top" class="cate_listing">IP :</td>
+                                          <td valign="top" class="bgcolor4">&nbsp;
+                                            <span class="bodytext"></span>
+                                          </td>
+                                        </tr>
+                                        <tr>
+                                          <td align="right" valign="top" class="cate_listing">Server :</td>
+                                          <td valign="top" class="bgcolor4">&nbsp;
+                                            <span class="bodytext"></span>
+                                          </td>
+                                        </tr>
+                                      </tbody>
+                                    </table>
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </td>
+                          <td align="right" width="50%" valign="top" class="tdgap1">
+                            <table align="right" width="97%" cellspacing="0" cellpadding="0" border="0">
+                              <tbody>
+                                <tr>
+                                  <td width="97%" class="bgcolor1">
+                                    <table width="100%" cellspacing="1" cellpadding="0" border="0" class="bgcolor3">
+                                      <tbody>
+                                        <tr>
+                                          <td align="right" width="38%" valign="top" class="cate_listing">CPU Usage   :</td>
+                                          <td width="62%" valign="top" id="cpu" class="bgcolor4"> </td>
+                                          <td id="cpu_free" style="display:none"> </td>
+                                          <td id="cpu_tot" style="display:none"> </td>
+                                        </tr>
+                                      </tbody>
+                                    </table>                                    
+                                  </td>
+                                </tr>
+                              </tbody>
+                            </table>
+                            <br>
+                            <br>
+                            <table width="97%" cellspacing="1" cellpadding="0" border="0" class="bgcolor3">
+                              <tbody>
+                                <tr>
+                                  <td align="center" width="13%" valign="top" class="cate_listing_head">
+                                    <strong>Status</strong>
+                                  </td>
+                                  <td width="25%" valign="top" class="cate_listing_head">Resources</td>
+                                  <td width="18%" valign="top" class="cate_listing_head">Used</td>
+                                  <td width="17%" valign="top" class="cate_listing_head">Free</td>
+                                  <td width="27%" valign="top" class="cate_listing_head">Max</td>
+                                </tr>
+                                <tr valign="middle" class="bgcolor4">
+                                  <td align="center" height="25">
+                                    <img align="absmiddle" width="13" height="13" border="0" src="/images/online.png">
+                                  </td>
+                                  <td height="25" class="bodytext">Disk</td>
+                                  <td height="25" id="hdd" class="bodytext"> </td>
+                                  <td height="25" id="hdd_free" class="bodytext"> </td>
+                                  <td height="25" id="hdd_tot" class="bodytext"> </td>
+                                </tr>
+                                <tr valign="middle" class="bgcolor4">
+                                  <td align="center" height="25">
+                                    <img width="13" height="13" src="/images/online.png">
+                                  </td>
+                                  <td height="25" class="bodytext">Mem</td>
+                                  <td height="25" id="mem" class="bodytext"> </td>
+                                  <td height="25" id="mem_free" class="bodytext"> </td>
+                                  <td height="25" id="mem_tot" class="bodytext"> </td>
+                                </tr>
+                              </tbody>
+                            </table>                            
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>                  
+                </td>
+              </tr>
+            </tbody>
+          </table>          
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <iframe width="50" scrolling="no" height="40" frameborder="0" style="display:none" allowtransparency="true" src="vm_resources.php?res=1&amp;vmid=0&amp;tdid=hdd"></iframe>
+  <!--<iframe src="vm_resources.php?res=2&vmid=0&tdid=mem" width="50" height="40" frameborder="0" allowtransparency="true" scrolling="no" style="display:none" ></iframe>
+  <iframe src="vm_resources.php?res=3&vmid=0&tdid=cpu" width="50" height="40" frameborder="0" allowtransparency="true" scrolling="no" style="display:none" ></iframe>--></td>

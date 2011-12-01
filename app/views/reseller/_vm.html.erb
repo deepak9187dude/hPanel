@@ -3,10 +3,10 @@
     <input type="checkbox" value="1" id="chkdel" name="chkdel[]">
   </td>
   <td align="left" class="bgcolor4">
-    <a class="det_link" href="index.php?cid=11&amp;action=UVT&amp;vmid=1&amp;left=1"><%= vm.id %></a>
+    <a class="det_link" href="<%= vm_details_path(vm) %>"><%= vm.id %></a>
   </td>
   <td align="left" class="bgcolor4">
-    <a class="det_link" href="index.php?cid=11&amp;action=UVT&amp;vmid=1&amp;left=1"><%= vm.name %></a>
+    <a class="det_link" href="<%= vm_details_path(vm) %>"><%= vm.name %></a>
   </td>
   <td height="26" class="bgcolor4">
     <img align="absmiddle" width="16" height="16" title="OpenVZ" src="/images/oenvz_sm.png"> &nbsp;<%= vm.vm_type %>
