@@ -58,6 +58,8 @@ Vhpanel::Application.routes.draw do
 #    vm manager
     match 'vm/:left' =>"reseller#view_all_vm",:as=>'vm',:defaults=>{:left=>1}
     match 'vm/:id/:left' =>"reseller#vm_details",:as=>'vm_details',:defaults=>{:left=>1}
+    match 'vm/:id/password/:left' =>"reseller#vm_change_password",:as=>'vm_change_password',:defaults=>{:left=>1}
+    match 'vm/:id/new/:left' =>"reseller#vm_new_password",:as=>'vm_new_password',:defaults=>{:left=>1}
     
 #    tickets
     match 'support/:left' =>"reseller#support_tickets",:via => [:get,:post,:put],:as=>'reseller_all_support_tickets',:defaults=>{:left=>3}

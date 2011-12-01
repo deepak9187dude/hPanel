@@ -24,8 +24,12 @@ you want between page reloads: 1 minute = 60000 milliseconds. */
                 <td width="45">#TYPE#</td>
                 <td width="45">
                   <img align="bottom" width="30" height="32" border="0" src="/images/icon_view_vm_big.png"></td>
-                <td width="90%" valign="top" style="padding-top:2px"><span class="txt_big_red"></span></td>
-                <td align="left" width="45"><img align="bottom" width="30" height="30" border="0" title="Stopped" src="/images/offline_big.gif"></td>
+                <td width="90%" valign="top" style="padding-top:2px">
+                  <span class="txt_big_red"></span>
+                </td>
+                <td align="left" width="45">
+                  <img align="bottom" width="30" height="30" border="0" title="Stopped" src="/images/offline_big.gif">
+                </td>
               </tr>
             </tbody>
           </table>
@@ -44,7 +48,9 @@ you want between page reloads: 1 minute = 60000 milliseconds. */
                           <table width="100%" cellspacing="0" cellpadding="0" border="0">
                             <tbody>
                               <tr>
-                                <td width="7%"><span class="bodytext">Actions</span></td>
+                                <td width="7%">
+                                  <span class="bodytext">Actions</span>
+                                </td>
                                 <td width="93%" class="line_bg">&nbsp;</td>
                               </tr>
                             </tbody>
@@ -69,14 +75,14 @@ you want between page reloads: 1 minute = 60000 milliseconds. */
                                     <tbody>
                                       <tr>
                                         <td align="center" height="41">
-                                          <a href="index.php?cid=11&amp;action=UVR&amp;vmid=0&amp;left=1">
+                                          <a href="<%= vm_change_password_path(@vm) %>">
                                             <img align="absmiddle" width="30" height="30" border="0" title="Refresh" src="/images/reset_password_big.png">
                                           </a>
                                         </td>
                                       </tr>
                                       <tr>
                                         <td align="center" valign="top" height="20">
-                                          <a class="sm_heading" href="index.php?cid=11&amp;action=UVR&amp;vmid=0&amp;left=1">Reset Password </a>
+                                          <a class="sm_heading" href="<%= vm_change_password_path(@vm) %>">Reset Password </a>
                                         </td>
                                       </tr>
                                     </tbody>
@@ -101,10 +107,8 @@ you want between page reloads: 1 minute = 60000 milliseconds. */
                                           </a>
                                         </td>
                                       </tr>
-
                                       <tr>
                                         <!-- onClick="funshowchild('index.php?cid=17&action=VPR&vmid=0&left=2',this.value,'chldpar2','index.php?cid=17&action=VPR&vmid=0&left=2&list=1');"-->
-
                                         <td align="center" valign="top" height="20">
                                           <a class="sm_heading" href="index.php?cid=11&amp;action=UPR&amp;vmid=0&amp;left=1">Processlist</a>
                                         </td>
@@ -188,37 +192,38 @@ you want between page reloads: 1 minute = 60000 milliseconds. */
                                       <tbody>
                                         <tr>
                                           <td align="right" valign="top" class="cate_listing">VM Name :</td>
-                                          <td valign="top" class="bgcolor4"><%= @vm.name %>
+                                          <td valign="top" class="bgcolor4"><%= @vm.display_name %>
                                             <span class="bodytext"></span>
                                           </td>
                                         </tr>
                                         <tr> 
                                           <td align="right" valign="top" class="cate_listing">Kernel  :</td> 
                                           <td valign="top" id="kernel" class="bgcolor4">
+                                            <%= @vm.name %>
                                             <span class="bodytext"></span>
                                           </td>
                                         </tr>
                                         <tr> 
                                           <td align="right" valign="top" class="cate_listing">Hardware Platform  :</td> 
-                                          <td valign="top" id="platform" class="bgcolor4">&nbsp;
+                                          <td valign="top" id="platform" class="bgcolor4"><%= @vm.vm_type %>
                                             <span class="bodytext"></span>
                                           </td>
                                         </tr>
                                         <tr>
                                           <td align="right" width="38%" valign="top" class="cate_listing">OS Template :</td>
-                                          <td width="62%" valign="top" class="bgcolor4">&nbsp;
+                                          <td width="62%" valign="top" class="bgcolor4">&nbsp;<%= @vm.template %>
                                             <span class="bodytext"></span>
                                           </td>
                                         </tr>
                                         <tr>
                                           <td align="right" valign="top" class="cate_listing">IP :</td>
-                                          <td valign="top" class="bgcolor4">&nbsp;
+                                          <td valign="top" class="bgcolor4">&nbsp;<%= @vm.ip_id %>
                                             <span class="bodytext"></span>
                                           </td>
                                         </tr>
                                         <tr>
                                           <td align="right" valign="top" class="cate_listing">Server :</td>
-                                          <td valign="top" class="bgcolor4">&nbsp;
+                                          <td valign="top" class="bgcolor4"><%= @vm.server_id %>
                                             <span class="bodytext"></span>
                                           </td>
                                         </tr>
