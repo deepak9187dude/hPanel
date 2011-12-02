@@ -113,10 +113,15 @@ class ResellerController < ApplicationController
   def vm_processes
     @vm = Vm.find(params[:id])
     @ps = `ps -eo pid,stat,pmem,user,command h`
+    @ps = @ps.split("\n")
+    
+#    render:text=>@ps.size
   end
   
   def vm_services
     @vm = Vm.find(params[:id])
+    @services = `sysv-rc-conf --list`
+    @services = @services.split("\n")
   end
   
   def vm_ssh

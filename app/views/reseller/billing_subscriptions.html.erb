@@ -9,7 +9,7 @@
                 <td colspan="2">
                   <span class="bodytext_1">
                     <%= link_to "Home", reseller_index_path,:class=>'bodylink' %>
-                    &gt; <a class="bodylink" href="index.php?cid=20&amp;action=BMG&amp;left=2">Billing Manager</a>
+                    &gt; <a class="bodylink" href="<%= reseller_billing_subscriptions_path %>">Billing Manager</a>
                     &gt; Subscriptions  </span>
                 </td>
               </tr>
@@ -78,11 +78,11 @@
                           <table cellspacing="1" cellpadding="0" border="0" align="left" width="87%" class="bgcolor3">
                             <tbody>
                               <tr>
-                                <td align="left" width="4%" class="cate_listing"><a class="cate_listing" href="index.php?cid=20&amp;left=2&amp;action=SUB&amp;orderby=id&amp;sort=ASC&amp;searchfield=&amp;searchval=&amp;limit=20&amp;page=">ID</a>  </td>
-                                <td width="15%" class="cate_listing"><a class="cate_listing" href="index.php?cid=20&amp;left=2&amp;action=SUB&amp;orderby=subscriptionname&amp;sort=ASC&amp;searchfield=&amp;searchval=&amp;limit=20&amp;page=">Subscription Name</a>  </td>                            
-                                <td align="left" width="10%" class="cate_listing"><a class="cate_listing" href="index.php?cid=20&amp;left=2&amp;action=SUB&amp;orderby=status&amp;sort=ASC&amp;searchfield=&amp;searchval=&amp;limit=20&amp;page=">Status</a>  </td>
-                                <td align="left" width="14%" class="cate_listing"><a class="cate_listing" href="index.php?cid=20&amp;left=2&amp;action=SUB&amp;orderby=plan&amp;sort=ASC&amp;searchfield=&amp;searchval=&amp;limit=20&amp;page=">Hosting Plan</a>  </td>
-                                <td align="left" width="14%" class="cate_listing"><a class="cate_listing" href="index.php?cid=20&amp;left=2&amp;action=SUB&amp;orderby=enddate&amp;sort=ASC&amp;searchfield=&amp;searchval=&amp;limit=20&amp;page=">End Date</a>  </td> 
+                                <td align="left" width="4%" class="cate_listing"><a class="cate_listing" href="#">ID</a>  </td>
+                                <td width="15%" class="cate_listing"><a class="cate_listing" href="#">Subscription Name</a>  </td>                            
+                                <td align="left" width="10%" class="cate_listing"><a class="cate_listing" href="#">Status</a>  </td>
+                                <td align="left" width="14%" class="cate_listing"><a class="cate_listing" href="#">Hosting Plan</a>  </td>
+                                <td align="left" width="14%" class="cate_listing"><a class="cate_listing" href="#">End Date</a>  </td> 
                               </tr>
                               <%= render :partial=>'subscription',:collection=>@subscriptions %>
                               <tr style="display:none">

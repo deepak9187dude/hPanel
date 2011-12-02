@@ -26,7 +26,7 @@
                 </tr>
                 <tr>
                   <td width="4%">
-                    <img border="0" align="bottom" width="30" height="32" title="View VM" src="../asset/images/history_b.png">
+                    <img border="0" align="bottom" width="30" height="32" title="View VM" src="/images/history_b.png">
                   </td>
                   <td width="96%" valign="top" style="padding-top:2px">
                     <span class="txt_big_red">Ticket History</span>
@@ -35,10 +35,10 @@
                 <tr>
                   <td width="4%">&nbsp;</td>
                   <td width="96%" valign="top" style="padding-top:2px"><span class="bodytext_1">
-                      <a class="bodylink" href="index.php?cid=4&amp;action=UVP&amp;left=0">Deepak sharma</a></span> 
+                      <a class="bodylink" href="<%= reseller_index_path %>"><%=@current_user.name%></a></span> 
                     &nbsp;&nbsp;&nbsp;&nbsp;<span class="txt_big_red">Support Ticket</span>
-                    &nbsp;&nbsp;&nbsp;&nbsp;<img title="In Progress" src="/images/offline.png"><span class="Stopped">On Hold</span>
-                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="txt_big_red">Medium</span>					
+                    &nbsp;&nbsp;&nbsp;&nbsp;<img title="In Progress" src="<%= @ticket.status_image %>"><span class="Stopped">On Hold</span>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="txt_big_red"><%@ticket.priority%></span>					
                   </td>
                 </tr>
               </tbody>
@@ -142,11 +142,11 @@
               <table cellspacing="1" cellpadding="0" border="0" width="100%" class="bgcolor3">
                 <tbody>
                   <tr>                                  
-                    <td width="14%" class="cate_listing"><a class="cate_listing_head" href="index.php?cid=31&amp;tid=9&amp;action=ATH&amp;orderby=ticketdetailsid&amp;left=3&amp;sort=ASC&amp;searchfield= &amp;searchval=Array&amp;limit=20&amp;page=">Ticket ID</a>  </td>
-                    <td width="14%" class="cate_listing"><a class="cate_listing_head" href="index.php?cid=31&amp;tid=9&amp;action=ATH&amp;orderby=subject&amp;left=3&amp;sort=ASC&amp;searchfield= &amp;searchval=Array&amp;limit=20&amp;page=">Subject</a>  </td>
-                    <td width="14%" class="cate_listing"><a class="cate_listing_head" href="index.php?cid=31&amp;tid=9&amp;action=ATH&amp;orderby=postdate&amp;left=3&amp;sort=ASC&amp;searchfield= &amp;searchval=Array&amp;limit=20&amp;page=">Date</a>  </td>  
-                    <td width="15%" class="cate_listing"><a class="cate_listing_head" href="index.php?cid=31&amp;tid=9&amp;action=ATH&amp;orderby=status&amp;left=3&amp;sort=ASC&amp;searchfield= &amp;searchval=Array&amp;limit=20&amp;page=">Status</a>  </td>
-                    <td width="15%" class="cate_listing"><a class="cate_listing_head" href="index.php?cid=31&amp;tid=9&amp;action=ATH&amp;orderby=priority&amp;left=3&amp;sort=ASC&amp;searchfield= &amp;searchval=Array&amp;limit=20&amp;page=">Priority</a>  </td>
+                    <td width="14%" class="cate_listing"><a class="cate_listing_head" href="#">Ticket ID</a>  </td>
+                    <td width="14%" class="cate_listing"><a class="cate_listing_head" href="#">Subject</a>  </td>
+                    <td width="14%" class="cate_listing"><a class="cate_listing_head" href="#">Date</a>  </td>  
+                    <td width="15%" class="cate_listing"><a class="cate_listing_head" href="#">Status</a>  </td>
+                    <td width="15%" class="cate_listing"><a class="cate_listing_head" href="#">Priority</a>  </td>
                   </tr>
                   <%= render :partial=> 'current_ticket_history',:collection=> @ticket_history %>
                   <tr style="display:none">

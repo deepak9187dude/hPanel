@@ -1,77 +1,149 @@
-<td valign="top" class="bgcolor2"><table width="100%" cellspacing="0" cellpadding="0" border="0">
-              <tbody><tr>
-			  <td class="middle_top"><table width="100%" cellspacing="0" cellpadding="0" border="0">
-                  <tbody><tr>
-                    <td colspan="2"><span class="bodytext_1"><a class="bodylink" href="index.php?cid=4&amp;action=UVP">Home</a> &gt; <a class="bodylink" href="index.php?cid=11&amp;action=UVL&amp;left=1">VM Manager</a> &gt; <a class="bodylink" href="index.php?cid=11&amp;action=UVT&amp;vmid=0&amp;left=1"></a> &gt;  Processes </span></td>
-                </tr>
-                  <tr>
-                    <td width="47"><img align="bottom" width="30" height="32" border="0" title="Add Server" src="/images/icon_view_server_big.png"></td>
-                    <td width="1262" valign="top" style="padding-top:2px"><span class="txt_big_red">  - Processes</span></td>
-                  </tr>
-                </tbody></table></td>
+<td valign="top" class="bgcolor2">
+  <table width="100%" cellspacing="0" cellpadding="0" border="0">
+    <tbody>
+      <tr>
+        <td class="middle_top">
+          <table width="100%" cellspacing="0" cellpadding="0" border="0">
+            <tbody>
+              <tr>
+                <td colspan="2">
+                  <span class="bodytext_1">
+                    <a class="bodylink" href="<%= reseller_index_path %>">Home</a> 
+                    &gt; <a class="bodylink" href="<%= vm_path %>">VM Manager</a> 
+                    &gt; <a class="bodylink" href=""></a> &gt;  Processes </span></td>
               </tr>
               <tr>
-                <td style="padding:10px;">
-				
-				<table width="100%" cellspacing="0" cellpadding="0" border="0">
-                  <tbody><tr>
-                    <td class="btm_border"><table width="100%" cellspacing="0" cellpadding="0" border="0">
-                      <tbody><tr>
-                        <td><table width="100%" cellspacing="0" cellpadding="0" border="0">
-                          <tbody><tr>
-                            <td width="7%"><span class="bodytext">Actions</span></td>
-                            <td width="93%" class="line_bg">&nbsp;</td>
-                          </tr>
-                        </tbody></table></td>
-                      </tr>
+                <td width="47">
+                  <img align="bottom" width="30" height="32" border="0" title="Add Server" src="/images/icon_view_server_big.png">
+                </td>
+                <td width="1262" valign="top" style="padding-top:2px">
+                  <span class="txt_big_red">  - Processes</span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <td style="padding:10px;">
+          <table width="100%" cellspacing="0" cellpadding="0" border="0">
+            <tbody>
+              <tr>
+                <td class="btm_border">
+                  <table width="100%" cellspacing="0" cellpadding="0" border="0">
+                    <tbody>
                       <tr>
-                        <td><table width="150" cellspacing="0" cellpadding="0" border="0">
-  <tbody><tr>    
-	 <td align="center"><table width="50%" cellspacing="1" cellpadding="1" border="0">
-       <tbody><tr>
-         <td align="center" height="30"><a class="sm_heading" href="index.php?cid=11&amp;action=UPR&amp;vmid=0&amp;left=1"><img align="absmiddle" width="30" height="29" border="0" title="Refresh" src="/images/icon_refresh.gif"></a></td>
-       </tr>
-       <tr>
-         <td align="center" height="20"><a class="sm_heading" href="index.php?cid=11&amp;action=UPR&amp;vmid=0&amp;left=1">Refresh</a></td>
-       </tr>
-     </tbody></table></td>
-  </tr>
-</tbody></table>                   
+                        <td>
+                          <table width="100%" cellspacing="0" cellpadding="0" border="0">
+                            <tbody>
+                              <tr>
+                                <td width="7%">
+                                  <span class="bodytext">Actions</span>
+                                </td>
+                                <td width="93%" class="line_bg">&nbsp;</td>
+                              </tr>
+                            </tbody>
+                          </table>                          
                         </td>
                       </tr>
-                    </tbody></table></td>
-                  </tr>
-                  <tr>
-                    <td>
-					  <div align="center" id="chldpar2">
-					<table width="100%" cellspacing="0" cellpadding="0" border="0">
-                      <tbody><tr>
-                        <td class="tdgap">&nbsp;</td>
-                      </tr>
-					  <form action="index.php?cid=17&amp;action=VPK&amp;vmid=0&amp;left=2" method="post" name="frmserver" id="frmserver"></form>
-					 <input type="hidden" id="action_type" name="action_type">
                       <tr>
-                        <td align="left"><process_loop></process_loop><table width="90%" cellspacing="1" cellpadding="0" border="0" class="bgcolor3">
-						                            <tbody><tr>
-                            <td align="center" width="5%" class="cate_listing_center"><input type="checkbox" onclick="javascript:selectall(checked, document.frmserver, 'chkdel[]')" id="checkbox" name="checkbox"></td>
-                            <td class="cate_listing_head"><a class="cate_listing_head" href="index.php?cid=11&amp;action=UPR&amp;vmid=4&amp;left=1&amp;orderby=1-n&amp;sort=&amp;#SEARCHURL#">Process ID</a>  </td>
-                            <td class="cate_listing_head"><a class="cate_listing_head" href="index.php?cid=11&amp;action=UPR&amp;vmid=4&amp;left=1&amp;orderby=2&amp;sort=&amp;#SEARCHURL#">State</a> </td>
-                            <td class="cate_listing_head"><a class="cate_listing_head" href="index.php?cid=11&amp;action=UPR&amp;vmid=4&amp;left=1&amp;orderby=3-n&amp;sort=&amp;#SEARCHURL#">Memory (MB) </a></td>
-                            <td class="cate_listing_head"><a class="cate_listing_head" href="index.php?cid=11&amp;action=UPR&amp;vmid=4&amp;left=1&amp;orderby=4&amp;sort=&amp;#SEARCHURL#">User</a></td>
-                            <td class="cate_listing_head"><a class="cate_listing_head" href="index.php?cid=11&amp;action=UPR&amp;vmid=4&amp;left=1&amp;orderby=5&amp;sort=&amp;#SEARCHURL#">Command</a></td>
-                          </tr>
-						  
-						  <tr style="display:#STYLE#"><td align="center" height="50" bgcolor="#FFFFFF" class="no_record" colspan="6">#MESSAGE#</td>
-						  </tr>
-                        </tbody></table></td>
+                        <td>
+                          <table width="150" cellspacing="0" cellpadding="0" border="0">
+                            <tbody>
+                              <tr>    
+                                <td align="center">
+                                  <table width="50%" cellspacing="1" cellpadding="1" border="0">
+                                    <tbody>
+                                      <tr>
+                                        <td align="center" height="30">
+                                          <a class="sm_heading" href="">
+                                            <img align="absmiddle" width="30" height="29" border="0" title="Refresh" src="/images/icon_refresh.gif">
+                                          </a>
+                                        </td>
+                                      </tr>
+                                      <tr>
+                                        <td align="center" height="20">
+                                          <a class="sm_heading" href="">Refresh</a>
+                                        </td>
+                                      </tr>
+                                    </tbody>
+                                  </table>
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>                   
+                        </td>
                       </tr>
-                      <tr>
-                        <td align="left" class="bodytext">&nbsp;</td>
-                      </tr>
-                    </tbody></table></div></td>
-                  </tr>
-                </tbody></table>
-				
-				</td>
+                    </tbody>
+                  </table>
+                </td>
               </tr>
-            </tbody></table></td>
+              <tr>
+                <td>
+                  <div align="center" id="chldpar2">
+                    <table width="100%" cellspacing="0" cellpadding="0" border="0">
+                      <tbody>
+                        <tr>
+                          <td class="tdgap">&nbsp;</td>
+                        </tr>
+                      <form action="index.php?cid=17&amp;action=VPK&amp;vmid=0&amp;left=2" method="post" name="frmserver" id="frmserver"></form>
+                      <input type="hidden" id="action_type" name="action_type">
+                      <tr>
+                        <td align="left">
+                      <process_loop>
+                        <pre>
+                        </pre>
+                      </process_loop>
+                      <table width="90%" cellspacing="1" cellpadding="0" border="0" class="bgcolor3">
+                        <tbody>
+                          <tr>
+                            <td align="center" width="5%" class="cate_listing_center">
+                              <input type="checkbox" onclick="javascript:selectall(checked, document.frmserver, 'chkdel[]')" id="checkbox" name="checkbox"></td>
+                            <td class="cate_listing_head">
+                              <a class="cate_listing_head" href="index.php?cid=11&amp;action=UPR&amp;vmid=4&amp;left=1&amp;orderby=1-n&amp;sort=&amp;#SEARCHURL#">Process ID</a> 
+                            </td>
+                            <td class="cate_listing_head">
+                              <a class="cate_listing_head" href="index.php?cid=11&amp;action=UPR&amp;vmid=4&amp;left=1&amp;orderby=2&amp;sort=&amp;#SEARCHURL#">State</a> 
+                            </td>
+                            <td class="cate_listing_head">
+                              <a class="cate_listing_head" href="index.php?cid=11&amp;action=UPR&amp;vmid=4&amp;left=1&amp;orderby=3-n&amp;sort=&amp;#SEARCHURL#">Memory (MB) </a>
+                            </td>
+                            <td class="cate_listing_head">
+                              <a class="cate_listing_head" href="index.php?cid=11&amp;action=UPR&amp;vmid=4&amp;left=1&amp;orderby=4&amp;sort=&amp;#SEARCHURL#">User</a>
+                            </td>
+                            <td class="cate_listing_head">
+                              <a class="cate_listing_head" href="index.php?cid=11&amp;action=UPR&amp;vmid=4&amp;left=1&amp;orderby=5&amp;sort=&amp;#SEARCHURL#">Command</a>
+                            </td>
+                          </tr>
+                          <tr style="display:#STYLE#">
+                            <td align="center" height="50" bgcolor="#FFFFFF" class="no_record" colspan="6">                            
+                              
+                            </td>
+                            
+                          </tr>
+                        </tbody>
+                      </table>                      
+                    </td>
+                      </tr>
+                      <tr>
+                        <td align="left" class="bodytext" colspan="5"></td>
+                      </tr>
+                      </tbody>
+                    </table>
+                  </div>                  
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <table>
+    <tr>
+      <td>
+        <%= render :partial => "process",:collection=>@ps %>
+      </td>
+    </tr>
+  </table>
+</td>

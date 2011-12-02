@@ -10,8 +10,8 @@
   <td height="26" class="bgcolor4">
     <%= link_to ticket.subject,reseller_ticket_details_path(ticket),:class=>'det_link' %>
   </td>
-  <td height="26" class="bgcolor4"><%= ticket.replies %></td>
-  <td height="26" class="bgcolor4">Deepak sharma</td>
+  <td height="26" class="bgcolor4"><%= ticket.ticket_details.count %></td>
+  <td height="26" class="bgcolor4"><%= ticket.ticket_details.last ? ticket.ticket_details.last.user.name : ticket.user.name %></td>
   <td height="26" class="bgcolor4">
     <font color="#FF6600">00h49m22s</font>
   </td>

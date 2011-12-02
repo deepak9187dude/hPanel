@@ -45,6 +45,8 @@ class Ticket < ActiveRecord::Base
       @icon = 'icon_inprocess.png'
     elsif self.status.downcase.strip == "hold"
       @icon = 'offline.png'
+    elsif self.status.downcase.strip == "closed"
+      @icon = 'online.png'
     else
       @icon = 'offline.png'      
     end
