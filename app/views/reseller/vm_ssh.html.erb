@@ -1,38 +1,60 @@
-<td valign="top" class="bgcolor2"><table width="100%" cellspacing="0" cellpadding="0" border="0">
-              <tbody><tr style="display:#DISP#">
-			  <td class="middle_top"><table width="100%" cellspacing="0" cellpadding="0" border="0">
-                  <tbody><tr>
-                    <td colspan="2"><span class="bodytext_1"><a class="bodylink" href="index.php?cid=4&amp;action=UVP">Home</a> &gt; <a class="bodylink" href="index.php?cid=11&amp;action=UVL&amp;left=1">VM Manager</a> &gt; <a class="bodylink" href="index.php?cid=11&amp;action=UVT&amp;vmid=0&amp;left=1"></a> &gt; VM SSH Terminal</span></td>
-                </tr>
-                  <tr>
-                    <td width="45"><img align="absmiddle" width="30" height="32" border="0" title="Refresh" src="/images/command_center.png"></td>
-                    <td valign="top" style="padding-top:2px"><span class="txt_big_red"> - VM SSH Terminal</span></td>
-                  </tr>
-                </tbody></table></td>
-                
+<td valign="top" class="bgcolor2">
+  <table width="100%" cellspacing="0" cellpadding="0" border="0">
+    <tbody>
+      <tr style="display:#DISP#">
+        <td class="middle_top">
+          <table width="100%" cellspacing="0" cellpadding="0" border="0">
+            <tbody>
+              <tr>
+                <td colspan="2">
+                  <span class="bodytext_1">
+                    <a class="bodylink" href="<%= reseller_index_path %>">Home</a>
+                    &gt; <a class="bodylink" href="<%= vm_path %>">VM Manager</a>
+                    &gt; VM SSH Terminal</span></td>
               </tr>
               <tr>
-                <td class="tdgap1">
-				<div align="center" id="chldpar2">			
-				<table width="100%" cellspacing="0" cellpadding="0" border="0">
-                    <tbody><tr>
-                      <td class="tdgap1">&nbsp;</td>
-                    </tr>
-                    <tr>
-                      <td class="tdgap1">	
-					  <table align="left" width="520" cellspacing="0" cellpadding="0" border="0">
-                          <tbody><tr>
-                            <td width="200%" class="bgcolor1" colspan="2">  <applet width="900" height="600" style="border-style: solid; border-width: 1; padding-left: 4; padding-right: 4; padding-top: 1; padding-bottom: 1" codebase="../sshterm-applet" code="com.sshtools.sshterm.SshTermApplet" archive="SSHTermApplet-signed.jar,SSHTermApplet-jdkbug-workaround-signed.jar,SSHTermApplet-jdk1.3.1-dependencies-signed.jar">
-  <param value="" name="sshapps.connection.host">
-  <param value="22" name="sshapps.connection.port">
-
-  <param value="root" name="sshapps.connection.userName">
-  <param value="password" name="sshapps.connection.authenticationMethod">
-  <param value="true" name="sshapps.connection.connectImmediately">
-  </applet>							</td>
-                          </tr>
-                                            </tbody></table></td></tr>
-                </tbody></table>
-				</div></td>
+                <td width="45">
+                  <img align="absmiddle" width="30" height="32" border="0" title="Refresh" src="/images/command_center.png"></td>
+                <td valign="top" style="padding-top:2px">
+                  <span class="txt_big_red"> - VM SSH Terminal</span>
+                </td>
               </tr>
-            </tbody></table></td>
+            </tbody>
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <td class="tdgap1">
+          <div align="center" id="chldpar2">			
+            <table width="100%" cellspacing="0" cellpadding="0" border="0">
+              <tbody>
+                <tr>
+                  <td class="tdgap1">&nbsp;</td>
+                </tr>
+                <tr>
+                  <td class="tdgap1">	
+                    <table align="left" width="520" cellspacing="0" cellpadding="0" border="0">
+                      <tbody>
+                        <tr>
+                          <td width="200%" class="bgcolor1" colspan="2">  
+                          <applet width="900" height="600" style="border-style: solid; border-width: 1; padding-left: 4; padding-right: 4; padding-top: 1; padding-bottom: 1" codebase="../sshterm-applet" code="com.sshtools.sshterm.SshTermApplet" archive="SSHTermApplet-signed.jar,SSHTermApplet-jdkbug-workaround-signed.jar,SSHTermApplet-jdk1.3.1-dependencies-signed.jar">
+                            <param value="" name="sshapps.connection.host">
+                            <param value="22" name="sshapps.connection.port">
+                            <param value="root" name="sshapps.connection.userName">
+                            <param value="password" name="sshapps.connection.authenticationMethod">
+                            <param value="true" name="sshapps.connection.connectImmediately">
+                          </applet>							
+                        </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</td>

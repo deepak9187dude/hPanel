@@ -12,9 +12,6 @@
           <td>$<%= plan_row['rec_period'] %> / <%= plan_row['month'] if plan_row['month'] > 1 %> <%= plan_row['period'] %></td> 
           <td align="right">
             <%= link_to(image_tag("/images_new/purchase_bt.gif",:width=>103,:height=>25,:border=>0,:id=>"Purchase3",:name=>"purchase2"),{:action=>'payment_selection',:plan_id=>plan_row['plan_id'],:plantype=>plan_row['plan_type']}) %>
-            <%#*<a href="index.php?cid=36&amp;left=1&amp;action=RPP&amp;id=MTQ=&amp;rid=Mw==">%>
-              <%#*<img width="103" height="25" border="0" id="Purchase3" name="Purchase2" alt="Puchase" src="../asset/images_new/purchase_bt.gif">%>
-            <%#*</a>%>
           </td>
         </tr>
       </tbody>

@@ -8,8 +8,8 @@
               <tr>
                 <td colspan="2">
                   <span class="bodytext_1">
-                    <a class="bodylink" href="index.php?cid=4&amp;action=UVP">Home</a> 
-                    &gt; <a class="bodylink" href="index.php?cid=20&amp;action=BMG&amp;left=2">Billing Manager</a> 
+                    <a class="bodylink" href="<%= reseller_index_path %>">Home</a> 
+                    &gt; <a class="bodylink" href="<%= reseller_billing_history_path %>">Billing Manager</a> 
                     &gt; Billing History  </span>
                 </td>
               </tr>
@@ -105,12 +105,12 @@
                           <table width="90%" cellspacing="1" cellpadding="0" border="0" align="left" class="bgcolor3">
                             <tbody>
                               <tr>                           
-                                <td width="4%" valign="middle" class="cate_listing"><a class="cate_listing" href="index.php?cid=20&amp;left=2&amp;action=BMH&amp;orderby=id&amp;sort=ASC&amp;searchval1=&amp;searchval2=&amp;searchval3=&amp;limit=20&amp;page=">ID</a>  </td>
-                                <td width="15%" class="cate_listing"><a class="cate_listing" href="index.php?cid=20&amp;left=2&amp;action=BMH&amp;orderby=subscriptionname&amp;sort=ASC&amp;searchval1=&amp;searchval2=&amp;searchval3=&amp;limit=20&amp;page=">Subscription Name</a>  </td>
-                                <td width="15%" class="cate_listing"><a class="cate_listing" href="index.php?cid=20&amp;left=2&amp;action=BMH&amp;orderby=type&amp;sort=ASC&amp;searchval1=&amp;searchval2=&amp;searchval3=&amp;limit=20&amp;page=">Document Type</a>  </td>
-                                <td width="10%" class="cate_listing"><a class="cate_listing" href="index.php?cid=20&amp;left=2&amp;action=BMH&amp;orderby=status&amp;sort=ASC&amp;searchval1=&amp;searchval2=&amp;searchval3=&amp;limit=20&amp;page=">Status</a>  </td>
-                                <td width="14%" class="cate_listing"><a class="cate_listing" href="index.php?cid=20&amp;left=2&amp;action=BMH&amp;orderby=docdate&amp;sort=ASC&amp;searchval1=&amp;searchval2=&amp;searchval3=&amp;limit=20&amp;page=">Doc. Date</a>  </td>
-                                <td width="14%" class="cate_listing"><a class="cate_listing" href="index.php?cid=20&amp;left=2&amp;action=BMH&amp;orderby=total&amp;sort=ASC&amp;searchval1=&amp;searchval2=&amp;searchval3=&amp;limit=20&amp;page=">Total</a>  </td>
+                                <td width="4%" valign="middle" class="cate_listing"><a class="cate_listing" href="#">ID</a>  </td>
+                                <td width="15%" class="cate_listing"><a class="cate_listing" href="#">Subscription Name</a>  </td>
+                                <td width="15%" class="cate_listing"><a class="cate_listing" href="#">Document Type</a>  </td>
+                                <td width="10%" class="cate_listing"><a class="cate_listing" href="#">Status</a>  </td>
+                                <td width="14%" class="cate_listing"><a class="cate_listing" href="#">Doc. Date</a>  </td>
+                                <td width="14%" class="cate_listing"><a class="cate_listing" href="#">Total</a>  </td>
                               </tr>
                               <tr class="bgcolor4">                            
                                <%= render :partial=>'billing',:collection=>@billings %>

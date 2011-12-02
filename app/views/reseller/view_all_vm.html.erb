@@ -1,4 +1,5 @@
-<td valign="top" class="bgcolor2"><script language="javascript" type="text/javascript">
+<td valign="top" class="bgcolor2">
+  <script language="javascript" type="text/javascript">
   function reFresh() {	
     location.reload(true)
     /* Set the number below to the amount of delay, in milliseconds,
@@ -15,8 +16,8 @@ you want between page reloads: 1 minute = 60000 milliseconds. */
               <tr>
                 <td colspan="2">
                   <span class="bodytext_1">
-                    <a class="bodylink" href="index.php?cid=4&amp;action=UVP">Home</a>
-                    &gt; <a class="bodylink" href="index.php?cid=11&amp;action=UVL&amp;left=1">VM Manager</a>
+                    <a class="bodylink" href="<%= reseller_index_path %>">Home</a>
+                    &gt; <a class="bodylink" href="<%= vm_path %>">VM Manager</a>
                     &gt; VMs
                   </span>
                 </td>
@@ -200,22 +201,22 @@ you want between page reloads: 1 minute = 60000 milliseconds. */
                                   <input type="checkbox" onclick="javascript:selectall(checked, document.frmvm, 'chkdel[]')" id="checkbox" name="checkbox">
                                 </td>
                                 <td align="left" width="11%" class="cate_listing">
-                                  <a class="cate_listing" href="index.php?cid=11&amp;action=UVL&amp;orderby=vm_name&amp;sort=ASC&amp;searchfield=&amp;searchval= &amp;left=1">VM ID</a>  
+                                  <a class="cate_listing" href="#">VM ID</a>  
                                 </td>
                                 <td align="left" width="15%" class="cate_listing">
-                                  <a class="cate_listing" href="index.php?cid=11&amp;action=UVL&amp;orderby=vm_display_name&amp;sort=ASC&amp;searchfield=&amp;searchval= &amp;left=1">VM Name</a> 
+                                  <a class="cate_listing" href="#">VM Name</a> 
                                 </td>
                                 <td width="11%" class="cate_listing">
-                                  <a class="cate_listing" href="index.php?cid=11&amp;action=UVL&amp;orderby=type&amp;sort=ASC&amp;searchfield=&amp;searchval= &amp;left=1">Os Type</a> 
+                                  <a class="cate_listing" href="#">Os Type</a> 
                                 </td>
                                 <td align="left" width="16%" class="cate_listing">
-                                  <a class="cate_listing" href="index.php?cid=11&amp;action=UVL&amp;orderby=vm_ip_id&amp;sort=ASC&amp;searchfield=&amp;searchval= &amp;left=1">IP</a>
+                                  <a class="cate_listing" href="#">IP</a>
                                 </td>
                                 <td width="14%" class="cate_listing">
-                                  <a class="cate_listing" href="index.php?cid=11&amp;action=UVL&amp;orderby=server_name&amp;sort=ASC&amp;searchfield=&amp;searchval= &amp;left=1">Server</a>
+                                  <a class="cate_listing" href="#">Server</a>
                                 </td>
                                 <td align="left" width="15%" class="cate_listing">
-                                  <a class="cate_listing" href="index.php?cid=11&amp;action=UVL&amp;orderby=vm_status&amp;sort=ASC&amp;searchfield=&amp;searchval= &amp;left=1">Status</a>  
+                                  <a class="cate_listing" href="#">Status</a>  
                                 </td>
                                 <td width="16%" class="cate_listing">Actions</td>
                               </tr>
