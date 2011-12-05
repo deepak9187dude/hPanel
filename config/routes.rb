@@ -63,6 +63,10 @@ Vhpanel::Application.routes.draw do
     match 'vm/:id/processes/:left' =>"reseller#vm_processes",:as=>'vm_processes',:defaults=>{:left=>1}
     match 'vm/:id/services/:left' =>"reseller#vm_services",:as=>'vm_services',:defaults=>{:left=>1}
     match 'vm/:id/ssh/:left' =>"reseller#vm_ssh",:as=>'vm_ssh',:defaults=>{:left=>1}
+    match 'vm/:id/delete/:left' =>"reseller#vm_delete",:as=>'vm_delete',:defaults=>{:left=>1}
+    match 'vm/:id/boot/:left' =>"reseller#vm_boot",:as=>'vm_boot',:defaults=>{:left=>1}
+    match 'vm/:id/shutdown/:left' =>"reseller#vm_shutdown",:as=>'vm_shutdwon',:defaults=>{:left=>1}
+    match 'vm/:id/reboot/:left' =>"reseller#vm_reboot",:as=>'vm_reboot',:defaults=>{:left=>1}
     
 #    tickets
     match 'support/:left' =>"reseller#support_tickets",:via => [:get,:post,:put],:as=>'reseller_all_support_tickets',:defaults=>{:left=>3}

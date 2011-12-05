@@ -25,7 +25,7 @@
       <tbody>
         <tr>
           <td align="center">
-            <a style="cursor:pointer" onclick="if(chk_vm_confirm('DELETE','VM','Stopped')!=false) { funshowchild('index.php?cid=11&amp;action=UVD&amp;vmid=1&amp;left=1',this.value,'chldpar2','index.php?cid=11&amp;action=UVL&amp;left=1')};">
+            <a style="cursor:pointer" onclick="if(chk_vm_confirm('DELETE','VM','Stopped')!=false) { funshowchild('<%= vm_delete_path(vm.id) %>',this.value,'chldpar2','index.php?cid=11&amp;action=UVL&amp;left=1')};">
               <img width="18" height="16" border="0" title="Delete" src="/images/icon_delete.gif">
             </a>
           </td>
@@ -35,17 +35,17 @@
             </a>
           </td>
           <td align="center">
-            <a style="cursor:pointer " onclick="if(chk_vm_confirm('BOOT','VM','Stopped')!=false) funshowchild('index.php?cid=11&amp;action=UVB&amp;vmid=1&amp;left=1',this.value,'chldpar2','index.php?cid=11&amp;action=UVL');">
+            <a style="cursor:pointer " onclick="if(chk_vm_confirm('BOOT','VM','Stopped')!=false) funshowchild('<%= vm_boot_path(vm.id) %>',this.value,'chldpar2','index.php?cid=11&amp;action=UVL');">
               <img width="18" height="16" border="0" title="Boot" src="/images//icon_boot.png">
             </a>
           </td>
           <td align="center">
-            <a style="cursor:pointer " onclick="if(chk_vm_shutdown('SHUTDOWN','VM','Stopped')!=false) funshowchild('index.php?cid=11&amp;action=UVH&amp;vmid=1&amp;left=1',this.value,'chldpar2','index.php?cid=11&amp;action=UVL');">
+            <a style="cursor:pointer " onclick="if(chk_vm_shutdown('SHUTDOWN','VM','Stopped')!=false) funshowchild('<%= vm_shutdwon_path(vm.id) %>',this.value,'chldpar2','index.php?cid=11&amp;action=UVL');">
               <img width="18" height="16" border="0" title="Shut Down" src="/images/icon_shut_down.png">
             </a>
           </td>
           <td align="center">
-            <a style="cursor:pointer " onclick="if(chk_vm_reboot('REBOOT','VM','Stopped')!=false) funshowchild('index.php?cid=11&amp;action=UVS&amp;vmid=1&amp;left=2',this.value,'chldpar2','index.php?cid=11&amp;action=UVL');">
+            <a style="cursor:pointer " onclick="if(chk_vm_reboot('REBOOT','VM','Running')!=false) funshowchild('<%= vm_reboot_path(vm.id) %>',this.value,'chldpar2','index.php?cid=11&amp;action=UVL');">
               <img width="18" height="16" border="0" title="Reboot" src="/images/icon_reboot.png">
             </a>
           </td>

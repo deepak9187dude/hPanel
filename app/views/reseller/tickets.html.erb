@@ -164,14 +164,14 @@
                                           </td>
                                           <td width="12%" class="bodytext">Show</td>
                                           <td width="12%" class="bodytext">
-                                            <select onchange="document.frmsearch.submit()" id="limit" class="limit" name="limit">
-                                              <option value="5">5</option>
-                                              <option value="10">10</option>
-                                              <option selected="" value="20">20</option>
-                                              <option value="40">40</option>
-                                              <option value="80">80</option>
-                                              <option value="160">160</option>
-                                              <option value="320">320</option>
+                                            <select onchange="document.frmsearch.submit()" id="limit" class="limit" name="limit">                                                                                           
+                                              <option value="5" <%= (@selection == "5") ? "selected":" " %> >5</option>
+                                              <option value="10" <%= (@selection == "10") ? "selected":" " %> >10</option>
+                                              <option value="20" <%= (@selection == "20") ? "selected":" " %>>20</option>
+                                              <option value="40" <%= (@selection == "40") ? "selected":" " %> >40</option>
+                                              <option value="80" <%= (@selection == "80") ? "selected":" " %> >80</option>
+                                              <option value="80" <%= (@selection == "160") ? "selected":" " %> >160</option>
+                                              <option value="80" <%= (@selection == "320") ? "selected":" " %> >320</option>
                                             </select>                                        
                                           </td>
                                         </tr>

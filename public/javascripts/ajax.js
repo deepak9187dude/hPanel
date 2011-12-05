@@ -45,7 +45,7 @@ var xmlHttp, pgurl, dObj, xmlHttp2, pgurl2, dObj2
 		xmlHttp=GetXmlHttpObject(childChanged) 		
 		//alert(url);
 		xmlHttp.open("GET", url , true)
-		dObj.innerHTML="<br><img src='../asset/images/loading_ani2.gif'>";			
+		dObj.innerHTML="<br><img src='/images/loading_ani2.gif'>";			
 		xmlHttp.send(null) 
     }
 

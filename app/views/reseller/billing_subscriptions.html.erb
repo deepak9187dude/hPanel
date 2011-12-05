@@ -40,7 +40,7 @@
                       <tr>
                         <td class="tdgap">&nbsp;</td>
                       </tr>
-                    <form action="index.php?cid=20&amp;action=SUB&amp;left=2" method="post" name="frmvm" id="frmvm"></form>
+                    <%=  form_tag("", :method=>'post', :multipart => true,:name=>"frmvm",:id=>"frmsearch",:action=>'') do %>
                     <tr>
                       <td>
                         <table cellspacing="1" cellpadding="0" border="0" align="left" width="87%">
@@ -48,14 +48,14 @@
                             <tr>
                               <td valign="middle" colspan="6">&nbsp;</td>
                               <td align="right" width="13%" valign="top" class="bodytext">Show&nbsp;&nbsp;
-                                <select onchange="document.frmvm.submit()" id="limit" class="limit" name="limit">
-                                  <option value="5">5</option>
-                                  <option value="10">10</option>
-                                  <option selected="" value="20">20</option>
-                                  <option value="40">40</option>
-                                  <option value="80">80</option>
-                                  <option value="160">160</option>
-                                  <option value="320">320</option>
+                                <select onchange="document.frmvm.submit()" id="limit" class="limit" name="limit">                                                                               
+                                  <option value="5" <%= (@selection == "5") ? "selected":" " %> >5</option>
+                                  <option value="10" <%= (@selection == "10") ? "selected":" " %> >10</option>
+                                  <option value="20" <%= (@selection == "20") ? "selected":" " %>>20</option>
+                                  <option value="40" <%= (@selection == "40") ? "selected":" " %> >40</option>
+                                  <option value="80" <%= (@selection == "80") ? "selected":" " %> >80</option>
+                                  <option value="80" <%= (@selection == "160") ? "selected":" " %> >160</option>
+                                  <option value="80" <%= (@selection == "320") ? "selected":" " %> >320</option>
                                 </select>
                               </td> 
                               <td align="right" width="11%" valign="middle">
@@ -72,6 +72,7 @@
                         </table>
                       </td>
                     </tr>
+                    <% end %>
                     <tr>
                       <td>
                         <div align="center" id="chldpar2">

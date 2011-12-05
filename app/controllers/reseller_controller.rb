@@ -127,12 +127,36 @@ class ResellerController < ApplicationController
   def vm_ssh
     @vm = Vm.find(params[:id])
   end
+  def vm_delete
+    @vm = Vm.find(params[:id])
+    render :text=>'<br><span class="bolderror">VM Delete has been scheduled successfully.</span>'
+  end
+  
+  def vm_boot
+    @vm = Vm.find(params[:id])
+    render :text=>'<br><span class="bolderror">VM Boot has been scheduled successfully.</span>'
+  end
+  
+  def vm_shutdown
+    @vm = Vm.find(params[:id])
+    render :text=>'<br><span class="bolderror">VM Shutdown has been scheduled successfully.</span>'
+  end
+  
+  def vm_reboot
+    @vm = Vm.find(params[:id])
+    render :text=>'<br><span class="bolderror">VM Reboot has been scheduled successfully.</span>'
+  end
   
   def plan_summary
   end
   
   def view_all_vm
     @vms = @current_user.vms
+    
+    if params[:limit]
+      @vms = @current_user.vms.find(:all, :order => "id desc", :limit => params[:limit])
+      @selection = params[:limit]
+    end
   end
   def del_vm
     
@@ -432,6 +456,11 @@ class ResellerController < ApplicationController
       @billings = @current_user.invoice_details
 #    params[:left]=1
 #    render :text=>params.to_json
+      
+    if params[:limit]
+      @billings = @current_user.invoice_details.find(:all, :order => "id desc", :limit => params[:limit])
+      @selection = params[:limit]
+    end
   end
   
   def order_details
@@ -459,6 +488,7 @@ class ResellerController < ApplicationController
     end
     if params[:limit]
       @tickets = @tickets.find(:all, :order => "id desc", :limit => params[:limit])
+      @selection = params[:limit]
     end
     render "tickets"
 #    render :text => params.to_json
@@ -477,13 +507,19 @@ class ResellerController < ApplicationController
       @tickets = @billing_progress
     end
      if params[:limit]
-      @tickets = @tickets.find(:all, :order => "id desc", :limit => params[:limit])
+      @tickets = @tickets.find(:all, :order => "id desc", :limit => params[:limit])      
+      @selection = params[:limit]
     end
     render "tickets"
   end
 
   def billing_subscriptions
     @subscriptions = @current_user.subscriptions
+    
+    if params[:limit]
+      @subscriptions = @current_user.subscriptions.find(:all, :order => "id desc", :limit => params[:limit])
+      @selection = params[:limit]
+    end
   end
 
   def new_ticket

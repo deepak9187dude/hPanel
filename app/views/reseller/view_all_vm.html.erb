@@ -128,7 +128,8 @@ you want between page reloads: 1 minute = 60000 milliseconds. */
                               </tr>
                               <tr id="trS33">
                                 <td width="95%">
-                                  <form id="frmsearch" method="post" action="index.php?cid=11&amp;action=UVL&amp;left=1" name="frmsearch">
+                                  <%=  form_tag("", :method=>'post', :multipart => true,:name=>"frmsearch",:id=>"frmsearch",:action=>'') do %>
+                                  <%#*<form id="frmsearch" method="post" action="" name="frmsearch">%>
                                     <table width="50%" cellspacing="2" cellpadding="2" border="0">
                                       <tbody>
                                         <tr>
@@ -155,19 +156,18 @@ you want between page reloads: 1 minute = 60000 milliseconds. */
                                           <td width="5%" valign="middle" class="bodytext">Show</td>
                                           <td width="10%" valign="middle" class="bodytext">
                                             <select onchange="document.frmsearch.submit()" id="limit" class="limit" name="limit">
-                                              <option value="5">5</option>
-                                              <option selected="" value="10">10</option>
-                                              <option value="20">20</option>
-                                              <option value="40">40</option>
-                                              <option value="80">80</option>
-                                              <option value="160">160</option>
-                                              <option value="320">320</option>
+                                              <option value="5" <%= (@selection == "5") ? "selected":" " %> >5</option>
+                                              <option value="10" <%= (@selection == "10") ? "selected":" " %> >10</option>
+                                              <option value="20" <%= (@selection == "20") ? "selected":" " %>>20</option>
+                                              <option value="40" <%= (@selection == "40") ? "selected":" " %> >40</option>
+                                              <option value="80" <%= (@selection == "80") ? "selected":" " %> >80</option>
                                             </select>
                                           </td>
                                         </tr>
                                       </tbody>
                                     </table>
-                                  </form>
+                                  <%#*</form>%>
+                                  <% end %>
                                 </td>
                                 <td width="5%" valign="bottom" class="bodytext">&nbsp;</td>
                               </tr>
