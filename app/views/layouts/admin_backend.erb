@@ -86,190 +86,430 @@
                                     <tr>
                                       <td class="tdgap">
                                         <div id="vertical_container" class="content_width">
-                                          <h1 class="accordion_toggle">MY ACCOUNT</h1>
+<%# admin menu start %>
+                                          <h1 class="accordion_toggle">CLIENT MANAGER</h1>
+
                                           <div id="content_width" class="accordion_content">
                                             <table width="90%" border="0" cellspacing="0" cellpadding="0">
                                               <tr>
                                                 <td class="cate_border">
-                                                  <%= image_tag("icon_view_client.png",:width=>16,:height=>20)  %>
+                                                  <%= image_tag("icon_view_vm.png",:width=>16,:height=>20,:title=>"View Clients")  %>
                                                   <span class="left_nav">
-                                                    <%= link_to('View Profile',reseller_index_path) %>
+                                                    <%= link_to "View All Clients", # %>
                                                   </span>
                                                 </td>
-                                              </tr>
-                                              <tr>
-                                                <td>
-                                                  <%= image_tag("icon_hosting_plan_tn.png",:width=>16,:height=>20,:title=>"Edit Profile")  %>
-                                                  <span class="left_nav">
-                                                    <%= link_to "Edit Profile",reseller_edit_path %>
-                                                  </span>
-                                                </td>
-                                              </tr>
-                                              <!--<tr>
-                                                   <td class="cate_border"><img src="../asset/images/icon_edit_client.png" title="Edit Profile" width="16" height="20" /><span class="left_nav"><a href="index.php?cid=4&action=UEP&left=0">Edit Profile</a></span></td>                              </tr>
-                                                 <tr>-->
-                                              <!--
-                                                                             <tr>
-                                                   <td class="cate_border"><img src="../asset/images/icon_creditcard_tn.png" title="Edit Credit Card" width="16" height="20" /><span class="left_nav"><a href="index.php?cid=4&action=UCC&left=0">Edit Credit Card</a></span></td>                              </tr>-->
-                                              <tr>
-                                                <td>
-                                                  <%= image_tag("reset_password.png",:width=>16,:height=>20,:title=>"Reset Password")  %>
-                                                  <span class="left_nav">
-                                                    <%= link_to "Reset Password",reseller_update_password_path %>
-                                                  </span>
-                                                </td>      
                                               </tr>
                                             </table>
                                           </div>
+
+                                          <div id="content_width" class="accordion_content">
+                                            <table width="90%" border="0" cellspacing="0" cellpadding="0">
+                                              <tr>
+                                                <td class="cate_border">
+                                                  <%= image_tag("icon_view_vm.png",:width=>16,:height=>20,:title=>"Add New Client")  %>
+                                                  <span class="left_nav">
+                                                    <%= link_to "Add a New Client", # %>
+                                                  </span>
+                                                </td>
+                                              </tr>
+                                            </table>
+                                          </div>
+
+                                          <div id="content_width" class="accordion_content">
+                                            <table width="90%" border="0" cellspacing="0" cellpadding="0">
+                                              <tr>
+                                                <td class="cate_border">
+                                                  <%= image_tag("icon_view_vm.png",:width=>16,:height=>20,:title=>"Subscriptions")  %>
+                                                  <span class="left_nav">
+                                                    <%= link_to "Subscriptions", # %>
+                                                  </span>
+                                                </td>
+                                              </tr>
+                                            </table>
+                                          </div>
+
+                                          <div id="content_width" class="accordion_content">
+                                            <table width="90%" border="0" cellspacing="0" cellpadding="0">
+                                              <tr>
+                                                <td class="cate_border">
+                                                  <%= image_tag("icon_view_vm.png",:width=>16,:height=>20,:title=>"Grace Period Settings")  %>
+                                                  <span class="left_nav">
+                                                    <%= link_to "Grace Period Settings", # %>
+                                                  </span>
+                                                </td>
+                                              </tr>
+                                            </table>
+                                          </div>
+
+                                          <div id="content_width" class="accordion_content">
+                                            <table width="90%" border="0" cellspacing="0" cellpadding="0">
+                                              <tr>
+                                                <td class="cate_border">
+                                                  <%= image_tag("icon_view_vm.png",:width=>16,:height=>20,:title=>"Termination Request")  %>
+                                                  <span class="left_nav">
+                                                    <%= link_to "Termination Request", # %>
+                                                  </span>
+                                                </td>
+                                              </tr>
+                                            </table>
+                                          </div>
+
+                                          <h1 class="accordion_toggle">SERVER MANAGER</h1>
+
+                                          <div id="content_width" class="accordion_content">
+                                            <table width="90%" border="0" cellspacing="0" cellpadding="0">
+                                              <tr>
+                                                <td class="cate_border">
+                                                  <%= image_tag("icon_view_vm.png",:width=>16,:height=>20,:title=>"View All Servers")  %>
+                                                  <span class="left_nav">
+                                                    <%= link_to "View All Servers", # %>
+                                                  </span>
+                                                </td>
+                                              </tr>
+                                            </table>
+                                          </div>
+
+                                          <div id="content_width" class="accordion_content">
+                                            <table width="90%" border="0" cellspacing="0" cellpadding="0">
+                                              <tr>
+                                                <td class="cate_border">
+                                                  <%= image_tag("icon_view_vm.png",:width=>16,:height=>20,:title=>"Add New Server")  %>
+                                                  <span class="left_nav">
+                                                    <%= link_to "Add a New Server", # %>
+                                                  </span>
+                                                </td>
+                                              </tr>
+                                            </table>
+                                          </div>
+
+                                          <div id="content_width" class="accordion_content">
+                                            <table width="90%" border="0" cellspacing="0" cellpadding="0">
+                                              <tr>
+                                                <td class="cate_border">
+                                                  <%= image_tag("icon_view_vm.png",:width=>16,:height=>20,:title=>"View VM's on Server")  %>
+                                                  <span class="left_nav">
+                                                    <%= link_to "View VM's on a Server", # %>
+                                                  </span>
+                                                </td>
+                                              </tr>
+                                            </table>
+                                          </div>
+
+                                          <div id="content_width" class="accordion_content">
+                                            <table width="90%" border="0" cellspacing="0" cellpadding="0">
+                                              <tr>
+                                                <td class="cate_border">
+                                                  <%= image_tag("icon_view_vm.png",:width=>16,:height=>20,:title=>"Device Management")  %>
+                                                  <span class="left_nav">
+                                                    <%= link_to "Device Management", # %>
+                                                  </span>
+                                                </td>
+                                              </tr>
+                                            </table>
+                                          </div>
+
+                                          <div id="content_width" class="accordion_content">
+                                            <table width="90%" border="0" cellspacing="0" cellpadding="0">
+                                              <tr>
+                                                <td class="cate_border">
+                                                  <%= image_tag("icon_view_vm.png",:width=>16,:height=>20,:title=>"Template Management")  %>
+                                                  <span class="left_nav">
+                                                    <%= link_to "Template Management", # %>
+                                                  </span>
+                                                </td>
+                                              </tr>
+                                            </table>
+                                          </div>
+
+                                          <div id="content_width" class="accordion_content">
+                                            <table width="90%" border="0" cellspacing="0" cellpadding="0">
+                                              <tr>
+                                                <td class="cate_border">
+                                                  <%= image_tag("icon_view_vm.png",:width=>16,:height=>20,:title=>"Network Management")  %>
+                                                  <span class="left_nav">
+                                                    <%= link_to "Network Management", # %>
+                                                  </span>
+                                                  <ul>
+                                                    <li class="left_nav">
+                                                      <%= link_to "IP Manager", # %>
+                                                    </li>
+                                                    <li class="left_nav">
+                                                      <%= link_to "Blocked IP", # %>
+                                                    </li>
+                                                    <li class="left_nav">
+                                                      <%= link_to "Resolver Management", # %>
+                                                    </li>
+                                                  </ul>
+                                                </td>
+                                              </tr>
+                                            </table>
+                                          </div>
+
+                                          <div id="content_width" class="accordion_content">
+                                            <table width="90%" border="0" cellspacing="0" cellpadding="0">
+                                              <tr>
+                                                <td class="cate_border">
+                                                  <%= image_tag("icon_view_vm.png",:width=>16,:height=>20,:title=>"Reset Password")  %>
+                                                  <span class="left_nav">
+                                                    <%= link_to "Reset Password", # %>
+                                                  </span>
+                                                </td>
+                                              </tr>
+                                            </table>
+                                          </div>
+
                                           <h1 class="accordion_toggle">VM MANAGER</h1>
+
                                           <div id="content_width" class="accordion_content">
                                             <table width="90%" border="0" cellspacing="0" cellpadding="0">
-                                              <%#*<tr>%>
-                                                <%#*<td class="cate_border">%>
-                                                  <%#= image_tag("icon_hosting_plan_tn.png",:width=>16,:height=>20,:title=>"Upgrade License")  %>
-                                                  <%#*<span class="left_nav">%>
-                                                    <%#= link_to "Upgrade Licence", reseller_licence_upgrade_path %>
-                                                  <%#*</span>%>
-                                                <%#*</td>%>
-                                              <%#*</tr>%>
-                                              <%#*<tr>%>
-                                                <%#*<td class="cate_border">%>
-                                                  <%#= image_tag("icon_license_s.png",:width=>16,:height=>20,:title=>"View License Code")  %>
-                                                  <%#*<span class="left_nav">%>
-                                                    <%#= link_to("View Licence Code",reseller_licence_code_path) %>
-                                                  <%#*</span>%>
-                                                <%#*</td>%>
-                                              <%#*</tr>%>
-                                              <%#*<tr>%>
-                                                <%#*<td class="cate_border">%>
-                                                  <%#= image_tag("icon_hosting_plan_tn.png",:width=>16,:height=>20,:title=>"Download")  %>
-                                                  <%#*<span class="left_nav">%>
-                                                    <%#= link_to("Download",reseller_download_path) %>
-                                                  <%#*</span>%>
-                                                <%#*</td>%>
-                                              <%#*</tr>%>
-                                              <%#*<tr>%>
-                                                <%#*<td class="cate_border">%>
-                                                  <%#= image_tag("icon_hosting_plan_tn.png",:width=>16,:height=>20,:title=>"Download")  %>
-                                                  <%#*<span class="left_nav">%>
-                                                    <%#= link_to("ssh",ssh_demo_path) %>
-                                                  <%#*</span>%>
-                                                <%#*</td>%>
-                                              <%#*</tr>%>                                              
                                               <tr>
                                                 <td class="cate_border">
-                                                  <%= image_tag("icon_view_vm.png",:width=>16,:height=>20,:title=>"View VM")  %>
+                                                  <%= image_tag("icon_view_vm.png",:width=>16,:height=>20,:title=>"View All VM's")  %>
                                                   <span class="left_nav">
-                                                    <%= link_to "View All VM", vm_path %>
+                                                    <%= link_to "View All VM's", # %>
                                                   </span>
                                                 </td>
                                               </tr>
                                             </table>
                                           </div>
-                                          <!--
-                                        <h1 class="accordion_toggle">MESSAGES MANAGER</h1>
-                                        <div id="content_width" class="accordion_content">
-                                                <table width="90%" border="0" cellspacing="0" cellpadding="0">
-                                                  <tr>
-                                                        <td class="cate_border"><img src="../asset/images/icon_log_manager.png" title="View All Jobs" width="16" height="20" align="bottom" /><span class="left_nav"><a href="index.php?cid=26&action=UMI&left=4">Inbox</a></span></td>
-                                                  </tr>
-                                                        <tr>
-                                                        <td><img src="../asset/images/icon_log_manager.png" title="View All Long Jobs" width="16" height="20" align="bottom" /><span class="left_nav"><a href="index.php?cid=26&action=UMS&left=4">Sentbox</a></span></td>
-                                                  </tr>
-                                                </table>
-                                        </div>
-                                          -->
+
+                                          <div id="content_width" class="accordion_content">
+                                            <table width="90%" border="0" cellspacing="0" cellpadding="0">
+                                              <tr>
+                                                <td class="cate_border">
+                                                  <%= image_tag("icon_view_vm.png",:width=>16,:height=>20,:title=>"Add New VM")  %>
+                                                  <span class="left_nav">
+                                                    <%= link_to "Add a New VM", # %>
+                                                  </span>
+                                                </td>
+                                              </tr>
+                                            </table>
+                                          </div>
+
                                           <h1 class="accordion_toggle">BILLING MANAGER</h1>
+
                                           <div id="content_width" class="accordion_content">
                                             <table width="90%" border="0" cellspacing="0" cellpadding="0">
                                               <tr>
                                                 <td class="cate_border">
-                                                  <%= image_tag("icon_billing-history_tn.png",:width=>16,:height=>20,:title=>"Billing History")  %>
+                                                  <%= image_tag("icon_view_vm.png",:width=>16,:height=>20,:title=>"Hosting Plans")  %>
                                                   <span class="left_nav">
-                                                    <%= link_to("Billing History",reseller_billing_history_path) %>
-                                                  </span>
-                                                </td>
-                                              </tr>
-                                              <tr>
-                                                <td class="cate_border">
-                                                  <%= image_tag("subicn-sm.png",:width=>16,:height=>20,:title=>"Subscriptions")  %>
-                                                  <span class="left_nav">
-                                                    <%= link_to "Subscriptions", reseller_billing_subscriptions_path %>
-                                                  </span>
-                                                </td>
-                                              </tr>
-                                              <tr>
-                                                <td class="cate_border">
-                                                  <%= image_tag("termination-icn2.png",:width=>16,:height=>20,:title=>"Termination Request")  %>
-                                                  <span class="left_nav">
-                                                    <%= link_to "Termination Request", reseller_billing_termination_path %>
-                                                  </span>
-                                                </td>
-                                              </tr>
-                                              <tr>
-                                                <td class="cate_border">
-                                                  <%= image_tag("paymentmethods-icn2.png",:width=>16,:height=>20,:title=>"Termination Request")  %>
-                                                  <span class="left_nav">
-                                                    <%= link_to "Payment Methods", reseller_billing_payment_methods_path %>
+                                                    <%= link_to "Hosting Plans", # %>
                                                   </span>
                                                 </td>
                                               </tr>
                                             </table>
                                           </div>
-                                          <h1 class="accordion_toggle">TICKET MANAGER</h1>
+
                                           <div id="content_width" class="accordion_content">
-                                            <table width="90%" border="0" cellspacing="0" cellpadding="0"> 
-                                              <tr> 
-                                                <td class="cate_border">
-                                                  <%= image_tag("support_th.png",:width=>16,:height=>20,:title=>"Support",:align=>'bottom')  %>
-                                                  <span class="left_nav">
-                                                    <%= link_to("Support (#{@support_all.count})",reseller_all_support_tickets_path) %>
-                                                  </span>
-                                                  <ul>
-                                                    <li class="left_nav">
-                                                      <%= link_to("Open (#{@support_open.count})",reseller_open_support_tickets_path)%>
-                                                    </li>
-                                                    <li class="left_nav">
-                                                      <%= link_to( "On Hold (#{@support_hold.count})",reseller_hold_support_tickets_path) %>
-                                                    </li>
-                                                    <li class="left_nav">
-                                                      <%= link_to( "Closed (#{@support_closed.count})",reseller_closed_support_tickets_path) %>
-                                                    </li>
-                                                    <li class="left_nav">
-                                                      <%= link_to( "In-Progress (#{@support_progress.count})",reseller_progress_support_tickets_path) %>
-                                                    </li>
-                                                  </ul>	
-                                                </td>
-                                              </tr>
+                                            <table width="90%" border="0" cellspacing="0" cellpadding="0">
                                               <tr>
-                                                <td>
-                                                  <%= image_tag("billing_th.png",:width=>16,:height=>20,:title=>"Billing",:align=>'bottom')  %>
+                                                <td class="cate_border">
+                                                  <%= image_tag("icon_view_vm.png",:width=>16,:height=>20,:title=>"Receivables")  %>
                                                   <span class="left_nav">
-                                                    <%= link_to("Billing (#{@billing_all.count})",reseller_all_billing_tickets_path) %>
+                                                    <%= link_to "Receivables", # %>
+                                                  </span>
+                                                </td>
+                                              </tr>
+                                            </table>
+                                          </div>
+
+                                          <h1 class="accordion_toggle">LOG MANAGER</h1>
+
+                                          <div id="content_width" class="accordion_content">
+                                            <table width="90%" border="0" cellspacing="0" cellpadding="0">
+                                              <tr>
+                                                <td class="cate_border">
+                                                  <%= image_tag("icon_view_vm.png",:width=>16,:height=>20,:title=>"Jobs Queue")  %>
+                                                  <span class="left_nav">
+                                                    <%= link_to "Jobs Queue", # %>
                                                   </span>
                                                   <ul>
                                                     <li class="left_nav">
-                                                      <%= link_to("Open (#{@billing_open.count})",reseller_open_billing_tickets_path)%>
+                                                      <%= link_to "Completed Logs", # %>
                                                     </li>
                                                     <li class="left_nav">
-                                                      <%= link_to( "On Hold (#{@billing_hold.count})",reseller_hold_billing_tickets_path) %>
+                                                      <%= link_to "Action Logs", # %>
                                                     </li>
                                                     <li class="left_nav">
-                                                      <%= link_to( "Closed (#{@billing_closed.count})",reseller_closed_billing_tickets_path) %>
+                                                      <%= link_to "Error Logs", # %>
                                                     </li>
-                                                    <li class="left_nav">
-                                                      <%= link_to( "In-Progress (#{@billing_progress.count})",reseller_progress_billing_tickets_path) %>
-                                                    </li>
-                                                  </ul>	
+                                                  </ul>
                                                 </td>
                                               </tr>
-                                            </table>           
+                                            </table>
                                           </div>
+
+                                          <div id="content_width" class="accordion_content">
+                                            <table width="90%" border="0" cellspacing="0" cellpadding="0">
+                                              <tr>
+                                                <td class="cate_border">
+                                                  <%= image_tag("icon_view_vm.png",:width=>16,:height=>20,:title=>"Long Queue")  %>
+                                                  <span class="left_nav">
+                                                    <%= link_to "Long Queue", # %>
+                                                  </span>
+                                                  <ul>
+                                                    <li class="left_nav">
+                                                      <%= link_to "Completed Logs", # %>
+                                                    </li>
+                                                    <li class="left_nav">
+                                                      <%= link_to "Action Logs", # %>
+                                                    </li>
+                                                    <li class="left_nav">
+                                                      <%= link_to "Error Logs", # %>
+                                                    </li>
+                                                  </ul>>
+                                                </td>
+                                              </tr>
+                                            </table>
+                                          </div>
+
+                                          <h1 class="accordion_toggle">COMMERCE MANAGER</h1>
+
+                                          <div id="content_width" class="accordion_content">
+                                            <table width="90%" border="0" cellspacing="0" cellpadding="0">
+                                              <tr>
+                                                <td class="cate_border">
+                                                  <%= image_tag("icon_view_vm.png",:width=>16,:height=>20,:title=>"Anti-Fraud Checklist")  %>
+                                                  <span class="left_nav">
+                                                    <%= link_to "Anti-Fraud Checklist", # %>
+                                                  </span>
+                                                </td>
+                                              </tr>
+                                            </table>
+                                          </div>
+
+                                          <div id="content_width" class="accordion_content">
+                                            <table width="90%" border="0" cellspacing="0" cellpadding="0">
+                                              <tr>
+                                                <td class="cate_border">
+                                                  <%= image_tag("icon_view_vm.png",:width=>16,:height=>20,:title=>"Gateway Settings")  %>
+                                                  <span class="left_nav">
+                                                    <%= link_to "Gateway Settings", # %>
+                                                  </span>
+                                                </td>
+                                              </tr>
+                                            </table>
+                                          </div>
+
+                                          <div id="content_width" class="accordion_content">
+                                            <table width="90%" border="0" cellspacing="0" cellpadding="0">
+                                              <tr>
+                                                <td class="cate_border">
+                                                  <%= image_tag("icon_view_vm.png",:width=>16,:height=>20,:title=>"Fraud Score")  %>
+                                                  <span class="left_nav">
+                                                    <%= link_to "Fraud Score", # %>
+                                                  </span>
+                                                </td>
+                                              </tr>
+                                            </table>
+                                          </div>
+
+                                          <h1 class="accordion_toggle">SETTINGS</h1>
+
+                                          <div id="content_width" class="accordion_content">
+                                            <table width="90%" border="0" cellspacing="0" cellpadding="0">
+                                              <tr>
+                                                <td class="cate_border">
+                                                  <%= image_tag("icon_view_vm.png",:width=>16,:height=>20,:title=>"Reset Password")  %>
+                                                  <span class="left_nav">
+                                                    <%= link_to "Reset Password", # %>
+                                                  </span>
+                                                </td>
+                                              </tr>
+                                            </table>
+                                          </div>
+
+                                          <h1 class="accordion_toggle">TICKET MANAGER</h1>
+
+                                          <div id="content_width" class="accordion_content">
+                                            <table width="90%" border="0" cellspacing="0" cellpadding="0">
+                                              <tr>
+                                                <td class="cate_border">
+                                                  <%= image_tag("icon_view_vm.png",:width=>16,:height=>20,:title=>"Support")  %>
+                                                  <span class="left_nav">
+                                                    <%= link_to "Support", # %>
+                                                  </span>
+                                                  <ul>
+                                                    <li class="left_nav">
+                                                      <%= link_to "Open", # %>
+                                                    </li>
+                                                    <li class="left_nav">
+                                                      <%= link_to "On Hold", # %>
+                                                    </li>
+                                                    <li class="left_nav">
+                                                      <%= link_to "Closed", # %>
+                                                    </li>
+                                                    <li class="left_nav">
+                                                      <%= link_to "In-Progress", # %>
+                                                    </li>
+                                                  </ul>
+                                                </td>
+                                              </tr>
+                                            </table>
+                                          </div>
+
+                                          <div id="content_width" class="accordion_content">
+                                            <table width="90%" border="0" cellspacing="0" cellpadding="0">
+                                              <tr>
+                                                <td class="cate_border">
+                                                  <%= image_tag("icon_view_vm.png",:width=>16,:height=>20,:title=>"Billing")  %>
+                                                  <span class="left_nav">
+                                                    <%= link_to "Billing", # %>
+                                                  </span>
+                                                  <ul>
+                                                    <li class="left_nav">
+                                                      <%= link_to "Open", # %>
+                                                    </li>
+                                                    <li class="left_nav">
+                                                      <%= link_to "On Hold", # %>
+                                                    </li>
+                                                    <li class="left_nav">
+                                                      <%= link_to "Closed", # %>
+                                                    </li>
+                                                    <li class="left_nav">
+                                                      <%= link_to "In-Progress", # %>
+                                                    </li>
+                                                  </ul>
+                                                </td>
+                                              </tr>
+                                            </table>
+                                          </div>
+
+                                          <h1 class="accordion_toggle">HELP</h1>
+
+                                          <div id="content_width" class="accordion_content">
+                                            <table width="90%" border="0" cellspacing="0" cellpadding="0">
+                                              <tr>
+                                                <td class="cate_border">
+                                                  <%= image_tag("icon_view_vm.png",:width=>16,:height=>20,:title=>"Admin User Guide")  %>
+                                                  <span class="left_nav">
+                                                    <%= link_to "Admin User Guide", # %>
+                                                  </span>>
+                                                </td>
+                                              </tr>
+                                            </table>
+                                          </div>
+
+                                          <div id="content_width" class="accordion_content">
+                                            <table width="90%" border="0" cellspacing="0" cellpadding="0">
+                                              <tr>
+                                                <td class="cate_border">
+                                                  <%= image_tag("icon_view_vm.png",:width=>16,:height=>20,:title=>"Installation Guide")  %>
+                                                  <span class="left_nav">
+                                                    <%= link_to "Installation Guide", # %>
+                                                  </span>
+                                                </td>
+                                              </tr>
+                                            </table>
+                                          </div>
+
                                           <%= link_to logout_path,:style=>'text-decoration:none' do %>
                                             <h1 class="accordion_logout">LOGOUT</h1>
                                           <%  end %>
                                           <div id="vertical_nested_container">                     
                                           </div>
+<%# admin menu ends %>
                                         </div>
                                       </td>
                                     </tr>
