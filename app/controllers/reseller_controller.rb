@@ -67,20 +67,108 @@ class ResellerController < ApplicationController
   
   def new_password
     @user = User.find(session[:user_id])
-    if params[:resetpassword] && params[:password]==params[:re_password]
-      @user.password = params[:password]
-      @user.save
-      flash[:info_msg] = "password updated successfully"
-      redirect_to reseller_update_password_path
+    if params[:old_password]==@user.password
+      if params[:resetpassword] && params[:password]==params[:re_password]
+        @user.password = params[:password]
+        @user.save
+        flash[:info_msg] = "password updated successfully"
+        redirect_to reseller_update_password_path
+      else
+        flash[:error_msg] = "password no not match"
+        redirect_to reseller_update_password_path
+      end
     else
-      flash[:error_msg] = "password no not match"
+      flash[:error_msg] = "Incorrect old password"
       redirect_to reseller_update_password_path
-    end
+    end        
+  end
+  
+  def vm_change_password
+    @vm = Vm.find(params[:id])
+  end
+#  
+#  
+  def vm_new_password
+    @vm = Vm.find(params[:id])
+    if params[:old_password] == @vm.password
+      if params[:resetpassword] && params[:password]==params[:re_password]
+        @vm.password = params[:password]
+        @vm.save
+        flash[:info_msg] = "password updated successfully"
+        redirect_to vm_change_password_path
+      else
+        flash[:error_msg] = "password no not match"
+        redirect_to vm_change_password_path
+      end
+    else
+      flash[:error_msg] = "Incorrect old password"
+      redirect_to vm_change_password_path
+    end        
   end
 
+  def vm_details
+    @vm = Vm.find(params[:id])
+  end
+  
+  def vm_processes
+    @vm = Vm.find(params[:id])
+    @ps = `ps -eo pid,stat,pmem,user,command h`
+    @ps = @ps.split("\n")
+    
+#    render:text=>@ps.size
+  end
+  
+  def vm_services
+    @vm = Vm.find(params[:id])
+    @services = `sysv-rc-conf --list`
+    @services = @services.split("\n")
+  end
+  
+  def vm_ssh
+    @vm = Vm.find(params[:id])
+  end
+  def vm_delete
+    @vm = Vm.find(params[:id])
+    render :text=>'<br><span class="bolderror">VM Delete has been scheduled successfully.</span>'
+  end
+  
+  def vm_boot
+    @vm = Vm.find(params[:id])
+    render :text=>'<br><span class="bolderror">VM Boot has been scheduled successfully.</span>'
+  end
+  
+  def vm_shutdown
+    @vm = Vm.find(params[:id])
+    render :text=>'<br><span class="bolderror">VM Shutdown has been scheduled successfully.</span>'
+  end
+  
+  def vm_reboot
+    @vm = Vm.find(params[:id])
+    render :text=>'<br><span class="bolderror">VM Reboot has been scheduled successfully.</span>'
+  end
+  
   def plan_summary
   end
-
+  
+  def view_all_vm
+    @vms = @current_user.vms
+    
+    if params[:limit]
+      @vms = @current_user.vms.find(:all, :order => "id desc", :limit => params[:limit])
+      @selection = params[:limit]
+    end
+  end
+  def del_vm
+    
+  end
+  
+  def billing_termination
+    
+  end
+  def payment_methods
+    
+  end
+  
   def licence_upgrade
     @plans = Plan.find(:all)
     @plan_rows = Array.new
@@ -186,18 +274,15 @@ class ResellerController < ApplicationController
   ############################################################################
   ###                       payment methods                              #####
   ############################################################################
-  def gateway_payment  
-
+  def gateway_payment 
       plan = Plan.find(session[:plan_id]) if session[:plan_id]
       if  session[:plan_type] and plan
           billing_plan = plan.plan_billing_rate
           plan_billing_rate = billing_plan.current_plan_price(session[:plan_type].to_s) 
-      end      
-      
+      end
       if request.post?
          if params[:ccdata]
-            @ccdata = Ccdata.new(params[:ccdata])
-            
+            @ccdata = Ccdata.new(params[:ccdata])            
             if @ccdata.isUserAccAddress == 1 then
                @ccdata.address = @current_user.address
                @ccdata.address2 = @current_user.address2
@@ -207,19 +292,20 @@ class ResellerController < ApplicationController
                @ccdata.country = @current_user.country
                @ccdata.postal_code = @current_user.postal_code
                @ccdata.phccode = @current_user.phccode
-               @ccdata.phacode = @user_current.phacode
+               @ccdata.phacode = @current_user.phacode
                @ccdata.phnumber = @current_user.phnumber
             end
             @ccdata.save
-            
-            invoice = @current_user.invoice_details.new
+            invoice = InvoiceDetail.new
+            invoice.user_id = @current_user.id
             subscription = plan.subscriptions.new
             subscription.name = plan.title
             subscription.user_id = @current_user.id
-            invoice.plan_id = session[:plan_id].to_s
+            invoice.plan_id = plan.id
             invoice.cc_id = @ccdata.id
-    
-            
+            invoice.transaction_type = 'Sale'     
+            invoice.payment_date = Time.now          
+            invoice.amount_credited = plan_billing_rate            
             #payment using bluepay payment gateway
             if params[:type].to_s.downcase == 'bluepay'
                 bpApi = Bluepay.new(BP_ACCOUNT_ID.to_s, BP_SECRET_KEY.to_s)
@@ -228,43 +314,136 @@ class ResellerController < ApplicationController
                 bpApi.use_card(@ccdata.card_num.to_s, exp_date , @ccdata.cvv.to_s)
                 #bpApi.easy_sale(plan_billing_rate)
                 bpApi.easy_sale("1.00")
-                bpApi.process()
-                
+                bpApi.process()                
                 if bpApi.get_status() == '1' then
                    msg = bpApi.get_message() + bpApi.get_trans_id()
-                   invoice.cc_trans_id = bpApi.get_trans_id()
+                   invoice.cc_trans_id = bpApi.get_trans_id().to_s
                    invoice.gateway_pay_status = "Approved"
-                   invoice.amount_Credited = plan_billing_rate
-                   invoice.payment_date = Date
                    invoice.gateway_trans_type = 'Sale'
                    invoice.gateway_trans_time = Time.now
+                   invoice.pay_success_date = Time.now
+                   invoice.pay_mode = 1 #'Bluepay'
+                   invoice.payment_status = 'Approved'
                    subscription.status = "Approved"
 #                   subscription.end_date
 #                  subscription.billing_period = 
 #                  subscription.next_billing_period =
                    msg = "Payment Successfull" 
+                   flash[:notice] = msg
                 else
                    msg = bpApi.get_message()
-                   invoice.gateway_pay_status = "Error"
+                   invoice.gateway_pay_status = "Pending"
                    subscription.status = "failed"
+                   flash[:error] = msg
                 end
-                invoice.save  
-                subscription.save
             elsif params[:type].to_s.downcase == 'paypal'
-                redirect_to paypal_checkout_path(plan_billing_rate)
+                redirect_to paypal_checkout_path(plan_billing_rate.to_i)
                 return
             end
-            render :text => msg.to_s
-            return
+            subscription.save
+            invoice.subscription_id=subscription.id
+            invoice.save
          end
       end
-      redirect_to reseller_index_path ,:message=>'payment successful'
+      redirect_to reseller_index_path ,:message=>msg
   end
   
+  
+  def checkout
+#    render :text => params.to_json
+#    return
+    if params[:amount] then
+       amount = params[:amount]
+       session[:amount] = amount
+        setup_response = gateway.setup_purchase(amount.to_i,
+        :ip => request.remote_ip,
+        :return_url => url_for(:action => 'confirm', :only_path => false),
+        :cancel_return_url => url_for(:action => 'index', :only_path => false)
+        ) 
+    end
+      redirect_to gateway.redirect_url_for(setup_response.token)
+  end
+  
+  def confirm
+      redirect_to :action => 'index' unless params[:token]
+      details_response = gateway.details_for(params[:token])
+      if !details_response.success?
+          @message = details_response.message
+          render :action => 'error'
+          return
+      end
+      @address = details_response.address
+      session[:address] = @address
+      #     render :text=> details_response.to_json
+  end
+
+   def complete
+       plan = Plan.find(session[:plan_id]) if session[:plan_id]
+        if  session[:plan_type] and plan
+            billing_plan = plan.plan_billing_rate
+            plan_billing_rate = billing_plan.current_plan_price(session[:plan_type].to_s) 
+        end
+        
+        @ccdata = Ccdata.new
+        @address = session[:address] if session[:address]
+        if @addressthen
+           @ccdata.address = @address.address1
+           @ccdata.address2 = @address.address2 
+           @ccdata.city = @address.city
+           @ccdata.state = @address.state
+           @ccdata.country = @address.country
+           @ccdata.postal_code = @address.zip
+           @ccdata.save
+        end
+         purchase = gateway.purchase(session[:amount].to_i,
+           :ip       => request.remote_ip,
+           :payer_id => params[:payer_id],
+           :token    => params[:token]
+         ) if session[:amount]
+     
+         if !purchase.success?
+           @message = purchase.message
+           render :action => 'error'
+           return
+         end
+    
+        invoice = InvoiceDetail.new
+        invoice.user_id = @current_user.id
+        subscription = plan.subscriptions.new
+        subscription.name = plan.title
+        subscription.user_id = @current_user.id
+        invoice.plan_id = plan.id
+        invoice.cc_id = @ccdata.id
+        invoice.transaction_type = 'Sale'     
+        invoice.payment_date = Time.now          
+        invoice.amount_credited = plan_billing_rate   
+      #  invoice.cc_trans_id = bpApi.get_trans_id().to_s
+        invoice.gateway_pay_status = "Approved"
+        invoice.gateway_trans_type = 'Sale'
+        invoice.gateway_trans_time = Time.now
+        invoice.pay_success_date = Time.now
+        invoice.pay_mode = 2 #'paypal'
+        invoice.payment_status = 'Approved'
+        subscription.status = "Approved"
+        invoice.save
+        subscription.save
+   end
+
+ private
+   def gateway
+     @gateway ||= PaypalExpressGateway.new(
+       :login => PP_LOGIN,
+       :password => PP_PASSWORD,
+       :signature => PP_SIGNATURE
+     )
+   end
+  ######################   end payment methods #################################
+ public
   
   def licence_code
 
   end
+  
   def download
 
   end
@@ -274,10 +453,24 @@ class ResellerController < ApplicationController
   end
   
   def billing_history
+      @billings = @current_user.invoice_details
 #    params[:left]=1
 #    render :text=>params.to_json
+      
+    if params[:limit]
+      @billings = @current_user.invoice_details.find(:all, :order => "id desc", :limit => params[:limit])
+      @selection = params[:limit]
+    end
   end
-
+  
+  def order_details
+    @order_details = InvoiceDetail.find(params[:id])
+    @total = @order_details.amount_credited
+  end
+  def order_history
+    @order_history = InvoiceDetail.find_all_by_id(params[:id])
+  end
+  
   def support_tickets
     if !params[:show]
       @tickets = @support_all
@@ -295,6 +488,7 @@ class ResellerController < ApplicationController
     end
     if params[:limit]
       @tickets = @tickets.find(:all, :order => "id desc", :limit => params[:limit])
+      @selection = params[:limit]
     end
     render "tickets"
 #    render :text => params.to_json
@@ -320,6 +514,11 @@ class ResellerController < ApplicationController
 
   def billing_subscriptions
     @subscriptions = @current_user.subscriptions
+    
+    if params[:limit]
+      @subscriptions = @current_user.subscriptions.find(:all, :order => "id desc", :limit => params[:limit])
+      @selection = params[:limit]
+    end
   end
 
   def new_ticket
@@ -380,6 +579,56 @@ class ResellerController < ApplicationController
   end
   
   def subscription_details
-    @subscription = Subscription.find(params[:id])
+      @subscription = Subscription.find(params[:id])
+  end
+  
+  def new_payment_method
+      @cc_data = Ccdata.new
+  end
+  
+  
+  def payment_methods
+      @payment_methods = @current_user.ccdatas
+  end
+  
+  def create_payment_method
+       @ccdata = Ccdata.new(params[:ccdata])    
+
+       if params[:new_address] == '0'
+         @ccdata.address = @current_user.address
+         @ccdata.address2 = @current_user.address2
+         @ccdata.city = @current_user.city
+         @ccdata.state = @current_user.state
+         @ccdata.state_other = @current_user.state_other
+         @ccdata.country = @current_user.country
+         @ccdata.postal_code = @current_user.postal_code
+         @ccdata.phccode = @current_user.phccode
+         @ccdata.phacode = @current_user.phacode
+         @ccdata.phnumber = @current_user.phnumber
+         @ccdata.user_id = @current_user.id
+       end
+       @ccdata.save
+       redirect_to reseller_billing_payment_methods_path
+  end
+  
+  def update_payment_method
+       @ccdata = Ccdata.find(params[:id])  if params[:id]
+       record = params[:ccdata]
+       @ccdata.first_name = record[:first_name]
+       @ccdata.last_name = record[:last_name]
+       @ccdata.card_num = record[:card_num]
+      
+       @ccdata.save
+       redirect_to reseller_billing_payment_methods_path
+  end
+  
+  def edit_payment_method
+      @cc_data  = Ccdata.find(params[:id]) if params[:id]
+  end
+  
+  def delete_payment_method
+      @ccdata = Ccdata.find(params[:id])  if params[:id]
+      @ccdata.destroy
+      redirect_to reseller_billing_payment_methods_path
   end
 end
