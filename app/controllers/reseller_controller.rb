@@ -154,9 +154,21 @@ class ResellerController < ApplicationController
     @vms = @current_user.vms
     
     if params[:limit]
-      @vms = @current_user.vms.find(:all, :order => "id desc", :limit => params[:limit])
       @selection = params[:limit]
+      @vms = @current_user.vms.find(:all, :order => "id desc", :limit => params[:limit])
+      if params[:txtsearch] and params[:txtsearch].strip !=""
+         if params[:cmbsearch].to_s.downcase == "server_type"           
+         elsif params[:cmbsearch].to_s.downcase == "server_hostname"           
+         else
+          @vms = @current_user.vms.find(:all,:conditions=>["#{params[:cmbsearch].to_s.downcase.strip} like ?", params[:txtsearch].to_s.strip.downcase],:limit=>params[:limit])
+         end
+      end
     end
+    
+#    if params[:limit]
+#      @vms = @current_user.vms.find(:all, :order => "id desc", :limit => params[:limit])
+#      @selection = params[:limit]
+#    end
   end
   def del_vm
     
