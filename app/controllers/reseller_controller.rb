@@ -630,12 +630,15 @@ class ResellerController < ApplicationController
   
   def update_payment_method
        @ccdata = Ccdata.find(params[:id])  if params[:id]
-       record = params[:ccdata]
+       
+       @ccdata.update_attributes(params[:ccdata])
+=begin       record = params[:ccdata]
        @ccdata.first_name = record[:first_name]
        @ccdata.last_name = record[:last_name]
        @ccdata.card_num = record[:card_num]
       
        @ccdata.save
+=end
        redirect_to reseller_billing_payment_methods_path
   end
   
