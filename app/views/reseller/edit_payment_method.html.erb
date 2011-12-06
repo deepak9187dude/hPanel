@@ -45,30 +45,28 @@
                     </tbody></table>
                     </td>
                </tr>
-               <tr height="40px">
-                   <td align="right" valign="top" class="cate_listing"><span class="mandotry">*</span> Card Type :</td>
-                   <td valign="middle" class="bgcolor4">	<select id="ccdata_cc_type" name="ccdata[cc_type]">
-							<option value="Visa">Visa</option>
-							<option value="MasterCard">MasterCard</option>
-							<option value="Discover">Discover</option>
-							<option value="Amex">American Express</option>
-							</select>
-                   </td>
-               </tr>
-			   <script>document.getElementById("creditCardType").value= "Visa";</script>
+              
                <tr height="40px">
                       <td align="right" width="37%" valign="top" class="cate_listing"><span class="mandotry">*</span>  Card Number  :</td>
                       <td width="63%" valign="middle" class="bgcolor4">   <%= f.text_field :card_num, :id=>"txtcardnum_1_4",:class=>"txtfield1" %>
                       </td>
                </tr>
                <tr height="40px">
-                      <td align="right" width="37%" valign="top" class="cate_listing"> &nbsp;&nbsp;&nbsp;&nbsp;	Expiration date :</td>
-                      <td width="63%" valign="middle" class="bgcolor4"> 
-                      <%=select_month(Date.today ,:use_month_numbers => true,:name=>'exp_month',:html=>{:id=>'exp_month'}) %>
+                   <td align="right" valign="top" class="cate_listing"><span class="mandotry">*</span> Card Type :</td>
+                   <td valign="middle" class="bgcolor4">	
+                       <%= select( "payment", "ccdata_cc_type" ,{ "Visa" => "visa", "Mastercard" => "mastercard", "Discover" => "discover", "American Express" => "amex" }) %>
+          					 	</select>
 
-			</select><script>document.getElementById("exp_month").value= "12";</script>&nbsp;&nbsp;
-			<%= select_year(Date.today.year, :id=>'exp_year',:name=>'exp_year', :start_year => Date.today.year, :end_year => Date.today.year + 10) %>
-			<script>document.getElementById("exp_year").value= "�Mu";</script></td>
+                   </td>
+               </tr>
+			
+               <tr height="40px">
+                <td align="right" width="37%" valign="top" class="cate_listing"> &nbsp;&nbsp;&nbsp;&nbsp;	Expiration date :</td>
+                      <td width="63%" valign="middle" class="bgcolor4"> 
+                      <%=select_month(Date.today ,:use_month_numbers => true,:name=>'exp_month',:field_name=>"exp_month",:prefix=>'ccdata',:html=>{:id=>'exp_month'} ) %>
+                      &nbsp;&nbsp;
+                			<%= select_year(Date.today.year, :id=>'exp_year',:name=>'exp_year',:field_name=>"exp_year",:prefix => "ccdata", :start_year => Date.today.year, :end_year => Date.today.year + 10 ) %>
+		            </td>
                </tr>               
 			   </tbody></table>
                </td>

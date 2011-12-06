@@ -1,5 +1,5 @@
 class ResellerController < ApplicationController
-  layout 'reseller_backend'  
+  layout 'reseller_backend'
   require 'Bluepay'
   include ActiveMerchant::Billing
   
@@ -28,7 +28,7 @@ class ResellerController < ApplicationController
   end
   def index
     @user = User.find(session[:user_id])
-#    render :text=>session.to_json
+# render :text=>session.to_json
   end
   def login
     render :layout => 'reseller_layout'
@@ -61,7 +61,7 @@ class ResellerController < ApplicationController
   end
 
   def change_password
-#    if params[:password]
+# if params[:password]
   end
   
   
@@ -80,14 +80,14 @@ class ResellerController < ApplicationController
     else
       flash[:error_msg] = "Incorrect old password"
       redirect_to reseller_update_password_path
-    end        
+    end
   end
   
   def vm_change_password
     @vm = Vm.find(params[:id])
   end
-#  
-#  
+#
+#
   def vm_new_password
     @vm = Vm.find(params[:id])
     if params[:old_password] == @vm.password
@@ -103,7 +103,7 @@ class ResellerController < ApplicationController
     else
       flash[:error_msg] = "Incorrect old password"
       redirect_to vm_change_password_path
-    end        
+    end
   end
 
   def vm_details
@@ -115,7 +115,7 @@ class ResellerController < ApplicationController
     @ps = `ps -eo pid,stat,pmem,user,command h`
     @ps = @ps.split("\n")
     
-#    render:text=>@ps.size
+# render:text=>@ps.size
   end
   
   def vm_services
@@ -154,9 +154,21 @@ class ResellerController < ApplicationController
     @vms = @current_user.vms
     
     if params[:limit]
-      @vms = @current_user.vms.find(:all, :order => "id desc", :limit => params[:limit])
       @selection = params[:limit]
+      @vms = @current_user.vms.find(:all, :order => "id desc", :limit => params[:limit])
+      if params[:txtsearch] and params[:txtsearch].strip !=""
+         if params[:cmbsearch].to_s.downcase == "server_type"           
+         elsif params[:cmbsearch].to_s.downcase == "server_hostname"           
+         else
+          @vms = @current_user.vms.find(:all,:conditions=>["#{params[:cmbsearch].to_s.downcase.strip} like ?", params[:txtsearch].to_s.strip.downcase],:limit=>params[:limit])
+         end
+      end
     end
+    
+#    if params[:limit]
+#      @vms = @current_user.vms.find(:all, :order => "id desc", :limit => params[:limit])
+#      @selection = params[:limit]
+#    end
   end
   def del_vm
     
@@ -179,8 +191,8 @@ class ResellerController < ApplicationController
       plan_billing_rates = plan.plan_billing_rate
       if plan_billing_rates.monthly != 0
         row = Hash.new
-        row['title'] =  plan.title
-        row['rec_period'] =  plan_billing_rates.rec_monthly
+        row['title'] = plan.title
+        row['rec_period'] = plan_billing_rates.rec_monthly
         row['month'] = plan_billing_rates.monthly
         row['vps'] = plan.vps
         row['plan_id'] = plan.id
@@ -191,7 +203,7 @@ class ResellerController < ApplicationController
 
       if plan_billing_rates.quaterly != 0
         row = Hash.new
-        row['title'] =  plan.title
+        row['title'] = plan.title
         row['rec_period'] = plan_billing_rates.rec_quaterly
         row['month'] = 3
         row['vps'] = plan.vps
@@ -203,7 +215,7 @@ class ResellerController < ApplicationController
 
       if plan_billing_rates.semi != 0
         row = Hash.new
-        row['title'] =  plan.title
+        row['title'] = plan.title
         row['rec_period'] = plan_billing_rates.rec_semiyear
         row['month'] = 6
         row['vps'] =plan.vps
@@ -215,7 +227,7 @@ class ResellerController < ApplicationController
 
       if plan_billing_rates.yearly != 0
         row = Hash.new
-        row['title'] =  plan.title
+        row['title'] = plan.title
         row['rec_period'] = plan_billing_rates.rec_yearly
         row['month'] = 1
         row['vps'] =plan.vps
@@ -231,15 +243,15 @@ class ResellerController < ApplicationController
       plan = Plan.find(params[:plan_id]) if params[:plan_id]
       if plan
           @plan_title = plan.title
-          @no_of_vps  = plan.vps
+          @no_of_vps = plan.vps
           session[:plan_id] = params[:plan_id] if params[:plan_id]
-          session[:plan_type] = params[:plantype].to_s  if params[:plantype]
+          session[:plan_type] = params[:plantype].to_s if params[:plantype]
       end
       if params[:plantype] and plan
           billing_plan = plan.plan_billing_rate
-          @plan_billing_rate = billing_plan.current_plan_price(params[:plantype].to_s) 
+          @plan_billing_rate = billing_plan.current_plan_price(params[:plantype].to_s)
           @plan_period = period(params[:plantype].to_s)
-      end   
+      end
   end
  
   def period(p)
@@ -251,7 +263,7 @@ class ResellerController < ApplicationController
       elsif p == "yearly"
          p= "year"
       elsif p == "semi"
-         p = "6 months" 
+         p = "6 months"
       end
       
       return p
@@ -261,28 +273,28 @@ class ResellerController < ApplicationController
       plan = Plan.find(session[:plan_id]) if session[:plan_id]
       if plan
           @plan_title = plan.title
-          @no_of_vps  = plan.vps
+          @no_of_vps = plan.vps
       end
-      if  session[:plan_type] and plan
+      if session[:plan_type] and plan
           billing_plan = plan.plan_billing_rate
-          @plan_billing_rate = billing_plan.current_plan_price(session[:plan_type].to_s) 
+          @plan_billing_rate = billing_plan.current_plan_price(session[:plan_type].to_s)
           @plan_period = period(session[:plan_type].to_s)
           session[:amount_to_charge] = @plan_billing_rate
-      end 
+      end
       @cc_data = Ccdata.new
-  end 
+  end
   ############################################################################
-  ###                       payment methods                              #####
+  ### payment methods #####
   ############################################################################
-  def gateway_payment 
+  def gateway_payment
       plan = Plan.find(session[:plan_id]) if session[:plan_id]
-      if  session[:plan_type] and plan
+      if session[:plan_type] and plan
           billing_plan = plan.plan_billing_rate
-          plan_billing_rate = billing_plan.current_plan_price(session[:plan_type].to_s) 
+          plan_billing_rate = billing_plan.current_plan_price(session[:plan_type].to_s)
       end
       if request.post?
          if params[:ccdata]
-            @ccdata = Ccdata.new(params[:ccdata])            
+            @ccdata = Ccdata.new(params[:ccdata])
             if @ccdata.isUserAccAddress == 1 then
                @ccdata.address = @current_user.address
                @ccdata.address2 = @current_user.address2
@@ -303,9 +315,9 @@ class ResellerController < ApplicationController
             subscription.user_id = @current_user.id
             invoice.plan_id = plan.id
             invoice.cc_id = @ccdata.id
-            invoice.transaction_type = 'Sale'     
-            invoice.payment_date = Time.now          
-            invoice.amount_credited = plan_billing_rate            
+            invoice.transaction_type = 'Sale'
+            invoice.payment_date = Time.now
+            invoice.amount_credited = plan_billing_rate
             #payment using bluepay payment gateway
             if params[:type].to_s.downcase == 'bluepay'
                 bpApi = Bluepay.new(BP_ACCOUNT_ID.to_s, BP_SECRET_KEY.to_s)
@@ -314,7 +326,7 @@ class ResellerController < ApplicationController
                 bpApi.use_card(@ccdata.card_num.to_s, exp_date , @ccdata.cvv.to_s)
                 #bpApi.easy_sale(plan_billing_rate)
                 bpApi.easy_sale("1.00")
-                bpApi.process()                
+                bpApi.process()
                 if bpApi.get_status() == '1' then
                    msg = bpApi.get_message() + bpApi.get_trans_id()
                    invoice.cc_trans_id = bpApi.get_trans_id().to_s
@@ -325,10 +337,10 @@ class ResellerController < ApplicationController
                    invoice.pay_mode = 1 #'Bluepay'
                    invoice.payment_status = 'Approved'
                    subscription.status = "Approved"
-#                   subscription.end_date
-#                  subscription.billing_period = 
-#                  subscription.next_billing_period =
-                   msg = "Payment Successfull" 
+# subscription.end_date
+# subscription.billing_period =
+# subscription.next_billing_period =
+                   msg = "Payment Successfull"
                    flash[:notice] = msg
                 else
                    msg = bpApi.get_message()
@@ -350,8 +362,8 @@ class ResellerController < ApplicationController
   
   
   def checkout
-#    render :text => params.to_json
-#    return
+# render :text => params.to_json
+# return
     if params[:amount] then
        amount = params[:amount]
        session[:amount] = amount
@@ -359,7 +371,7 @@ class ResellerController < ApplicationController
         :ip => request.remote_ip,
         :return_url => url_for(:action => 'confirm', :only_path => false),
         :cancel_return_url => url_for(:action => 'index', :only_path => false)
-        ) 
+        )
     end
       redirect_to gateway.redirect_url_for(setup_response.token)
   end
@@ -374,21 +386,21 @@ class ResellerController < ApplicationController
       end
       @address = details_response.address
       session[:address] = @address
-      #     render :text=> details_response.to_json
+      # render :text=> details_response.to_json
   end
 
    def complete
        plan = Plan.find(session[:plan_id]) if session[:plan_id]
-        if  session[:plan_type] and plan
+        if session[:plan_type] and plan
             billing_plan = plan.plan_billing_rate
-            plan_billing_rate = billing_plan.current_plan_price(session[:plan_type].to_s) 
+            plan_billing_rate = billing_plan.current_plan_price(session[:plan_type].to_s)
         end
         
         @ccdata = Ccdata.new
         @address = session[:address] if session[:address]
         if @addressthen
            @ccdata.address = @address.address1
-           @ccdata.address2 = @address.address2 
+           @ccdata.address2 = @address.address2
            @ccdata.city = @address.city
            @ccdata.state = @address.state
            @ccdata.country = @address.country
@@ -396,9 +408,9 @@ class ResellerController < ApplicationController
            @ccdata.save
         end
          purchase = gateway.purchase(session[:amount].to_i,
-           :ip       => request.remote_ip,
+           :ip => request.remote_ip,
            :payer_id => params[:payer_id],
-           :token    => params[:token]
+           :token => params[:token]
          ) if session[:amount]
      
          if !purchase.success?
@@ -414,10 +426,10 @@ class ResellerController < ApplicationController
         subscription.user_id = @current_user.id
         invoice.plan_id = plan.id
         invoice.cc_id = @ccdata.id
-        invoice.transaction_type = 'Sale'     
-        invoice.payment_date = Time.now          
-        invoice.amount_credited = plan_billing_rate   
-      #  invoice.cc_trans_id = bpApi.get_trans_id().to_s
+        invoice.transaction_type = 'Sale'
+        invoice.payment_date = Time.now
+        invoice.amount_credited = plan_billing_rate
+      # invoice.cc_trans_id = bpApi.get_trans_id().to_s
         invoice.gateway_pay_status = "Approved"
         invoice.gateway_trans_type = 'Sale'
         invoice.gateway_trans_time = Time.now
@@ -437,7 +449,7 @@ class ResellerController < ApplicationController
        :signature => PP_SIGNATURE
      )
    end
-  ######################   end payment methods #################################
+  ###################### end payment methods #################################
  public
   
   def licence_code
@@ -454,8 +466,8 @@ class ResellerController < ApplicationController
   
   def billing_history
       @billings = @current_user.invoice_details
-#    params[:left]=1
-#    render :text=>params.to_json
+# params[:left]=1
+# render :text=>params.to_json
       
     if params[:limit]
       @billings = @current_user.invoice_details.find(:all, :order => "id desc", :limit => params[:limit])
@@ -475,7 +487,7 @@ class ResellerController < ApplicationController
     if !params[:show]
       @tickets = @support_all
       if params[:limit]
-#        render :text =>'hi'
+# render :text =>'hi'
       end
     elsif(params[:show]=="open")
       @tickets = @support_open
@@ -487,11 +499,19 @@ class ResellerController < ApplicationController
       @tickets = @support_progress
     end
     if params[:limit]
-      @tickets = @tickets.find(:all, :order => "id desc", :limit => params[:limit])
       @selection = params[:limit]
+      @tickets = @tickets.find(:all,:limit=>params[:limit])
+      if params[:txtsearch] and params[:txtsearch].strip !=""
+# @tickets = Ticket.where("#{params[:cmbsearch]} = ? AND category = ?",params[:txtsearch].to_s,"support").find(:all, :order => "id desc", :limit => params[:limit])
+         if params[:cmbsearch].to_s.downcase == "lastactivity"
+           
+         else
+          @tickets = Ticket.find(:all,:conditions=>["#{params[:cmbsearch].to_s.downcase} like ? AND category = 'support'", params[:txtsearch].to_s.strip.downcase],:limit=>params[:limit])
+         end
+      end
     end
     render "tickets"
-#    render :text => params.to_json
+# render :text => params.to_json
   end
 
   def billing_tickets
@@ -506,8 +526,17 @@ class ResellerController < ApplicationController
     elsif(params[:show]=="progress")
       @tickets = @billing_progress
     end
-     if params[:limit]
-      @tickets = @tickets.find(:all, :order => "id desc", :limit => params[:limit])
+    if params[:limit]
+      @selection = params[:limit]
+      @tickets = @tickets.find(:all,:limit=>params[:limit])
+      if params[:txtsearch] and params[:txtsearch].strip !=""
+# @tickets = Ticket.where("#{params[:cmbsearch]} = ? AND category = ?",params[:txtsearch].to_s,"support").find(:all, :order => "id desc", :limit => params[:limit])
+         if params[:cmbsearch].to_s.downcase == "lastactivity"
+           
+         else
+          @tickets = Ticket.find(:all,:conditions=>["#{params[:cmbsearch].to_s.downcase} like ? AND category = 'billing'", params[:txtsearch].to_s.strip.downcase],:limit=>params[:limit])
+         end
+      end
     end
     render "tickets"
   end
@@ -551,7 +580,7 @@ class ResellerController < ApplicationController
     ticket_reply = TicketDetail.new(params[:ticket_detail])
     ticket_reply.replier_id = @current_user.id
     ticket_reply.ticket_id=params[:id]
-#    ticket_reply.ticket.status = ticket_reply.status
+# ticket_reply.ticket.status = ticket_reply.status
     ticket = Ticket.find(ticket_reply.ticket_id)
     ticket.status = ticket_reply.status
     ticket.save
@@ -613,12 +642,15 @@ class ResellerController < ApplicationController
   
   def update_payment_method
        @ccdata = Ccdata.find(params[:id])  if params[:id]
-       record = params[:ccdata]
+       
+       @ccdata.update_attributes(params[:ccdata])
+=begin       record = params[:ccdata]
        @ccdata.first_name = record[:first_name]
        @ccdata.last_name = record[:last_name]
        @ccdata.card_num = record[:card_num]
       
        @ccdata.save
+=end
        redirect_to reseller_billing_payment_methods_path
   end
   
