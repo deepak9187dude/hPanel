@@ -1,0 +1,306 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>Vhpanel</title>
+    <%= stylesheet_link_tag :all %>
+    <%= javascript_include_tag :defaults %>
+    <script type="text/javascript">
+      document.railslft=<%= params[:left]?params[:left]:0 %>
+    </script>
+    <%= csrf_meta_tag %>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Welcome to VMComplete</title>
+    <%= javascript_include_tag 'combine.js' %>
+    <%= javascript_include_tag 'left_menu.js' %>
+    <%= javascript_include_tag 'validate.js' %>
+    <script type="text/javascript">
+      var show_path = 'http://<%= request.host_with_port %>/images/search_show.png';
+      var hide_path = 'http://<%= request.host_with_port %>/images/search_hide.png';
+    </script>
+    <%= javascript_include_tag 'common.js' %>
+    <%= javascript_include_tag 'ajax.js' %>
+    <%= javascript_include_tag 'pngfix.js' %>
+    <%= javascript_include_tag 'tabbed_pages.js' %>
+    
+    <link rel="stylesheet" href="/stylesheets/tabbed_pages.css" type="text/css" />
+  </head>
+  <body> 
+   <%= params.to_s %>
+    <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
+      <tr>
+        <td valign="top">
+          <table width="100%" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+              <td align="left" valign="top" class="header">
+                <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                  <tr>
+                    <td width="220" height="75" align="center" valign="top">
+                      <%= image_tag("logo.jpg") %>
+                    </td>
+                    <td height="75" valign="bottom" style="padding:0px 18px 0px 50px;">
+                      <table width="100%" border="0" align="left" cellspacing="0" cellpadding="0">
+                        <tr>
+                          <td width="290" align="left">&nbsp;</td>
+                          <td align="right" valign="bottom"><span class="txt_big_red">Welcome deepak@idifysolutions.com</span></td>
+                        </tr>
+
+                        <tr>
+                          <td align="left">&nbsp;</td>
+                          <td align="right" valign="bottom" width="397">
+                            <%= link_to(image_tag("btn_logout.gif",:title=>"Logout",:width=>"139",:height=>'35',:border=>0),logout_path) %>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td height="2" colspan="2" align="left">
+                            <%= image_tag('trans.gif',:width=>10,:height=>10) %>
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+            <tr>
+              <td align="left" valign="top" class="middle">
+                <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                  <tr>
+                    <td width="236" valign="top">
+                      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                        <tr>
+                          <td height="16" valign="top" class="lefttop">
+                            <%= image_tag("left_top.gif",:width=>236,:height=>16) %>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td valign="top" class="leftnav">
+                            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                              <tr>
+                                <td class="cate_top">
+                                  <%= link_to('HOME',reseller_index_path,:class=>'txt_big_red') %>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td class="tdgap">
+                                  <table width="100%"  border="0" cellspacing="0" cellpadding="0">
+                                    <tr>
+                                      <td class="tdgap">
+                                        <div id="vertical_container" class="content_width">
+                                          <h1 class="accordion_toggle">MY ACCOUNT</h1>
+                                          <div id="content_width" class="accordion_content">
+                                            <table width="90%" border="0" cellspacing="0" cellpadding="0">
+                                              <tr>
+                                                <td class="cate_border">
+                                                  <%= image_tag("icon_view_client.png",:width=>16,:height=>20)  %>
+                                                  <span class="left_nav">
+                                                    <%= link_to('View Profile',reseller_index_path) %>
+                                                  </span>
+                                                </td>
+                                              </tr>
+                                              <tr>
+                                                <td>
+                                                  <%= image_tag("icon_hosting_plan_tn.png",:width=>16,:height=>20,:title=>"Edit Profile")  %>
+                                                  <span class="left_nav">
+                                                    <%= link_to "Edit Profile",reseller_edit_path %>
+                                                  </span>
+                                                </td>
+                                              </tr>
+                                              <!--<tr>
+                                                   <td class="cate_border"><img src="../asset/images/icon_edit_client.png" title="Edit Profile" width="16" height="20" /><span class="left_nav"><a href="index.php?cid=4&action=UEP&left=0">Edit Profile</a></span></td>                              </tr>
+                                                 <tr>-->
+                                              <!--
+                                                                             <tr>
+                                                   <td class="cate_border"><img src="../asset/images/icon_creditcard_tn.png" title="Edit Credit Card" width="16" height="20" /><span class="left_nav"><a href="index.php?cid=4&action=UCC&left=0">Edit Credit Card</a></span></td>                              </tr>-->
+                                              <tr>
+                                                <td>
+                                                  <%= image_tag("reset_password.png",:width=>16,:height=>20,:title=>"Reset Password")  %>
+                                                  <span class="left_nav">
+                                                    <%= link_to "Reset Password",reseller_update_password_path %>
+                                                  </span>
+                                                </td>      
+                                              </tr>
+                                            </table>
+                                          </div>
+                                          <h1 class="accordion_toggle">VM MANAGER</h1>
+                                          <div id="content_width" class="accordion_content">
+                                            <table width="90%" border="0" cellspacing="0" cellpadding="0">
+                                              <%#*<tr>%>
+                                                <%#*<td class="cate_border">%>
+                                                  <%#= image_tag("icon_hosting_plan_tn.png",:width=>16,:height=>20,:title=>"Upgrade License")  %>
+                                                  <%#*<span class="left_nav">%>
+                                                    <%#= link_to "Upgrade Licence", reseller_licence_upgrade_path %>
+                                                  <%#*</span>%>
+                                                <%#*</td>%>
+                                              <%#*</tr>%>
+                                              <%#*<tr>%>
+                                                <%#*<td class="cate_border">%>
+                                                  <%#= image_tag("icon_license_s.png",:width=>16,:height=>20,:title=>"View License Code")  %>
+                                                  <%#*<span class="left_nav">%>
+                                                    <%#= link_to("View Licence Code",reseller_licence_code_path) %>
+                                                  <%#*</span>%>
+                                                <%#*</td>%>
+                                              <%#*</tr>%>
+                                              <%#*<tr>%>
+                                                <%#*<td class="cate_border">%>
+                                                  <%#= image_tag("icon_hosting_plan_tn.png",:width=>16,:height=>20,:title=>"Download")  %>
+                                                  <%#*<span class="left_nav">%>
+                                                    <%#= link_to("Download",reseller_download_path) %>
+                                                  <%#*</span>%>
+                                                <%#*</td>%>
+                                              <%#*</tr>%>
+                                              <%#*<tr>%>
+                                                <%#*<td class="cate_border">%>
+                                                  <%#= image_tag("icon_hosting_plan_tn.png",:width=>16,:height=>20,:title=>"Download")  %>
+                                                  <%#*<span class="left_nav">%>
+                                                    <%#= link_to("ssh",ssh_demo_path) %>
+                                                  <%#*</span>%>
+                                                <%#*</td>%>
+                                              <%#*</tr>%>                                              
+                                              <tr>
+                                                <td class="cate_border">
+                                                  <%= image_tag("icon_view_vm.png",:width=>16,:height=>20,:title=>"View VM")  %>
+                                                  <span class="left_nav">
+                                                    <%= link_to "View All VM", vm_path %>
+                                                  </span>
+                                                </td>
+                                              </tr>
+                                            </table>
+                                          </div>
+                                          <!--
+                                        <h1 class="accordion_toggle">MESSAGES MANAGER</h1>
+                                        <div id="content_width" class="accordion_content">
+                                                <table width="90%" border="0" cellspacing="0" cellpadding="0">
+                                                  <tr>
+                                                        <td class="cate_border"><img src="../asset/images/icon_log_manager.png" title="View All Jobs" width="16" height="20" align="bottom" /><span class="left_nav"><a href="index.php?cid=26&action=UMI&left=4">Inbox</a></span></td>
+                                                  </tr>
+                                                        <tr>
+                                                        <td><img src="../asset/images/icon_log_manager.png" title="View All Long Jobs" width="16" height="20" align="bottom" /><span class="left_nav"><a href="index.php?cid=26&action=UMS&left=4">Sentbox</a></span></td>
+                                                  </tr>
+                                                </table>
+                                        </div>
+                                          -->
+                                          <h1 class="accordion_toggle">BILLING MANAGER</h1>
+                                          <div id="content_width" class="accordion_content">
+                                            <table width="90%" border="0" cellspacing="0" cellpadding="0">
+                                              <tr>
+                                                <td class="cate_border">
+                                                  <%= image_tag("icon_billing-history_tn.png",:width=>16,:height=>20,:title=>"Billing History")  %>
+                                                  <span class="left_nav">
+                                                    <%= link_to("Billing History",reseller_billing_history_path) %>
+                                                  </span>
+                                                </td>
+                                              </tr>
+                                              <tr>
+                                                <td class="cate_border">
+                                                  <%= image_tag("subicn-sm.png",:width=>16,:height=>20,:title=>"Subscriptions")  %>
+                                                  <span class="left_nav">
+                                                    <%= link_to "Subscriptions", reseller_billing_subscriptions_path %>
+                                                  </span>
+                                                </td>
+                                              </tr>
+                                              <tr>
+                                                <td class="cate_border">
+                                                  <%= image_tag("termination-icn2.png",:width=>16,:height=>20,:title=>"Termination Request")  %>
+                                                  <span class="left_nav">
+                                                    <%= link_to "Termination Request", reseller_billing_termination_path %>
+                                                  </span>
+                                                </td>
+                                              </tr>
+                                              <tr>
+                                                <td class="cate_border">
+                                                  <%= image_tag("paymentmethods-icn2.png",:width=>16,:height=>20,:title=>"Termination Request")  %>
+                                                  <span class="left_nav">
+                                                    <%= link_to "Payment Methods", reseller_billing_payment_methods_path %>
+                                                  </span>
+                                                </td>
+                                              </tr>
+                                            </table>
+                                          </div>
+                                          <h1 class="accordion_toggle">TICKET MANAGER</h1>
+                                          <div id="content_width" class="accordion_content">
+                                            <table width="90%" border="0" cellspacing="0" cellpadding="0"> 
+                                              <tr> 
+                                                <td class="cate_border">
+                                                  <%= image_tag("support_th.png",:width=>16,:height=>20,:title=>"Support",:align=>'bottom')  %>
+                                                  <span class="left_nav">
+                                                    <%= link_to("Support (#{@support_all.count})",reseller_all_support_tickets_path) %>
+                                                  </span>
+                                                  <ul>
+                                                    <li class="left_nav">
+                                                      <%= link_to("Open (#{@support_open.count})",reseller_open_support_tickets_path)%>
+                                                    </li>
+                                                    <li class="left_nav">
+                                                      <%= link_to( "On Hold (#{@support_hold.count})",reseller_hold_support_tickets_path) %>
+                                                    </li>
+                                                    <li class="left_nav">
+                                                      <%= link_to( "Closed (#{@support_closed.count})",reseller_closed_support_tickets_path) %>
+                                                    </li>
+                                                    <li class="left_nav">
+                                                      <%= link_to( "In-Progress (#{@support_progress.count})",reseller_progress_support_tickets_path) %>
+                                                    </li>
+                                                  </ul>	
+                                                </td>
+                                              </tr>
+                                              <tr>
+                                                <td>
+                                                  <%= image_tag("billing_th.png",:width=>16,:height=>20,:title=>"Billing",:align=>'bottom')  %>
+                                                  <span class="left_nav">
+                                                    <%= link_to("Billing (#{@billing_all.count})",reseller_all_billing_tickets_path) %>
+                                                  </span>
+                                                  <ul>
+                                                    <li class="left_nav">
+                                                      <%= link_to("Open (#{@billing_open.count})",reseller_open_billing_tickets_path)%>
+                                                    </li>
+                                                    <li class="left_nav">
+                                                      <%= link_to( "On Hold (#{@billing_hold.count})",reseller_hold_billing_tickets_path) %>
+                                                    </li>
+                                                    <li class="left_nav">
+                                                      <%= link_to( "Closed (#{@billing_closed.count})",reseller_closed_billing_tickets_path) %>
+                                                    </li>
+                                                    <li class="left_nav">
+                                                      <%= link_to( "In-Progress (#{@billing_progress.count})",reseller_progress_billing_tickets_path) %>
+                                                    </li>
+                                                  </ul>	
+                                                </td>
+                                              </tr>
+                                            </table>           
+                                          </div>
+                                          <%= link_to logout_path,:style=>'text-decoration:none' do %>
+                                            <h1 class="accordion_logout">LOGOUT</h1>
+                                          <%  end %>
+                                          <div id="vertical_nested_container">                     
+                                          </div>
+                                        </div>
+                                      </td>
+                                    </tr>
+                                  </table>
+                                </td>
+                              </tr>
+                            </table>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td valign="top" class="leftbtm">
+                            <%= image_tag('left_bottom.gif',:width=>'236',:height=>'16') %>
+                          </td>
+                        </tr>
+                      </table>
+                    </td>
+                    <td valign="top" class="bgcolor2">
+                      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                        <tr>
+                          <td width="11" valign="top"> </td>
+                          <%= yield %>
+                        </tr>
+                      </table>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>
