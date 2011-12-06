@@ -1,0 +1,201 @@
+<td valign="top" class="bgcolor2"><table width="100%" cellspacing="0" cellpadding="0" border="0">
+<tbody><tr>
+	<td class="middle_top">
+    	<table width="100%" cellspacing="0" cellpadding="0" border="0">
+         <tbody><tr>
+         	<td colspan="2"><span class="bodytext_1"><a class="bodylink" href="index.php?cid=4&amp;action=UVP">Home</a> &gt; <a class="bodylink" href="index.php?cid=20&amp;action=BMG&amp;left=2">Billing Manager</a> &gt; <a class="bodylink" href="index.php?cid=25&amp;action=BMP&amp;left=2">	Payment Methods </a> &gt; New Credit Card</span></td>
+         </tr>
+          <tr>
+              <td width="44"><img align="bottom" width="30" height="32" border="0" title="Edit Credit Card" src="/images/icon_creditcard.png"></td>
+              <td width="1265" valign="top" style="padding-top:2px"><span class="txt_big_red">New Credit Card</span></td>
+          </tr>
+          </tbody></table>
+    </td>
+</tr>
+<tr>
+    <td class="tdgap1">
+    	<table align="center" width="100%" cellspacing="0" cellpadding="0" border="0">
+        <tbody><tr>
+            <td>
+        <%= form_for @cc_data,:html=>{:id=>'frmucr',:name=>"frmucr"} ,:url => reseller_create_payment_method_path do |f| %>
+         <table width="100%" cellspacing="0" cellpadding="0" border="0">
+            <tbody><tr>
+            	<td align="center" colspan="2" class="mandotry"><span class="bolderror"></span></td>
+            </tr>
+			
+            <tr>
+               <td valign="top" colspan="4">
+               <table width="70%" cellspacing="1" cellpadding="0" border="0" class="bgcolor3">
+			    <tbody><tr>
+            	<td class="cate_listing" colspan="2">Credit Card Private Data
+				</td>
+				</tr>
+               	<tr>
+                    <td align="right" width="37%" valign="top" class="cate_listing"><br><span class="mandotry">*</span> Name :</td>
+                    <td width="63%" valign="top" class="bgcolor4">
+                    <table width="100%" cellspacing="1" cellpadding="0" border="0">
+                         <tbody><tr align="left">                          
+                                <td width="33%">First Name</td>
+                                <td width="49%">Last Name</td>
+                        </tr>
+                        <tr align="left">                          
+                            <td><%= f.text_field :first_name, :id=>"txtfirst_1",:class=>"txtfield" %></td>
+                            <td><%= f.text_field :last_name, :id=>"txtlast_1",:class=>"txtfield" %></td>
+                        </tr>
+                    </tbody></table>
+                    </td>
+               </tr>
+               <tr height="40px">
+                   <td align="right" valign="top" class="cate_listing"><span class="mandotry">*</span> Card Type :</td>
+                   <td valign="middle" class="bgcolor4">	<select id="ccdata_cc_type" name="ccdata[cc_type]">
+							<option value="Visa">Visa</option>
+							<option value="MasterCard">MasterCard</option>
+							<option value="Discover">Discover</option>
+							<option value="Amex">American Express</option>
+							</select>
+                   </td>
+               </tr>
+			   <script>document.getElementById("creditCardType").value= "Visa";</script>
+               <tr height="40px">
+                      <td align="right" width="37%" valign="top" class="cate_listing"><span class="mandotry">*</span>  Card Number  :</td>
+                      <td width="63%" valign="middle" class="bgcolor4">   <%= f.text_field :card_num, :id=>"txtcardnum_1_4",:class=>"txtfield1" %>
+                      </td>
+               </tr>
+               <tr height="40px">
+                      <td align="right" width="37%" valign="top" class="cate_listing"> &nbsp;&nbsp;&nbsp;&nbsp;	Expiration date :</td>
+                      <td width="63%" valign="middle" class="bgcolor4"> 
+                      <%=select_month(Date.today ,:use_month_numbers => true,:name=>'exp_month',:html=>{:id=>'exp_month'}) %>
+
+			</select><script>document.getElementById("exp_month").value= "12";</script>&nbsp;&nbsp;
+			<%= select_year(Date.today.year, :id=>'exp_year',:name=>'exp_year', :start_year => Date.today.year, :end_year => Date.today.year + 10) %>
+			<script>document.getElementById("exp_year").value= "�Mu";</script></td>
+               </tr>               
+			   </tbody></table>
+               </td>
+               </tr>                     
+			   <tr>
+            	<td colspan="4">&nbsp;</td>
+				</tr>
+				<tr>
+            	<td colspan="4">
+               <table width="70%" cellspacing="1" cellpadding="0" border="0" class="bgcolor3">     
+			   <tbody><tr> 
+                     <td valign="top" class="cate_listing" colspan="2"><span class="mandotry">*</span> Credit Card Billing Address and Phone : 
+                     <input type="radio" onclick="divAddr(this.value);" value="0" checked="CHECKED" name="new_address">Use Account address &nbsp;<input type="radio" onclick="divAddr(this.value);" value="1" name="new_address">New Billing Address</td>
+               </tr>          				
+               </tbody></table>
+			   </td>
+			   </tr>			  
+			   	<tr>				
+            	<td colspan="4"><div style="display:none" id="Divnewaddress">
+				   <table width="70%" cellspacing="1" cellpadding="0" border="0" class="bgcolor3">     
+					  <tbody><tr> 
+					  <td align="right" width="37%" valign="top" class="cate_listing">&nbsp;&nbsp;&nbsp;Address Line 1 :</td>
+                      <td width="63%" valign="middle" class="bgcolor4">
+                       <%= f.text_field :address,:class=>'txtfield1',:id=>'txtaddr1' %>
+                      </td>
+				   </tr>
+				  <tr> 
+					  <td align="right" width="37%" valign="top" class="cate_listing">&nbsp;&nbsp;&nbsp;Address Line 2 :</td>
+                      <td width="63%" valign="middle" class="bgcolor4">
+                      <%= f.text_field :address2,:class=>'txtfield1',:id=>'txtaddr2' %>   
+            </td>
+				   </tr>
+				   <tr height="40px">
+						  <td align="right" width="37%" valign="top" class="cate_listing">&nbsp;&nbsp;&nbsp;City :</td>
+						  <td width="63%" valign="middle" class="bgcolor4">                   
+						  <%= f.text_field :city,:class=>'txtfield1',:id=>'txtcity' %>
+              </td>
+				   </tr>
+				   <tr height="40px">
+						  <td align="right" valign="top" class="cate_listing">&nbsp;&nbsp;&nbsp;State(US) :</td>
+						  <td valign="middle" class="bgcolor4">                    
+						      <%= f.collection_select :state ,StateMaster.all ,:id ,:state_name %>              
+						  </td>
+				   </tr>
+				   <tr height="40px">
+						  <td align="right" width="37%" valign="top" class="cate_listing">&nbsp;&nbsp;&nbsp;State Other(other countries) :</td>
+						  <td width="63%" valign="middle" class="bgcolor4">                       <%= f.text_field :state_other,:class=>'txtfield',:id=>'txtstother' %> 
+						  </td>
+				  </tr>
+				   <tr height="40px">
+						  <td align="right" width="37%" valign="top" class="cate_listing">&nbsp;&nbsp;&nbsp;Country :</td>
+						  <td width="63%" valign="middle" class="bgcolor4">
+						  <%= f.collection_select :country, CountryMaster.all,:id,:country_name  %>
+						  </td>
+				   </tr>
+				   <tr height="40px">
+						  <td align="right" width="37%" valign="top" class="cate_listing"><span class="mandotry">*</span> Zip/Postal Code :</td>
+						  <td width="63%" valign="middle" class="bgcolor4"> <%= f.text_field :postal_code,:class=>'txtfield1',:id=>'txtpost_6' %><input type="text" value="" id="txtpost_6" class="txtfield1" maxlength="10" name="txtpost_6">
+							</td>
+				   </tr>
+				   <tr>
+						  <td align="right" width="37%" valign="top" class="cate_listing"><br>
+							&nbsp;&nbsp;&nbsp;Phone :</td>
+						  <td width="63%" valign="top" class="bgcolor4">
+								<table width="100%" cellspacing="0" cellpadding="0" border="0">
+								<tbody><tr>
+								<td width="20%" class="bodytext">Country Code</td>
+								<td align="left" width="19%">Area Code</td>
+								<td align="left" width="27%">Number</td>
+								<td align="left" width="22%">Extension</td>
+								</tr>
+								<tr>
+								<td>                            
+								<input type="text" value="" id="txtcc_7" class="txtfield2" size="12" maxlength="5" name="txtcc_7">
+								
+								</td>
+								<td><input type="text" value="" id="txtac_7" class="txtfield2" size="12" maxlength="5" name="txtac_7">
+								</td>
+								<td>							
+								<input type="text" value="" id="txtnumber_7" class="txtfield" size="10" maxlength="10" name="txtnumber_7">
+								</td>
+								<td><input type="text" value="" id="txtext_7" class="txtfield2" size="12" maxlength="5" name="txtext_7">
+								</td>
+								</tr>
+								</tbody></table>
+					</td>
+					</tr>
+					</tbody></table>
+					  </div>
+					  </td>
+					  </tr>
+			   <tr>
+            	<td colspan="4">&nbsp;</td>
+				</tr>
+			  	<tr>
+            	<td colspan="4">
+				   <table width="70%" cellspacing="1" cellpadding="0" border="0" class="bgcolor3">     
+				   <tbody><tr> 
+						  <td align="right" valign="top" colspan="2" class="cate_listing">Payment Method General Data
+						  </td>
+						  </tr>
+						  <tr> 
+					  <td align="right" width="37%" valign="top" class="cate_listing">Accout</td>
+                      <td align="right" width="63%" valign="top" class="bgcolor4">
+					  </td>
+					  </tr>
+					  <tr> 
+					  <td align="right" width="37%" valign="top" class="cate_listing">Allow payment by this payment method</td>
+                      <td align="right" width="63%" valign="top" class="bgcolor4"><input type="checkbox" value="1" name="chkPayment" id="chkPayment">
+					  </td>
+					  </tr>
+					  </tbody></table>
+					  </td>
+					  </tr>  
+            <tr valign="middle">
+                  <td align="left" width="40%" height="40"><input type="button" onclick="window.document.location='index.php?cid=25&amp;action=BMP&amp;left=2'" value="Cancel" id="btncancel" class="button" name="btncancel">&nbsp;</td>
+                  <td align="right" width="20%" height="40"><input type="submit" onclick="return chk_confirm('delete', 'credit card');" value="Delete" id="btndel" class="button" style="display:none" name="btndel"></td>
+				  <td align="right" width="10%" height="40"> 
+			      <input type="submit" value="Save" id="btnsave" class="button" name="btnsave">                    </td>
+				   <td align="right" width="30%" height="40">&nbsp;</td>
+                </tr>
+            </tbody></table>
+            <%end%>
+            </td>
+       </tr>
+	   
+        </tbody></table>
+    </td>
+</tr>
+</tbody></table></td>

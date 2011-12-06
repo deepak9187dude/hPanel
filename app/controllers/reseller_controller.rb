@@ -292,7 +292,7 @@ class ResellerController < ApplicationController
                @ccdata.country = @current_user.country
                @ccdata.postal_code = @current_user.postal_code
                @ccdata.phccode = @current_user.phccode
-               @ccdata.phacode = @user_current.phacode
+               @ccdata.phacode = @current_user.phacode
                @ccdata.phnumber = @current_user.phnumber
             end
             @ccdata.save
@@ -507,8 +507,7 @@ class ResellerController < ApplicationController
       @tickets = @billing_progress
     end
      if params[:limit]
-      @tickets = @tickets.find(:all, :order => "id desc", :limit => params[:limit])      
-      @selection = params[:limit]
+      @tickets = @tickets.find(:all, :order => "id desc", :limit => params[:limit])
     end
     render "tickets"
   end
@@ -580,6 +579,56 @@ class ResellerController < ApplicationController
   end
   
   def subscription_details
-    @subscription = Subscription.find(params[:id])
+      @subscription = Subscription.find(params[:id])
+  end
+  
+  def new_payment_method
+      @cc_data = Ccdata.new
+  end
+  
+  
+  def payment_methods
+      @payment_methods = @current_user.ccdatas
+  end
+  
+  def create_payment_method
+       @ccdata = Ccdata.new(params[:ccdata])    
+
+       if params[:new_address] == '0'
+         @ccdata.address = @current_user.address
+         @ccdata.address2 = @current_user.address2
+         @ccdata.city = @current_user.city
+         @ccdata.state = @current_user.state
+         @ccdata.state_other = @current_user.state_other
+         @ccdata.country = @current_user.country
+         @ccdata.postal_code = @current_user.postal_code
+         @ccdata.phccode = @current_user.phccode
+         @ccdata.phacode = @current_user.phacode
+         @ccdata.phnumber = @current_user.phnumber
+         @ccdata.user_id = @current_user.id
+       end
+       @ccdata.save
+       redirect_to reseller_billing_payment_methods_path
+  end
+  
+  def update_payment_method
+       @ccdata = Ccdata.find(params[:id])  if params[:id]
+       record = params[:ccdata]
+       @ccdata.first_name = record[:first_name]
+       @ccdata.last_name = record[:last_name]
+       @ccdata.card_num = record[:card_num]
+      
+       @ccdata.save
+       redirect_to reseller_billing_payment_methods_path
+  end
+  
+  def edit_payment_method
+      @cc_data  = Ccdata.find(params[:id]) if params[:id]
+  end
+  
+  def delete_payment_method
+      @ccdata = Ccdata.find(params[:id])  if params[:id]
+      @ccdata.destroy
+      redirect_to reseller_billing_payment_methods_path
   end
 end

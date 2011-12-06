@@ -35,6 +35,9 @@ Vhpanel::Application.routes.draw do
     
     match '/reseller_update' => 'reseller#reseller_update', :via => [:post,:put],:as=> 'reseller_update'
     match 'password/change' =>"reseller#change_password",:as=>'reseller_update_password'
+    match 'paymentmethod/create' => "reseller#create_payment_method", :as => 'reseller_create_payment_method', :via => [:post,:put]
+    match 'paymentmethod/update/:id' => "reseller#update_payment_method", :as => 'reseller_update_payment_method', :via => [:post,:put]
+    match 'paymentmethod/delete/:id' => "reseller#delete_payment_method", :as => 'reseller_delete_payment_method', :via => [:post,:put]
     
 #    licence
     match 'licence/upgrade/:left' =>"reseller#licence_upgrade",:as=>'reseller_licence_upgrade',:defaults=>{:left=>1}
@@ -53,6 +56,8 @@ Vhpanel::Application.routes.draw do
     match 'billing/subscriptions/:left' =>"reseller#billing_subscriptions",:as=>'reseller_billing_subscriptions',:defaults=>{:left=>2}
     match 'billing/termination/:left' =>"reseller#billing_termination",:as=>'reseller_billing_termination',:defaults=>{:left=>2}
     match 'billing/payment/methods/:left' =>"reseller#payment_methods",:as=>'reseller_billing_payment_methods',:defaults=>{:left=>2}
+    match 'billing/payment/methods/:left/new' =>"reseller#new_payment_method",:as=>'reseller_new_payment_method',:defaults=>{:left=>2}
+    match 'billing/payment/methods/:left/edit/:id' =>"reseller#edit_payment_method",:as=>'reseller_edit_payment_method',:defaults=>{:left=>2}
     match 'subscription/:id/:left' =>"reseller#subscription_details",:as=>'reseller_subscriptions_details',:defaults=>{:left=>2}
     
 #    vm manager
