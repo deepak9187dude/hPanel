@@ -11,9 +11,9 @@ class Ccdata < ActiveRecord::Base
       
       def status_message
         if self.isActive == true
-          @msg = 'Approved'
+          @msg = 'Active'
         else
-          @msg = 'Pending'      
+          @msg = 'Disabled'      
         end
       end  
       

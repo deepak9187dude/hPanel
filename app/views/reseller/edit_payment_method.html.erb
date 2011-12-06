@@ -3,11 +3,11 @@
 	<td class="middle_top">
     	<table width="100%" cellspacing="0" cellpadding="0" border="0">
          <tbody><tr>
-         	<td colspan="2"><span class="bodytext_1"><a class="bodylink" href="index.php?cid=4&amp;action=UVP">Home</a> &gt; <a class="bodylink" href="index.php?cid=20&amp;action=BMG&amp;left=2">Billing Manager</a> &gt; <a class="bodylink" href="#">	Payment Methods </a> &gt; New Credit Card</span></td>
+         	<td colspan="2"><span class="bodytext_1"><a class="bodylink" href="index.php?cid=4&amp;action=UVP">Home</a> &gt; <a class="bodylink" href="index.php?cid=20&amp;action=BMG&amp;left=2">Billing Manager</a> &gt; <a class="bodylink" href="#">	Payment Methods </a> &gt; Update Credit Card</span></td>
          </tr>
           <tr>
               <td width="44"><img align="bottom" width="30" height="32" border="0" title="Edit Credit Card" src="/images/icon_creditcard.png"></td>
-              <td width="1265" valign="top" style="padding-top:2px"><span class="txt_big_red">New Credit Card</span></td>
+              <td width="1265" valign="top" style="padding-top:2px"><span class="txt_big_red">Update Credit Card</span></td>
           </tr>
           </tbody></table>
     </td>
@@ -79,13 +79,13 @@
                <table width="70%" cellspacing="1" cellpadding="0" border="0" class="bgcolor3">     
 			   <tbody><tr> 
                      <td valign="top" class="cate_listing" colspan="2"><span class="mandotry">*</span> Credit Card Billing Address and Phone : 
-                     <input type="radio" onclick="divAddr(this.value);" value="0" checked="CHECKED" name="new_address">Use Account address &nbsp;<input type="radio" onclick="divAddr(this.value);" value="1" name="new_address">New Billing Address</td>
+                     <input type="radio" onclick="divAddr(this.value);" value="0"  name="new_address">Use Account address &nbsp;<input type="radio" onclick="divAddr(this.value);" value="1" name="new_address" checked="CHECKED" >New Billing Address</td>
                </tr>          				
                </tbody></table>
 			   </td>
 			   </tr>			  
 			   	<tr>				
-            	<td colspan="4"><div style="display:none" id="Divnewaddress">
+            	<td colspan="4"><div id="Divnewaddress">
 				   <table width="70%" cellspacing="1" cellpadding="0" border="0" class="bgcolor3">     
 					  <tbody><tr> 
 					  <td align="right" width="37%" valign="top" class="cate_listing">&nbsp;&nbsp;&nbsp;Address Line 1 :</td>
@@ -175,8 +175,9 @@
 					  </tr>
 					  <tr> 
 					  <td align="right" width="37%" valign="top" class="cate_listing">Allow payment by this payment method</td>
-                      <td align="right" width="63%" valign="top" class="bgcolor4"><input type="checkbox" value="1" name="chkPayment" id="chkPayment">
-					  </td>
+                <td align="right" width="63%" valign="top" class="bgcolor4">
+                    <%=f.check_box "isActive" %>
+           		  </td>
 					  </tr>
 					  </tbody></table>
 					  </td>
