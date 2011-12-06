@@ -64,9 +64,9 @@
                <tr height="40px">
                       <td align="right" width="37%" valign="top" class="cate_listing"> &nbsp;&nbsp;&nbsp;&nbsp;	Expiration date :</td>
                       <td width="63%" valign="middle" class="bgcolor4"> 
-                      <%=select_month(Date.today ,:use_month_numbers => true,:name=>'exp_month',:field_name=>"month",:prefix=>'ccdata',:html=>{:id=>'exp_month'}) %>
+                      <%=select_month(Date.today ,:use_month_numbers => true,:name=>'exp_month',:field_name=>"exp_month",:prefix=>'ccdata',:html=>{:id=>'exp_month'}) %>
                       &nbsp;&nbsp;
-                			<%= select_year(Date.today.year, :id=>'exp_year',:name=>'exp_year',:field_name=>"year",:prefix => "ccdata", :start_year => Date.today.year, :end_year => Date.today.year + 10) %>
+                			<%= select_year(Date.today.year, :id=>'exp_year',:name=>'exp_year',:field_name=>"exp_year",:prefix => "ccdata", :start_year => Date.today.year, :end_year => Date.today.year + 10) %>
 		            </td>
                </tr>               
 			   </tbody></table>
