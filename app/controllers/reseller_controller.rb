@@ -487,8 +487,16 @@ class ResellerController < ApplicationController
       @tickets = @support_progress
     end
     if params[:limit]
-      @tickets = @tickets.find(:all, :order => "id desc", :limit => params[:limit])
       @selection = params[:limit]
+      @tickets = @tickets.find(:all,:limit=>params[:limit])
+      if params[:txtsearch] and params[:txtsearch].strip !=""
+#        @tickets = Ticket.where("#{params[:cmbsearch]} = ? AND category = ?",params[:txtsearch].to_s,"support").find(:all, :order => "id desc", :limit => params[:limit])
+         if params[:cmbsearch].to_s.downcase == "lastactivity"
+           
+         else
+          @tickets = Ticket.find(:all,:conditions=>["#{params[:cmbsearch].to_s.downcase} like ? AND  category = 'support'", params[:txtsearch].to_s.strip.downcase],:limit=>params[:limit])
+         end
+      end
     end
     render "tickets"
 #    render :text => params.to_json
@@ -506,9 +514,17 @@ class ResellerController < ApplicationController
     elsif(params[:show]=="progress")
       @tickets = @billing_progress
     end
-     if params[:limit]
-      @tickets = @tickets.find(:all, :order => "id desc", :limit => params[:limit])      
+    if params[:limit]
       @selection = params[:limit]
+      @tickets = @tickets.find(:all,:limit=>params[:limit])
+      if params[:txtsearch] and params[:txtsearch].strip !=""
+#        @tickets = Ticket.where("#{params[:cmbsearch]} = ? AND category = ?",params[:txtsearch].to_s,"support").find(:all, :order => "id desc", :limit => params[:limit])
+         if params[:cmbsearch].to_s.downcase == "lastactivity"
+           
+         else
+          @tickets = Ticket.find(:all,:conditions=>["#{params[:cmbsearch].to_s.downcase} like ? AND  category = 'billing'", params[:txtsearch].to_s.strip.downcase],:limit=>params[:limit])
+         end
+      end
     end
     render "tickets"
   end
