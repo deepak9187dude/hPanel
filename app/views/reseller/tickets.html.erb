@@ -76,7 +76,7 @@
                                       <tr>
                                         <td valign="bottom" height="33" align="center">
                                           <a href="#">
-                                            <input width="26" type="image" height="29" border="0" align="absmiddle" onclick="if(chkdel(document.frmuser, 'DELETE', 'Ticket')!=false)  { document.frmuser.action ='index.php?cid=31&amp;action=DCT'; document.frmuser.submit();}" name="userdel" title="Delete Ticket" src="/images/icon_delete_big.gif">
+                                            <input width="26" type="image" height="29" border="0" align="absmiddle" onclick="if(chkdel(document.frmuser, 'DELETE', 'Ticket')!=false)  { document.frmuser.action =''; document.frmuser.submit();}" name="userdel" title="Delete Ticket" src="/images/icon_delete_big.gif">
                                           </a>
                                         </td>
                                       </tr>
@@ -196,6 +196,7 @@
                           </table>                          
                         </td>
                       </tr>
+                    <%=  form_tag("", :method=>'post', :multipart => true,:name=>"frmuser",:id=>"frmuser",:action=>'') do %>
                     <form method="post" name="frmuser" id="frmuser">
                     <tr>
                       <td>
@@ -238,7 +239,7 @@
                         </table>
                       </td>
                     </tr>
-		</form>                        
+		<% end %>                       
                     <tr>
                       <td align="right"></td>
                     </tr>

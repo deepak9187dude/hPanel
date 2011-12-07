@@ -1,6 +1,6 @@
 class Ticket < ActiveRecord::Base
   belongs_to :user
-  has_many :ticket_details
+  has_many :ticket_details, :dependent => :destroy
     
   def ticket_type
     self.category.downcase == "support"?"Support Ticket":"Billing Ticket"

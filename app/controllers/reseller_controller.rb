@@ -472,6 +472,11 @@ class ResellerController < ApplicationController
   end
   
   def support_tickets
+#    Delete Tickets
+    if params[:chkdel]
+      del = params[:chkdel]
+      Ticket.destroy(del)      
+    end
     if !params[:show]
       @tickets = @support_all
       if params[:limit]
