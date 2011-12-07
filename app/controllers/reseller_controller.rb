@@ -150,14 +150,18 @@ class ResellerController < ApplicationController
   def plan_summary
   end
   
-  def view_all_vm
-    @vms = @current_user.vms
-    if params[:chkdel]
-#      @vms= Vm.destory(params[:chkdel])
-    end
-    if params[:limit]
-      @vms = @current_user.vms.find(:all, :order => "id desc", :limit => params[:limit])
-      @selection = params[:limit]
+ def view_all_vm
+  @vms = @current_user.vms
+
+  if params[:limit]
+    @selection = params[:limit]
+    @vms = @current_user.vms.find(:all, :order => "id desc", :limit => params[:limit])
+    if params[:txtsearch] and params[:txtsearch].strip !=""
+       if params[:cmbsearch].to_s.downcase == "server_type"
+       elsif params[:cmbsearch].to_s.downcase == "server_hostname"
+       else
+        @vms = @current_user.vms.find(:all,:conditions=>["#{params[:cmbsearch].to_s.downcase.strip} like ?", params[:txtsearch].to_s.strip.downcase],:limit=>params[:limit])
+       end
     end
   end
   def del_vm
