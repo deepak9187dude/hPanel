@@ -71,12 +71,12 @@ you want between page reloads: 1 minute = 60000 milliseconds. */
                                               <tr>
                                                 <td align="center" height="30">
                                                   <a href="#">
-                                                    <input align="absmiddle" width="26" type="image" height="29" border="0" onclick="if(chkdel(document.frmvm,'DELETE','Selected VM')!=false) { document.frmvm.action ='index.php?cid=11&amp;action=UVD&amp;left=1'; document.frmvm.submit();}" name="vmdel" title="Delete VM" src="/images/icon_delete_big.gif">
+                                                    <input align="absmiddle" width="26" type="image" height="29" border="0" onclick="if(chkdel(document.frmvm,'DELETE','Selected VM')!=false) { document.frmvm.action =''; document.frmvm.submit();}" name="vmdel" title="Delete VM" src="/images/icon_delete_big.gif">
                                                   </a>
                                                 </td>
                                               </tr>
                                               <tr>
-                                                <td align="center" valign="top" height="20"><a onclick="if(chkdel(document.frmvm,'DELETE','Selected VM')!=false) { document.frmvm.action ='index.php?cid=11&amp;action=UVD&amp;left=1'; document.frmvm.submit();}" class="sm_heading" href="#">Delete </a></td>
+                                                <td align="center" valign="top" height="20"><a onclick="if(chkdel(document.frmvm,'DELETE','Selected VM')!=false) { document.frmvm.action =''; document.frmvm.submit();}" class="sm_heading" href="#">Delete </a></td>
                                               </tr>
                                             </tbody>
                                           </table>
@@ -175,7 +175,7 @@ you want between page reloads: 1 minute = 60000 milliseconds. */
                           </table>                          
                         </td>
                       </tr>
-                    <form action="index.php?cid=11&amp;action=UVD" method="post" name="frmvm" id="frmvm"></form>
+                      <%=  form_tag("", :method=>'post', :multipart => true,:name=>"frmvm",:id=>"frmvm",:action=>'') do %>
                     <tr>
                       <td>
                         <table align="left" width="100%" cellspacing="0" cellpadding="0" border="0">
@@ -274,6 +274,7 @@ you want between page reloads: 1 minute = 60000 milliseconds. */
                         </table>                        
                       </td>
                     </tr>
+                    <% end %>
             </tbody>
           </table>
                   

@@ -54,7 +54,7 @@
                <tr height="40px">
                    <td align="right" valign="top" class="cate_listing"><span class="mandotry">*</span> Card Type :</td>
                    <td valign="middle" class="bgcolor4">	
-                       <%= select( "payment", "ccdata_cc_type" ,{ "Visa" => "visa", "Mastercard" => "mastercard", "Discover" => "discover", "American Express" => "amex" }) %>
+                       <%= select( "ccdata", "cc_type" ,{ "Visa" => "visa", "Mastercard" => "mastercard", "Discover" => "discover", "American Express" => "amex" }) %>
           					 	</select>
 
                    </td>
@@ -183,7 +183,7 @@
 					  </td>
 					  </tr>  
             <tr valign="middle">
-                  <td align="left" width="40%" height="40"><input type="button" onclick="window.document.location='#'" value="Cancel" id="btncancel" class="button" name="btncancel">&nbsp;</td>
+                  <td align="left" width="40%" height="40"><input type="button" onclick="window.document.location='<%=reseller_billing_payment_methods_path%>'" value="Cancel" id="btncancel" class="button" name="btncancel">&nbsp;</td>
                   <td align="right" width="20%" height="40"><input type="submit" onclick="return confirm_delete(); chk_confirm('delete', 'credit card');" value="Delete" id="btndel" class="button" style="display:block" name="btndel"></td>
 				  <td align="right" width="10%" height="40">   
 			      <input type="submit" value="Save" id="btnsave" class="button" name="btnsave">                    </td>

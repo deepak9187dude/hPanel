@@ -152,7 +152,9 @@ class ResellerController < ApplicationController
   
   def view_all_vm
     @vms = @current_user.vms
-    
+    if params[:chkdel]
+#      @vms= Vm.destory(params[:chkdel])
+    end
     if params[:limit]
       @vms = @current_user.vms.find(:all, :order => "id desc", :limit => params[:limit])
       @selection = params[:limit]

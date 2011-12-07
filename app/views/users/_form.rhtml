@@ -97,7 +97,8 @@
           <tr>
             <td width="38%" align="right" valign="top" class="cate_listing">&nbsp;&nbsp;&nbsp;<span class="mandotry">*</span> Country :</td>
             <td width="62%" valign="top" class="bgcolor4"> 
-              <%= select_tag :country, :id=>'cmbcountry',:class=>'txtdrop',:onchange=>'checkCountry(this.value);'  %>
+              <%#= select_tag :country, :id=>'cmbcountry',:class=>'txtdrop',:onchange=>'checkCountry(this.value);'  %>
+               <%= f.collection_select :cmbcountry, CountryMaster.all,:id,:country_name  %>
               <%#*<select name="cmbcountry" class="txtdrop" id="cmbcountry"  onchange="checkCountry(this.value);">%>
                 <%#*#SELCOUNTRY#%>   
               <%#*</select>%>                    
@@ -109,9 +110,10 @@
             <tr>
               <td width="38%" align="right" valign="top" class="cate_listing">&nbsp;&nbsp;&nbsp;State (US):</td>
               <td width="62%" valign="top" class="bgcolor4">                
-                <select name="cmbstate" class="txtdrop" id="cmbstate">
+               <!-- <select name="cmbstate" class="txtdrop" id="cmbstate">
                   #SELSTATE#
-                </select>                    
+                </select>                  -->  
+                <%= f.collection_select :cmbstate ,StateMaster.all ,:id ,:state_name %>  
               </td>
             </tr>
           </table>

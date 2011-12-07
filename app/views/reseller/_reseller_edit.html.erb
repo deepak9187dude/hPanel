@@ -131,66 +131,7 @@
                                     <span class="mandotry">*</span> Country :
                                   </td>
                                   <td width="65%" valign="top" class="bgcolor4">
-                                    <select onchange="checkCountry(this.value);" id="cmbcountry" class="txtdrop" name="cmbcountry">
-                                      <option value=""> - Select - </option>
-                                      <option value="1">Afghanistan</option>
-                                      <option value="2">Albania</option>
-                                      <option value="3">Algeria</option>
-                                      <option value="4">American Samoa</option>
-                                      <option value="5">Andorra</option>
-                                      <option value="6">Angola</option>
-                                      <option value="7">Anguilla</option>
-                                      <option value="8">Antarctica</option>
-                                      <option value="9">Antigua and Barbuda</option>
-                                      <option value="10">Argentina</option>
-                                      <option value="11">Armenia</option>
-                                      <option value="12">Aruba</option>
-                                      <option value="13">Australia</option>
-                                      <option value="14">Austria</option>
-                                      <option value="15">Azerbaijan</option>
-                                      <option value="16">Bahamas</option>
-                                      <option value="17">Bahrain</option>
-                                      <option value="18">Bangladesh</option>
-                                      <option value="19">Barbados</option>
-                                      <option value="20">Belarus</option>
-                                      <option value="21">Belgium</option>
-                                      <option value="22">Belize</option>
-                                      <option value="23">Benin</option>
-                                      <option value="24">Bermuda</option>
-                                      <option value="25">Bhutan</option>
-                                      <option value="26">Bolivia</option>
-                                      <option value="27">Bosnia and Herzegovina</option>
-                                      <option value="28">Botswana</option>
-                                      <option value="29">Bouvet Island</option>
-                                      <option value="30">Brazil</option>
-                                      <option value="31">British Indian Ocean Trtry</option>
-                                      <option value="32">Brunei Darussalam</option>
-                                      <option value="33">Bulgaria</option>
-                                      <option value="34">Burkina Faso</option>
-                                      <option value="35">Burundi</option>                          
-                                      <option value="36">Cambodia</option>                         
-                                      <option value="37">Cameroon</option>                           
-                                      <option value="38">Canada</option>                             
-                                      <option value="39">Cap Verde</option>                          
-                                      <option value="40">Cayman Islands</option>                     
-                                      <option value="41">Central African Republic</option>             
-                                      <option value="42">Chad</option>                                  
-                                      <option value="43">Chile</option>                          
-                                      <option value="44">China</option>                        
-                                      <option value="45">Christmas Island</option>             
-                                      <option value="46">Cocos (Keeling) Islands</option>       
-                                      <option value="47">Colombia</option>                        
-                                      <option value="48">Comoros</option>                        
-                                      <option value="49">Congo, Dem. Rep. of</option>            
-                                      <option value="50">Congo, Republic of</option>              
-                                      <option value="51">Cook Islands</option>                    
-                                      <option value="52">Costa Rica</option>                      
-                                      <option value="53">Cote d'Ivoire</option>                    
-                                      <option value="54">Croatia/Hrvatska</option>                 
-                                      <option value="55">Cuba</option>                             
-                                      <option value="56">Cyprus</option>                        
-                                      <option value="57">Czech Republic</option>               
-                                    </select>                  
+                                     <%= f.collection_select :country, CountryMaster.all,:id,:country_name  %>
                                   </td>
                                 </tr>
                               </tbody>
