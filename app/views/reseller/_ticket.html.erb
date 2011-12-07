@@ -13,10 +13,13 @@
   <td height="26" class="bgcolor4"><%= ticket.ticket_details.count %></td>
   <td height="26" class="bgcolor4"><%= ticket.ticket_details.last ? ticket.ticket_details.last.user.name : ticket.user.name %></td>
   <td height="26" class="bgcolor4">
-    <font color="#FF6600">00h49m22s</font>
+    <%
+      require 'time_diff'
+      time_diff_components = Time.diff((ticket.ticket_details.last ?ticket.ticket_details.last.created_at: ticket.created_at ), Time.now)
+    %>
+    <font color="#FF6600"> <%="#{time_diff_components[:day]}d, #{time_diff_components[:hour]}h, #{time_diff_components[:minute]}m"%> </font>
   </td>
-  <td height="26" align="center" class="bgcolor4">
-    
+  <td height="26" align="center" class="bgcolor4">    
     <img src="/images/<%= ticket.status_image %>" title="In Progress">
     <span class="Booting"><%= ticket.status %></span>
   </td>

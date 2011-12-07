@@ -542,8 +542,7 @@ class ResellerController < ApplicationController
   end
 
   def billing_subscriptions
-    @subscriptions = @current_user.subscriptions
-    
+    @subscriptions = @current_user.subscriptions    
     if params[:limit]
       @subscriptions = @current_user.subscriptions.find(:all, :order => "id desc", :limit => params[:limit])
       @selection = params[:limit]
@@ -560,7 +559,6 @@ class ResellerController < ApplicationController
       render "new_ticket"
       return
     end
-
     ticket.user_id=@current_user.id
     ticket.random=ActiveSupport::SecureRandom.base64(10)#need to be changed later
     ticket.save
