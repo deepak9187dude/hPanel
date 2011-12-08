@@ -7,8 +7,7 @@ class SessionsController < ApplicationController
       if user.account_type.strip.downcase == "admin"
         redirect_to reseller_index_path, :notice => "Logged in successfully"
       elsif user.account_type.strip.downcase == "superadmin"
-        redirect_to reseller_index_path, :notice => "Logged in successfully"
-        
+        redirect_to admin_path, :notice => "Logged in successfully"        
       else
         redirect_to root_path, :notice => "Logged in successfully"
       end

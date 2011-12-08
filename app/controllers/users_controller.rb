@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  layout 'backend'
+  layout 'admin_backend'
   def index 
     @users = User.find(:all, :conditions => ["id != ?", 1])
   end
