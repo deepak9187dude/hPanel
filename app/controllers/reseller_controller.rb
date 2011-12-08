@@ -164,6 +164,7 @@ class ResellerController < ApplicationController
        end
     end
   end
+ end
   def del_vm
     
   end
