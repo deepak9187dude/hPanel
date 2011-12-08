@@ -45,7 +45,20 @@
                         </tr>
 
                         <tr>
-                          <td align="left">&nbsp;</td>
+                          <td align="left">
+                            <table width="450" cellspacing="0" cellpadding="0" border="0">
+                              <tbody>
+                                <tr>
+                                  <td align="center" width="144">
+                                    <a href="<%= vm_path %>">
+                                      <img width="139" height="35" border="0" title="VM" src="/images/btn_vm.gif"/>
+                                    </a>
+                                  </td>
+                                  <td align="center">&nbsp;</td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </td>
                           <td align="right" valign="bottom" width="397">
                             <%= link_to(image_tag("btn_logout.gif",:title=>"Logout",:width=>"139",:height=>'35',:border=>0),logout_path) %>
                           </td>

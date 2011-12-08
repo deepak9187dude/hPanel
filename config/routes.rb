@@ -97,7 +97,8 @@ Vhpanel::Application.routes.draw do
   end
 #  resources :subscriptions, :controller=>'subscriptions',:path=>'reseller/subscriptions'
     
-   
+#   admin section routes
+
    root :to => "front#index"
 #   match ':controller(/:action(/:id(.:format)))'
    match ':controller(/:action(.:format))'
