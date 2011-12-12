@@ -5,7 +5,7 @@ body { margin:0px; padding:0px; color:#444; font:12px Arial, Helvetica, sans-ser
 .innerbg {background:url(/images_new/innerpagebg.gif) repeat-x #fff;}
 h1, h2, h3, h4, h5, ul, li, p, form {margin:0px; padding:0px;}
 
-ul, li {list-style:none;}
+ul, li {list-style:none; list-style-image:url(/images/bullet.gif);}
 
 a {outline:none; color:#476299; text-decoration:none;}
 a:hover { color:#ff5215;}
