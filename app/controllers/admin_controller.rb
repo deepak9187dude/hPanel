@@ -41,4 +41,20 @@ class AdminController < ApplicationController
     render "admin_subscriptions/all_subscriptions"
   end
   
+  def subscriptions_on_hold
+    render "admin_subscriptions/subscriptions_on_hold"
+  end
+  
+  def subscriptions_expired
+    render "admin_subscriptions/subscriptions_expired"
+  end
+  
+  def subscriptions_termination_queue
+    render "admin_subscriptions/subscriptions_termination_queue"
+  end
+  
+  def subscriptions_failed
+    render "admin_subscriptions/subscriptions_failed"
+  end
+  
 end

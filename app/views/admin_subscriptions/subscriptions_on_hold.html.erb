@@ -1,0 +1,118 @@
+<td valign="top" class="bgcolor2"><table width="100%" cellspacing="0" cellpadding="0" border="0">
+              <tbody><tr>
+                <td class="middle_top"><table width="100%" cellspacing="0" cellpadding="0" border="0">
+                    <tbody><tr>
+                      <td colspan="2"><span class="bodytext_1"><a class="bodylink" href="index.php?cid=3">Home</a> &gt; <a class="bodylink" href="index.php?cid=21&amp;action=CMM"> Client Manager </a> &gt; Subscriptions On Hold  </span></td>
+                    </tr>
+                    <tr>
+                      <td width="4%"><img align="bottom" width="30" height="32" border="0" title="Add Server" src="/images/subscription-icn1.png"></td>
+                      <td width="96%" valign="top" style="padding-top:2px"><span class="txt_big_red">Subscriptions</span></td>
+                    </tr>
+                  </tbody></table></td>
+              </tr>
+              <tr>
+                <td style="padding:5px;"><table width="100%" cellspacing="0" cellpadding="0" border="0">
+                    <tbody><tr>
+                      <td><table width="100%" cellspacing="0" cellpadding="0" border="0">
+                                                    <tbody><tr>
+                            <td align="left" valign="top"><div style="height:100%" id="dvContent">
+                                <div id="content">
+                                  <div id="gallery">
+								  <span><a href="Subscriptions.php?category=&amp;page=Subscriptions" class="offdiv"><div title="All Subscriptions" class="offdiv"><span>All Subscriptions (0)</span></div></a></span>
+								 
+								  <a href="Subscriptionsonhold.php?category=&amp;page=Subscriptionsonhold&amp;key=hold" class="ondiv"><div title="Subscriptions On Hold" class="ondiv">Subscriptions On Hold (0)</div></a>
+								  <a href="expired.php?category=&amp;page=expired" class="offdiv"><div title="Expired" class="offdiv"><span onclick="ShowDiv('divExpired','divEdit')">Expired (0)</span></div></a>
+								  <a href="terminating.php?category=&amp;page=terminating" class="offdiv"><div title="Termination Queue" class="offdiv"><span onclick="ShowDiv('divTermination','divEdit')">Termination Queue (0)</span></div></a>	
+                                  <a href="failed.php?category=&amp;page=failed" class="offdiv"><div title="Transaction Failed" class="offdiv"><span onclick="ShowDiv('divFailed','divEdit')">Failed(0)</span></div></a>					                                  
+                                  </div>
+										
+                                  <div class="hide" style="height:100%" id="All Subscriptions">
+								  
+										<div id="divAll">
+										
+										</div>
+										<div style="display:none" id="divEdit">
+																				</div>
+										<br>
+                                  		</div>
+										<div class="show" style="height:100%" id="Subscriptions On Hold">
+										 <div id="divSearch">
+<form method="post" name="frmHold" target="frmEdit" action="searchsubscrmanager.php?search=H&amp;cat=" id="frmHold">
+	<table width="100%" cellspacing="0" cellpadding="0">
+		<tbody><tr class="cate_listing_head"><td valign="middle">&nbsp;&nbsp;Subscription Search</td><td width="5%" valign="middle"><img onclick="javascript:ShowHideHR('S33');" style="padding-left: 20px;" id="imgS33" name="imgS33" src="/images/search_show.png"></td></tr>
+        <tr id="trS33" width="100%">
+			<td valign="top">
+            	<table width="100%" cellspacing="0" cellpadding="0" border="0">
+					<tbody><tr>
+                    	<td width="7%" valign="bottom" nowrap="nowrap">ID&nbsp;<br><input type="text" value="" size="4" id="txtholdSubid" name="txtholdSubid">&nbsp;&nbsp;</td>
+                        <td width="14%" valign="bottom" nowrap="nowrap">Hosting Plan&nbsp;&nbsp;<br><input type="text" value="" size="18" id="txtholdPlan" name="txtholdPlan"></td>
+                    	<td width="14%" valign="bottom" nowrap="nowrap">Hosting Plan Type&nbsp;&nbsp;<br><select name="cmbholdCategory_1" id="cmbholdCategory_1"><option value="0">All</option><option value="1">XEN-VPS</option><option value="2">OpenVZ</option><option value="3">Dedicated Server</option></select>&nbsp;&nbsp;</td>
+                        <td width="14%" valign="bottom" nowrap="nowrap">Account Name&nbsp;&nbsp;<br><input type="text" value="" size="18" id="txtholdAccname" name="txtholdAccname"></td>
+                       
+                        <td width="5%">
+                        <input width="31" type="image" height="33" onclick="return formsubmit();" name="gohold" id="gohold" title="Search" src="/images/icon_search.gif"></td>
+						<td width="5%" valign="bottom" class="bodytext">Show</td>
+								<td width="45%" valign="bottom" class="bodytext">
+								<select onchange="document.frmHold.submit()" id="limit" class="limit" name="limit">
+								<option value="5">5</option><option value="10">10</option><option value="20">20</option><option value="40">40</option><option value="80">80</option><option value="160">160</option><option value="320">320</option>								</select>
+								</td>
+                    </tr>
+                   
+                  <tr>
+                  		<td colspan="5">
+                            <table cellspacing="0" cellpadding="0">
+                            <tbody><tr><td width="">End date after: <br>
+                            <input type="hidden" value="0000-00-00" id="dateFromhold" name="dateFromhold"><input type="hidden" value="1" id="dateFromhold_dp" name="dateFromhold_dp"><input type="hidden" value="2009" id="dateFromhold_year_start" name="dateFromhold_year_start"><input type="hidden" value="2025" id="dateFromhold_year_end" name="dateFromhold_year_end"><input type="hidden" value="" id="dateFromhold_mon" name="dateFromhold_mon"><input type="hidden" value="" id="dateFromhold_da1" name="dateFromhold_da1"><input type="hidden" value="" id="dateFromhold_da2" name="dateFromhold_da2"><input type="hidden" value="" id="dateFromhold_sna" name="dateFromhold_sna"><input type="hidden" value="" id="dateFromhold_aut" name="dateFromhold_aut"><input type="hidden" value="" id="dateFromhold_frm" name="dateFromhold_frm"><input type="hidden" value="" id="dateFromhold_tar" name="dateFromhold_tar"><input type="hidden" value="" id="dateFromhold_inp" name="dateFromhold_inp"><input type="hidden" value="d-M-Y" id="dateFromhold_fmt" name="dateFromhold_fmt"><input type="text" class="calendarcontainer" name="divCalendar_dateFromhold_lbl" id="divCalendar_dateFromhold_lbl" value="Select Date" readonly="readonly"> <a href="javascript:toggleCalendar('cal_dateFromhold');"><img align="absmiddle" border="0" name="tcbtn_dateFromhold" id="tcbtn_dateFromhold" src="./images/iconCalendar.gif"></a><span style="position: relative;display:none;z-index:10000;" id="cal_dateFromhold"><iframe width="134" scrolling="no" height="205" frameborder="0" src="./calendar_form.php?objname=dateFromhold&amp;selected_day=0&amp;selected_month=0&amp;selected_year=0&amp;year_start=2009&amp;year_end=2025&amp;dp=1&amp;mon=&amp;da1=&amp;da2=&amp;sna=&amp;aut=&amp;frm=&amp;tar=&amp;inp=&amp;fmt=d-M-Y" style="DISPLAY:block; LEFT:0px; POSITION:absolute; TOP:0px;" id="dateFromhold_frame"></iframe></span>                            </td>
+                            <td width="10%">&nbsp;</td>
+                            <td>End date before: <br>
+                            <input type="hidden" value="0000-00-00" id="dateTohold" name="dateTohold"><input type="hidden" value="1" id="dateTohold_dp" name="dateTohold_dp"><input type="hidden" value="2009" id="dateTohold_year_start" name="dateTohold_year_start"><input type="hidden" value="2025" id="dateTohold_year_end" name="dateTohold_year_end"><input type="hidden" value="" id="dateTohold_mon" name="dateTohold_mon"><input type="hidden" value="" id="dateTohold_da1" name="dateTohold_da1"><input type="hidden" value="" id="dateTohold_da2" name="dateTohold_da2"><input type="hidden" value="" id="dateTohold_sna" name="dateTohold_sna"><input type="hidden" value="" id="dateTohold_aut" name="dateTohold_aut"><input type="hidden" value="" id="dateTohold_frm" name="dateTohold_frm"><input type="hidden" value="" id="dateTohold_tar" name="dateTohold_tar"><input type="hidden" value="" id="dateTohold_inp" name="dateTohold_inp"><input type="hidden" value="d-M-Y" id="dateTohold_fmt" name="dateTohold_fmt"><input type="text" class="calendarcontainer" name="divCalendar_dateTohold_lbl" id="divCalendar_dateTohold_lbl" value="Select Date" readonly="readonly"> <a href="javascript:toggleCalendar('cal_dateTohold');"><img align="absmiddle" border="0" name="tcbtn_dateTohold" id="tcbtn_dateTohold" src="./images/iconCalendar.gif"></a><span style="position: relative;display:none;z-index:10000;" id="cal_dateTohold"><iframe width="134" scrolling="no" height="205" frameborder="0" src="./calendar_form.php?objname=dateTohold&amp;selected_day=0&amp;selected_month=0&amp;selected_year=0&amp;year_start=2009&amp;year_end=2025&amp;dp=1&amp;mon=&amp;da1=&amp;da2=&amp;sna=&amp;aut=&amp;frm=&amp;tar=&amp;inp=&amp;fmt=d-M-Y" style="DISPLAY:block; LEFT:0px; POSITION:absolute; TOP:0px;" id="dateTohold_frame"></iframe></span>                            </td>
+                            </tr></tbody></table>
+                         </td>
+                     </tr>
+                  </tbody></table>
+             </td>
+           </tr>
+         </tbody></table>
+         <input type="hidden" value="" id="p_start" name="p_start">
+    <input type="hidden" value="" id="p_sort" name="p_sort">
+    <input type="hidden" value="" id="column_name" name="column_name">
+    <input type="hidden" value="" id="orderby" name="orderby">
+    <input type="hidden" value="2" id="start_search" name="start_search">
+</form>
+</div>
+<script type="text/javascript">
+ function formsubmit()
+ {
+	  document.getElementById('start_search').value=1;
+	   document.getElementById('orderby').value="";
+	document.getElementById('column_name').value="";
+	 document.frmHold.submit();
+ }
+ document.getElementById('start_search').value=2;
+ </script>								   		<div id="divHold">
+										<table width="100%" cellspacing="0" cellpadding="0" border="0"><tbody><tr><td align="right" valign="middle">&nbsp;<a href="sub_download.php?cat=&amp;list=On Hold" class="det_link"><img title="Export to Excel" src="/images/excel.jpg"></a></td></tr><tr><td valign="middle"><table width="100%" cellspacing="1" cellpadding="0" border="0" class="bgcolor3"><tbody><tr><td class="bodytext"><div id="dvContent"><span class="bodytext">No record</span></div></td></tr></tbody></table></td> </tr></tbody></table>										</div>
+										 
+										</div>
+										<div class="hide" style="height:100%" id="Expired">
+										 <div id="divExpired">
+																				</div>
+										</div>
+										<div class="hide" style="height:100%" id="Termination Queue">
+										 <div id="divTermination">
+										
+										</div>
+										</div>
+										
+                                  </div>
+                                  
+                                </div>
+                              </td>
+                          </tr>
+                                                 <!--   <tr>
+                            <td class="btm_border">&nbsp;</td>
+                          </tr>-->
+                        </tbody></table></td>
+                    </tr>
+                  </tbody></table></td>
+              </tr>
+            </tbody></table></td>
