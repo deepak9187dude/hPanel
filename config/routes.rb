@@ -103,8 +103,8 @@ scope 'admin' do
 #  resources :users
 
 #  admin client manager
-  match "/view_all_clients"=>"admin#view_all_clients",:as=>"admin_all_clients"
-  match "/add_new_client"=>"admin#add_new_client",:as=>"admin_new_client"
+  match "/clients/all"=>"admin#view_all_clients",:as=>"admin_all_clients"
+  match "/clients/add"=>"admin#add_new_client",:as=>"admin_new_client"
   match "/subscriptions/all"=>"admin#all_subscriptions",:as=>"admin_all_subscriptions"
   match "/subscriptions/onhold"=>"admin#subscriptions_on_hold",:as=>"admin_subscriptions_on_hold"
   match "/subscriptions/expired"=>"admin#subscriptions_expired",:as=>"admin_subscriptions_expired"
