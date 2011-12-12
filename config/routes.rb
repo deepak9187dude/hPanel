@@ -110,6 +110,7 @@ scope 'admin' do
   match "/subscriptions/expired"=>"admin#subscriptions_expired",:as=>"admin_subscriptions_expired"
   match "/subscriptions/termination"=>"admin#subscriptions_termination_queue",:as=>"admin_subscriptions_termination_queue"
   match "/subscriptions/failed"=>"admin#subscriptions_failed",:as=>"admin_subscriptions_failed"
+  match "/settings/graceperiod"=>"admin#grace_period_settings",:as=>"grace_period_settings"
 end
    root :to => "front#index"
 #   match ':controller(/:action(/:id(.:format)))'

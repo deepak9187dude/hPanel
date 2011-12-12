@@ -20,8 +20,7 @@
     <%= javascript_include_tag 'common.js' %>
     <%= javascript_include_tag 'ajax.js' %>
     <%= javascript_include_tag 'pngfix.js' %>
-    <%= javascript_include_tag 'tabbed_pages.js' %>
-    
+    <%= javascript_include_tag 'tabbed_pages.js' %>    
     <link rel="stylesheet" href="/stylesheets/tabbed_pages.css" type="text/css" />
   </head>
   <body> 
@@ -43,7 +42,6 @@
                           <td width="290" align="left">&nbsp;</td>
                           <td align="right" valign="bottom"><span class="txt_big_red">Welcome deepak@idifysolutions.com</span></td>
                         </tr>
-
                         <tr>
                           <td align="left">
                             <table width="450" cellspacing="0" cellpadding="0" border="0">
@@ -108,7 +106,7 @@
                                     <tr>
                                       <td class="tdgap">
                                         <div id="vertical_container" class="content_width">
-<%# admin menu start %>
+                                          <%# admin menu start %>
                                           <h1 class="accordion_toggle">CLIENT MANAGER</h1>
                                           <div id="content_width" class="accordion_content">
                                             <table width="90%" border="0" cellspacing="0" cellpadding="0">
@@ -116,7 +114,7 @@
                                                 <td class="cate_border">
                                                   <%= image_tag("icon_view_client.png",:width=>16,:height=>20,:title=>"View Clients")  %>
                                                   <span class="left_nav">
-                                                    <%= link_to "View All Clients", "#" %>
+                                                    <%= link_to "View All Clients", admin_all_clients_path %>
                                                   </span>
                                                 </td>
                                               </tr>
@@ -124,7 +122,7 @@
                                                 <td class="cate_border">
                                                   <%= image_tag("icon_add_client.png",:width=>16,:height=>20,:title=>"Add New Client")  %>
                                                   <span class="left_nav">
-                                                    <%= link_to "Add a New Client", "#" %>
+                                                    <%= link_to "Add a New Client", admin_new_client_path %>
                                                   </span>
                                                 </td>
                                               </tr>
@@ -132,7 +130,7 @@
                                                 <td class="cate_border">
                                                   <%= image_tag("subicn-sm.jpg",:width=>16,:height=>20,:title=>"Subscriptions")  %>
                                                   <span class="left_nav">
-                                                    <%= link_to "Subscriptions", "#" %>
+                                                    <%= link_to "Subscriptions", admin_all_subscriptions_path %>
                                                   </span>
                                                 </td>
                                               </tr>
@@ -140,7 +138,7 @@
                                                 <td class="cate_border">
                                                   <%= image_tag("graceperiod-icn2.jpg",:width=>16,:height=>20,:title=>"Grace Period Settings")  %>
                                                   <span class="left_nav">
-                                                    <%= link_to "Grace Period Settings", "#" %>
+                                                    <%= link_to "Grace Period Settings", grace_period_settings_path %>
                                                   </span>
                                                 </td>
                                               </tr>
@@ -154,9 +152,7 @@
                                               </tr>
                                             </table>
                                           </div>
-
                                           <h1 class="accordion_toggle">SERVER MANAGER</h1>
-
                                           <div id="content_width" class="accordion_content">
                                             <table width="90%" border="0" cellspacing="0" cellpadding="0">
                                               <tr>
@@ -228,7 +224,6 @@
                                               </tr>
                                             </table>
                                           </div>
-
                                           <h1 class="accordion_toggle">VM MANAGER</h1>
                                           <div id="content_width" class="accordion_content">
                                             <table width="90%" border="0" cellspacing="0" cellpadding="0">
@@ -250,7 +245,6 @@
                                               </tr>
                                             </table>
                                           </div>
-
                                           <h1 class="accordion_toggle">BILLING MANAGER</h1>
                                           <div id="content_width" class="accordion_content">
                                             <table width="90%" border="0" cellspacing="0" cellpadding="0">
@@ -272,7 +266,6 @@
                                               </tr>
                                             </table>
                                           </div>
-
                                           <h1 class="accordion_toggle">LOG MANAGER</h1>
                                           <div id="content_width" class="accordion_content">
                                             <table width="90%" border="0" cellspacing="0" cellpadding="0">
@@ -316,7 +309,6 @@
                                               </tr>
                                             </table>
                                           </div>
-
                                           <h1 class="accordion_toggle">COMMERCE MANAGER</h1>
                                           <div id="content_width" class="accordion_content">
                                             <table width="90%" border="0" cellspacing="0" cellpadding="0">
@@ -346,7 +338,6 @@
                                               </tr>
                                             </table>
                                           </div>
-
                                           <h1 class="accordion_toggle">SETTINGS</h1>
                                           <div id="content_width" class="accordion_content">
                                             <table width="90%" border="0" cellspacing="0" cellpadding="0">
@@ -360,7 +351,6 @@
                                               </tr>
                                             </table>
                                           </div>
-
                                           <h1 class="accordion_toggle">TICKET MANAGER</h1>
                                           <div id="content_width" class="accordion_content">
                                             <table width="90%" border="0" cellspacing="0" cellpadding="0">
@@ -410,7 +400,6 @@
                                               </tr>
                                             </table>
                                           </div>
-
                                           <h1 class="accordion_toggle">HELP</h1>
                                           <div id="content_width" class="accordion_content">
                                             <table width="90%" border="0" cellspacing="0" cellpadding="0">
@@ -432,13 +421,12 @@
                                               </tr>
                                             </table>
                                           </div>
-
                                           <%= link_to logout_path,:style=>'text-decoration:none' do %>
                                             <h1 class="accordion_logout">LOGOUT</h1>
                                           <%  end %>
                                           <div id="vertical_nested_container">                     
                                           </div>
-<%# admin menu ends %>
+                                        <%# admin menu ends %>
                                         </div>
                                       </td>
                                     </tr>

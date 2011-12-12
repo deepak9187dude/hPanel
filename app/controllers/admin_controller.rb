@@ -57,4 +57,12 @@ class AdminController < ApplicationController
     render "admin_subscriptions/subscriptions_failed"
   end
   
+  def grace_period_settings
+    
+  end
+  
+  def termination_request
+    
+  end
+  
 end
