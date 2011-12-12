@@ -1,0 +1,165 @@
+<td valign="top" class="bgcolor2"><table width="100%" cellspacing="0" cellpadding="0" border="0">
+              <tbody><tr>
+			  <td class="middle_top"><table width="100%" cellspacing="0" cellpadding="0" border="0">
+                  <tbody><tr>
+                    <td colspan="2"><span class="bodytext_1"><a class="bodylink" href="index.php?cid=3">Home</a> &gt;  <a class="bodylink" href="index.php?cid=24&amp;action=TML&amp;left=4">Messages Manager</a> &gt; Templates</span></td>
+                    </tr>
+                  <tr>
+                    <td width="42"><img align="bottom" width="30" height="32" border="0" title="Templates" src="../asset/images/icon_sendmail_big.png"></td>
+                    <td width="1267" valign="top" style="padding-top:2px"><span class="txt_big_red">Templates</span></td>
+                  </tr>
+                </tbody></table></td>
+              </tr>
+              <tr>
+                <td style="padding:10px;">				
+				<table width="100%" cellspacing="0" cellpadding="0" border="0">
+                  <tbody><tr>
+                    <td class="btm_border"><table width="100%" cellspacing="0" cellpadding="0" border="0">
+                      <tbody><tr>
+                        <td><table width="100%" cellspacing="0" cellpadding="0" border="0">
+                          <tbody><tr>
+                            <td width="7%"><span class="bodytext">Actions</span></td>
+                            <td width="93%" class="line_bg">&nbsp;</td>
+                          </tr>
+                        </tbody></table></td>
+                      </tr>
+                      <tr>
+                        <td><table width="210" cellspacing="0" cellpadding="0" border="0">
+  <tbody><tr>
+    <td align="center"><table width="100%" cellspacing="1" cellpadding="1" border="0">
+      <tbody><tr>
+        <td align="center" valign="bottom" height="30"><a href="index.php?cid=24&amp;action=TMP&amp;left=4"><img align="absmiddle" width="30" height="32" border="0" title="Create" src="../asset/images/icon_compose.png"></a></td>
+      </tr>
+      <tr>
+        <td align="center" valign="bottom" height="20"><a class="sm_heading" href="index.php?cid=24&amp;action=TMP&amp;left=4">Create</a></td>
+      </tr>
+    </tbody></table></td>
+	<td align="center"><table width="100%" cellspacing="1" cellpadding="1" border="0">
+      <tbody><tr>
+        <td align="center" valign="bottom" height="30"><a href="index.php?cid=24&amp;action=TLL&amp;left=4"><img align="absmiddle" width="30" height="32" border="0" title="Email Logs" src="../asset/images/icon_log_manager_big.png"></a></td>
+      </tr>
+      <tr>
+        <td align="center" valign="bottom" height="20"><a class="sm_heading" href="index.php?cid=24&amp;action=TLL&amp;left=4">Email Logs</a></td>
+      </tr>
+    </tbody></table></td>
+	    <td align="center">
+	<table width="100%" cellspacing="1" cellpadding="1" border="0">
+      <tbody><tr>
+        <td align="center" valign="bottom" height="30"> 
+        
+		  <a href="#"><input width="31" type="image" height="33" name="del" id="del" title="Delete" onclick="if(chk_confirm('DELETE','Templates')!=false)  frmserver.submit();" src="../asset/images/icon_delete_big.gif"></a>
+        </td>
+      </tr>
+      <tr>
+        <td align="center" valign="bottom" height="20"><a onclick="if(chk_confirm('DELETE','Templates')!=false)  frmserver.submit();" class="sm_heading" name="hiddel" id="hiddel" href="#"> Delete </a></td>
+      </tr>
+    </tbody></table></td>
+	 <td align="center"><table width="100%" cellspacing="1" cellpadding="1" border="0">
+       <tbody><tr>
+         <td align="center" valign="bottom" height="30" href="index.php?cid=24&amp;action=TML&amp;left=4" <a=""><img align="absmiddle" width="30" height="29" border="0" title="Refresh" src="../asset/images/icon_refresh.gif"></td>
+       </tr>
+       <tr>
+         <td align="center" valign="bottom" height="20"><a class="sm_heading" href="index.php?cid=24&amp;action=TML&amp;left=4">Refresh</a></td>
+       </tr>
+     </tbody></table></td>
+  </tr>
+</tbody></table>                   
+                        
+                    </td></tr></tbody></table> 
+				  </td></tr><tr><td height="10"></td></tr>
+                  <tr>
+                    <td><table width="100%" cellspacing="0" cellpadding="0" border="0">
+                      <tbody><tr>
+                        <td class="tdgap">
+						<table width="61%" cellspacing="0" cellpadding="0" border="0">
+						  <tbody><tr class="cate_listing_head">
+							    <td valign="middle">&nbsp;Search Templates</td>
+							    <td align="center" width="5%" valign="middle"><img align="bottom" onclick="javascript:ShowHideHR('S33');" src="../asset/images/search_show.png" id="imgS33"></td>
+						  </tr>
+                          <tr id="trS33">
+                            <td width="95%">
+							<form id="frmsearch" method="post" action="index.php?cid=24&amp;action=TML&amp;left=4" name="frmsearch">
+							<table width="60%" cellspacing="2" cellpadding="2" border="0">
+                              <tbody><tr>
+                                <td width="30%" class="bodytext">Template Name</td>
+                                
+                                <td width="36%">
+                                  <label>
+                                    <input type="text" value=" " id="txtsearch" class="txtfield" name="txtsearch">
+                                  </label>
+                                </td>
+                                <td width="13%"><a href="#">
+                                <input width="31" type="image" height="33" name="go" id="go" title="Search" src="../asset/images/icon_search.gif"></a></td>						<td width="8%" class="bodytext">Show</td>
+								<td width="13%" class="bodytext">
+								<select onchange="document.frmsearch.submit()" id="limit" class="limit" name="limit">
+								<option value="5">5</option><option selected="" value="10">10</option><option value="20">20</option><option value="40">40</option><option value="80">80</option><option value="160">160</option><option value="320">320</option>
+								</select>
+								</td>
+                              </tr>
+                            </tbody></table></form></td>
+                            <td valign="bottom" class="bodytext">&nbsp;</td>
+                          </tr>
+                         
+                      <tr>
+                        <td>
+							<table width="88%" cellspacing="0" cellpadding="0" border="0">
+							 
+							  <tbody><tr><td width="95%" height="5">&nbsp;</td>
+								<td align="right" width="5%">&nbsp;</td>
+							  </tr>
+						  </tbody></table>
+						</td>
+                      </tr>
+					   <tr>
+                        <td>
+						<form method="post" id="frmserver" name="frmserver">
+						<table width="91%" cellspacing="0" cellpadding="0" border="0">
+                      <tbody><tr>
+                        <td><table width="91%" cellspacing="1" cellpadding="0" border="0" class="bgcolor3">
+                          <tbody><tr>
+                            <td align="center" width="8%" class="cate_listing_center">
+                                <input type="checkbox" onclick="javascript:selectall(checked, document.frmserver, 'chkdel[]')" id="checkbox" name="checkbox">
+                            </td>
+                            <td width="46%" class="cate_listing"><a class="cate_listing_head" href="index.php?cid=24&amp;action=TML&amp;orderby=templatename&amp;left=4&amp;page=&amp;sort=ASC&amp;searchfield=&amp;searchval= &amp;limit=">Template Name</a>  </td>
+                            <td width="28%" class="cate_listing"><a class="cate_listing_head" href="index.php?cid=24&amp;action=TML&amp;orderby=insertTS&amp;left=4&amp;page=&amp;sort=ASC&amp;searchfield=&amp;searchval= &amp;limit=">Date of Creation</a>  </td>
+                            <td width="18%" class="cate_listing">Actions</td>
+                          </tr>
+						  
+						  <tr style="display:table-row"><td align="center" height="50" bgcolor="#FFFFFF" class="no_record" colspan="4">Templates are not available</td>
+						  </tr>
+                        </tbody></table></td>
+                      </tr> 
+                      <tr>
+                        <td class="bodytext">
+						<table width="91%" cellspacing="1" cellpadding="1" border="0">
+                          <tbody><tr>
+                            <td width="42%"><table align="left" width="208" cellspacing="0" cellpadding="0" border="0" class="bodytext">
+                              <tbody><tr align="left" valign="bottom">
+                                <td width="27">&nbsp; </td>
+                                <td width="181">&nbsp;</td>
+                              </tr>
+                            </tbody></table></td>
+                            <td align="right" width="58%"></td>
+                          </tr>
+                        </tbody></table> 
+						</td>
+						</tr>
+						</tbody></table>
+							</form>
+						</td>
+						</tr>
+						</tbody></table>
+				 
+		</td>
+          </tr>
+        </tbody></table></td>
+      </tr>
+    </tbody></table></td>
+  </tr>
+</tbody></table>
+
+
+
+
+
+</td>

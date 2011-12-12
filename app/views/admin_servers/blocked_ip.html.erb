@@ -1,0 +1,134 @@
+<td valign="top" class="bgcolor2"><table width="100%" cellspacing="0" cellpadding="0" border="0">
+  <tbody><tr>
+    <td class="middle_top"><table width="100%" cellspacing="0" cellpadding="0" border="0">
+        <tbody><tr>
+          <td colspan="2"><span class="bodytext_1"><a class="bodylink" href="index.php?cid=3">Home</a> &gt; <a class="bodylink" href="index.php?cid=8&amp;action=SML&amp;left=1">Servers Manager</a> &gt; <a class="bodylink" href="index.php?cid=12&amp;action=SIM&amp;left=1">Network Management - Blocked IP </a> &gt; Blocked IP </span></td>
+        </tr>
+        <tr>
+          <td width="4%"><img align="bottom" width="30" height="32" border="0" title="Blocked IP" src="../asset/images/icon_ip_big.png"></td>
+          <td width="96%" valign="top" style="padding-top:2px"><span class="txt_big_red">Blocked IP</span></td>
+        </tr>
+      </tbody></table></td>
+  </tr>
+  <tr>
+    <td style="padding:10px;"><table width="100%" cellspacing="0" cellpadding="0" border="0">
+        <tbody><tr>
+          <td class="btm_border"><table width="100%" cellspacing="0" cellpadding="0" border="0">
+              <tbody><tr>
+                <td><table width="100%" cellspacing="0" cellpadding="0" border="0">
+                    <tbody><tr>
+                      <td width="7%"><span class="bodytext">Actions</span></td>
+                      <td width="93%" class="line_bg">&nbsp;</td>
+                    </tr>
+                  </tbody></table></td>
+              </tr>
+              <tr>
+                <td><table width="8%" cellspacing="0" cellpadding="0" border="0">
+                    <tbody><tr>
+                      <td align="center"><table width="100%" cellspacing="1" cellpadding="1" border="0">
+                          <tbody><tr>
+                            <td align="center" height="41"><a href="#">
+                              <input align="absmiddle" width="26" type="image" height="29" border="0" onclick="if(chkdel(document.frmip,'DELETE','Selected IP')!=false){ document.frmip.action ='index.php?cid=28&amp;action=BID'; document.frmip.submit();}" name="vmdel" title="Delete VM" src="../asset/images/icon_delete_big.gif">
+                              </a></td>
+                          </tr>
+                          <tr>
+                            <td align="center" valign="top" height="20"><a onclick="if(chkdel(document.frmip,'DELETE','Selected IP')!=false) { document.frmip.action ='index.php?cid=28&amp;action=BID'; document.frmip.submit();}" class="sm_heading" href="#">Delete </a></td>
+                          </tr>
+                        </tbody></table></td>
+                    </tr>
+                  </tbody></table></td>
+              </tr>
+            </tbody></table></td>
+        </tr>
+        <tr>          
+        </tr>
+        <tr>
+          <td><table width="100%" cellspacing="0" cellpadding="0" border="0">
+              <tbody><tr>
+                <td class="tdgap">&nbsp;</td>
+              </tr>
+              <tr>
+                <td class="tdgap"><table width="80%" cellspacing="0" cellpadding="0" border="0">
+                    <tbody><tr class="cate_listing_head">
+                      <td valign="middle">&nbsp;IP Search </td>
+                      <td align="center" width="5%" valign="middle"><img align="bottom" onclick="javascript:ShowHideHR('S33');" src="../asset/images/search_show.png" id="imgS33"></td>
+                    </tr>
+                    <tr id="trS33">
+                      <td width="95%"><form id="frmsearch" method="post" action="index.php?cid=28&amp;action=BIP&amp;left=1" name="frmsearch">
+                          <table width="95%" cellspacing="2" cellpadding="2" border="0">
+                            <tbody><tr>
+                              <td width="15%" class="bodytext">Search By</td>
+                              <td width="31%"><label>
+                                  <select id="cmbsearch" class="txtdrop" name="cmbsearch">
+                                    <option value="">-Search by-</option>
+                                    
+									   <option value="ip_block_ip_address">IP</option><option value="ip_block_action_date">DATE</option>
+                                      
+                                  </select>
+                                </label></td>
+                              <td width="30%"><label>
+                                  <input type="text" value=" " id="txtsearch" class="txtfield" name="txtsearch">
+                                </label></td>
+                              <td width="7%"><a href="#">
+                                <input width="31" type="image" height="33" name="go" id="go" title="Search" src="../asset/images/icon_search.gif">
+                                </a></td>
+                              <td width="8%" class="bodytext">Show</td>
+                              <td width="9%" class="bodytext"><select onchange="document.frmsearch.submit()" id="limit" class="limit" name="limit">
+                                  
+                                      
+								<option value="5">5</option><option selected="" value="10">10</option><option value="20">20</option><option value="40">40</option><option value="80">80</option><option value="160">160</option><option value="320">320</option>
+								
+                                    
+                                </select></td>
+                            </tr>
+                          </tbody></table>
+                        </form></td>
+                      <td width="5%" valign="bottom" class="bodytext">&nbsp;</td>
+                    </tr>
+                  </tbody></table></td>
+              </tr>
+              <form action="index.php?cid=28&amp;action=BID&amp;left=1&amp;limit=10" method="post" name="frmip" id="frmip"></form>
+                <tr>
+                  <td><table width="60%" cellspacing="0" cellpadding="0" border="0">
+                      <tbody><tr>
+                        <td height="5"></td>
+                      </tr>
+                      <tr>
+                        <td align="right">&nbsp;</td>
+                      </tr>
+                    </tbody></table></td>
+                </tr>
+                <tr>
+                  <td><table width="60%" cellspacing="1" cellpadding="0" border="0" class="bgcolor3">
+                      <tbody><tr>
+                        <td align="center" width="8%" class="cate_listing_center"><input type="checkbox" onclick="javascript:selectall(checked, document.frmip, 'chkdel[]')" id="checkbox" name="checkbox"></td>
+                        <td width="24%" class="cate_listing"><a class="cate_listing_head" href="index.php?cid=28&amp;action=BIP&amp;left=1&amp;orderby=ip_address&amp;sort=ASC&amp;searchfield=&amp;searchval= &amp;limit=10&amp;page=">IP Address</a>  </td>
+                        <!--<td width="26%" class="cate_listing">IP System Status</td>-->
+                        <td width="19%" class="cate_listing"><a class="cate_listing_head" href="index.php?cid=28&amp;action=BIP&amp;left=1&amp;orderby=action_date&amp;sort=ASC&amp;searchfield=&amp;searchval= &amp;limit=10&amp;limit=10&amp;page=">Date</a> </td>
+                        <td width="23%" class="cate_listing">Actions</td>
+                      </tr>
+                      
+                      <tr style="display:table-row">
+                        <td align="center" height="50" bgcolor="#FFFFFF" class="no_record" colspan="5">IP are not available </td>
+                      </tr>
+                    </tbody></table></td>
+                </tr>
+              
+              <tr>
+                <td class="bodytext"><table width="60%" cellspacing="1" cellpadding="1" border="0">
+                    <tbody><tr>
+                      <td width="39%"><table align="left" width="215" height="27" cellspacing="0" cellpadding="0" border="0" class="bodytext">
+                          <tbody><tr align="left" valign="middle">
+                            <td width="80"><img align="absmiddle" width="18" height="16" border="0" title="Delete" src="../asset/images/icon_delete.gif">&nbsp;Delete</td>
+                            <td width="197"><img align="absmiddle" width="18" height="16" border="0" title="Block" src="../asset/images/unblock_ip.png">&nbsp;Unblock IP</td>
+                          </tr>
+                        </tbody></table></td>
+                      <td align="right" width="61%"></td>
+                    </tr>
+                  </tbody></table></td>
+              </tr>
+            </tbody></table></td>
+        </tr>
+      </tbody></table></td>
+  </tr>
+</tbody></table></td>

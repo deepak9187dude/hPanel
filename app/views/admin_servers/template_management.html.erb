@@ -1,0 +1,120 @@
+<td valign="top" class="bgcolor2"><table width="100%" cellspacing="0" cellpadding="0" border="0">
+              <tbody><tr><td class="middle_top"><table width="100%" cellspacing="0" cellpadding="0" border="0">
+                  <tbody><tr>
+                    <td colspan="2"><span class="bodytext_1"><a class="bodylink" href="index.php?cid=3">Home</a> &gt;<a class="bodylink" href="index.php?cid=21&amp;action=SMM&amp;left=1">Server Manager</a> &gt; OS Templates</span></td>
+                    </tr>
+                  <tr>
+                    <td width="45"><img align="bottom" width="30" height="32" border="0" title="OS Templates" src="../asset/images/icon_template.png"></td>
+                    <td valign="top" style="padding-top:2px"><span class="txt_big_red">OS Templates </span></td>
+                  </tr>
+                </tbody></table></td>
+				
+              
+              </tr>
+              <tr>
+                <td style="padding:10px;">
+				
+				<table width="100%" cellspacing="0" cellpadding="0" border="0">
+                  <tbody><tr>
+                    <td class="btm_border"><table width="100%" cellspacing="0" cellpadding="0" border="0">
+                      
+                      <tbody><tr>
+                        <td><table width="100%" cellspacing="0" cellpadding="0" border="0">
+                          <tbody><tr>
+                            <td><table width="100%" cellspacing="0" cellpadding="0" border="0">
+                                <tbody><tr>
+                                  <td width="7%"><span class="bodytext">Actions</span></td>
+                                  <td width="93%" class="line_bg">&nbsp;</td>
+                                </tr>
+                            </tbody></table></td>
+                          </tr>
+                          <tr>
+                            <td> <table width="80" cellspacing="0" cellpadding="0" border="0">
+                                <tbody><tr>
+                                  <td align="center"><table width="95%" cellspacing="1" cellpadding="1" border="0">
+                                      <tbody><tr>
+                                        <td align="center" valign="bottom" height="41"><a href="index.php?cid=18&amp;action=NOS&amp;left=1"><img align="absmiddle" width="30" height="32" border="0" title="New OS Template" src="../asset/images/icon_add_vm_big.png"></a></td>
+                                      </tr>
+                                      <tr>
+                                        <td align="center" valign="top" height="20"><a class="sm_heading" href="index.php?cid=18&amp;action=NOS&amp;left=1">New OS Template </a></td>
+                                      </tr>
+                                  </tbody></table></td>
+                                  
+                                </tr>
+                            </tbody></table></td>
+                          </tr>
+                        </tbody></table></td>
+                      </tr>
+                    </tbody></table></td>
+                  </tr>
+                  <tr>
+                    <td>
+					<div align="center" style="width:100%" id="chldpar2">
+					<table width="100%" cellspacing="0" cellpadding="0" border="0">
+                      <tbody><tr>
+                        <td align="left" class="tdgap"><table width="65%" cellspacing="0" cellpadding="0" border="0">
+                          <tbody><tr>
+                            <td align="left" width="70%">
+							<form id="frmsearch" method="post" action="index.php?cid=18&amp;action=TPL&amp;left=1" name="frmsearch">
+							<table width="89%" cellspacing="2" cellpadding="2" border="0">
+                              <tbody><tr>
+                                <td width="28%" class="bodytext">Search By</td>
+                                <td width="23%">
+                                    <select id="cmbsearch" class="txtdrop" name="cmbsearch">
+									  <option value="">-Search by-</option>
+									   <option value="ostemp_name">OSTemplate Name</option><option value="ostemp_type">Type</option><option value="ostemp_flavourtype">Flavour</option><option value="ostemp_architecture">Template Architecture</option>
+                                    </select>
+                                </td>
+                                <td width="26%">
+                                  <label>
+                                    <input type="text" value=" " id="txtsearch" class="txtfield" name="txtsearch">
+                                  </label>
+                                </td>
+                                <td width="6%"><a href="#">
+                                <input width="31" type="image" height="33" name="go" id="go" title="Search" src="../asset/images/icon_search.gif"></a></td>						<td width="7%" class="bodytext">Show</td>
+								<td width="10%" class="bodytext">
+								<select onchange="document.frmsearch.submit()" id="limit" class="limit" name="limit">
+								<option value="5">5</option><option selected="" value="10">10</option><option value="20">20</option><option value="40">40</option><option value="80">80</option><option value="160">160</option><option value="320">320</option>
+								</select>
+								</td>
+                              </tr>
+                            </tbody></table></form></td>
+                          </tr>
+                        </tbody></table></td>
+                      </tr>
+					  <form method="post" name="frmos" id="frmos"></form>
+                      <tr>
+                        <td align="left">
+						<table width="79%" cellspacing="1" cellpadding="0" border="0" class="bgcolor3">
+                          <tbody><tr>
+                            <!-- <td width="8%" align="center" class="cate_listing_center">
+                            <input type="checkbox" name="checkbox" id="checkbox"  onClick="javascript:selectall(checked, document.frmos, 'chkdel[]')"/>                            </td>-->
+                            <td align="left" width="22%" class="cate_listing"><a class="cate_listing_head" href="index.php?cid=18&amp;action=TPL&amp;orderby=ostemp_name&amp;sort=ASC&amp;searchfield=&amp;searchval= &amp;left=1&amp;limit=10&amp;page=">Template Name</a>  </td>
+                            <!--<td width="23%" align="left" class="cate_listing"><a href="index.php?cid=18&action=TPL&orderby=ostemp_path&sort=ASC&searchfield=&searchval= &left=1&limit=10&page=" class="cate_listing_head">Template Path</a>  </td>-->
+                            <td align="left" width="20%" class="cate_listing"><a class="cate_listing_head" href="index.php?cid=18&amp;action=TPL&amp;orderby=ostemp_type&amp;sort=ASC&amp;searchfield=&amp;searchval= &amp;left=1&amp;limit=10&amp;page=">Type</a>  </td>
+							<td align="left" width="21%" class="cate_listing"><a class="cate_listing_head" href="index.php?cid=18&amp;action=TPL&amp;orderby=ostemp_flavourtype&amp;sort=ASC&amp;searchfield=&amp;searchval= &amp;left=1&amp;limit=10&amp;page=">Flavour</a>  </td>
+                            <td align="left" width="29%" class="cate_listing"><a class="cate_listing_head" href="index.php?cid=18&amp;action=TPL&amp;orderby=ostemp_architecture&amp;sort=ASC&amp;searchfield=&amp;searchval= &amp;left=1&amp;limit=10&amp;page=">Template Architecture</a>  </td>
+                            <td align="left" width="8%" class="cate_listing">Action</td>
+                            <!-- <td width="14%" align="left" class="cate_listing">Status</td>-->
+                          </tr>
+						  
+						  <tr bgcolor="#FFFFFF" style="display:table-row"><td align="center" height="50" class="no_record" colspan="7">OSTemplate are not available</td>
+						  </tr>
+                        </tbody></table>
+						</td>
+                      </tr>
+                      <tr>
+                        <td align="left" class="bodytext"><table width="79%" cellspacing="1" cellpadding="1" border="0">
+                          <tbody><tr>
+                            <td width="51%">&nbsp;</td>
+                            <td align="right" width="49%"></td>
+                          </tr>
+                        </tbody></table></td>
+                      </tr>
+                    </tbody></table></div></td>
+                  </tr>
+                </tbody></table>
+				
+				</td>
+              </tr>
+            </tbody></table></td>
