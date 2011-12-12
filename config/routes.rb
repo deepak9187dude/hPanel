@@ -101,9 +101,15 @@ Vhpanel::Application.routes.draw do
 scope 'admin' do
   match "/index",:as => "admin",:via=>[:get,:post,:put]
 #  resources :users
+
+#  admin client manager
   match "/view_all_clients"=>"admin#view_all_clients",:as=>"admin_all_clients"
   match "/add_new_client"=>"admin#add_new_client",:as=>"admin_new_client"
-  match "/all_subscriptions"=>"admin#all_subscriptions",:as=>"admin_all_subscriptions"
+  match "/subscriptions/all"=>"admin#all_subscriptions",:as=>"admin_all_subscriptions"
+  match "/subscriptions/onhold"=>"admin#subscriptions_on_hold",:as=>"admin_subscriptions_on_hold"
+  match "/subscriptions/expired"=>"admin#subscriptions_expired",:as=>"admin_subscriptions_expired"
+  match "/subscriptions/termination"=>"admin#subscriptions_termination_queue",:as=>"admin_subscriptions_termination_queue"
+  match "/subscriptions/failed"=>"admin#subscriptions_failed",:as=>"admin_subscriptions_failed"
 end
    root :to => "front#index"
 #   match ':controller(/:action(/:id(.:format)))'

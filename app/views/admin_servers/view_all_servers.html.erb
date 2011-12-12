@@ -1,0 +1,234 @@
+<td valign="top" class="bgcolor2"><table width="100%" cellspacing="0" cellpadding="0" border="0">
+              <tbody><tr>
+			  <td class="middle_top"><table width="100%" cellspacing="0" cellpadding="0" border="0">
+                  <tbody><tr>
+                    <td colspan="2"><span class="bodytext_1"><a class="bodylink" href="index.php?cid=3">Home</a> &gt;  <a class="bodylink" href="index.php?cid=21&amp;action=SMM&amp;left=1">Servers Manager</a> &gt; View All Servers </span></td>
+                    </tr>
+                  <tr>
+                    <td width="42"><img align="bottom" width="30" height="32" border="0" title="Servers" src="/images/icon_view_server_big.png"></td>
+                    <td width="1267" valign="top" style="padding-top:2px"><span class="txt_big_red">SERVERS</span></td>
+                  </tr>
+                </tbody></table></td>
+              </tr>
+              <tr>
+                <td style="padding:10px;">
+				
+				<table width="100%" cellspacing="0" cellpadding="0" border="0">
+                  <tbody><tr>
+                    <td class="btm_border"><table width="100%" cellspacing="0" cellpadding="0" border="0">
+                      <tbody><tr>
+                        <td><table width="100%" cellspacing="0" cellpadding="0" border="0">
+                          <tbody><tr>
+                            <td width="7%"><span class="bodytext">Actions</span></td>
+                            <td width="93%" class="line_bg">&nbsp;</td>
+                          </tr>
+                        </tbody></table></td>
+                      </tr>
+                      <tr>
+                        <td><table width="210" cellspacing="0" cellpadding="0" border="0">
+  <tbody><tr>
+    <td align="center"><table width="100%" cellspacing="1" cellpadding="1" border="0">
+      <tbody><tr>
+        <td align="center" valign="bottom" height="30"><a href="index.php?cid=8&amp;action=SMC&amp;left=1"><img align="absmiddle" width="30" height="32" border="0" title="New Server" src="/images/icon_add_server_big.png"></a></td>
+      </tr>
+      <tr>
+        <td align="center" valign="bottom" height="20"><a class="sm_heading" href="index.php?cid=8&amp;action=SMC&amp;left=1">Add </a></td>
+      </tr>
+    </tbody></table></td>    <td align="center">
+	<table width="100%" cellspacing="1" cellpadding="1" border="0">
+      <tbody><tr>
+        <td align="center" valign="bottom" height="30"><a href="#">
+          <input align="absmiddle" width="26" type="image" height="29" border="0" onclick="if(chkdel(document.frmserver, 'DELETE', 'Server')!=false)  { document.frmserver.action ='index.php?cid=8&amp;action=SMD'; document.frmserver.submit();}" name="serverdel" title="Delete Server" src="/images/icon_delete_big.gif">
+        </a></td>
+      </tr>
+      <tr>
+        <td align="center" valign="bottom" height="20"><a onclick="if(chkdel(document.frmserver, 'DELETE', 'Server')!=false)  { document.frmserver.action ='index.php?cid=8&amp;action=SMD'; document.frmserver.submit();}" class="sm_heading" href="#">Delete </a></td>
+      </tr>
+    </tbody></table></td>
+	 <td align="center"><table width="100%" cellspacing="1" cellpadding="1" border="0">
+       <tbody><tr>
+         <td align="center" valign="bottom" height="30"><a href="index.php?cid=8&amp;action=SMC"> </a><a href="index.php?cid=8&amp;action=SML&amp;left=1"><img align="absmiddle" width="30" height="29" border="0" title="Refresh" src="/images/icon_refresh.gif"></a></td>
+       </tr>
+       <tr>
+         <td align="center" valign="bottom" height="20"><a class="sm_heading" href="index.php?cid=8&amp;action=SML&amp;left=1">Refresh</a></td>
+		 
+       </tr>
+     </tbody></table></td><td align="center"><table width="100%" cellspacing="1" cellpadding="1" border="0">
+
+       <tbody><tr>
+
+         <td align="center" valign="bottom" height="30"><a href="index.php?cid=8&amp;action=SBI"><img align="absmiddle" width="26" height="29" border="0" title="Block" src="/images/block_ip.png"></a></td>
+
+       </tr>
+
+       <tr>
+
+         <td align="center" valign="bottom" height="20"><a class="sm_heading" href="index.php?cid=8&amp;action=SBI&amp;left=1">Block IP</a></td>
+
+       </tr>
+
+     </tbody></table></td>
+  </tr>
+</tbody></table>                   
+                        </td>
+                      </tr>
+                    </tbody></table></td>
+                  </tr>
+				  <tr><td height="10"></td></tr>
+                  <tr>
+                    <td><table width="100%" cellspacing="0" cellpadding="0" border="0">
+                      <tbody><tr>
+                        <td class="tdgap"><table width="70%" cellspacing="0" cellpadding="0" border="0">
+						  <tbody><tr class="cate_listing_head">
+							    <td valign="middle">&nbsp;Server Search
+							  	  
+								  </td>
+							    <td align="center" width="5%" valign="middle"><img align="bottom" onclick="javascript:ShowHideHR('S33');" src="/images/search_show.png" id="imgS33"></td>
+							</tr>
+                          <tr id="trS33">
+                            <td width="95%">
+							<form id="frmsearch" method="post" action="index.php?cid=8&amp;action=SML&amp;left=1" name="frmsearch">
+							<table width="75%" cellspacing="2" cellpadding="2" border="0">
+                              <tbody><tr>
+                                <td width="30%" class="bodytext">Search By</td>
+                                <td width="38%">
+                                  <label>
+                                    <select id="cmbsearch" class="txtdrop" name="cmbsearch">
+									  <option value="">-Search by-</option>
+									   <option value="server_hostname">Server Host</option><option value="server_type">Server Type</option>
+                                    </select>
+                                  </label>
+                                </td>
+                                <td width="28%">
+                                  <label>
+                                    <input type="text" value=" " id="txtsearch" class="txtfield" name="txtsearch">
+                                  </label>
+                                </td>
+                                <td width="10%"><a href="#"><input width="31" type="image" height="33" name="go" id="go" title="Search" src="/images/icon_search.gif"></a></td>
+									<td width="5%" class="bodytext">Show</td>
+								<td width="10%" class="bodytext">
+								<select onchange="document.frmsearch.submit()" id="limit" class="limit" name="limit">
+								<option value="5">5</option><option selected="" value="10">10</option><option value="20">20</option><option value="40">40</option><option value="80">80</option><option value="160">160</option><option value="320">320</option>
+								</select>
+								</td>
+                              </tr>
+                            </tbody></table></form></td>
+                            <td valign="bottom" class="bodytext">&nbsp;</td>
+                          </tr>
+                        </tbody></table></td>
+                      </tr>
+					  <form action="index.php?cid=8&amp;action=SMD" method="post" name="frmserver" id="frmserver"></form>
+					 
+                      <tr>
+                        <td>
+							<table width="70%" cellspacing="0" cellpadding="0" border="0">
+							<tbody><tr><td height="5"></td></tr>
+							  <tr>
+								<td align="right"><a href="csv_download.php?id=server&amp;searchfield=&amp;searchval= " class="det_link"><img border="0" title="Export to Excel" src="/images/excel.jpg"></a></td>
+							  </tr>
+							</tbody></table>
+						</td>
+                      </tr>
+                      <tr>
+                        <td><table width="70%" cellspacing="1" cellpadding="0" border="0" class="bgcolor3">
+                          <tbody><tr>
+                            <td align="center" width="5%" class="cate_listing_center">
+                                <input type="checkbox" onclick="javascript:selectall(checked, document.frmserver, 'chkdel[]')" id="checkbox" name="checkbox">
+                            </td>
+                            <td width="27%" class="cate_listing"><a class="cate_listing_head" href="index.php?cid=8&amp;action=SML&amp;orderby=server_hostname&amp;left=1&amp;sort=ASC&amp;searchfield=&amp;searchval= &amp;limit=10&amp;page=">Server Hostname</a>  </td>
+                            <td width="15%" class="cate_listing"><a class="cate_listing_head" href="index.php?cid=8&amp;action=SML&amp;orderby=server_type&amp;left=1&amp;sort=ASC&amp;searchfield=&amp;searchval= &amp;limit=10&amp;page=">Server Type</a>  </td>
+                            <td width="19%" class="cate_listing"><a class="cate_listing_head" href="index.php?cid=8&amp;action=SML&amp;orderby=server_max_vps&amp;left=1&amp;sort=ASC&amp;searchfield=&amp;searchval= &amp;limit=10&amp;page=">Max VPS</a>  </td>
+                            <td width="18%" class="cate_listing"><a class="cate_listing_head" href="index.php?cid=8&amp;action=SML&amp;orderby=server_vps_cnt&amp;left=1&amp;sort=ASC&amp;searchfield=&amp;searchval= &amp;limit=10&amp;page=">Allocated VPS</a>  </td>
+                            <td width="19%" class="cate_listing">Actions</td>
+                          </tr>
+						  
+                          <tr>
+                            <td align="center" height="26" class="bgcolor4_center">
+                              <input type="checkbox" value="4" id="chkdel" name="chkdel[]">
+							</td>
+                            <td height="26" class="bgcolor4"><a class="det_link" href="index.php?cid=8&amp;action=SMT&amp;sid=4&amp;left=1">admin@idifysolutions.com</a></td>
+                            <td height="26" class="bgcolor4"><img align="absmiddle" width="16" height="16" title="OpenVZ" src="/images/oenvz_sm.png"> openVZ</td>
+                            <td align="center" height="26" class="bgcolor4">1</td>
+                            <td align="center" class="bgcolor4">0</td>
+                            <td align="center" height="26" class="bgcolor4_center"><table align="center" width="101" cellspacing="0" cellpadding="0" border="0">
+                              <tbody><tr>
+                                <td align="center"><a href="index.php?cid=8&amp;action=SME&amp;sid=4&amp;left=1"><img width="16" height="20" border="0" title="Edit" src="/images/icon_add_server.png"></a></td>
+                                <td align="center"><a style="cursor:pointer" onclick="if(chk_confirm('DELETE','Server')!=false)  location.href='index.php?cid=8&amp;action=SMD&amp;sid=4&amp;left=1';"><img width="18" height="16" border="0" title="Delete" src="/images/icon_delete.gif"></a></td>
+								<td align="center"><a href="index.php?cid=8&amp;action=SRP&amp;sid=4&amp;left=1"><img width="16" height="20" border="0" title="Reset Password" src="/images/reset_password.png"></a></td>
+                                <td align="center"><a href="index.php?cid=8&amp;action=SVL&amp;sid=4&amp;left=1"><img width="16" height="20" border="0" title="View VM" src="/images/icon_view_vm.png"></a></td>
+								<td align="center"><a href="index.php?cid=12&amp;action=SVI&amp;sid=4&amp;left=1"><img width="16" height="20" border="0" title="View IP" src="/images/icon_ip.png"></a></td>
+                              </tr>
+                            </tbody></table></td>
+                          </tr>
+  						  
+                          <tr>
+                            <td align="center" height="26" class="bgcolor4_center">
+                              <input type="checkbox" value="3" id="chkdel" name="chkdel[]">
+							</td>
+                            <td height="26" class="bgcolor4"><a class="det_link" href="index.php?cid=8&amp;action=SMT&amp;sid=3&amp;left=1">deepak</a></td>
+                            <td height="26" class="bgcolor4"><img align="absmiddle" width="16" height="16" title="OpenVZ" src="/images/oenvz_sm.png"> openVZ</td>
+                            <td align="center" height="26" class="bgcolor4">3</td>
+                            <td align="center" class="bgcolor4">0</td>
+                            <td align="center" height="26" class="bgcolor4_center"><table align="center" width="101" cellspacing="0" cellpadding="0" border="0">
+                              <tbody><tr>
+                                <td align="center"><a href="index.php?cid=8&amp;action=SME&amp;sid=3&amp;left=1"><img width="16" height="20" border="0" title="Edit" src="/images/icon_add_server.png"></a></td>
+                                <td align="center"><a style="cursor:pointer" onclick="if(chk_confirm('DELETE','Server')!=false)  location.href='index.php?cid=8&amp;action=SMD&amp;sid=3&amp;left=1';"><img width="18" height="16" border="0" title="Delete" src="/images/icon_delete.gif"></a></td>
+								<td align="center"><a href="index.php?cid=8&amp;action=SRP&amp;sid=3&amp;left=1"><img width="16" height="20" border="0" title="Reset Password" src="/images/reset_password.png"></a></td>
+                                <td align="center"><a href="index.php?cid=8&amp;action=SVL&amp;sid=3&amp;left=1"><img width="16" height="20" border="0" title="View VM" src="/images/icon_view_vm.png"></a></td>
+								<td align="center"><a href="index.php?cid=12&amp;action=SVI&amp;sid=3&amp;left=1"><img width="16" height="20" border="0" title="View IP" src="/images/icon_ip.png"></a></td>
+                              </tr>
+                            </tbody></table></td>
+                          </tr>
+  						  
+                          <tr>
+                            <td align="center" height="26" class="bgcolor4_center">
+                              <input type="checkbox" value="2" id="chkdel" name="chkdel[]">
+							</td>
+                            <td height="26" class="bgcolor4"><a class="det_link" href="index.php?cid=8&amp;action=SMT&amp;sid=2&amp;left=1">OpenVz</a></td>
+                            <td height="26" class="bgcolor4"><img align="absmiddle" width="16" height="16" title="OpenVZ" src="/images/oenvz_sm.png"> openVZ</td>
+                            <td align="center" height="26" class="bgcolor4">20</td>
+                            <td align="center" class="bgcolor4">0</td>
+                            <td align="center" height="26" class="bgcolor4_center"><table align="center" width="101" cellspacing="0" cellpadding="0" border="0">
+                              <tbody><tr>
+                                <td align="center"><a href="index.php?cid=8&amp;action=SME&amp;sid=2&amp;left=1"><img width="16" height="20" border="0" title="Edit" src="/images/icon_add_server.png"></a></td>
+                                <td align="center"><a style="cursor:pointer" onclick="if(chk_confirm('DELETE','Server')!=false)  location.href='index.php?cid=8&amp;action=SMD&amp;sid=2&amp;left=1';"><img width="18" height="16" border="0" title="Delete" src="/images/icon_delete.gif"></a></td>
+								<td align="center"><a href="index.php?cid=8&amp;action=SRP&amp;sid=2&amp;left=1"><img width="16" height="20" border="0" title="Reset Password" src="/images/reset_password.png"></a></td>
+                                <td align="center"><a href="index.php?cid=8&amp;action=SVL&amp;sid=2&amp;left=1"><img width="16" height="20" border="0" title="View VM" src="/images/icon_view_vm.png"></a></td>
+								<td align="center"><a href="index.php?cid=12&amp;action=SVI&amp;sid=2&amp;left=1"><img width="16" height="20" border="0" title="View IP" src="/images/icon_ip.png"></a></td>
+                              </tr>
+                            </tbody></table></td>
+                          </tr>
+  						  
+						  <tr style="display:none"><td align="center" height="50" bgcolor="#FFFFFF" class="no_record" colspan="6"> </td>
+						  </tr>
+                        </tbody></table></td>
+                      </tr>
+                      <tr>
+                        <td class="bodytext"><table width="70%" cellspacing="1" cellpadding="1" border="0">
+                          <tbody><tr>
+                            <td width="64%"><table align="left" width="408" cellspacing="0" cellpadding="0" border="0" class="bodytext">
+                              <tbody><tr align="left" valign="bottom">
+                                <td width="20"><img align="absmiddle" width="16" height="20" border="0" title="Edit" src="/images/icon_add_server.png">&nbsp;</td>
+                                <td width="30">Edit</td>
+                                <td width="22"><img align="absmiddle" width="18" height="16" border="0" title="Delete" src="/images/icon_delete.gif">&nbsp;</td>
+                                <td width="48">Delete</td>
+                                <td width="20"><img align="absmiddle" width="16" height="20" border="0" title="Details" src="/images/reset_password.png">&nbsp;</td>
+ 								<td width="92">Reset Password</td>
+ 								<td width="20"><img align="absmiddle" width="16" height="20" src="/images/icon_view_vm.png"> </td>
+								<td width="61">View VM</td>
+								<td width="20"><img align="absmiddle" width="16" height="20" src="/images/icon_ip.png"> </td>
+                                <td width="74">View IP </td>
+                              </tr>
+                            </tbody></table></td>
+                            <td align="right" width="36%"></td>
+                          </tr>
+                        </tbody></table></td>
+                      </tr>
+                    </tbody></table></td>
+                  </tr>
+                </tbody></table>
+				
+				</td>
+              </tr>
+
+            </tbody></table></td>
