@@ -24,7 +24,21 @@ class AdminController < ApplicationController
       redirect_to reseller_login_path ,:message=>'Please log in'
     end
   end
+  
   def index
     
   end
+  
+  def view_all_clients
+    render "admin_clients/view_all_clients"
+  end
+  
+  def add_new_client
+    render "admin_clients/add_new_client"
+  end
+  
+  def all_subscriptions
+    render "admin_subscriptions/all_subscriptions"
+  end
+  
 end

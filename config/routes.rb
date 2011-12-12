@@ -100,7 +100,10 @@ Vhpanel::Application.routes.draw do
 #   admin section routes
 scope 'admin' do
   match "/index",:as => "admin",:via=>[:get,:post,:put]
-  resources :users
+#  resources :users
+  match "/view_all_clients"=>"admin#view_all_clients",:as=>"admin_all_clients"
+  match "/add_new_client"=>"admin#add_new_client",:as=>"admin_new_client"
+  match "/all_subscriptions"=>"admin#all_subscriptions",:as=>"admin_all_subscriptions"
 end
    root :to => "front#index"
 #   match ':controller(/:action(/:id(.:format)))'
