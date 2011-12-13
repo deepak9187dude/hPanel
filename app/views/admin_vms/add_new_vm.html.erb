@@ -1,0 +1,193 @@
+<td valign="top" class="bgcolor2"><table width="100%" cellspacing="0" cellpadding="0" border="0">
+
+              <tbody><tr style="display:table-row">
+
+			  <td class="middle_top"><table width="100%" cellspacing="0" cellpadding="0" border="0">
+
+                  <tbody><tr>
+
+                    <td colspan="2"><span class="bodytext_1"><a class="bodylink" href="index.php?cid=3">Home</a> &gt; <a class="bodylink" href="index.php?cid=21&amp;action=VMS&amp;left=2">VM Manager</a> &gt; Create VM</span></td>
+
+                </tr>
+
+                  <tr>
+
+                    <td width="42"><img align="bottom" width="30" height="32" border="0" title="Create VM" src="/images/icon_add_vm_big.png"></td>
+
+                    <td width="1267" valign="top" style="padding-top:2px"><span class="txt_big_red">Create VM</span></td>
+
+                  </tr>
+
+                </tbody></table></td>
+
+                
+
+              </tr>
+
+              <tr>
+
+                <td class="tdgap1"><span align="center" class="bolderror" id="chldpar1"></span>
+				<div align="center" id="chldparhide">			
+
+				<table width="100%" cellspacing="0" cellpadding="0" border="0">
+
+                    <tbody><tr>
+
+                      <td class="tdgap1">
+
+					<form onsubmit="getVmDetails(document.frmvmcr,'index.php?cid=7&amp;action=VMC&amp;vmid=0&amp;left=2','chldparhide','index.php?cid=7&amp;action=VML&amp;left=2'); return false;" enctype="multipart/form-data" method="post" id="frmvmcr" name="frmvmcr">	
+						  <table align="left" width="546" cellspacing="0" cellpadding="0" border="0">
+
+					  	<tbody><tr>
+
+					  	  <td align="center" height="30" class="mandotry" colspan="2"><span class="bolderror" id="iderror"></span>
+
+						</td>
+
+					  	</tr>
+
+                          <tr>
+
+                            <td colspan="2" class="bgcolor1">
+
+							
+
+							<table width="100%" cellspacing="1" cellpadding="4" border="0" class="bgcolor3">
+
+                                <tbody><tr>
+
+                                  <td align="right" width="41%" valign="top" class="cate_listing"><span class="mandotry">*</span> VM  Name :</td>
+
+                                  <td width="59%" valign="top" class="bgcolor4"><input type="text" value="" id="txtvm_1_10" class="txtfield1" name="txtvm_1_10"></td>
+                                </tr>
+
+                                <tr>
+
+                                  <td align="right" valign="top" class="cate_listing"><span class="mandotry">*</span> Password :</td>
+
+                                  <td valign="top" class="bgcolor4"><input type="password" onchange="funshow2('get_ajax_content.php?ajax=CHP',this.value,'showMsg');" value="" id="txtpwd_1" class="txtfield1" name="txtpwd_1"><span class="bolderror" id="showMsg"></span></td>
+                                </tr>
+
+                                <tr>
+
+                                  <td align="right" valign="top" class="cate_listing"><span class="mandotry">*</span> Retype Password :</td>
+
+                                  <td valign="top" class="bgcolor4">                                    <input type="password" id="txtrpwd_1" class="txtfield1" name="txtrpwd_1"> </td>
+                                </tr>
+
+                                <tr>
+
+                                  <td align="right" valign="top" class="cate_listing"><span class="mandotry">*</span> Client Name :</td>
+
+                                  <td valign="top" class="bgcolor4"><select onchange=" funshow2('get_ajax_content.php?ajax=APL',this.value,'chldplan');" id="cmbuser_1" class="txtdrop" name="cmbuser_1">
+
+                                      <option value=""> - Select - </option>
+
+                                    </select>
+
+                                     </td>
+                                </tr>
+
+                                <tr>
+
+                                  <td align="right" valign="top" class="cate_listing"><span class="mandotry">*</span> Subscription Name :</td>
+
+                                  <td valign="top" class="bgcolor4"><div style="display:inline; width:160px" id="chldplan"><select onchange="funshow2('get_ajax_content.php?ajax=AST',this.value,'chldtemp');" id="cmbplan_1" class="txtdrop" name="cmbplan_1">
+
+                                      <option value=""> - Select - </option>
+
+                                    </select></div>
+
+                                     </td>
+                                </tr>
+								    <!--<tr>
+                                  <td align="right" valign="top" class="cate_listing">&nbsp;&nbsp;&nbsp;&nbsp;OS Template Name :</td>
+
+                                  <td valign="top"  class="bgcolor4"><div id='chldsub' style="display:inline; width:160px"><span id="ostemplate" class="bodytext"></span>  <input name="hidostempid" type="hidden"   id="hidostempid" value="" />
+                                    <input name="hidostempname" type="hidden"   id="hidostempname" value=""/>
+</div>
+ </td>
+                                </tr>-->
+
+                                <!--<tr>
+
+                                  <td align="right" valign="top" class="cate_listing"><span class="mandotry">*</span>&nbsp;Contact Email :</td>
+
+                                  <td valign="top"  class="bgcolor4"><input name="txtemail_1_2" type="text" class="txtfield1" id="txtemail_1_2" value="" />
+
+                                    </td>
+                                </tr>-->
+
+                                <tr>
+
+                                  <td align="right" valign="top" class="cate_listing"><span class="mandotry">*</span> Server :</td>
+
+                                  <td valign="top" class="bgcolor4"><select onchange="funshow('get_ajax_content.php?ajax=ASI',this.value,'chldpar');" id="cmbserver_1" class="txtdrop" name="cmbserver_1"><option value=""> - Select - </option><option value="2">OpenVz&nbsp;-&nbsp;64bit&nbsp;openVZ</option><option value="3">deepak&nbsp;-&nbsp;32bit&nbsp;openVZ</option><option value="4">admin@idifysolutions.com&nbsp;-&nbsp;64bit&nbsp;openVZ</option></select>
+
+                                       </td>
+                                </tr>
+                               <!-- <tr>
+
+                                  <td align="right" valign="top" class="cate_listing">&nbsp;&nbsp;&nbsp;&nbsp;Assign automatically : </td>
+
+                                  <td valign="top"  class="bgcolor4"><input name="chkip" type="checkbox" id="chkip" value="checkbox" onClick="AddItem('cmbip_1', 'chkip');" #CHKAUTO#></td>
+                                </tr>-->
+                                <tr>
+
+                                  <td align="right" valign="top" class="cate_listing"><span class="mandotry">*</span> IP Address :</td>
+
+                                  <td valign="top" class="bgcolor4"> <div style="display:inline; width:160px" id="chldpar"><select id="cmbip_1" class="txtdrop" name="cmbip_1">
+
+                                      <option value=""> - Select - </option>
+
+                                    </select></div>
+
+                                      
+
+                                   </td>
+                                </tr>                                
+                                <tr>
+
+                                  <td align="right" width="41%" valign="top" class="cate_listing"><span class="mandotry">*</span> Ostemplate :</td>
+
+                                  <td width="59%" valign="top" class="bgcolor4"> <div style="display:inline; width:160px" id="chldtemp"><select id="cmbtemplate_1" class="txtdrop" name="cmbtemplate_1"><option value=""> - Select - </option>  </select></div>
+
+                                    </td>
+                                </tr>
+								<tr>
+								  <td align="right" valign="top" class="cate_listing"><span class="mandotry">*</span> VM Host Name :</td>
+								  <td valign="top" class="bgcolor4"><input type="text" value="" id="txtvmhostname_1" class="txtfield1" name="txtvmhostname_1">
+							      </td>
+							  </tr>
+								<tr>
+                                  <td align="right" valign="top" class="cate_listing"><span class="mandotry">*</span> Assign Resolver :</td>
+                                  <td valign="top" class="bgcolor4"><input type="checkbox" #resolver_check#="" value="checkbox" name="resolver">                                  </td>
+                                </tr>
+                            </tbody></table>
+
+							</td>
+
+                          </tr>
+
+							<tr>
+
+							  <td align="right" width="41%" valign="middle"><input type="button" onclick="window.location='index.php?cid=7&amp;action=VML&amp;left=2';" value="Cancel" id="btncancel" class="button" name="btncancel">&nbsp;</td>
+
+							  <td align="left" width="59%" valign="middle" height="30"><input type="submit" value="Submit" id="btnsubmit" class="button" name="btnsubmit"> 
+                                                           <input type="hidden" value="deepak" id="licensekey" name="licensekey">
+                                                           <input type="hidden" value="1" id="vpscount" name="vpscount">                                                           
+                                                          </td>
+
+                        </tr>
+
+                      </tbody></table>
+
+					</form></td>
+
+                    </tr>
+
+                </tbody></table></div></td>
+
+              </tr>
+
+            </tbody></table></td>

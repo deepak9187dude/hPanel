@@ -1,0 +1,168 @@
+<td valign="top" class="bgcolor2"><table width="100%" cellspacing="0" cellpadding="0" border="0">
+
+               <tbody><tr style="display:table-row">
+
+			  <td class="middle_top"><table width="100%" cellspacing="0" cellpadding="0" border="0">
+
+                  <tbody><tr>
+
+                    <td colspan="2"><span class="bodytext_1"><a class="bodylink" href="index.php?cid=3">Home</a> &gt;  <a class="bodylink" href="index.php?cid=21&amp;action=SMM&amp;left=1">Servers Manager</a> &gt; Add New Server </span></td>
+
+                    </tr>
+
+                  <tr>
+
+                    <td width="4%"><img align="bottom" width="30" height="32" border="0" title="Add New Server" src="/images/icon_add_server_big.png"></td>
+
+                    <td width="96%" valign="top" style="padding-top:2px"><span class="txt_big_red">Add New Server</span></td>
+
+                  </tr>
+
+                </tbody></table></td>
+
+
+
+              </tr>
+
+              <tr>
+
+                <td class="tdgap1"><span align="center" class="bolderror" id="chldpar1"></span>
+
+				<div align="center" id="chldpar2">						
+
+				<table width="100%" cellspacing="0" cellpadding="0" border="0">
+
+                    <tbody><tr>
+
+                      <td class="tdgap1">
+
+					  <form onsubmit="get(document.frmscr,'index.php?cid=8&amp;action=SMC&amp;sid=0&amp;left=1','chldpar2','index.php?cid=8&amp;action=SML&amp;left=1'); return false;" method="post" id="frmscr" name="frmscr">
+
+					  <table align="left" width="60%" cellspacing="0" cellpadding="0" border="0">
+
+					            <tbody><tr>
+
+                                  <td align="center" height="25" class="mandotry" colspan="2"><span class="bolderror"></span></td>				            
+					            </tr>								
+
+                          <tr>
+
+                            <td colspan="2" class="bgcolor1">
+
+							
+
+							<table width="100%" cellspacing="1" cellpadding="2" border="0" class="bgcolor3">
+
+
+
+                                <tbody><tr>
+
+                                  <td align="right" width="43%" valign="top" class="cate_listing"><span class="mandotry">*</span> IP or Hostname :</td>
+
+                                  <td width="57%" valign="top" class="bgcolor4"><input type="text" value="" id="txtshost_1" class="txtfield1" name="txtshost_1"> </td>
+                                </tr>
+
+                                <tr>
+
+                                  <td align="right" valign="top" class="cate_listing"><span class="mandotry">*</span> Server Type :</td>
+
+                                  <td valign="top" class="bgcolor4"><select id="cmbstype_1" class="txtdrop" name="cmbstype_1">
+
+                                      <option value=""> - Select - </option><option value="openVZ">openVZ</option><option value="Xen">Xen</option>
+
+                                    </select></td>
+                                </tr>
+
+                                <tr>
+
+                                  <td align="right" valign="top" class="cate_listing"><span class="mandotry">*</span> Password :</td>
+
+                                  <td valign="top" class="bgcolor4">                                    <input type="password" value="" id="txtspwd_1" class="txtfield1" name="txtspwd_1"> </td>
+                                </tr>
+
+                                <tr>
+
+                                  <td align="right" valign="top" class="cate_listing"><span class="mandotry">*</span> Retype Password :</td>
+
+                                  <td valign="top" class="bgcolor4">                                    <input type="password" id="txtsrpwd_1" class="txtfield1" name="txtsrpwd_1"> 
+
+                                   </td>
+                                </tr>
+
+                                <tr>
+
+                                  <td align="right" valign="top" class="cate_listing"><span class="mandotry">*</span> Max VPS :</td>
+
+                                  <td valign="top" class="bgcolor4"><input type="text" value="" id="txtvps_1" class="txtfield1" name="txtvps_1">
+
+                                     </td>
+                                </tr>
+
+                                <tr>
+
+                                  <td align="right" valign="top" class="cate_listing"><span class="mandotry">*</span>  IP :</td>
+
+                                  <td valign="top" class="bgcolor4"><input type="text" value="" id="txtip_1" class="txtfield1" name="txtip_1">
+
+     </td>
+                                </tr>
+
+                                <tr>
+
+                                  <td align="right" valign="top" class="cate_listing"><span class="mandotry">*</span> Subnetmask :</td>
+
+                                  <td valign="top" class="bgcolor4"><input type="text" value="" id="txtsubnet_1" class="txtfield1" name="txtsubnet_1">
+
+     </td>
+                                </tr>
+
+                                <tr>
+                                  <td align="right" valign="top" class="cate_listing"><span class="mandotry">*</span> SSH Port :</td>
+                                  <td valign="top" class="bgcolor4"><input type="text" value="22" id="txtssh_1" class="txtfield1" name="txtssh_1">
+ </td>
+                                </tr>
+                                <tr>
+
+                                  <td align="right" valign="top" class="cate_listing"><span class="mandotry">*</span> Gateway :</td>
+
+                                  <td valign="top" class="bgcolor4"><input type="text" value="" id="txtgateway_1" class="txtfield1" name="txtgateway_1">
+ </td>
+                                </tr>								
+                                <tr>
+                                  <td align="right" valign="top" class="cate_listing"><span class="mandotry">*</span> Server OS Type :</td>
+                                  <td valign="top" class="bgcolor4"><select id="cmbsfstype_1" class="txtdrop" name="cmbsfstype_1">
+                                      <option value=""> - Select - </option><option value="centos">Cent OS</option><option value="fedora">Fedora</option><option value="debian">Debian</option><option value="ubuntu">Ubuntu</option>
+                                    </select></td>
+                                </tr>
+								<tr>
+                                  <td align="right" valign="top" class="cate_listing"><span class="mandotry">*</span> Server Architecture :</td>
+                                  <td valign="top" class="bgcolor4"><select id="cmbsfstype_1" class="txtdrop" name="cmbsarchitecture_1">
+                                      <option value=""> - Select - </option><option value="32">32 bit</option><option value="64">64 bit</option>
+                                    </select></td>
+                                </tr>
+                            </tbody></table>							</td>
+                          </tr>
+
+						         <tr>   <td align="right" width="43%" valign="middle"><input type="button" onclick="history.back()" value="Cancel" id="btncancel" class="button" name="btncancel">&nbsp;</td>
+
+                                  <td align="left" width="57%" valign="middle" height="35">                                    <input type="submit" value="Submit" id="btnsubmit" class="button" name="btnsubmit"></td>
+					            </tr>
+						         <tr>
+						           <td align="left" valign="middle" height="35" class="left_nav" colspan="2"><strong>Note:</strong> You need to transfer the SSH key from the installed server (current server IP) to the server you are adding now. For more details please read <a class="bodylink" target="blank" href="../../openVZ-XEN-InstallationGuide-ver1.0.pdf">Installation Guide</a> from the Help section.</td>
+			            </tr>
+                      </tbody></table>
+
+					  </form></td>
+					  
+
+                    </tr>
+
+                </tbody></table>
+
+				</div>
+
+				</td>
+
+              </tr>
+
+            </tbody></table></td>

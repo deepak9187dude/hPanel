@@ -97,7 +97,7 @@
                             <table width="100%" border="0" cellspacing="0" cellpadding="0">
                               <tr>
                                 <td class="cate_top">
-                                  <%= link_to('HOME',reseller_index_path,:class=>'txt_big_red') %>
+                                  <%= link_to('HOME',admin_path,:class=>'txt_big_red') %>
                                 </td>
                               </tr>
                               <tr>
@@ -159,7 +159,7 @@
                                                 <td class="cate_border">
                                                   <%= image_tag("icon_view_server.png",:width=>16,:height=>20,:title=>"View All Servers")  %>
                                                   <span class="left_nav">
-                                                    <%= link_to "View All Servers", "#" %>
+                                                    <%= link_to "View All Servers", admin_servers_path %>
                                                   </span>
                                                 </td>
                                               </tr>
@@ -167,7 +167,7 @@
                                                 <td class="cate_border">
                                                   <%= image_tag("icon_add_server.png",:width=>16,:height=>20,:title=>"Add New Server")  %>
                                                   <span class="left_nav">
-                                                    <%= link_to "Add a New Server", "#" %>
+                                                    <%= link_to "Add a New Server", admin_new_server_path %>
                                                   </span>
                                                 </td>
                                               </tr>
@@ -175,7 +175,7 @@
                                                 <td class="cate_border">
                                                   <%= image_tag("icon_vm_server.png",:width=>16,:height=>20,:title=>"View VM's on Server")  %>
                                                   <span class="left_nav">
-                                                    <%= link_to "View VM's on a Server", "#" %>
+                                                    <%= link_to "View VM's on a Server", admin_view_vm_on_server_path %>
                                                   </span>
                                                 </td>
                                               </tr>
@@ -183,7 +183,7 @@
                                                 <td class="cate_border">
                                                   <%= image_tag("icon_device_management.png",:width=>16,:height=>20,:title=>"Device Management")  %>
                                                   <span class="left_nav">
-                                                    <%= link_to "Device Management", "#" %>
+                                                    <%= link_to "Device Management", admin_device_management_path %>
                                                   </span>
                                                 </td>
                                               </tr>
@@ -191,7 +191,7 @@
                                                 <td class="cate_border">
                                                   <%= image_tag("icon_template_tn.png",:width=>16,:height=>20,:title=>"Template Management")  %>
                                                   <span class="left_nav">
-                                                    <%= link_to "Template Management", "#" %>
+                                                    <%= link_to "Template Management", admin_template_management_path %>
                                                   </span>
                                                 </td>
                                               </tr>
@@ -203,13 +203,13 @@
                                                   </span>
                                                   <ul>
                                                     <li class="left_nav">
-                                                      <%= link_to "IP Manager", "#" %>
+                                                      <%= link_to "IP Manager", admin_ip_manager_path %>
                                                     </li>
                                                     <li class="left_nav">
-                                                      <%= link_to "Blocked IP", "#" %>
+                                                      <%= link_to "Blocked IP", admin_blocked_ip_path %>
                                                     </li>
                                                     <li class="left_nav">
-                                                      <%= link_to "Resolver Management", "# "%>
+                                                      <%= link_to "Resolver Management", admin_resolver_management_path %>
                                                     </li>
                                                   </ul>
                                                 </td>
@@ -218,7 +218,7 @@
                                                 <td class="cate_border">
                                                   <%= image_tag("reset_password.png",:width=>16,:height=>20,:title=>"Reset Password")  %>
                                                   <span class="left_nav">
-                                                    <%= link_to "Reset Password", "#" %>
+                                                    <%= link_to "Reset Password", admin_server_reset_password_path %>
                                                   </span>
                                                 </td>
                                               </tr>
@@ -231,7 +231,7 @@
                                                 <td class="cate_border">
                                                   <%= image_tag("icon_view_vm.png",:width=>16,:height=>20,:title=>"View All VM's")  %>
                                                   <span class="left_nav">
-                                                    <%= link_to "View All VM's", "#" %>
+                                                    <%= link_to "View All VM's", admin_all_vms_path %>
                                                   </span>
                                                 </td>
                                               </tr>
@@ -239,7 +239,7 @@
                                                 <td class="cate_border">
                                                   <%= image_tag("icon_add_vm.png",:width=>16,:height=>20,:title=>"Add New VM")  %>
                                                   <span class="left_nav">
-                                                    <%= link_to "Add a New VM", "#" %>
+                                                    <%= link_to "Add a New VM", admin_new_vm_path %>
                                                   </span>
                                                 </td>
                                               </tr>

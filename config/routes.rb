@@ -99,18 +99,35 @@ Vhpanel::Application.routes.draw do
     
 #   admin section routes
 scope 'admin' do
-  match "/index",:as => "admin",:via=>[:get,:post,:put]
+  match "/index(/:left)"=>"admin#index",:as => "admin",:via=>[:get,:post,:put],:defaults=>{:left=>'i'}
 #  resources :users
 #  admin client manager
-  match "/clients/all/:left"=>"admin#view_all_clients",:as=>"admin_all_clients",:defaults=>{:left=>'0'}
-  match "/clients/add/:left"=>"admin#add_new_client",:as=>"admin_new_client",:defaults=>{:left=>'0'}
-  match "/subscriptions/:type/:left"=>"admin#admin_subscriptions",:as=>"admin_subscriptions",:defaults=>{:type=>'all',:left=>'0'}
+  match "/clients/all"=>"admin#view_all_clients",:as=>"admin_all_clients"
+  match "/clients/add"=>"admin#add_new_client",:as=>"admin_new_client"
+  match "/subscriptions/:type"=>"admin#admin_subscriptions",:as=>"admin_subscriptions",:defaults=>{:type=>'all'}
 #  match "/subscriptions/onhold"=>"admin#subscriptions_on_hold",:as=>"admin_subscriptions_on_hold"
 #  match "/subscriptions/expired"=>"admin#subscriptions_expired",:as=>"admin_subscriptions_expired"
 #  match "/subscriptions/termination"=>"admin#subscriptions_termination_queue",:as=>"admin_subscriptions_termination_queue"
 #  match "/subscriptions/failed"=>"admin#subscriptions_failed",:as=>"admin_subscriptions_failed"
-  match "/settings/graceperiod/:left"=>"admin#grace_period_settings",:as=>"grace_period_settings",:defaults=>{:left=>'0'}
-  match "/billing/termination/:left"=>"admin#termination_request",:as=>"termination_request",:defaults=>{:left=>'0'}
+  match "/settings/graceperiod"=>"admin#grace_period_settings",:as=>"grace_period_settings"
+  match "/billing/termination"=>"admin#termination_request",:as=>"termination_request"
+  
+    
+#  admin server manager
+  match "/server/viewall/:left"=>"admin_servers#view_all_servers",:as=>"admin_servers",:defaults=>{:left=>'1'}
+  match "/server/add/:left"=>"admin_servers#add_new_server",:as=>"admin_new_server",:defaults=>{:left=>'1'}
+  match "/server/view/vm/:left"=>"admin_servers#view_vm_on_server",:as=>"admin_view_vm_on_server",:defaults=>{:left=>'1'}
+  match "/server/device/:left"=>"admin_servers#device_management",:as=>"admin_device_management",:defaults=>{:left=>'1'}
+  match "/server/template/:left"=>"admin_servers#template_management",:as=>"admin_template_management",:defaults=>{:left=>'1'}
+  match "/server/network/ipmanager/:left"=>"admin_servers#ip_manager",:as=>"admin_ip_manager",:defaults=>{:left=>'1'}
+  match "/server/network/ipblocked/:left"=>"admin_servers#blocked_ip",:as=>"admin_blocked_ip",:defaults=>{:left=>'1'}
+  match "/server/network/nameserver/:left"=>"admin_servers#resolver_management",:as=>"admin_resolver_management",:defaults=>{:left=>'1'}
+  match "/server/password/reset/:left"=>"admin_servers#reset_password",:as=>"admin_server_reset_password",:defaults=>{:left=>'1'}
+  
+    
+#  admin server manager
+  match "/vms/all/:left"=>"admin_vms#view_all_vm",:as=>"admin_all_vms",:defaults=>{:left=>2}
+  match "/vms/new/:left"=>"admin_vms#add_new_vm",:as=>"admin_new_vm",:defaults=>{:left=>2}
 end
    root :to => "front#index"
 #   match ':controller(/:action(/:id(.:format)))'
