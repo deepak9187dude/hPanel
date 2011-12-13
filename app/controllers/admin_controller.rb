@@ -1,8 +1,6 @@
 class AdminController < ApplicationController  
-  layout 'admin_backend' 
-  
+  layout 'admin_backend'   
   before_filter :current_user, :except=>[:login,:forgot_password]
-
   def current_user
     if session[:user_id]
       @current_user = User.find(session[:user_id])
@@ -37,24 +35,29 @@ class AdminController < ApplicationController
     render "admin_clients/add_new_client"
   end
   
-  def all_subscriptions
-    render "admin_subscriptions/all_subscriptions"
-  end
-  
-  def subscriptions_on_hold
-    render "admin_subscriptions/subscriptions_on_hold"
-  end
-  
-  def subscriptions_expired
-    render "admin_subscriptions/subscriptions_expired"
-  end
-  
-  def subscriptions_termination_queue
-    render "admin_subscriptions/subscriptions_termination_queue"
-  end
-  
-  def subscriptions_failed
-    render "admin_subscriptions/subscriptions_failed"
+  def admin_subscriptions    
+    @sub_type = params[:type]
+    case @sub_type
+    when "all"
+      @subscription = ""
+      @sub_navigation = "Subscriptions"
+    when "onhold"
+      @subscription = ""
+      @sub_navigation = "Subscriptions On Hold "
+    when "expired"
+      @subscription = ""
+      @sub_navigation = "Expired"
+    when "termination"
+      @subscription = ""
+      @sub_navigation = "Terminated"
+    when "failed"
+      @subscription = ""
+      @sub_navigation = "Failed"
+    else
+      @subscription = ""
+      @sub_navigation = "Failed"
+    end
+    render 'admin_subscriptions/all_subscriptions'
   end
   
   def grace_period_settings

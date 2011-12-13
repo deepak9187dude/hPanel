@@ -101,16 +101,16 @@ Vhpanel::Application.routes.draw do
 scope 'admin' do
   match "/index",:as => "admin",:via=>[:get,:post,:put]
 #  resources :users
-
 #  admin client manager
-  match "/clients/all"=>"admin#view_all_clients",:as=>"admin_all_clients"
-  match "/clients/add"=>"admin#add_new_client",:as=>"admin_new_client"
-  match "/subscriptions/all"=>"admin#all_subscriptions",:as=>"admin_all_subscriptions"
-  match "/subscriptions/onhold"=>"admin#subscriptions_on_hold",:as=>"admin_subscriptions_on_hold"
-  match "/subscriptions/expired"=>"admin#subscriptions_expired",:as=>"admin_subscriptions_expired"
-  match "/subscriptions/termination"=>"admin#subscriptions_termination_queue",:as=>"admin_subscriptions_termination_queue"
-  match "/subscriptions/failed"=>"admin#subscriptions_failed",:as=>"admin_subscriptions_failed"
-  match "/settings/graceperiod"=>"admin#grace_period_settings",:as=>"grace_period_settings"
+  match "/clients/all/:left"=>"admin#view_all_clients",:as=>"admin_all_clients",:defaults=>{:left=>'0'}
+  match "/clients/add/:left"=>"admin#add_new_client",:as=>"admin_new_client",:defaults=>{:left=>'0'}
+  match "/subscriptions/:type/:left"=>"admin#admin_subscriptions",:as=>"admin_subscriptions",:defaults=>{:type=>'all',:left=>'0'}
+#  match "/subscriptions/onhold"=>"admin#subscriptions_on_hold",:as=>"admin_subscriptions_on_hold"
+#  match "/subscriptions/expired"=>"admin#subscriptions_expired",:as=>"admin_subscriptions_expired"
+#  match "/subscriptions/termination"=>"admin#subscriptions_termination_queue",:as=>"admin_subscriptions_termination_queue"
+#  match "/subscriptions/failed"=>"admin#subscriptions_failed",:as=>"admin_subscriptions_failed"
+  match "/settings/graceperiod/:left"=>"admin#grace_period_settings",:as=>"grace_period_settings",:defaults=>{:left=>'0'}
+  match "/billing/termination/:left"=>"admin#termination_request",:as=>"termination_request",:defaults=>{:left=>'0'}
 end
    root :to => "front#index"
 #   match ':controller(/:action(/:id(.:format)))'

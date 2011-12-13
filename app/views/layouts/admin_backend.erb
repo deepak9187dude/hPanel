@@ -40,7 +40,7 @@
                       <table width="100%" border="0" align="left" cellspacing="0" cellpadding="0">
                         <tr>
                           <td width="290" align="left">&nbsp;</td>
-                          <td align="right" valign="bottom"><span class="txt_big_red">Welcome deepak@idifysolutions.com</span></td>
+                          <td align="right" valign="bottom"><span class="txt_big_red">Welcome <%= @current_user.name %></span></td>
                         </tr>
                         <tr>
                           <td align="left">
@@ -130,7 +130,7 @@
                                                 <td class="cate_border">
                                                   <%= image_tag("subicn-sm.jpg",:width=>16,:height=>20,:title=>"Subscriptions")  %>
                                                   <span class="left_nav">
-                                                    <%= link_to "Subscriptions", admin_all_subscriptions_path %>
+                                                    <%= link_to "Subscriptions", admin_subscriptions_path %>
                                                   </span>
                                                 </td>
                                               </tr>
@@ -146,7 +146,7 @@
                                                 <td class="cate_border">
                                                   <%= image_tag("termination-icn2.jpg",:width=>16,:height=>20,:title=>"Termination Request")  %>
                                                   <span class="left_nav">
-                                                    <%= link_to "Termination Request", "#" %>
+                                                    <%= link_to "Termination Request", termination_request_path %>
                                                   </span>
                                                 </td>
                                               </tr>
