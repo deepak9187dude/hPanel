@@ -9,4 +9,8 @@ class AdminVmsController < ApplicationController
   def add_new_vm
     
   end
+  
+  def vm_details
+    
+  end
 end

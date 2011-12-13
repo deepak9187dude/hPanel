@@ -1,0 +1,132 @@
+<td valign="top" class="bgcolor2"><table width="100%" cellspacing="0" cellpadding="0" border="0">
+              <tbody><tr>
+                <td class="middle_top"><table width="100%" cellspacing="0" cellpadding="0" border="0">
+                    <tbody><tr>
+                      <td colspan="2"><span class="bodytext_1"><a class="bodylink" href="index.php?cid=3">Home</a> &gt; <a class="bodylink" href="../index.php?cid=21&amp;action=BMM&amp;left=3">Billing Manager</a> &gt;<span class="bodytext_1"> Hosting Plans</span></span></td>
+                    </tr>
+                    <tr>
+                      <td width="4%"><img align="bottom" width="30" height="32" border="0" title="Hosting Plans" src="../../asset/images/icon_hosting_plan.png"></td>
+                      <td width="96%" valign="top" style="padding-top:2px"><span class="txt_big_red">Hosting Plans</span></td>
+                    </tr>
+                  </tbody></table></td>
+              </tr>
+              <tr>
+                <td style="padding:5px;"><table width="100%" cellspacing="0" cellpadding="0" border="0">
+                    <tbody><tr>
+                      <td><table width="100%" cellspacing="0" cellpadding="0" border="0">
+                          <tbody><tr>
+                            <td><table width="800px" cellspacing="0" cellpadding="0" border="0">
+                                <tbody><tr>
+                                  <td width="7%"><span class="bodytext">Actions</span></td>
+                                  <td width="93%" class="line_bg">&nbsp;</td>
+                                </tr>
+                              </tbody></table></td>
+                          </tr>
+                          <tr>
+                            <td><table width="30%" cellspacing="0" cellpadding="0" border="0">
+                                <tbody><tr>
+								<td align="center"><table width="100%" cellspacing="1" cellpadding="1" border="0">
+      <tbody><tr>
+        <td align="center" height="30"><a href="addplan.php?category=All&amp;left=3"><img align="absmiddle" width="30" height="32" border="0" title="Add" src="../../asset/images/icon_hosting_plan.png"></a></td>
+      </tr>
+      <tr>
+        <td align="center" height="20"><a class="sm_heading" href="addplan.php?category=All&amp;left=3">Add </a></td>
+
+      </tr>
+    </tbody></table></td>
+                              
+                                  <td align="center"><table width="94%" cellspacing="1" cellpadding="1" border="0">
+                                      <tbody><tr>
+                                        <td align="center" height="30"><a href="ViewPlans.php?category=All&amp;left=3"><img align="absmiddle" width="27" height="24" border="0" title="Refresh" src="../../asset/images/icon_refresh.gif"></a></td>
+                                      </tr>
+                                      <tr>
+                                        <td align="center" height="20"><a class="sm_heading" href="ViewPlans.php?category=All&amp;left=3">Refresh</a></td>
+                                      </tr>
+                                    </tbody></table></td>
+                                </tr>
+                              </tbody></table></td>
+                          </tr>
+                        </tbody></table></td>
+                    </tr>
+                    <tr>
+                      <td><div id="divSearch">
+  <form method="post" name="frmhp" target="frmEdit" action="searchsubscrmanager.php?search=HP&amp;cat=All" id="frmhp">
+											<table width="100%" cellspacing="0" cellpadding="0">
+											<tbody>
+											<tr class="cate_listing_head">
+											<td valign="middle" colspan="9">&nbsp;&nbsp;Search</td><td width="2%" valign="middle"><img align="bottom" onclick="javascript:ShowHideHR('S33');" src="../../asset/images/search_show.png" style="padding-left: 20px;" id="imgS33"></td></tr>
+											<tr id="trS33" width="100%">
+											<td valign="top" colspan="9">
+											<table width="100%" cellspacing="0" cellpadding="0" border="0" style="padding-left:8px"><tbody>
+											<tr><td width="10%" valign="bottom" nowrap="nowrap">ID&nbsp;<br>
+											<input type="text" value="" size="4" id="txtid" name="txtid">&nbsp;&nbsp;</td>
+											<td width="16%" valign="bottom" nowrap="nowrap">Title&nbsp;&nbsp;<br>
+											<input type="text" value="" size="10" id="txtPlan" name="txtPlan"></td>
+											<!--<td valign="bottom" width="4%" nowrap="nowrap">&nbsp;</td>-->
+											<td width="16%" valign="top" nowrap="nowrap">Status&nbsp;&nbsp;<br>
+											<select id="cmbstatus" name="cmbstatus">											
+											<option value="All">All</option>
+											<option value="1">Active</option>																			
+											<option value="0">In-Active</option>											
+											</select>
+											</td>
+											<td width="10%" valign="top" nowrap="nowrap">Category&nbsp;&nbsp;<br>
+											<select name="cmbCategory_1" id="cmbCategory_1"><option value="0">All</option><option value="XEN-VPS">XEN-VPS</option><option value="OpenVZ">OpenVZ</option><option value="Dedicated Server">Dedicated Server</option></select>&nbsp;&nbsp;</td>	
+											<td width="3%" valign="bottom" nowrap="nowrap">&nbsp;</td>
+											<td width="5%" valign="bottom" nowrap="nowrap"><!--<a href="#">--><input width="31" type="image" height="33" onclick="return formsubmit();" name="go" id="go" title="Search" src="../../asset/images/icon_search.gif"><!--</a>--><!--<input name="btnsearch" id="btnsearch" value="Search" type="submit" >--></td>					<td width="5%" valign="bottom" class="bodytext">Show</td>
+								<td width="45%" valign="bottom" class="bodytext">
+								<select onchange="document.frmhp.submit()" id="limit" class="limit" name="limit">
+								<option value="5">5</option><option value="10">10</option><option value="20">20</option><option value="40">40</option><option value="80">80</option><option value="160">160</option><option value="320">320</option>								</select>
+								</td>
+											</tr>
+											<tr><td colspan="6">&nbsp;</td></tr>											
+											</tbody></table></td></tr>
+											</tbody>
+											</table>
+                                             <input type="hidden" value="" id="p_start" name="p_start">
+   											 <input type="hidden" value="" id="p_sort" name="p_sort">
+    										<input type="hidden" value="" id="column_name" name="column_name">
+                                            <input type="hidden" value="" id="orderby" name="orderby">
+   											 <input type="hidden" value="2" id="start_search" name="start_search">
+											</form>
+											</div>
+ <script type="text/javascript">
+ function formsubmit()
+ {
+	 document.getElementById('start_search').value=1;
+	 document.getElementById('orderby').value="";
+	 document.getElementById('column_name').value="";
+	 document.frmhp.submit();
+ }
+  document.getElementById('start_search').value=2;
+ </script></td>
+					  
+					</tr>  
+										<tr>
+                      <td>
+                     	<div id="dvContent"><table width="100%" cellspacing="0" cellpadding="0" border="0"><tbody><tr><td align="right" valign="middle">&nbsp;<a href="plansxls.php?cat=All" class="det_link"><img title="Export to Excel" src="../../asset/images/excel.jpg"></a></td></tr><tr><td valign="middle"><table width="800px" cellspacing="1" cellpadding="0" border="0" class="bgcolor3"><tbody><tr><td align="center" width="5%" class="cate_listing"><a onclick="sortclick('desc','EffplanId','ViewPlans')" class="cate_listing_head" href="#">ID</a> </td>
+					<td align="center" width="18%" class="cate_listing"><a onclick="sortclick('desc','planTitle','ViewPlans')" class="cate_listing_head" href="#">Title</a> </td>	
+					<td align="center" width="20%" class="cate_listing"><a onclick="sortclick('desc','typeName','ViewPlans')" href="#" class="cate_listing_head">Type</a> </td>	
+					<td align="center" width="12%" class="cate_listing"><a onclick="sortclick('desc','catName','ViewPlans')" href="#" class="cate_listing_head">Category</a> </td>						                    
+					<td align="center" width="12%" class="cate_listing"><a onclick="sortclick('desc','cntsubscrs','ViewPlans')" href="#" class="cate_listing_head">Subscription</a> </td>
+					<td align="center" width="12%" class="cate_listing"><a onclick="sortclick('desc','status','ViewPlans')" href="#" class="cate_listing_head">Status</a> </td>
+					<td align="center" width="11%" class="cate_listing"><a onclick="sortclick('desc','planSellOption','ViewPlans')" href="#" class="cate_listing_head">Sell Status</a> </td>
+					<td align="center" width="10%" class="cate_listing"><a onclick="sortclick('desc','planSellOption','ViewPlans')" href="#" class="cate_listing_head">Sell Option</a></td>															
+					</tr><tr><td align="center" width="5%" class="bgcolor4"><a href="PlanManager.php?id=1&amp;left=3" class="det_link">1</a></td>
+					<td align="center" width="18%" class="bgcolor4"><a href="PlanManager.php?id=1&amp;left=3" class="det_link">plan 1</a></td>
+					<td align="right" width="20%" height="26" class="bgcolor4">Xen VPS</td>
+					<td align="right" width="12%" height="26" class="bgcolor4">XEN-VPS</td>
+					<td align="right" width="12%" height="26" class="bgcolor4">0</td>
+					<td align="center" width="12%" valign="middle" class="bgcolor4"><img title="Active" src="../../asset/images/online.png"><span class="Running">&nbsp;Active</span></td><td align="center" width="11%" valign="middle" class="bgcolor4"><img title="Stopped" src="../../asset/images/offline.png"><span class="Stopped">&nbsp;Stopped</span></td><td align="center" width="10%" valign="middle" class="bgcolor4">&nbsp;<img onclick="if(chk_confirm('SET','plan for sell in store')!=false)  location.href='sellplans.php?action=SELL&amp;id=1'" title="Set for Sell" style="padding-top:5px; cursor:pointer" src="../../asset/images/tick.gif"></td></tr></tbody></table></td> </tr></tbody></table>
+                        </div>
+						                      
+                        </td>
+                    </tr>
+										
+                    <tr>
+                      <td class="contenttext"></td>
+                            <td align="right" width="36%"></td>
+                          </tr>
+                        </tbody></table></td>
+                    </tr>
+                  </tbody></table></td>

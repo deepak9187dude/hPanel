@@ -128,6 +128,11 @@ scope 'admin' do
 #  admin server manager
   match "/vms/all/:left"=>"admin_vms#view_all_vm",:as=>"admin_all_vms",:defaults=>{:left=>2}
   match "/vms/new/:left"=>"admin_vms#add_new_vm",:as=>"admin_new_vm",:defaults=>{:left=>2}
+  match "/vms/:id/details/:left"=>"admin_vms#vm_details",:as=>"admin_vm_details",:defaults=>{:left=>2}
+  
+#    admin billing manager
+  match "/billing/hosting/plans/:left"=>"admin_billings#hosting_plans",:as=>"billing_hosting_plans",:defaults=>{:left=>3}
+
 end
    root :to => "front#index"
 #   match ':controller(/:action(/:id(.:format)))'
