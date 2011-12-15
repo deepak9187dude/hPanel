@@ -277,13 +277,13 @@
                                                   </span>
                                                   <ul>
                                                     <li class="left_nav">
-                                                      <%= link_to "Completed Logs", "#" %>
+                                                      <%= link_to "Completed Logs", jobs_queue_path %>
                                                     </li>
                                                     <li class="left_nav">
-                                                      <%= link_to "Action Logs", "#" %>
+                                                      <%= link_to "Action Logs", jobs_queue_path('action',4) %>
                                                     </li>
                                                     <li class="left_nav">
-                                                      <%= link_to "Error Logs", "#" %>
+                                                      <%= link_to "Error Logs", jobs_queue_path('error',4) %>
                                                     </li>
                                                   </ul>
                                                 </td>
@@ -296,13 +296,13 @@
                                                   </span>
                                                   <ul>
                                                     <li class="left_nav">
-                                                      <%= link_to "Completed Logs", "#" %>
+                                                      <%= link_to "Completed Logs", long_queue_path('completed',4) %>
                                                     </li>
                                                     <li class="left_nav">
-                                                      <%= link_to "Action Logs", "#" %>
+                                                      <%= link_to "Action Logs", long_queue_path('action',4) %>
                                                     </li>
                                                     <li class="left_nav">
-                                                      <%= link_to "Error Logs", "#" %>
+                                                      <%= link_to "Error Logs", long_queue_path('error',4) %>
                                                     </li>
                                                   </ul>
                                                 </td>

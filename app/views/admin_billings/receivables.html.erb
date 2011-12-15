@@ -17,7 +17,7 @@
               </tr>
               <tr>
                 <td width="4%">
-                  <img align="bottom" width="30" height="32" border="0" title="Orders" src="../../asset/images/receivables-icn.png">
+                  <img align="bottom" width="30" height="32" border="0" title="Orders" src="/images/receivables-icn.png">
                 </td>
                 <td width="96%" valign="top" style="padding-top:2px">
                   <span class="txt_big_red">Orders</span>
@@ -61,7 +61,7 @@
                                     <span onclick="ShowDiv('divCancelled','divEdit')">Cancelled(0)</span>
                                   </div>
                                 </a>
-                                <a href="manualorders.php?status=open&amp;left=3" class="offdiv">
+                                <a href="<%= billing_reveivables_path(3,"requests") %>" class="offdiv">
                                   <div title="Payment Requests" class="offdiv">
                                     <span>Payment Requests(0)</span>
                                   </div>
@@ -73,7 +73,7 @@
                                     <table width="100%" cellspacing="0" cellpadding="0">
                                       <tbody>
                                         <tr class="cate_listing_head"><td valign="middle">&nbsp;&nbsp;Search
-                                          </td><td align="center" width="5%" valign="middle"><img align="bottom" onclick="javascript:ShowHideHR('S33');" src="../../asset/images/search_show.png" id="imgS33"></td></tr>
+                                          </td><td align="center" width="5%" valign="middle"><img align="bottom" onclick="javascript:ShowHideHR('S33');" src="/images/search_show.png" id="imgS33"></td></tr>
                                         <tr id="trS33" width="100%">
                                           <td valign="top" colspan="9">
                                             <table width="100%" cellspacing="0" cellpadding="0" border="0"><tbody>
@@ -97,7 +97,7 @@
                                                 </select>
                                               </td>
                                               <td width="5%" valign="bottom" nowrap="nowrap"><!--<a href="#">-->
-                                                <input width="31" type="image" height="33" onclick="return formsubmit();" name="go" id="go" title="Search" src="../../asset/images/icon_search.gif"> 
+                                                <input width="31" type="image" height="33" onclick="return formsubmit();" name="go" id="go" title="Search" src="/images/icon_search.gif"> 
                                               </td><td width="5%" valign="bottom" class="bodytext">Show</td>
                                               <td width="45%" valign="bottom" class="bodytext">
                                                 <select onchange="document.frmorder.submit()" id="limit" class="limit" name="limit">
@@ -144,7 +144,7 @@
                                   document.getElementById('start_search').value=2;
                                 </script> 
                                 <div id="divAll">
-                                  <table width="100%" cellspacing="0" cellpadding="0" border="0"><tbody><tr><td align="right" valign="middle">&nbsp;<a href="receivanlebxls.php" class="det_link"><img title="Export to Excel" src="../../asset/images/excel.jpg"></a></td></tr><tr><td valign="middle"><div style="display:none" id="divEdit">
+                                  <table width="100%" cellspacing="0" cellpadding="0" border="0"><tbody><tr><td align="right" valign="middle">&nbsp;<a href="receivanlebxls.php" class="det_link"><img title="Export to Excel" src="/images/excel.jpg"></a></td></tr><tr><td valign="middle"><div style="display:none" id="divEdit">
 
                                           </div><br><div class="hide" style="height:100%" id="pending_orders">
                                             <div id="divPending">

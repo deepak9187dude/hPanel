@@ -5,7 +5,7 @@ class AdminBillingsController < ApplicationController
   end
   
   def receivables
-    @receivable_type = params[:type]
+    @receivable_type = params[:receivable]
     case @receivable_type
     when "orders"
       @receivables = ""
@@ -19,9 +19,14 @@ class AdminBillingsController < ApplicationController
     when "cancelled"
       @receivables = ""
       @receivable_navigation = "Cancelled orders"
+    when "requests"
+      @receivables = ""
+      @receivable_navigation = "Payment Requests/Failed Payments "
+      render "payment_requests"
     else
       @receivables = ""
       @receivable_navigation = ""
     end
   end
+  
 end
