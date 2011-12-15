@@ -18,22 +18,22 @@ class AdminController < ApplicationController
     @sub_type = params[:type]
     case @sub_type
     when "all"
-      @subscription = ""
+      @subscriptions = ""
       @sub_navigation = "Subscriptions"
     when "onhold"
-      @subscription = ""
+      @subscriptions = ""
       @sub_navigation = "Subscriptions On Hold "
     when "expired"
-      @subscription = ""
+      @subscriptions = ""
       @sub_navigation = "Expired"
     when "termination"
-      @subscription = ""
+      @subscriptions = ""
       @sub_navigation = "Terminated"
     when "failed"
-      @subscription = ""
+      @subscriptions = ""
       @sub_navigation = "Failed"
     else
-      @subscription = ""
+      @subscriptions = ""
       @sub_navigation = "Failed"
     end
     render 'admin_subscriptions/all_subscriptions'

@@ -132,6 +132,7 @@ scope 'admin' do
   
 #    admin billing manager
   match "/billing/hosting/plans/:left"=>"admin_billings#hosting_plans",:as=>"billing_hosting_plans",:defaults=>{:left=>3}
+  match "/billing/receivables/:left/:receivable"=>"admin_billings#receivables",:as => "billing_reveivables",:defaults=>{:left=>3,:receivable=>'orders'}
 
 end
    root :to => "front#index"
