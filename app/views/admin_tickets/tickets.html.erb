@@ -1,0 +1,255 @@
+<script type="text/javascript" src="/javascripts/common.js"></script>
+<td valign="top" class="bgcolor2">
+  <table width="100%" cellspacing="0" cellpadding="0" border="0">
+    <tbody>
+      <tr>
+        <td class="middle_top">
+          <table width="100%" cellspacing="0" cellpadding="0" border="0">
+            <tbody>
+              <tr>
+                <td colspan="2">
+                  <span class="bodytext_1">
+                    <%= link_to "Home", admin_path,:class=>'bodylink' %>
+                    &gt; <%= link_to "Ticket Manager", admin_all_support_tickets_path,:class=>'bodylink' %> 
+                    &gt; Support Ticket
+                  </span>
+                </td>
+              </tr>
+              <tr>
+                <td width="43"> 
+                  <%= image_tag("support_b.png",:height=>30,:width=>30,:border=>0,:align=>"bottom",:title=>"Support Ticket") %>
+                </td>
+                <td width="1266" valign="top" style="padding-top:2px">
+                  <span class="txt_big_red"> Support Ticket</span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <td style="padding:10px;">
+          <table width="100%" cellspacing="0" cellpadding="0" border="0">
+            <tbody>
+              <tr>
+                <td class="btm_border">
+                  <table width="100%" cellspacing="0" cellpadding="0" border="0">
+                    <tbody>
+                      <tr>
+                        <td>
+                          <table width="100%" cellspacing="0" cellpadding="0" border="0">
+                            <tbody>
+                              <tr>
+                                <td width="7%"><span class="bodytext">Actions</span></td>
+                                <td width="93%" class="line_bg">&nbsp;</td>
+                              </tr>
+                            </tbody>
+                          </table>                          
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <table width="210px" cellspacing="0" cellpadding="0" border="0">
+                            <tbody>
+                              <tr>
+                                <td align="center">
+                                  <table width="100%" cellspacing="1" cellpadding="1" border="0">
+                                    <tbody>
+                                      <tr>
+                                        <td valign="bottom" height="33" align="center">
+                                          <%= link_to(image_tag("new_ticket_b.png",:width=>30,:height=>32,:align=>"absmiddle",:title=>"New Ticket"),admin_new_ticket_path) %>
+                                          
+                                        </td>
+                                      </tr>
+                                      <tr>
+                                        <td valign="bottom" height="20" align="center">
+                                          
+                                          <a class="sm_heading" href="<%= admin_new_ticket_path %>">New Ticket</a>
+                                        </td>
+                                      </tr>
+                                    </tbody>
+                                  </table>
+                                </td>
+                                <td align="center">
+                                  <table width="100%" cellspacing="1" cellpadding="1" border="0">
+                                    <tbody>
+                                      <tr>
+                                        <td valign="bottom" height="33" align="center">
+                                          <a href="#">
+                                            <input width="26" type="image" height="29" border="0" align="absmiddle" onclick="if(chkdel(document.frmuser, 'DELETE', 'Ticket')!=false)  { document.frmuser.action =''; document.frmuser.submit();}" name="userdel" title="Delete Ticket" src="/images/icon_delete_big.gif">
+                                          </a>
+                                        </td>
+                                      </tr>
+                                      <tr>
+                                        <td valign="bottom" height="20" align="center">
+                                          <a onclick="if(chkdel(document.frmuser, 'DELETE', 'Ticket')!=false)  { document.frmuser.action ='index.php?cid=31&amp;action=DCT'; document.frmuser.submit();}" class="sm_heading" href="#">Delete </a>
+                                        </td>
+                                      </tr>
+                                    </tbody>
+                                  </table>
+                                </td>
+                                <td align="center">
+                                  <table width="100%" cellspacing="1" cellpadding="1" border="0">
+                                    <tbody>
+                                      <tr>
+                                        <td valign="bottom" height="33" align="center">
+                                          <%= link_to(image_tag("icon_refresh.gif",:border=>0,:align=>"absmiddle",:title=>"Refresh"),"") %>
+                                        </td>
+                                      </tr>
+                                      <tr>
+                                        <td valign="bottom" height="20" align="center">
+                                          <a class="sm_heading" href="">Refresh</a>
+                                        </td>
+                                      </tr>
+                                    </tbody>
+                                  </table>
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <table width="80%" cellspacing="0" cellpadding="0" border="0">
+                    <tbody>
+                      <tr>
+                        <td height="10"></td>
+                      </tr>
+                      <tr>
+                        <td class="tdgap">
+                          <table width="100%" cellspacing="0" cellpadding="0" border="0">
+                            <tbody>
+                              <tr class="cate_listing_head">
+                                <td valign="middle">&nbsp;Ticket Search </td>
+                                <td width="4%" valign="middle" align="center">
+                                  <%= image_tag("search_show.png",:align=>'bottom',:onclick=>"javascript:ShowHideHR('S33');",:id=>"imgS33") %>
+                                </td>
+                              </tr>
+                              <tr id="trS33">
+                                <td width="96%">
+                                 <%=  form_tag("", :method=>'post', :multipart => true,:name=>"frmsearch",:id=>"frmsearch",:action=>'') do %>
+                                    <table width="75%" cellspacing="2" cellpadding="2" border="0">
+                                      <tbody>
+                                        <tr>
+                                          <td width="24%" class="bodytext">Search By</td>
+                                          <td width="38%">
+                                            <label>
+                                              <select id="cmbsearch" class="txtdrop" name="cmbsearch">
+                                                <option value="">-Search by-</option>
+                                                <option value="id">Ticket ID</option>
+                                                <option value="subject">Subject</option>
+                                                <option value="replies">Total Replies</option>
+                                                <option value="replier">Last Replier</option>
+                                                <option value="lastactivity">Last Activity</option>
+                                                <option value="status">Status</option>
+                                              </select>
+                                            </label>                                        
+                                          </td>
+                                          <td width="28%">
+                                            <label>
+                                              <input type="text" value=" " id="txtsearch" class="txtfield" name="txtsearch">
+                                            </label>                                        </td>
+                                          <td width="10%">
+                                            <a href="#">
+                                              <input width="31" type="image" height="33" name="go" id="go" title="Search" src="/images/icon_search.gif">
+                                            </a>
+                                          </td>
+                                          <td width="12%" class="bodytext">Show</td>
+                                          <td width="12%" class="bodytext">
+                                            <select onchange="document.frmsearch.submit()" id="limit" class="limit" name="limit">                                                                                           
+                                              <option value="5" <%= (@selection == "5") ? "selected":" " %> >5</option>
+                                              <option value="10" <%= (@selection == "10") ? "selected":" " %> >10</option>
+                                              <option value="20" <%= (@selection == "20") ? "selected":" " %>>20</option>
+                                              <option value="40" <%= (@selection == "40") ? "selected":" " %> >40</option>
+                                              <option value="80" <%= (@selection == "80") ? "selected":" " %> >80</option>
+                                              <option value="80" <%= (@selection == "160") ? "selected":" " %> >160</option>
+                                              <option value="80" <%= (@selection == "320") ? "selected":" " %> >320</option>
+                                            </select>                                        
+                                          </td>
+                                        </tr>
+                                      </tbody>
+                                    </table>
+                                 <% end %>
+                                </td>
+                                <td width="4%" valign="bottom" class="bodytext">&nbsp;</td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <table width="70%" cellspacing="0" cellpadding="0" border="0">
+                            <tbody>
+                              <tr>
+                                <td height="5"></td>
+                              </tr>
+                              <tr>
+                                <td align="right"><!-- <a class="det_link" href="csv_download.php?id=user&searchfield=&searchval= "><img src="../asset/images/excel.jpg" border="0" title="Export to Excel"></a> --></td>
+                              </tr>
+                            </tbody>
+                          </table>                          
+                        </td>
+                      </tr>
+                    <%=  form_tag("", :method=>'post', :multipart => true,:name=>"frmuser",:id=>"frmuser",:action=>'') do %>                    
+                    <tr>
+                      <td>
+                        <table width="100%" cellspacing="1" cellpadding="0" border="0" class="bgcolor3">
+                          <tbody>
+                            <tr>
+                              <td width="5%" align="center" class="cate_listing_center">
+                                <input type="checkbox" onclick="javascript:selectall(checked, document.frmuser, 'chkdel[]')" id="checkbox" name="checkbox">                                  
+                              </td>
+                              <td width="14%" class="cate_listing">
+                                <a class="cate_listing_head" href="#">Ticket ID</a>  
+                              </td>
+                              <td width="14%" class="cate_listing">
+                                <a class="cate_listing_head" href="#">Subject</a>  
+                              </td>
+                              <td width="14%" class="cate_listing">
+                                <a class="cate_listing_head" href="#">Total Replies</a>  
+                              </td>
+                              <td width="20%" class="cate_listing">
+                                <a class="cate_listing_head" href="#">Last Replier</a>  
+                              </td>
+                              <td width="15%" class="cate_listing">
+                                <a class="cate_listing_head" href="#">Last Activity</a>  
+                              </td>
+                              <td width="15%" class="cate_listing">
+                                <a class="cate_listing_head" href="#">Status</a>  
+                              </td>
+                            </tr>
+                            <% if !@tickets.empty? %>
+                            <%= render :partial=> "ticket",:collection=>@tickets %>
+                            <% else %>
+                            <tr style="display:table-row">
+                              <td align="center" height="50" bgcolor="#FFFFFF" class="no_record" colspan="7">Tickets are not available</td>
+                            </tr>
+                            <% end %>
+                            <tr style="display:none">
+                              <td height="50" bgcolor="#FFFFFF" align="center" class="no_record" colspan="7"> </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </td>
+                    </tr>
+		<% end %>                       
+                    <tr>
+                      <td align="right"></td>
+                    </tr>
+            </tbody>
+          </table>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>

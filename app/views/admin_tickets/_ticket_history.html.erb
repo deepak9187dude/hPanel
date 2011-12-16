@@ -1,0 +1,169 @@
+<td valign="top" class="bgcolor2">
+  <script language="javascript" type="text/javascript">
+  function ShowDiv(id1, id2)
+  { 
+    window.document.getElementById(id1).style.display = "block";
+    window.document.getElementById(id2).style.display = "none";
+    window.document.getElementById('divGSedit').style.display = "none"; 
+  }
+  </script>
+  <div style="height: 100%;" id="content">
+    <table cellspacing="0" cellpadding="0" border="0" width="100%">
+      <tbody>
+        <tr>
+          <td class="middle_top">
+            <table cellspacing="0" cellpadding="0" border="0" width="100%">
+              <tbody>
+                <tr>
+                  <td colspan="2">
+                    <span class="bodytext_1">
+                      <%= link_to "Home", admin_path,:class=>'bodylink' %>
+                      &gt; <%= link_to "Ticket Manager", admin_all_support_tickets_path,:class=>'bodylink' %>
+                      &gt; <%= link_to "Support Ticket", admin_all_support_tickets_path,:class=>'bodylink' %>
+                      &gt;  Ticket History  
+                    </span>
+                  </td>
+                </tr>
+                <tr>
+                  <td width="4%">
+                    <img border="0" align="bottom" width="30" height="32" title="View VM" src="/images/history_b.png">
+                  </td>
+                  <td width="96%" valign="top" style="padding-top:2px">
+                    <span class="txt_big_red">Ticket History</span>
+                  </td>
+                </tr>
+                <tr>
+                  <td width="4%">&nbsp;</td>
+                  <td width="96%" valign="top" style="padding-top:2px"><span class="bodytext_1">
+                      <a class="bodylink" href="<%= admin_path %>"><%=@current_user.name%></a></span> 
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="txt_big_red">Support Ticket</span>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<img title="In Progress" src="<%= @ticket.status_image %>"><span class="Stopped">On Hold</span>
+                    &nbsp;&nbsp;&nbsp;&nbsp;<span class="txt_big_red"><%@ticket.priority%></span>					
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <%= render :partial=>'ticket_tabs' %>
+    <div class="hide" style="height: 100%;" id="General">
+      <div id="divGS">
+      </div>
+      <div style="display: none;" id="divGSedit">															 
+      </div>
+    </div>
+    <div class="hide" style="height: 100%;" id="Post Reply"> 
+      <div id="divRes">
+      </div> 
+      <div style="display: none;" id="divEditRes">
+      </div>
+    </div>
+    <div class="hide" style="height: 100%;" id="Add Notes">
+      <div id="divNotes">
+      </div>
+      <div style="display: none;" id="divEditNotes">
+      </div>
+    </div>
+    <div class="show" style="height: 100%;" id="Ticket History">
+      <div id="divHist">
+        <table cellspacing="0" cellpadding="0" border="0" width="80%">
+          <tbody>
+            <tr>
+              <td class="tdgap">
+                <table cellspacing="0" cellpadding="0" border="0" width="100%">
+                  <tbody>
+                    <tr class="cate_listing_head">
+                      <td valign="middle">&nbsp;Ticket History Search </td>
+                      <td align="center" width="4%" valign="middle"><img align="bottom" onclick="javascript:ShowHideHR('S33');" src="../asset/images/search_show.png" id="imgS33"></td>
+                    </tr>
+                    <tr id="trS33">
+                      <td width="96%">
+                        <form id="frmsearch" method="post" name="frmsearch">
+                          <table cellspacing="2" cellpadding="2" border="0" width="75%">
+                            <tbody>
+                              <tr>
+                                <td width="15%" class="bodytext">Search By</td>
+                                <td width="17%">
+                                  <label>
+                                    <select id="cmbsearch" class="txtdrop" name="cmbsearch">
+                                      <option value="">-Search by-</option><option value="ticketdetailsid">Ticket ID</option><option value="subject">Subject</option><option value="postdate">Date</option><option value="status">Status</option><option value="priority">Priority</option>
+                                    </select>
+                                  </label>                                    
+                                </td>
+                                <td width="22%">
+                                  <label>
+                                    <input type="text" value="Array" id="txtsearch" class="txtfield" name="txtsearch">
+                                  </label>                          
+                                </td>
+                                <td width="5%">
+                                  <a href="#">
+                                    <input width="31" type="image" height="33" name="go" id="go" title="Search" src="/images/icon_search.gif">
+                                  </a>
+                                </td>
+                                <td width="6%" class="bodytext">Show</td>
+                                <td width="35%" class="bodytext">
+                                  <select onchange="document.frmsearch.submit()" id="limit" class="limit" name="limit">
+                                    <option value="5">5</option><option value="10">10</option><option selected="" value="20">20</option><option value="40">40</option><option value="80">80</option><option value="160">160</option><option value="320">320</option>
+                                  </select>                                        
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </form>
+                      </td>
+                      <td width="4%" valign="bottom" class="bodytext">&nbsp;</td>
+                    </tr>
+                  </tbody>
+                </table>                
+              </td>
+            </tr>
+            <tr>
+              <td height="10"></td>
+            </tr>
+            <tr>
+              <td>
+                <table cellspacing="0" cellpadding="0" border="0" width="70%">
+                  <tbody>
+                    <tr>
+                      <td height="5"></td>
+                    </tr>
+                    <tr>
+                      <td align="right"> </td>
+                    </tr>
+                  </tbody>
+                </table>                
+              </td>
+            </tr>
+          <form method="post" name="frmuser" id="frmuser"></form>
+          <tr>
+            <td>
+              <table cellspacing="1" cellpadding="0" border="0" width="100%" class="bgcolor3">
+                <tbody>
+                  <tr>                                  
+                    <td width="14%" class="cate_listing"><a class="cate_listing_head" href="#">Ticket ID</a>  </td>
+                    <td width="14%" class="cate_listing"><a class="cate_listing_head" href="#">Subject</a>  </td>
+                    <td width="14%" class="cate_listing"><a class="cate_listing_head" href="#">Date</a>  </td>  
+                    <td width="15%" class="cate_listing"><a class="cate_listing_head" href="#">Status</a>  </td>
+                    <td width="15%" class="cate_listing"><a class="cate_listing_head" href="#">Priority</a>  </td>
+                  </tr>
+                  <%= render :partial=> 'current_ticket_history',:collection=> @ticket_history %>
+                  <tr style="display:none">
+                    <td bgcolor="#FFFFFF" align="center" height="50" class="no_record" colspan="7"> </td>
+                  </tr>
+                </tbody>
+              </table>              
+            </td>
+          </tr>
+          <tr>
+            <td align="right"></td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+      <div style="display: none;" id="divEditHist">
+      </div>
+    </div>
+  </div>
+</td>

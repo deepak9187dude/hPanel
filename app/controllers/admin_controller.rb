@@ -50,4 +50,7 @@ class AdminController < ApplicationController
   def resolver_management
     
   end
+  def reset_password
+    
+  end
 end

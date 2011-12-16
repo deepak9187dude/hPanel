@@ -1,0 +1,19 @@
+<div id="gallery">
+  <a href="<%= admin_ticket_details_path(@ticket,:page=>'general') %>" class="<%= (params[:page]=='general')?"ondiv":"offdiv" %>">
+    <span>
+      <div title="General" class="<%= (params[:page]=='general')?"ondiv":"offdiv" %>">
+        <span onclick="ShowDiv('divGS','divGSedit')">General</span>
+      </div>          
+    </span>
+  </a>
+  <a href="<%= admin_ticket_details_path(@ticket,:page=>'reply') %>" class="<%= (params[:page]=='reply')?"ondiv":"offdiv" %>">
+    <div title="Post Reply" class="<%= (params[:page]=='reply')?"ondiv":"offdiv" %>">
+      <span onclick="ShowDiv('divRes','divEditRes')">Post Reply</span>
+    </div> 
+  </a>								  
+  <a href="<%= admin_ticket_details_path(@ticket,:page=>'history') %>" class="<%= (params[:page]=='history')?"ondiv":"offdiv" %>">
+    <div title="Ticket History" class="<%= (params[:page]=='history')?"ondiv":"offdiv" %>">
+      <span onclick="ShowDiv('divHist','divEditHist')">Ticket History</span>
+    </div> 
+  </a>
+</div>

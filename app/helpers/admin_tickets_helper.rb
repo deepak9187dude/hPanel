@@ -1,0 +1,2 @@
+module AdminTicketsHelper
+end

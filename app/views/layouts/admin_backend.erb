@@ -345,7 +345,7 @@
                                                 <td class="cate_border">
                                                   <%= image_tag("reset_password.png",:width=>16,:height=>20,:title=>"Reset Password")  %>
                                                   <span class="left_nav">
-                                                    <%= link_to "Reset Password", "#" %>
+                                                    <%= link_to "Reset Password", admin_reset_password_path %>
                                                   </span>
                                                 </td>
                                               </tr>
@@ -358,20 +358,20 @@
                                                 <td class="cate_border">
                                                   <%= image_tag("support_th.png",:width=>16,:height=>20,:title=>"Support")  %>
                                                   <span class="left_nav">
-                                                    <%= link_to "Support", "#" %>
+                                                    <%= link_to("Support (#{@support_all.count})",admin_all_support_tickets_path) %>
                                                   </span>
                                                   <ul>
                                                     <li class="left_nav">
-                                                      <%= link_to "Open", "#" %>
+                                                      <%= link_to("Open (#{@support_open.count})",admin_open_support_tickets_path)%>
                                                     </li>
                                                     <li class="left_nav">
-                                                      <%= link_to "On Hold","#" %>
+                                                      <%= link_to( "On Hold (#{@support_hold.count})",admin_hold_support_tickets_path) %>
                                                     </li>
                                                     <li class="left_nav">
-                                                      <%= link_to "Closed", "#" %>
+                                                      <%= link_to( "Closed (#{@support_closed.count})",admin_closed_support_tickets_path) %>
                                                     </li>
                                                     <li class="left_nav">
-                                                      <%= link_to "In-Progress", "#" %>
+                                                      <%= link_to( "In-Progress (#{@support_progress.count})",admin_progress_support_tickets_path) %>
                                                     </li>
                                                   </ul>
                                                 </td>
@@ -380,20 +380,20 @@
                                                 <td class="cate_border">
                                                   <%= image_tag("billing_th.png",:width=>16,:height=>20,:title=>"Billing")  %>
                                                   <span class="left_nav">
-                                                    <%= link_to "Billing", "#" %>
+                                                    <%= link_to("Billing (#{@billing_all.count})",admin_all_billing_tickets_path) %>
                                                   </span>
                                                   <ul>
                                                     <li class="left_nav">
-                                                      <%= link_to "Open", "#" %>
+                                                      <%= link_to("Open (#{@billing_open.count})",admin_open_billing_tickets_path)%>
                                                     </li>
                                                     <li class="left_nav">
-                                                      <%= link_to "On Hold", "#" %>
+                                                      <%= link_to( "On Hold (#{@billing_hold.count})",admin_hold_billing_tickets_path) %>
                                                     </li>
                                                     <li class="left_nav">
-                                                      <%= link_to "Closed", "#" %>
+                                                      <%= link_to( "Closed (#{@billing_closed.count})",admin_closed_billing_tickets_path) %>
                                                     </li>
                                                     <li class="left_nav">
-                                                      <%= link_to "In-Progress", "#" %>
+                                                      <%= link_to( "In-Progress (#{@billing_progress.count})",admin_progress_billing_tickets_path) %>
                                                     </li>
                                                   </ul>
                                                 </td>
@@ -407,7 +407,7 @@
                                                 <td class="cate_border">
                                                   <%= image_tag("admin_user_guide_icon.gif",:width=>16,:height=>20,:title=>"Admin User Guide")  %>
                                                   <span class="left_nav">
-                                                    <%= link_to "Admin User Guide", "#" %>
+                                                    <%= link_to "Admin User Guide", "/VMComplete-Admin-UserManual-ver2.0.pdf" %>
                                                   </span>>
                                                 </td>
                                               </tr>
@@ -415,7 +415,7 @@
                                                 <td class="cate_border">
                                                   <%= image_tag("installation_guide_icon.gif",:width=>16,:height=>20,:title=>"Installation Guide")  %>
                                                   <span class="left_nav">
-                                                    <%= link_to "Installation Guide", "#" %>
+                                                    <%= link_to "Installation Guide", "/openVZ-XEN-InstallationGuide-ver1.0.pdf" %>
                                                   </span>
                                                 </td>
                                               </tr>

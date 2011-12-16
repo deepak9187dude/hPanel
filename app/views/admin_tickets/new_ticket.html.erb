@@ -1,0 +1,201 @@
+<td valign="top" class="bgcolor2"><script src="../fckeditor/fckeditor.js" type="text/javascript"></script>
+  <script type="text/javascript">
+    function valTicket()
+    {
+      var err=0;
+
+      if(document.getElementById("cmbpriority").value=="")
+      {
+        document.getElementById("errpriority").innerHTML = "Please select priority" ;
+        //return false;
+        err=1;
+      }
+      else 
+      {
+        document.getElementById("errpriority").innerHTML = "" ;
+        //return true;
+      }
+
+   
+      if(document.getElementById("cmbcategory").value=="")
+      {
+        document.getElementById("errcategory").innerHTML = "Please select category" ;
+        //return false;
+        err=1;
+	
+      }
+      else 
+      {
+        document.getElementById("errcategory").innerHTML = "" ;
+        //return true;
+      } 
+
+   
+      if(document.getElementById("txtsub").value=="")
+      {
+        document.getElementById("errsub").innerHTML = "Please enter subject" ;
+        //return false;
+        err=1;
+	
+      }
+      else 
+      {
+        document.getElementById("errsub").innerHTML = "" ;
+        //return true;
+      } 
+
+      if(err==1)
+        return false;
+      else
+        return true;	 
+    }
+  </script>
+  <script type="text/javascript" src="/javascripts/tiny_mce/tiny_mce.js"></script>
+  <script type="text/javascript">
+  tinyMCE.init({
+    // General options
+        mode : "textareas",
+        theme : "advanced",
+        plugins : "autolink,lists,spellchecker,pagebreak,style,layer,table,save,advhr,advimage,advlink,emotions,iespell,inlinepopups,insertdatetime,preview,media,searchreplace,print,contextmenu,paste,directionality,fullscreen,noneditable,visualchars,nonbreaking,xhtmlxtras,template",
+
+        // Theme options
+        theme_advanced_buttons1 : "save,newdocument,|,bold,italic,underline,strikethrough,|,justifyleft,justifycenter,justifyright,justifyfull,|,styleselect,formatselect,fontselect,fontsizeselect",
+        theme_advanced_buttons2 : "cut,copy,paste,pastetext,pasteword,|,search,replace,|,bullist,numlist,|,outdent,indent,blockquote,|,undo,redo,|,link,unlink,anchor,image,cleanup,help,code,|,insertdate,inserttime,preview,|,forecolor,backcolor",
+        theme_advanced_buttons3 : "tablecontrols,|,hr,removeformat,visualaid,|,sub,sup,|,charmap,emotions,iespell,media,advhr,|,print,|,ltr,rtl,|,fullscreen",
+        theme_advanced_buttons4 : "insertlayer,moveforward,movebackward,absolute,|,styleprops,spellchecker,|,cite,abbr,acronym,del,ins,attribs,|,visualchars,nonbreaking,template,blockquote,pagebreak,|,insertfile,insertimage",
+        theme_advanced_toolbar_location : "top",
+        theme_advanced_toolbar_align : "left",
+        theme_advanced_statusbar_location : "bottom",
+        theme_advanced_resizing : true,
+
+        // Skin options
+        skin : "o2k7",
+        skin_variant : "silver",
+
+        // Example content CSS (should be your site CSS)
+        content_css : "css/example.css",
+
+        // Drop lists for link/image/media/template dialogs
+        template_external_list_url : "js/template_list.js",
+        external_link_list_url : "js/link_list.js",
+        external_image_list_url : "js/image_list.js",
+        media_external_list_url : "js/media_list.js",
+
+        // Replace values for the template plugin
+        template_replace_values : {
+                username : "Some User",
+                staffid : "991234"}
+
+  });
+  </script>
+<table cellspacing="0" cellpadding="0" border="0" width="100%">
+  <tbody>
+  <tr>
+    <td class="middle_top">
+      <table cellspacing="0" cellpadding="0" border="0" width="100%">
+        <tbody>
+          <tr>
+            <td colspan="2">
+              <span class="bodytext_1">
+                <a class="bodylink" href="<%= admin_path %>">Home</a> 
+                &gt; <a class="bodylink" href="<%= admin_all_support_tickets_path %>">Ticket Manager</a> 
+                &gt; Submit Ticket 
+              </span>
+            </td>
+          </tr>
+          <tr>
+            <td width="47">
+              <%= image_tag("submit_ticket_b.png",:border=>0,:align=>'left',:width=>'30',:height=>32,:title=>'Compose')  %>
+            </td>
+            <td width="1262" valign="top" style="padding-top:2px">
+              <span class="txt_big_red">Submit Ticket </span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </td>
+  </tr>
+  <tr>
+    <td class="tdgap1">
+    <table cellspacing="0" cellpadding="0" border="0" width="100%">
+      <tbody>
+        <tr>
+          <td class="tdgap1">
+	    <%= form_for @ticket, :as => :ticket, :html=>{:onsubmit=>"return valTicket();",:id=>"frmucr"} ,:url => admin_create_ticket_path do |f| %>
+            
+              <table cellspacing="0" cellpadding="0" border="0" align="left" width="85%">
+                <tbody>
+                  <tr>
+                    <td align="center" colspan="2" class="mandotry">
+                      <span class="bolderror">                              
+                      </span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td colspan="2" class="bgcolor1">
+                      <table cellspacing="1" cellpadding="4" border="0" width="100%" class="bgcolor3">
+                        <tbody>
+                          <tr>
+                            <td align="right" width="19%" valign="top" class="cate_listing">
+                              <span class="mandotry">*</span> Priority :
+                            </td>
+                            <td width="81%" valign="top" class="bgcolor4"> 
+                              <%= select_tag 'ticket[priority]', options_for_select(@ticket_priority),:id=>'cmbpriority',:class=>'txtdrop'%>
+                              &nbsp;&nbsp;
+                              <span class="error" id="errpriority"></span>
+                            </td>
+                          </tr>
+                          <script>document.getElementById("cmbpriority").value= '';</script>
+                          <tr>
+                            <td align="right" width="19%" valign="top" class="cate_listing">
+                              <span class="mandotry">*</span> Category :
+                            </td>
+                            <td width="81%" valign="top" class="bgcolor4">   
+                             <%= select_tag 'ticket[category]', options_for_select(@ticket_category),:id=>'cmbcategory',:class=>'txtdrop'%>
+                              &nbsp;&nbsp;
+                              <span class="error" id="errcategory"></span>
+                            </td>
+                          </tr>
+                          <script>document.getElementById("cmbcategory").value= '';</script>				     
+                          <tr>
+                            <td align="right" width="19%" valign="top" class="cate_listing">
+                              <span class="mandotry">*</span> Subject :
+                            </td>
+                            <td width="81%" valign="top" class="bgcolor4"> 
+                              <%= f.text_field :subject,:size=>55,:id=>'txtsub',:class=>'txtfield1' %>
+                            &nbsp;&nbsp;
+                            <span class="error" id="errsub"></span>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td align="right" valign="top" class="cate_listing"><span class="mandotry">*</span> Comments :</td>
+                            <td valign="top" class="bgcolor4">
+                              <%= text_area(:ticket, :comments,:rows=>10,:cols=>60) %>
+                              <script type="text/javascript"></script>
+                            </td>
+                          </tr>					  
+                        </tbody>
+                      </table>
+                    </td>
+                  </tr>
+                  <tr>
+                  <td align="right" width="141">
+                    <input type="button" onclick="history.back()" value="Cancel" id="btncancel" class="button" name="btncancel">&nbsp;
+                  </td>
+                  <td align="left" width="598" height="40">
+                    <input type="submit" value="Submit" id="save" class="button" name="save">
+                    &nbsp;&nbsp;
+                  </td>
+                  </tr>
+                </tbody>
+              </table>
+            <% end %>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </td>
+  </tr>
+  </tbody>
+</table>
+</td>
