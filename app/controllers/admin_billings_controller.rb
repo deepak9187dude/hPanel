@@ -29,4 +29,15 @@ class AdminBillingsController < ApplicationController
     end
   end
   
+  def anti_fraud_checklist
+    
+  end
+  
+  def gateway_settings
+    
+  end
+  
+  def fraud_score
+    
+  end
 end

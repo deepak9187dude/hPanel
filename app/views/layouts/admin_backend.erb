@@ -314,17 +314,9 @@
                                             <table width="90%" border="0" cellspacing="0" cellpadding="0">
                                               <tr>
                                                 <td class="cate_border">
-                                                  <%= image_tag("anti-fraud-icn2.png",:width=>16,:height=>20,:title=>"Anti-Fraud Checklist")  %>
-                                                  <span class="left_nav">
-                                                    <%= link_to "Anti-Fraud Checklist", "#" %>
-                                                  </span>
-                                                </td>
-                                              </tr>
-                                              <tr>
-                                                <td class="cate_border">
                                                   <%= image_tag("gateway-icn2.png",:width=>16,:height=>20,:title=>"Gateway Settings")  %>
                                                   <span class="left_nav">
-                                                    <%= link_to "Gateway Settings", "#" %>
+                                                    <%= link_to "Gateway Settings", gateway_settings_path %>
                                                   </span>
                                                 </td>
                                               </tr>
@@ -332,7 +324,15 @@
                                                 <td class="cate_border">
                                                   <%= image_tag("fraudscoreinc2.png",:width=>16,:height=>20,:title=>"Fraud Score")  %>
                                                   <span class="left_nav">
-                                                    <%= link_to "Fraud Score", "#" %>
+                                                    <%= link_to "Fraud Score", fraud_score_path %>
+                                                  </span>
+                                                </td>
+                                              </tr>
+                                              <tr>
+                                                <td class="cate_border">
+                                                  <%= image_tag("anti-fraud-icn2.png",:width=>16,:height=>20,:title=>"Anti-Fraud Checklist")  %>
+                                                  <span class="left_nav">
+                                                    <%= link_to "Anti-Fraud Checklist", anti_fraud_checklist_path %>
                                                   </span>
                                                 </td>
                                               </tr>

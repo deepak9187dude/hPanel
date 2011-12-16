@@ -25,10 +25,10 @@ class AdminLogsController < ApplicationController
     case @long_type
     when "completed"
       @long_queues = ""
-      @long_queue_navigation = "Completed Logs"
+      @long_queue_navigation = "Long Job Queue"
     when "action"
       @long_queues = ""
-      @long_queue_navigation = "Action Logs"
+      @long_queue_navigation = "Long Job Queue"
     when "error"
       @long_queues = ""
       @long_queue_navigation = "Error Logs"

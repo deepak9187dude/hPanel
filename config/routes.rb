@@ -138,6 +138,12 @@ scope 'admin' do
   match "/logs/jobs/:type/:left"=>"admin_logs#jobs_queue",:as=>"jobs_queue",:defaults=>{:left=>4,:type=>'completed'}
   match "/logs/jong/:type/:left"=>"admin_logs#long_queue",:as=>"long_queue",:defaults=>{:left=>4,:type=>'completed'}
   
+#    commerce manager
+  match "/commerce/fraud/:left"=>"admin_billings#anti_fraud_checklist",:as=>"anti_fraud_checklist",:defaults=>{:left=>5}
+  match "/gateway/settings/:left"=>"admin_billings#gateway_settings",:as=>"gateway_settings",:defaults=>{:left=>5}
+  match "/gateway/fraudscore/:left"=>"admin_billings#fraud_score",:as=>"fraud_score",:defaults=>{:left=>5}
+
+  
 
 end
    root :to => "front#index"

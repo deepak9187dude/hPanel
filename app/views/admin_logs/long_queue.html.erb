@@ -1,148 +1,209 @@
-<td valign="top" class="bgcolor2"><table width="100%" cellspacing="0" cellpadding="0" border="0">
-              <tbody><tr><td class="middle_top"><table width="100%" cellspacing="0" cellpadding="0" border="0">
-                  <tbody><tr>
-                    <td colspan="2"><span class="bodytext_1"><a class="bodylink" href="index.php?cid=3">Home</a> &gt; <a class="bodylink" href="index.php?cid=14&amp;action=CLQ&amp;left=6">Log Manager</a> &gt; Long Job Queue </span></td>
-                    </tr>
-                  <tr>
-                    <td width="40"><img align="bottom" width="30" height="32" border="0" title="Long Jobs Queue" src="../asset/images/icon_log_manager_big.png"></td>
-                    <td width="1269" valign="top" style="padding-top:2px"><span class="txt_big_red">Long Jobs Queue</span></td>
-                  </tr>
-                </tbody></table></td>
-				
-              
+<td valign="top" class="bgcolor2">
+  <table width="100%" cellspacing="0" cellpadding="0" border="0">
+    <tbody>
+      <tr>
+        <td class="middle_top">
+          <table width="100%" cellspacing="0" cellpadding="0" border="0">
+            <tbody>
+              <tr>
+                <td colspan="2">
+                  <span class="bodytext_1">
+                    <a class="bodylink" href="index.php?cid=3">Home</a> 
+                    &gt; <a class="bodylink" href="index.php?cid=14&amp;action=CLQ&amp;left=6">Log Manager</a> 
+                    &gt;<%= @long_queue_navigation %>
+                  </span>
+                </td>
               </tr>
               <tr>
-                <td style="padding:10px;">
-				
-				<table width="100%" cellspacing="0" cellpadding="0" border="0">
-                  <!--<tr>
-                    <td class="btm_border"><table width="100%" border="0" cellspacing="0" cellpadding="0">
-                      
+                <td width="40">
+                  <img align="bottom" width="30" height="32" border="0" title="Long Jobs Queue" src="/images/icon_log_manager_big.png">
+                </td>
+                <td width="1269" valign="top" style="padding-top:2px">
+                  <span class="txt_big_red"><%= @long_queue_navigation %></span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <td style="padding:10px;">
+          <table width="100%" cellspacing="0" cellpadding="0" border="0">
+            <!--<tr>
+              <td class="btm_border"><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                
+                <tr>
+                  <td><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                    <tr>
+                      <td><table width="100%" border="0" cellspacing="0" cellpadding="0">
+                          <tr>
+                            <td width="7%"><span class="bodytext">Actions</span></td>
+                            <td width="93%" class="line_bg">&nbsp;</td>
+                          </tr>
+                      </table></td>
+                    </tr>
+                    <tr>
+                      <td><table width="150"  border="0" cellspacing="0" cellpadding="0">
+                          <tr>
+                            <td align="center"><table width="100%"  border="0" cellspacing="1" cellpadding="1">
+                              <tr>
+                                <td height="41" align="center"><a href="#">
+                                  <input type="image" src="/images/icon_delete_big.gif" title="Delete Log" width="26" height="29" border="0" align="absmiddle" name="vmdel" onClick="if(chkdel(document.frmjob,'DELETE','Selected Log(s)')!=false) document.frmjob.action ='index.php?cid=14&action=ALD&left=6'; document.frmjob.submit();"/>
+                                </a></td>
+                              </tr>
+                              <tr>
+                                <td height="20" align="center" valign="top"><a href="#" class="sm_heading" onClick="if(chkdel(document.frmjob,'DELETE','Selected Log(s)')!=false) document.frmjob.action ='index.php?cid=14&action=ALD&left=6'; document.frmjob.submit();">Delete </a></td>
+                              </tr>
+                            </table></td>
+                            <td align="center"><table width="94%"  border="0" cellspacing="1" cellpadding="1">
+                              <tr>
+                                <td height="41" align="center"><a href="index.php?cid=14&action=CLQ&left=6"><img src="/images/icon_refresh.gif" title="Refresh" width="27" height="24" border="0" align="absmiddle" /></a></td>
+                              </tr>
+                              <tr>
+                                <td height="20" align="center" valign="top"><a href="index.php?cid=14&action=CLQ&left=6" class="sm_heading">Refresh</a></td>
+                              </tr>
+                            </table></td>
+                          </tr>
+                      </table></td>
+                    </tr>
+                  </table></td>
+                </tr>
+              </table></td>
+            </tr>-->
+            <tbody>
+              <tr>
+                <td>
+                  <table width="100%" cellspacing="0" cellpadding="0" border="0">
+                    <tbody>
                       <tr>
-                        <td><table width="100%" border="0" cellspacing="0" cellpadding="0">
-                          <tr>
-                            <td><table width="100%" border="0" cellspacing="0" cellpadding="0">
-                                <tr>
-                                  <td width="7%"><span class="bodytext">Actions</span></td>
-                                  <td width="93%" class="line_bg">&nbsp;</td>
-                                </tr>
-                            </table></td>
-                          </tr>
-                          <tr>
-                            <td><table width="150"  border="0" cellspacing="0" cellpadding="0">
-                                <tr>
-                                  <td align="center"><table width="100%"  border="0" cellspacing="1" cellpadding="1">
-                                    <tr>
-                                      <td height="41" align="center"><a href="#">
-                                        <input type="image" src="../asset/images/icon_delete_big.gif" title="Delete Log" width="26" height="29" border="0" align="absmiddle" name="vmdel" onClick="if(chkdel(document.frmjob,'DELETE','Selected Log(s)')!=false) document.frmjob.action ='index.php?cid=14&action=ALD&left=6'; document.frmjob.submit();"/>
-                                      </a></td>
-                                    </tr>
-                                    <tr>
-                                      <td height="20" align="center" valign="top"><a href="#" class="sm_heading" onClick="if(chkdel(document.frmjob,'DELETE','Selected Log(s)')!=false) document.frmjob.action ='index.php?cid=14&action=ALD&left=6'; document.frmjob.submit();">Delete </a></td>
-                                    </tr>
-                                  </table></td>
-                                  <td align="center"><table width="94%"  border="0" cellspacing="1" cellpadding="1">
-                                    <tr>
-                                      <td height="41" align="center"><a href="index.php?cid=14&action=CLQ&left=6"><img src="../asset/images/icon_refresh.gif" title="Refresh" width="27" height="24" border="0" align="absmiddle" /></a></td>
-                                    </tr>
-                                    <tr>
-                                      <td height="20" align="center" valign="top"><a href="index.php?cid=14&action=CLQ&left=6" class="sm_heading">Refresh</a></td>
-                                    </tr>
-                                  </table></td>
-                                </tr>
-                            </table></td>
-                          </tr>
-                        </table></td>
-                      </tr>
-                    </table></td>
-                  </tr>-->
-                  <tbody><tr>
-                    <td><table width="100%" cellspacing="0" cellpadding="0" border="0">
-                      <tbody><tr>
                         <td class="tdgap">&nbsp;</td>
                       </tr>
                       <tr>
-                        <td class="tdgap"><table width="80%" cellspacing="0" cellpadding="0" border="0">
-						   <tbody><tr class="cate_listing_head">
-							    <td valign="middle">&nbsp; Long Job Queue Search</td>
-							    <td align="center" width="5%" valign="middle"><img align="bottom" onclick="javascript:ShowHideHR('S33');" src="../asset/images/search_show.png" id="imgS33"></td>
-						  </tr>
-                          <tr id="trS33">
-                            <td width="95%">
-							<form id="frmsearch" method="post" action="index.php?cid=14&amp;action=CLQ&amp;left=6" name="frmsearch">
-							<table width="76%" cellspacing="2" cellpadding="2" border="0">
-                              <tbody><tr>
-                                <td width="19%" class="bodytext">Search By</td>
-                                <td width="28%"><select id="cmbsearch" class="txtdrop" name="cmbsearch">
-                                  <option value="">-Search by-</option>
-                                  
-									   <option value="long_id">ID</option><option value="queue_descr">Description</option><option value="queue_status">Status</option><option value="long_added_date">Added On</option>
-                                    
-                                </select></td>
-                                <td width="29%">
-                                  <label>
-                                    <input type="text" value=" " id="txtsearch" class="txtfield" name="txtsearch">
-                                  </label>                                </td>
-                                <td width="7%"><a href="#"><input width="31" type="image" height="33" name="go" id="go" title="Search" src="../asset/images/icon_search.gif"></a></td>						<td width="8%" class="bodytext">Show</td>
-								<td width="9%" class="bodytext">
-								<select onchange="document.frmsearch.submit()" id="limit" class="limit" name="limit">
-								<option value="5">5</option><option selected="" value="10">10</option><option value="20">20</option><option value="40">40</option><option value="80">80</option><option value="160">160</option><option value="320">320</option>
-								</select>								</td>
+                        <td class="tdgap">
+                          <table width="80%" cellspacing="0" cellpadding="0" border="0">
+                            <tbody>
+                              <tr class="cate_listing_head">
+                                <td valign="middle">&nbsp; Long Job Queue Search</td>
+                                <td align="center" width="5%" valign="middle">
+                                  <img align="bottom" onclick="javascript:ShowHideHR('S33');" src="/images/search_show.png" id="imgS33">
+                                </td>
                               </tr>
-                            </tbody></table>
-							</form></td>
-                            <td width="5%" valign="bottom" class="bodytext">&nbsp;</td>
-                          </tr>
-                        </tbody></table></td>
-                      </tr>
-                      <tr>
-                        <td class="tdgap"><table width="80%" cellspacing="0" cellpadding="0" border="0">
-                          <tbody><tr>
-                            <td height="5"></td>
-                          </tr>
-                          <tr>
-                            <td align="right"><a href="csv_download.php?id=long&amp;searchfield=&amp;searchval= " class="det_link"><img border="0" title="Export to Excel" src="../asset/images/excel.jpg"></a></td>
-                          </tr>
-                        </tbody></table></td>
-                      </tr>
-					  <form method="post" name="frmjob" id="frmjob"></form>
-                      <tr>
-                        <td><div align="center" style="width:80%" id="chldpar2">
-						<table width="100%" cellspacing="1" cellpadding="0" border="0" class="bgcolor3">
-                          <tbody><tr>
-                            <td align="center" width="5%" class="cate_listing_center">
-                                <input type="checkbox" onclick="javascript:selectall(checked, document.frmjob, 'chkdel[]')" id="checkbox" name="checkbox">
-                            </td>
-                            <td align="left" width="13%" class="cate_listing"><a class="cate_listing_head" href="index.php?cid=14&amp;action=CLQ&amp;left=6&amp;orderby=long_id&amp;sort=ASC&amp;searchfield=&amp;searchval= ">ID</a>  </td>
-                            <td align="left" width="53%" class="cate_listing"><a class="cate_listing_head" href="index.php?cid=14&amp;action=CLQ&amp;left=6&amp;orderby=queue_descr&amp;sort=ASC&amp;searchfield=&amp;searchval= ">Description</a>  </td>
-                            <td align="left" width="13%" class="cate_listing"><a class="cate_listing_head" href="index.php?cid=14&amp;action=CLQ&amp;left=6&amp;orderby=queue_status&amp;sort=ASC&amp;searchfield=&amp;searchval= ">Status</a>  </td>
-                            <td align="left" width="16%" class="cate_listing"><a class="cate_listing_head" href="index.php?cid=14&amp;action=CLQ&amp;left=6&amp;orderby=long_added_date&amp;sort=ASC&amp;searchfield=&amp;searchval= ">Added on</a>  </td>
-                          </tr>
-						  
-						  <tr bgcolor="#FFFFFF" style="display:table-row"><td align="center" height="50" class="no_record" colspan="5">Long Jobs are not available</td>
-						  </tr>
-                        </tbody></table>
-						</div></td>
-                      </tr>
-                      <tr>
-                        <td align="left" class="bodytext"><table width="80%" cellspacing="1" cellpadding="1" border="0">
-                          <tbody><tr>
-                            <td><table align="left" width="298" cellspacing="0" cellpadding="0" border="0">
-                              <tbody><tr align="left" valign="middle">
-                                <td width="76"><img align="absmiddle" width="13" height="13" border="0" title="Edit" src="../asset/images/icon_pending.png">&nbsp;Pending</td>
-                                <td width="84"><img align="absmiddle" width="13" height="13" border="0" title="Delete" src="../asset/images/icon_inprocess.png">&nbsp;In Process </td>
-                                <td width="77"><img align="absmiddle" width="13" height="13" border="0" title="Details" src="../asset/images/online.png">&nbsp;Success </td>
-                                <td width="61"><img align="absmiddle" width="13" height="13" src="../asset/images/offline.png">&nbsp;Error</td>
+                              <tr id="trS33">
+                                <td width="95%">
+                                  <form id="frmsearch" method="post" action="index.php?cid=14&amp;action=CLQ&amp;left=6" name="frmsearch">
+                                    <table width="76%" cellspacing="2" cellpadding="2" border="0">
+                                      <tbody>
+                                        <tr>
+                                          <td width="19%" class="bodytext">Search By</td>
+                                          <td width="28%">
+                                            <select id="cmbsearch" class="txtdrop" name="cmbsearch">
+                                              <option value="">-Search by-</option>
+                                              <option value="long_id">ID</option><option value="queue_descr">Description</option><option value="queue_status">Status</option><option value="long_added_date">Added On</option>
+                                            </select></td>
+                                          <td width="29%">
+                                            <label>
+                                              <input type="text" value=" " id="txtsearch" class="txtfield" name="txtsearch">
+                                            </label>                                </td>
+                                          <td width="7%"><a href="#"><input width="31" type="image" height="33" name="go" id="go" title="Search" src="/images/icon_search.gif"></a></td>						<td width="8%" class="bodytext">Show</td>
+                                          <td width="9%" class="bodytext">
+                                            <select onchange="document.frmsearch.submit()" id="limit" class="limit" name="limit">
+                                              <option value="5">5</option><option selected="" value="10">10</option><option value="20">20</option><option value="40">40</option><option value="80">80</option><option value="160">160</option><option value="320">320</option>
+                                            </select>								</td>
+                                        </tr>
+                                      </tbody>
+                                    </table>
+                                  </form>
+                                </td>
+                                <td width="5%" valign="bottom" class="bodytext">&nbsp;</td>
                               </tr>
-                            </tbody></table></td>
-                            <td align="right"></td>
-                          </tr>
-                        </tbody></table></td>
+                            </tbody>
+                          </table>                          
+                        </td>
                       </tr>
-                    </tbody></table></td>
-                  </tr>
-                </tbody></table>
-				
-				</td>
-              </tr>
-            </tbody></table></td>
+                      <tr>
+                        <td class="tdgap">
+                          <table width="80%" cellspacing="0" cellpadding="0" border="0">
+                            <tbody>
+                              <tr>
+                                <td height="5"></td>
+                              </tr>
+                              <tr>
+                                <td align="right">
+                                  <a href="csv_download.php?id=long&amp;searchfield=&amp;searchval= " class="det_link"><img border="0" title="Export to Excel" src="/images/excel.jpg"></a></td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </td>
+                      </tr>
+                    <form method="post" name="frmjob" id="frmjob"></form>
+                    <tr>
+                      <td>
+                        <div align="center" style="width:80%" id="chldpar2">
+                          <table width="100%" cellspacing="1" cellpadding="0" border="0" class="bgcolor3">
+                            <tbody>
+                              <tr>
+                                <td align="center" width="5%" class="cate_listing_center">
+                                  <input type="checkbox" onclick="javascript:selectall(checked, document.frmjob, 'chkdel[]')" id="checkbox" name="checkbox">
+                                </td>
+                                <td align="left" width="13%" class="cate_listing"><a class="cate_listing_head" href="index.php?cid=14&amp;action=CLQ&amp;left=6&amp;orderby=long_id&amp;sort=ASC&amp;searchfield=&amp;searchval= ">ID</a>  </td>
+                                <td align="left" width="53%" class="cate_listing"><a class="cate_listing_head" href="index.php?cid=14&amp;action=CLQ&amp;left=6&amp;orderby=queue_descr&amp;sort=ASC&amp;searchfield=&amp;searchval= ">Description</a>  </td>
+                                <td align="left" width="13%" class="cate_listing"><a class="cate_listing_head" href="index.php?cid=14&amp;action=CLQ&amp;left=6&amp;orderby=queue_status&amp;sort=ASC&amp;searchfield=&amp;searchval= ">Status</a>  </td>
+                                <td align="left" width="16%" class="cate_listing"><a class="cate_listing_head" href="index.php?cid=14&amp;action=CLQ&amp;left=6&amp;orderby=long_added_date&amp;sort=ASC&amp;searchfield=&amp;searchval= ">Added on</a>  </td>
+                              </tr>
+                              <tr bgcolor="#FFFFFF" style="display:table-row"><td align="center" height="50" class="no_record" colspan="5">Long Jobs are not available</td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>                        
+                      </td>
+                    </tr>
+                    <tr>
+                      <td align="left" class="bodytext">
+                        <table width="80%" cellspacing="1" cellpadding="1" border="0">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <table align="left" width="298" cellspacing="0" cellpadding="0" border="0">
+                                  <tbody>
+                                    <tr align="left" valign="middle">
+                                      <td width="76">
+                                        <img align="absmiddle" width="13" height="13" border="0" title="Edit" src="/images/icon_pending.png">
+                                        &nbsp;Pending
+                                      </td>
+                                      <td width="84">
+                                        <img align="absmiddle" width="13" height="13" border="0" title="Delete" src="/images/icon_inprocess.png">
+                                        &nbsp;In Process 
+                                      </td>
+                                      <td width="77">
+                                        <img align="absmiddle" width="13" height="13" border="0" title="Details" src="/images/online.png">
+                                        &nbsp;Success 
+                                      </td>
+                                      <td width="61">
+                                        <img align="absmiddle" width="13" height="13" src="/images/offline.png">
+                                        &nbsp;Error
+                                      </td>
+                                    </tr>
+                                  </tbody>
+                                </table>
+                              </td>
+                              <td align="right">                                
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>                        
+                      </td>
+                    </tr>
+            </tbody>
+          </table>
+                  
+                </td>
+      </tr>
+    </tbody>
+          </table>
+
+</td>
+</tr>
+</tbody>
+  </table>
+  
+</td>
