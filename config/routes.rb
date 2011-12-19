@@ -102,8 +102,8 @@ scope 'admin' do
   match "/index(/:left)"=>"admin#index",:as => "admin",:via=>[:get,:post,:put],:defaults=>{:left=>'i'}
 #  resources :users
 #  admin client manager
-  match "/clients/all"=>"admin#view_all_clients",:as=>"admin_all_clients"
-  match "/clients/add"=>"admin#add_new_client",:as=>"admin_new_client"
+  match "/clients/all"=>"admin_clients#view_all_clients",:as=>"admin_all_clients"
+  match "/clients/add"=>"admin_clients#add_new_client",:as=>"admin_new_client"
   match "/subscriptions/:type"=>"admin#admin_subscriptions",:as=>"admin_subscriptions",:defaults=>{:type=>'all'}
 #  match "/subscriptions/onhold"=>"admin#subscriptions_on_hold",:as=>"admin_subscriptions_on_hold"
 #  match "/subscriptions/expired"=>"admin#subscriptions_expired",:as=>"admin_subscriptions_expired"

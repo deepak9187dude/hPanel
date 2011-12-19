@@ -5,15 +5,7 @@ class AdminController < ApplicationController
   def index
     
   end
-  
-  def view_all_clients
-    render "admin_clients/view_all_clients"
-  end
-  
-  def add_new_client
-    render "admin_clients/add_new_client"
-  end
-  
+
   def admin_subscriptions    
     @sub_type = params[:type]
     case @sub_type
