@@ -1,35 +1,37 @@
-<td valign="top" class="bgcolor2"><script type="text/javascript">
-  function checkCountry(country) {    
-    if(country == 225) {        
+<script type="text/javascript" src="/javascripts/validate.js"></script>
+<td valign="top" class="bgcolor2">
+  <script type="text/javascript">
+  function checkCountry(country) {
+    if(country == 225) {
+        
       document.getElementById('stateid').style.display= "block";
-      //document.getElementById('usstates2').style.display= "block";          
+           
     } else {
-      document.getElementById('stateid').style.display= "none";
-      //document.getElementById('usstates2').style.display= "none";        
+      document.getElementById('stateid').style.display= "none";         
     }
   }
   </script>
-  <table width="100%" cellspacing="0" cellpadding="0" border="0">
+  <table cellspacing="0" cellpadding="0" border="0" width="100%">
     <tbody>
       <tr>
         <td class="middle_top">
-          <table width="100%" cellspacing="0" cellpadding="0" border="0">
+          <table cellspacing="0" cellpadding="0" border="0" width="100%">
             <tbody>
               <tr>
                 <td colspan="2">
                   <span class="bodytext_1">
-                    <a class="bodylink" href="index.php?cid=3">Home</a> &gt; 
-                    <a class="bodylink" href="index.php?cid=21&amp;action=CMM">Client Manager</a>
-                    &gt; Add New Client  
+                    <a class="bodylink" href="<%= admin_path %>">Home</a> 
+                    &gt; <a class="bodylink" href="<%= admin_path %>">My Account </a> 
+                    &gt; Edit Profile 
                   </span>
                 </td>
               </tr>
               <tr>
-                <td width="47">
-                  <img align="bottom" width="30" height="32" border="0" title="Add New Client" src="/images/icon_add_client_big.png">
+                <td width="44">
+                  <img border="0" align="bottom" width="30" height="32" title="Edit Profile" src="../asset/images/icon_edit_client_big.png">
                 </td>
-                <td width="1262" valign="top" style="padding-top:2px">
-                  <span class="txt_big_red">Add New Client</span>
+                <td width="1265" valign="top" style="padding-top:2px">
+                  <span class="txt_big_red">Edit Profile </span>
                 </td>
               </tr>
             </tbody>
@@ -38,293 +40,15 @@
       </tr>
       <tr>
         <td class="tdgap1">
-          <table width="100%" cellspacing="0" cellpadding="0" border="0">
+          <table cellspacing="0" cellpadding="0" border="0" align="center" width="100%">
             <tbody>
               <tr>
                 <td class="tdgap1">
-                  <form method="post" id="frmucr" name="frmucr" action="index.php?cid=9&amp;action=CMC&amp;userid=0&amp;flag=0">
-                    <table align="left" width="80%" cellspacing="0" cellpadding="0" border="0">
-                      <tbody>
-                        <tr>
-                          <td align="center" colspan="2" class="mandotry">
-                            <span class="bolderror"><br></span>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td colspan="2" class="bgcolor1">
-                            <table width="100%" cellspacing="1" cellpadding="4" border="0" class="bgcolor3">
-                              <tbody>
-                                <tr>
-                                  <td align="right" width="38%" valign="top" class="cate_listing">
-                                    <br><span class="mandotry">*</span> Name :
-                                  </td>
-                                  <td width="62%" valign="top" class="bgcolor4">
-                                    <table width="100%" cellspacing="0" cellpadding="0" border="0">
-                                      <tbody>
-                                        <tr>
-                                          <td align="left" width="18%">Title</td>
-                                          <td width="33%">First Name</td>
-                                          <td width="49%">Last Name</td>
-                                        </tr>
-                                        <tr>
-                                          <td valign="top"> 
-                                            <select id="cmbtitle_1" class="txtdrop1" name="cmbtitle_1">
-                                              <option selected="" value="Mr.">Mr.</option>
-                                              <option value="Mrs.">Mrs.</option>
-                                              <option value="Ms.">Ms.</option>
-                                            </select>
-                                          </td>
-                                          <td valign="top">
-                                            <input type="text" value="" id="txtfirst_1" class="txtfield" name="txtfirst_1">
-                                          </td>
-                                          <td valign="top">                              
-                                            <input type="text" value="" id="txtlast_1" class="txtfield" name="txtlast_1"> 
-                                          </td>
-                                        </tr>
-                                      </tbody>
-                                    </table>
-                                  </td>
-                                </tr>
-                                <tr>
-                                  <td align="right" width="38%" valign="top" class="cate_listing">
-                                    <span class="mandotry">*</span> Email :
-                                  </td>
-                                  <td width="62%" valign="top" class="bgcolor4">
-                                    <input type="text" value="" id="txtemail_1_2" class="txtfield" name="txtemail_1_2">
-                                  </td>
-                                </tr>
-                                <tr>
-                                  <td align="right" valign="top" class="cate_listing">
-                                    <span class="mandotry">*</span> Password :
-                                  </td>
-                                  <td valign="top" class="bgcolor4">         
-                                    <input type="text" value="" id="txtpwd_1" class="txtfield1" name="txtpwd_1">
-                                  </td>
-                                </tr>
-                                <tr>
-                                  <td align="right" valign="top" class="cate_listing">
-                                    <span class="mandotry">*</span> Retype Password:</td>
-                                  <td valign="top" class="bgcolor4">                       
-                                    <input type="text" value="" id="txtrpwd_1" class="txtfield1" name="txtrpwd_1">
-                                  </td>
-                                </tr>
-                                <tr>
-                                  <td align="right" valign="top" class="cate_listing">
-                                    &nbsp;&nbsp;&nbsp;Account Type :
-                                  </td>
-                                  <td valign="top" class="bgcolor4">
-                                    <table width="100%" cellspacing="0" cellpadding="0" border="0">
-                                      <tbody>
-                                        <tr>
-                                          <td width="7%">      
-                                            <input type="radio" checked="" value="Business" id="rdaccount" name="rdaccount">                          </td>
-                                          <td width="93%">
-                                            <span class="bodytext">Business Account</span>
-                                          </td>
-                                        </tr>
-                                        <tr>
-                                          <td>&nbsp;</td>
-                                          <td>
-                                            <span class="bodytext">Company Name</span>
-                                            <br>&nbsp;
-                                            <input type="text" value="" id="txtcompany" class="txtfield1" name="txtcompany">                                                                                              </td>
-                                        </tr>
-                                        <tr>
-                                          <td>
-                                            <input type="radio" value="Personal" id="rdaccount" name="rdaccount">                              </td>
-                                          <td class="bgcolor4">Personal Account</td>
-                                        </tr>
-                                      </tbody>
-                                    </table>                                    
-                                  </td>
-                                </tr>
-                                <tr>
-                                  <td align="right" valign="top" class="cate_listing">
-                                    <span class="mandotry">*</span> Status :
-                                  </td>
-                                  <td valign="top" class="bgcolor4">
-                                    <select id="cmbstatus_1" class="txtdrop" name="cmbstatus_1">
-                                      <option value="Active">Active</option><option selected="" value="On Hold">On Hold</option>
-                                    </select>
-                                  </td>
-                                </tr>
-                                <tr>
-                                  <td align="right" width="38%" valign="top" class="cate_listing">
-                                    <span class="mandotry">*</span> Address Line 1 :
-                                  </td>
-                                  <td width="62%" valign="top" class="bgcolor4">
-                                    <input type="text" value="" id="txtaddr1_1" class="txtfield1" name="txtaddr1_1">
-                                  </td>
-                                </tr>
-                                <tr>
-                                  <td align="right" width="38%" valign="top" class="cate_listing">
-                                    &nbsp;&nbsp;&nbsp;Address Line 2 :
-                                  </td>
-                                  <td width="62%" valign="top" class="bgcolor4">          
-                                    <input type="text" value="" id="txtaddr2" class="txtfield1" name="txtaddr2"> 
-                                  </td>
-                                </tr>
-                                <tr>
-                                  <td align="right" width="38%" valign="top" class="cate_listing">
-                                    &nbsp;&nbsp;&nbsp;<span class="mandotry">*</span> City :
-                                  </td>
-                                  <td width="62%" valign="top" class="bgcolor4">      
-                                    <input type="text" value="" id="txtcity" class="txtfield1" name="txtcity">
-                                  </td>
-                                </tr>
-                                <tr>
-                                  <td align="right" width="38%" valign="top" class="cate_listing">
-                                    &nbsp;&nbsp;&nbsp;<span class="mandotry">*</span> Country :
-                                  </td>
-                                  <td width="62%" valign="top" class="bgcolor4">      
-                                    <select onchange="checkCountry(this.value);" id="cmbcountry" class="txtdrop" name="cmbcountry">
-                                      <option value=""> - Select - </option>
-                                      <option value="1">Afghanistan</option>
-                                      <option value="2">Albania</option>
-                                      <option value="3">Algeria</option>
-                                      <option value="4">American Samoa</option>                                      
-                                    </select>        
-                                  </td>
-                                </tr>
-                              </tbody>
-                            </table>
-                            <div style="display:block" id="stateid">
-                              <table width="100%" cellspacing="1" cellpadding="4" border="0" class="bgcolor3">
-                                <tbody>
-                                  <tr>
-                                    <td align="right" width="38%" valign="top" class="cate_listing">&nbsp;&nbsp;&nbsp;State (US):</td>
-                                    <td width="62%" valign="top" class="bgcolor4"> 
-                                      <select id="cmbstate" class="txtdrop" name="cmbstate">
-                                        <option value="0"> - Select - </option>
-                                        <option value="1">Alabama</option><option value="2">Alaska</option>
-                                        <option value="3">American Somoa</option><option value="4">Arizona</option>
-                                        <option value="5">Arkansas</option><option value="6">Armed Forces Africa</option>
-                                        <option value="7">Armed Forces Americas</option>
-                                        <option value="8">Armed Forces Pacific</option>
-                                        <option value="9">California</option><option value="10">Colorado</option>                                        
-                                      </select>                  
-                                    </td>
-                                  </tr>
-                                </tbody>
-                              </table>
-                            </div>
-                            <table width="100%" cellspacing="1" cellpadding="4" border="0" class="bgcolor3">
-                              <tbody>
-                                <tr>
-                                  <td align="right" width="38%" valign="top" class="cate_listing">
-                                    &nbsp;&nbsp;&nbsp;State Other(other countries) :
-                                  </td>
-                                  <td width="62%" valign="top" class="bgcolor4">     
-                                    <input type="text" value="" id="txtstother" class="txtfield" name="txtstother">  
-                                  </td>
-                                </tr>
-                                <tr>
-                                  <td align="right" width="38%" valign="top" class="cate_listing">
-                                    &nbsp;&nbsp;&nbsp;Postal Code :
-                                  </td>
-                                  <td width="62%" valign="top" class="bgcolor4">  
-                                    <input type="text" value="" id="txtpost_6" class="txtfield1" maxlength="10" name="txtpost_6">
-                                  </td>
-                                </tr>
-                                <tr>
-                                  <td align="right" width="38%" valign="top" class="cate_listing">
-                                    <br><span class="mandotry">*</span> Phone :
-                                  </td>
-                                  <td width="62%" valign="top" class="bgcolor4">
-                                    <table width="100%" cellspacing="0" cellpadding="0" border="0" class="bgcolor4">
-                                      <tbody>
-                                        <tr>
-                                          <td width="28%">Country Code</td>
-                                          <td width="24%">Area Code</td>
-                                          <td width="48%">Number</td>
-                                        </tr>
-                                        <tr>
-                                          <td>                            +
-                                            <label>
-                                              <input type="text" value="" id="txtcc" class="txtfield2" maxlength="5" name="txtcc_7">      
-                                            </label>              
-                                          </td>
-                                          <td>
-                                            <input type="text" value="" id="txtac" class="txtfield2" maxlength="8" name="txtac_7">                              </td>
-                                          <td>
-                                            <input type="text" value="" id="txtnumber" class="txtfield" maxlength="10" name="txtnumber_7">      
-                                          </td>
-                                        </tr>
-                                      </tbody>
-                                    </table>
-                                  </td>
-                                </tr>
-                                <tr>
-                                  <td align="right" width="38%" valign="top" class="cate_listing"><br>&nbsp;&nbsp;&nbsp;Mobile :</td>
-                                  <td width="62%" valign="top" class="bgcolor4"><table width="100%" cellspacing="0" cellpadding="0" border="0" class="bgcolor4">
-                                      <tbody>
-                                        <tr>
-                                          <td width="28%">Country Code</td>
-                                          <td width="24%">Area Code</td>
-                                          <td width="48%">Number</td>
-                                        </tr>
-                                        <tr>
-                                          <td>                            +
-                                            <label>
-                                              <input type="text" value="" id="txtmcc" class="txtfield2" maxlength="5" name="txtmcc_11">                               
-                                            </label>               
-                                          </td>
-                                          <td>
-                                            <input type="text" value="" id="textfield11" class="txtfield2" maxlength="8" name="txtmac_11">                              
-                                          </td>
-                                          <td>
-                                            <input type="text" value="" id="textfield11" class="txtfield" maxlength="10" name="txtmnumber_11">                    
-                                          </td>
-                                        </tr>
-                                      </tbody>
-                                    </table>
-                                  </td>
-                                </tr>
-                                <tr>
-                                  <td align="right" width="38%" valign="top" class="cate_listing"><br>&nbsp;&nbsp;&nbsp;Fax :</td>
-                                  <td width="62%" valign="top" class="bgcolor4"><table width="100%" cellspacing="0" cellpadding="0" border="0" class="bgcolor4">
-                                      <tbody>
-                                        <tr>
-                                          <td width="28%">Country Code</td>
-                                          <td width="24%">Area Code</td>
-                                          <td width="48%">Number</td>
-                                        </tr>
-                                        <tr>
-                                          <td>                            +
-                                            <label>
-                                              <input type="text" value="" id="textfield12" class="txtfield2" maxlength="5" name="txtfcc">
-                                            </label>                      
-                                          </td>
-                                          <td>
-                                            <input type="text" value="" id="textfield13" class="txtfield2" maxlength="8" name="txtfac">
-                                          </td>
-                                          <td>
-                                            <input type="text" value="" id="textfield13" class="txtfield" maxlength="10" name="txtfnumber">                    
-                                          </td>
-                                        </tr>
-                                      </tbody>
-                                    </table>
-                                  </td>
-                                </tr>
-                              </tbody></table>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td align="right" width="296">
-                            <input type="button" onclick="history.back()" value="Cancel" id="btncancel" class="button" name="btncancel">
-                            &nbsp;
-                          </td>
-                          <td align="left" width="489" height="40">
-                            <input type="submit" value="Submit" id="adduser" class="button" name="adduser">
-                          </td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </form>
+                  <%= render :partial => 'form' %>  
                 </td>
               </tr>
             </tbody>
-          </table> 
+          </table>
         </td>
       </tr>
     </tbody>

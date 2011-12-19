@@ -1,0 +1,47 @@
+<tr>
+  <td align="center" height="26" class="bgcolor4_center">
+<center>
+  <input type="checkbox" value="3" id="chkdel" name="chkdel[]">
+</center>
+</td>
+<td height="26" class="bgcolor4">
+  <a class="det_link" href="index.php?cid=9&amp;action=CMT&amp;userid=3"><%= client.name %></a>
+</td>
+<td height="26" class="bgcolor4"><%= client.email %></td>
+<td align="center" height="26" class="bgcolor4">
+  <img title="Active" src="/images/online.png">
+  <span class="Running"><%= client.status %></span>
+</td>
+<td align="center" height="26" class="bgcolor4_center">
+  <table align="center" width="103" cellspacing="0" cellpadding="0" border="0">
+    <tbody>
+      <tr>
+        <td align="center" width="20">
+          <a href="<%= admin_edit_client_path(client) %>">
+            <img width="16" height="20" border="0" title="Edit" src="/images/icon_edit_client.png">
+          </a>
+        </td>
+        <td align="center" width="20">
+          <a style="cursor:pointer" onclick="if(chk_confirm('DELETE','User')!=false) location.href='index.php?cid=9&amp;action=CMD&amp;userid=3&amp;left=0';">
+            <img width="18" height="16" border="0" title="Delete" src="/images/icon_delete.gif">
+          </a>
+        </td>
+        <td align="center" width="20">
+          <a href="index.php?cid=9&amp;action=CMT&amp;userid=3">
+            <img width="18" height="18" border="0" title="View Details" src="/images/icon_details.gif">
+          </a>
+        </td>
+        <td align="center" width="20">
+          <a href="index.php?cid=9&amp;action=CVL&amp;userid=3">
+            <img width="16" height="20" border="0" title="View VM" src="/images/icon_view_vm.png">
+          </a>
+        </td>
+        <td align="center" width="20"><a onclick="window.open('http://localhost/admin/index.php?cid=9&action=CPL&userid=3','VMComplete_login_cp','toolbar=1,location=1,resizable=1,scrollbars=1,width=950,height=560')" style="cursor:pointer">
+            <img width="16" height="20" border="0" title="Login to CP" src="/images/icon_view_client.png">
+          </a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</td>
+</tr>
