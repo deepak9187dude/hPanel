@@ -1,27 +1,46 @@
-<td valign="top" class="bgcolor2"><table width="100%" cellspacing="0" cellpadding="0" border="0">
-    <tbody><tr>
-        <td class="middle_top"><table width="100%" cellspacing="0" cellpadding="0" border="0">
-            <tbody><tr>
-                <td colspan="2"><span class="bodytext_1"><a class="bodylink" href="../index.php?cid=3">Home</a> &gt; <a class="bodylink" href="../index.php?cid=21&amp;action=BMM&amp;left=3"> Billing Manager </a> &gt; <a class="bodylink" href="../index.php?cid=21&amp;action=RVB&amp;left=3">Receivable </a> &gt;Payment Requests/Failed Payments  </span></td>
+<td valign="top" class="bgcolor2">
+  <table width="100%" cellspacing="0" cellpadding="0" border="0">
+    <tbody>
+      <tr>
+        <td class="middle_top">
+          <table width="100%" cellspacing="0" cellpadding="0" border="0">
+            <tbody>
+              <tr>
+                <td colspan="2">
+                  <span class="bodytext_1">
+                    <a class="bodylink" href="../index.php?cid=3">Home</a> &gt;
+                    <a class="bodylink" href="../index.php?cid=21&amp;action=BMM&amp;left=3"> Billing Manager </a> &gt;
+                    <a class="bodylink" href="../index.php?cid=21&amp;action=RVB&amp;left=3">Receivable </a> &gt;Payment Requests/Failed Payments
+                  </span>
+                </td>
               </tr>
               <tr>
-                <td width="4%"><img align="bottom" width="30" height="32" border="0" src="/images/Payment-Requests_larg.png"></td>
-                <td width="96%" valign="top" style="padding-top:2px"><span class="txt_big_red">Payment Requests/Failed Payments</span></td>
+                <td width="4%">
+                  <img align="bottom" width="30" height="32" border="0" src="/images/Payment-Requests_larg.png">
+                </td>
+                <td width="96%" valign="top" style="padding-top:2px">
+                  <span class="txt_big_red">Payment Requests/Failed Payments</span>
+                </td>
               </tr>
-            </tbody></table></td>
+            </tbody>
+          </table>
+        </td>
       </tr>
       <tr>
-        <td style="padding:5px;"><table width="100%" cellspacing="0" cellpadding="0" border="0">
-            <tbody><tr>
+        <td style="padding:5px;">
+          <table width="100%" cellspacing="0" cellpadding="0" border="0">
+            <tbody>
+              <tr>
                 <td>
                   <div style="height:100%" id="dvContent">
                     <div id="content">
                       <div id="gallery">
                         <a href="<%= billing_reveivables_path(3,"orders") %>" class="ondiv">
                           <span onclick="ShowDiv('divAll','divEdit')">
-                            <div title="Orders" class="<%= (params[:receivable]=="orders")?"ondiv":"offdiv" %>">Orders (0)</div>
+                            <div title="Orders" class="<%= (params[:receivable]=="orders")?"ondiv":"offdiv" %>">Orders (0)
+                            </div>
                           </span>
-                        </a>                                  
+                        </a>
                         <a href="<%= billing_reveivables_path(3,"pending") %>" class="offdiv">
                           <div title="Pending " class="<%= (params[:receivable]=="pending")?"ondiv":"offdiv" %>">Pending  (0)</div>
                         </a>
@@ -32,7 +51,8 @@
                         </a>
                         <a href="<%= billing_reveivables_path(3,"cancelled") %>" class="offdiv">
                           <div title="Cancelled Queue" class="<%= (params[:receivable]=="cancelled")?"ondiv":"offdiv" %>">
-                            <span onclick="ShowDiv('divCancelled','divEdit')">Cancelled(0)</span>
+                            <span onclick="ShowDiv('divCancelled','divEdit')">Cancelled(0)
+                            </span>
                           </div>
                         </a>
                         <a href="<%= billing_reveivables_path(3,"requests") %>" class="offdiv">
@@ -44,7 +64,8 @@
 
                       <table width="100%" cellspacing="0" cellpadding="0" border="0">
 
-                        <tbody><tr>
+                        <tbody>
+                          <tr>
                             <td align="left" valign="top">
 
                               <div class="show" style="height:100%" id="Payment Requests">
@@ -52,33 +73,112 @@
                                   <form method="post" name="frmrequests" target="frmEdit" action="searchsubscrmanager.php?search=REQ" id="frmrequests">
                                     <table width="100%" cellspacing="0" cellpadding="0">
                                       <tbody>
-                                        <tr class="cate_listing_head"><td valign="middle" colspan="2">&nbsp;&nbsp;Payment Requests/Failed Payments Search</td>
-                                          <td width="2%" valign="middle"><img align="bottom" onclick="javascript:ShowHideHR('S33');" src="/images/search_show.png" style="padding-left: 2px;" id="imgS33"></td>
+                                        <tr class="cate_listing_head">
+                                          <td valign="middle" colspan="2">&nbsp;&nbsp;Payment Requests/Failed Payments Search
+                                          </td>
+                                          <td width="2%" valign="middle"><img align="bottom" onclick="javascript:ShowHideHR('S33');" src="/images/search_show.png" style="padding-left: 2px;" id="imgS33">
+                                          </td>
                                         </tr>
                                         <tr id="trS33" width="100%">
                                           <td valign="top" colspan="2">
-                                            <table width="100%" cellspacing="0" cellpadding="0" border="0"><tbody>
-                                                <tr><td width="6%" valign="bottom" nowrap="nowrap">ID&nbsp;<br>
-                                                    <input type="text" value="" size="4" id="txtSubid" name="txtSubid">&nbsp;&nbsp;</td>
+                                            <table width="100%" cellspacing="0" cellpadding="0" border="0">
+                                              <tbody>
+                                                <tr>
+                                                  <td width="6%" valign="bottom" nowrap="nowrap">ID&nbsp;<br>
+                                                    <input type="text" value="" size="4" id="txtSubid" name="txtSubid">&nbsp;&nbsp;
+                                                  </td>
                                                   <td width="13%" valign="bottom" nowrap="nowrap">Account Name&nbsp;&nbsp;<br>
-                                                    <input type="text" value="" size="18" id="txtAccname" name="txtAccname"></td>
+                                                    <input type="text" value="" size="18" id="txtAccname" name="txtAccname">
+                                                  </td>
                                                   <td width="13%" valign="bottom" nowrap="nowrap">Hosting Plan Type&nbsp;&nbsp;<br>
-                                                    <select name="cmbCategory_1" id="cmbCategory_1"><option value="0">All</option><option value="1">XEN-VPS</option><option value="2">OpenVZ</option><option value="3">Dedicated Server</option></select>&nbsp;&nbsp;</td>	
-                                                  <td width="5%" valign="bottom" nowrap="nowrap"><input width="31" type="image" height="33" onclick="return formsubmit();" name="go" id="go" title="Search" src="/images/icon_search.gif"></td>
-                                                  <td width="5%" valign="bottom" class="bodytext">Show</td>
+                                                    <select name="cmbCategory_1" id="cmbCategory_1">
+                                                      <option value="0">All</option>
+                                                      <option value="1">XEN-VPS</option>
+                                                      <option value="2">OpenVZ</option>
+                                                      <option value="3">Dedicated Server</option>
+                                                    </select>&nbsp;&nbsp;
+                                                  </td>
+                                                  <td width="5%" valign="bottom" nowrap="nowrap">
+                                                    <input width="31" type="image" height="33" onclick="return formsubmit();" name="go" id="go" title="Search" src="/images/icon_search.gif">
+                                                  </td>
+                                                  <td width="5%" valign="bottom" class="bodytext">Show
+                                                  </td>
                                                   <td width="45%" valign="bottom" class="bodytext">
                                                     <select onchange="document.frmrequests.submit()" id="limit" class="limit" name="limit">
-                                                      <option value="5">5</option><option value="10">10</option><option value="20">20</option><option value="40">40</option><option value="80">80</option><option value="160">160</option><option value="320">320</option>								</select>
+                                                      <option value="5">5</option>
+                                                      <option value="10">10</option>
+                                                      <option value="20">20</option>
+                                                      <option value="40">40</option>
+                                                      <option value="80">80</option>
+                                                      <option value="160">160</option>
+                                                      <option value="320">320</option>
+                                                    </select>
                                                   </td>
                                                 </tr>
 
-                                                <tr><td colspan="6">
+                                                <tr>
+                                                  <td colspan="6">
                                                     <table>
-                                                      <tbody><tr><td>End date after: <br>
-                                                            <input type="hidden" value="0000-00-00" id="dateFrom" name="dateFrom"><input type="hidden" value="1" id="dateFrom_dp" name="dateFrom_dp"><input type="hidden" value="2009" id="dateFrom_year_start" name="dateFrom_year_start"><input type="hidden" value="2025" id="dateFrom_year_end" name="dateFrom_year_end"><input type="hidden" value="" id="dateFrom_mon" name="dateFrom_mon"><input type="hidden" value="" id="dateFrom_da1" name="dateFrom_da1"><input type="hidden" value="" id="dateFrom_da2" name="dateFrom_da2"><input type="hidden" value="" id="dateFrom_sna" name="dateFrom_sna"><input type="hidden" value="" id="dateFrom_aut" name="dateFrom_aut"><input type="hidden" value="" id="dateFrom_frm" name="dateFrom_frm"><input type="hidden" value="" id="dateFrom_tar" name="dateFrom_tar"><input type="hidden" value="" id="dateFrom_inp" name="dateFrom_inp"><input type="hidden" value="d-M-Y" id="dateFrom_fmt" name="dateFrom_fmt"><input type="text" class="calendarcontainer" name="divCalendar_dateFrom_lbl" id="divCalendar_dateFrom_lbl" value="Select Date" readonly="readonly"> <a href="javascript:toggleCalendar('cal_dateFrom');"><img align="absmiddle" border="0" name="tcbtn_dateFrom" id="tcbtn_dateFrom" src="./images/iconCalendar.gif"></a><span style="position: relative;display:none;z-index:10000;" id="cal_dateFrom"><iframe width="134" scrolling="no" height="205" frameborder="0" src="./calendar_form.php?objname=dateFrom&amp;selected_day=0&amp;selected_month=0&amp;selected_year=0&amp;year_start=2009&amp;year_end=2025&amp;dp=1&amp;mon=&amp;da1=&amp;da2=&amp;sna=&amp;aut=&amp;frm=&amp;tar=&amp;inp=&amp;fmt=d-M-Y" style="DISPLAY:block; LEFT:0px; POSITION:absolute; TOP:0px;" id="dateFrom_frame"></iframe></span>											</td><td width="10%">&nbsp;</td><td>End date before: <br>
-                                                            <input type="hidden" value="0000-00-00" id="dateTo" name="dateTo"><input type="hidden" value="1" id="dateTo_dp" name="dateTo_dp"><input type="hidden" value="2009" id="dateTo_year_start" name="dateTo_year_start"><input type="hidden" value="2025" id="dateTo_year_end" name="dateTo_year_end"><input type="hidden" value="" id="dateTo_mon" name="dateTo_mon"><input type="hidden" value="" id="dateTo_da1" name="dateTo_da1"><input type="hidden" value="" id="dateTo_da2" name="dateTo_da2"><input type="hidden" value="" id="dateTo_sna" name="dateTo_sna"><input type="hidden" value="" id="dateTo_aut" name="dateTo_aut"><input type="hidden" value="" id="dateTo_frm" name="dateTo_frm"><input type="hidden" value="" id="dateTo_tar" name="dateTo_tar"><input type="hidden" value="" id="dateTo_inp" name="dateTo_inp"><input type="hidden" value="d-M-Y" id="dateTo_fmt" name="dateTo_fmt"><input type="text" class="calendarcontainer" name="divCalendar_dateTo_lbl" id="divCalendar_dateTo_lbl" value="Select Date" readonly="readonly"> <a href="javascript:toggleCalendar('cal_dateTo');"><img align="absmiddle" border="0" name="tcbtn_dateTo" id="tcbtn_dateTo" src="./images/iconCalendar.gif"></a><span style="position: relative;display:none;z-index:10000;" id="cal_dateTo"><iframe width="134" scrolling="no" height="205" frameborder="0" src="./calendar_form.php?objname=dateTo&amp;selected_day=0&amp;selected_month=0&amp;selected_year=0&amp;year_start=2009&amp;year_end=2025&amp;dp=1&amp;mon=&amp;da1=&amp;da2=&amp;sna=&amp;aut=&amp;frm=&amp;tar=&amp;inp=&amp;fmt=d-M-Y" style="DISPLAY:block; LEFT:0px; POSITION:absolute; TOP:0px;" id="dateTo_frame"></iframe></span>											</td></tr>
-                                                      </tbody></table></td></tr>
-                                              </tbody></table></td></tr>
+                                                      <tbody>
+                                                        <tr>
+                                                          <td>End date after: <br>
+                                                            <input type="hidden" value="0000-00-00" id="dateFrom" name="dateFrom">
+                                                            <input type="hidden" value="1" id="dateFrom_dp" name="dateFrom_dp">
+                                                            <input type="hidden" value="2009" id="dateFrom_year_start" name="dateFrom_year_start">
+                                                            <input type="hidden" value="2025" id="dateFrom_year_end" name="dateFrom_year_end">
+                                                            <input type="hidden" value="" id="dateFrom_mon" name="dateFrom_mon">
+                                                            <input type="hidden" value="" id="dateFrom_da1" name="dateFrom_da1">
+                                                            <input type="hidden" value="" id="dateFrom_da2" name="dateFrom_da2">
+                                                            <input type="hidden" value="" id="dateFrom_sna" name="dateFrom_sna">
+                                                            <input type="hidden" value="" id="dateFrom_aut" name="dateFrom_aut">
+                                                            <input type="hidden" value="" id="dateFrom_frm" name="dateFrom_frm">
+                                                            <input type="hidden" value="" id="dateFrom_tar" name="dateFrom_tar">
+                                                            <input type="hidden" value="" id="dateFrom_inp" name="dateFrom_inp">
+                                                            <input type="hidden" value="d-M-Y" id="dateFrom_fmt" name="dateFrom_fmt">
+                                                            <input type="text" class="calendarcontainer" name="divCalendar_dateFrom_lbl" id="divCalendar_dateFrom_lbl" value="Select Date" readonly="readonly">
+                                                            <a href="javascript:toggleCalendar('cal_dateFrom');">
+                                                              <img align="absmiddle" border="0" name="tcbtn_dateFrom" id="tcbtn_dateFrom" src="./images/iconCalendar.gif">
+                                                            </a>
+                                                            <span style="position: relative;display:none;z-index:10000;" id="cal_dateFrom">
+                                                              <iframe width="134" scrolling="no" height="205" frameborder="0" src="./calendar_form.php?objname=dateFrom&amp;selected_day=0&amp;selected_month=0&amp;selected_year=0&amp;year_start=2009&amp;year_end=2025&amp;dp=1&amp;mon=&amp;da1=&amp;da2=&amp;sna=&amp;aut=&amp;frm=&amp;tar=&amp;inp=&amp;fmt=d-M-Y" style="DISPLAY:block; LEFT:0px; POSITION:absolute; TOP:0px;" id="dateFrom_frame">
+
+                                                              </iframe>
+                                                            </span>
+                                                          </td>
+                                                          <td width="10%">&nbsp;</td>
+                                                          <td>End date before: <br>
+                                                            <input type="hidden" value="0000-00-00" id="dateTo" name="dateTo">
+                                                            <input type="hidden" value="1" id="dateTo_dp" name="dateTo_dp">
+                                                            <input type="hidden" value="2009" id="dateTo_year_start" name="dateTo_year_start">
+                                                            <input type="hidden" value="2025" id="dateTo_year_end" name="dateTo_year_end">
+                                                            <input type="hidden" value="" id="dateTo_mon" name="dateTo_mon">
+                                                            <input type="hidden" value="" id="dateTo_da1" name="dateTo_da1">
+                                                            <input type="hidden" value="" id="dateTo_da2" name="dateTo_da2">
+                                                            <input type="hidden" value="" id="dateTo_sna" name="dateTo_sna">
+                                                            <input type="hidden" value="" id="dateTo_aut" name="dateTo_aut">
+                                                            <input type="hidden" value="" id="dateTo_frm" name="dateTo_frm">
+                                                            <input type="hidden" value="" id="dateTo_tar" name="dateTo_tar">
+                                                            <input type="hidden" value="" id="dateTo_inp" name="dateTo_inp">
+                                                            <input type="hidden" value="d-M-Y" id="dateTo_fmt" name="dateTo_fmt">
+                                                            <input type="text" class="calendarcontainer" name="divCalendar_dateTo_lbl" id="divCalendar_dateTo_lbl" value="Select Date" readonly="readonly">
+                                                            <a href="javascript:toggleCalendar('cal_dateTo');">
+                                                              <img align="absmiddle" border="0" name="tcbtn_dateTo" id="tcbtn_dateTo" src="./images/iconCalendar.gif">
+                                                            </a>
+                                                            <span style="position: relative;display:none;z-index:10000;" id="cal_dateTo">
+                                                              <iframe width="134" scrolling="no" height="205" frameborder="0" src="./calendar_form.php?objname=dateTo&amp;selected_day=0&amp;selected_month=0&amp;selected_year=0&amp;year_start=2009&amp;year_end=2025&amp;dp=1&amp;mon=&amp;da1=&amp;da2=&amp;sna=&amp;aut=&amp;frm=&amp;tar=&amp;inp=&amp;fmt=d-M-Y" style="DISPLAY:block; LEFT:0px; POSITION:absolute; TOP:0px;" id="dateTo_frame">
+
+                                                              </iframe>
+                                                            </span>
+                                                          </td>
+                                                        </tr>
+                                                      </tbody>
+                                                    </table>
+                                                  </td>
+                                                </tr>
+                                              </tbody>
+                                            </table>
+                                          </td>
+                                        </tr>
                                       </tbody>
                                     </table>
                                     <input type="hidden" value="" id="p_start" name="p_start">
@@ -97,8 +197,35 @@
                                     document.getElementById('frmrequests').submit();
                                   }
                                   document.getElementById('start_search').value=2;
-                                </script>										<div id="divAll">
-                                  <table width="100%" cellspacing="0" cellpadding="0" border="0"><tbody><tr><td align="right" valign="middle">&nbsp;<a href="download.php?key=MO" class="det_link"><img title="Export to Excel" src="/images/excel.jpg"></a></td></tr><tr><td valign="middle"><table width="100%" cellspacing="1" cellpadding="0" border="0" class="bgcolor3"><tbody><tr><td class="bodytext"><div id="dvContent"><span class="bodytext">No record</span></div></td></tr></tbody></table></td> </tr></tbody></table>										</div>
+                                </script>
+                                <div id="divAll">
+                                  <table width="100%" cellspacing="0" cellpadding="0" border="0">
+                                    <tbody>
+                                      <tr>
+                                        <td align="right" valign="middle">&nbsp;
+                                          <a href="download.php?key=MO" class="det_link">
+                                            <img title="Export to Excel" src="/images/excel.jpg">
+                                          </a>
+                                        </td>
+                                      </tr>
+                                      <tr>
+                                        <td valign="middle">
+                                          <table width="100%" cellspacing="1" cellpadding="0" border="0" class="bgcolor3">
+                                            <tbody>
+                                              <tr>
+                                                <td class="bodytext">
+                                                  <div id="dvContent">
+                                                    <span class="bodytext">No record</span>
+                                                  </div>
+                                                </td>
+                                              </tr>
+                                            </tbody>
+                                          </table>
+                                        </td>
+                                      </tr>
+                                    </tbody>
+                                  </table>
+                                </div>
                                 <div style="display:none" id="divEdit">
 
                                 </div>
@@ -120,16 +247,22 @@
                                 <div id="divCancelled">
 
                                 </div>
-                              </div><!--close pending orders div -->  
+                              </div><!--close pending orders div -->
 
 
                             </td>
                           </tr>
 
-                        </tbody></table>
+                        </tbody>
+                      </table>
                     </div>
-                  </div></td>
+                  </div>
+                </td>
               </tr>
-            </tbody></table></td>
+            </tbody>
+          </table>
+        </td>
       </tr>
-    </tbody></table></td>
+    </tbody>
+  </table>
+</td>
