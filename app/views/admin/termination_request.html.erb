@@ -1,88 +1,163 @@
-<td valign="top" class="bgcolor2"><table width="100%" cellspacing="0" cellpadding="0" border="0">
-              <tbody><tr>
-                <td class="middle_top"><table width="100%" cellspacing="0" cellpadding="0" border="0">			
-                    <tbody><tr>
-                      <td colspan="2"><span class="bodytext_1"><a class="bodylink" href="index.php?cid=3">Home</a> &gt; <a class="bodylink" href="../index.php?cid=21&amp;action=CMM&amp;left=0">Client Manager</a>   </span></td>
-                    </tr>
-                    <tr>
-                      <td width="4%"><img align="bottom" width="30" height="32" border="0" title="Termination Requests" src="../../asset/images/termination-icn.png"></td>
-                      <td width="96%" valign="top" style="padding-top:2px"><span class="txt_big_red"> Termination Requests</span></td>
-                    </tr>
-                  </tbody></table></td>
+<td valign="top" class="bgcolor2">
+  <table width="100%" cellspacing="0" cellpadding="0" border="0">
+    <tbody>
+      <tr>
+        <td class="middle_top">
+          <table width="100%" cellspacing="0" cellpadding="0" border="0">
+            <tbody>
+              <tr>
+                <td colspan="2">
+                  <span class="bodytext_1">
+                    <a class="bodylink" href="index.php?cid=3">Home</a> &gt;
+                    <a class="bodylink" href="../index.php?cid=21&amp;action=CMM&amp;left=0">Client Manager</a>
+                  </span>
+                </td>
               </tr>
               <tr>
-                <td style="padding:5px;"><table width="100%" cellspacing="0" cellpadding="0" border="0">
-                    <tbody><tr>
-                      <td><table width="100%" cellspacing="0" cellpadding="0" border="0">
-                                                <tbody><tr><td>&nbsp;</td></tr>
-                          <tr>
-                            <td align="left" valign="top"><div id="dvContent">
-                                <div id="content">
-                                  <div id="gallery">
-                                  <div id="divSearch">
-  <form method="post" name="frmtermreq" target="frmEdit" action="searchsubscrmanager.php?search=termreq" id="frmtermreq">
-
-											<table width="80%" cellspacing="0" cellpadding="0">
-											<tbody>
-											<tr class="cate_listing_head"><td valign="middle" colspan="9">&nbsp;&nbsp;Search</td><td width="5%" valign="middle"><img align="bottom" onclick="javascript:ShowHideHR('S33');" src="../../asset/images/search_show.png" style="padding-left: 2px;" id="imgS33"></td></tr>
-											<tr id="trS33">
-											<td valign="top" colspan="9">
-											<table width="100%" cellspacing="0" cellpadding="0" border="0"><tbody>
-											<tr><td width="9%" valign="bottom" nowrap="nowrap">ID&nbsp;<br>
-											<input type="text" value="" size="6" id="txtSubid" name="txtSubid">&nbsp;&nbsp;</td>
-											<td width="16%" valign="top" nowrap="nowrap">Hosting Plan Type&nbsp;&nbsp;<br>
-											<select name="cmbCategory_1" id="cmbCategory_1"><option value="0">All</option><option value="1">XEN-VPS</option><option value="2">OpenVZ</option><option value="3">Dedicated Server</option></select>&nbsp;&nbsp;</td>			
-											<td width="17%" valign="bottom" nowrap="nowrap">Account Name&nbsp;&nbsp;<br>
-											<input type="text" value="" size="18" id="txtAccname" name="txtAccname"></td>
-											<td width="3%" valign="bottom" nowrap="nowrap"><!--<a href="#">-->
-											  <input width="31" type="image" height="33" onclick="return formsubmit();" name="go" id="go" title="Search" src="../../asset/images/icon_search.gif"><!--</a><input name="btnsearch" id="btnsearch" value="Search" type="submit" >--></td>						<td align="left" width="4%" valign="bottom" class="bodytext">Show</td>
-								<td align="left" width="51%" valign="bottom" class="bodytext">
-								<select onchange="document.frmtermreq.submit()" id="limit" class="limit" name="limit">
-								<option value="5">5</option><option value="10">10</option><option value="20">20</option><option value="40">40</option><option value="80">80</option><option value="160">160</option><option value="320">320</option>								</select>
-								</td>
-											</tr>
-											<tr><td colspan="6">&nbsp;</td></tr>
-											
-											</tbody></table></td></tr>
-											</tbody>
-											</table>
-                                            <input type="hidden" value="" id="p_start" name="p_start">
-                                            <input type="hidden" value="" id="p_sort" name="p_sort">
-                                            <input type="hidden" value="" id="column_name" name="column_name">
-                                             <input type="hidden" value="" id="orderby" name="orderby">
-   											 <input type="hidden" value="2" id="start_search" name="start_search">
-											</form>
-											</div>
- <script type="text/javascript">
- function formsubmit()
- {
-	  document.getElementById('start_search').value=1;
-	  document.getElementById('orderby').value="";
-	  document.getElementById('column_name').value="";
-	  document.frmtermreq.submit();
- }
- document.getElementById('start_search').value=2;
- </script>                                  	<div id="term_req">
-                                    	<form method="post" name="frmvm" id="frmvm">
-				  <table width="80%" cellspacing="2" cellpadding="0" border="0">
-				  <tbody><tr><td align="right" valign="middle">&nbsp;<a href="term_reqxls.php" class="det_link"><img title="Export to Excel" src="../../asset/images/excel.jpg"></a></td></tr>
-				  <tr><td valign="top"><table width="100%" cellspacing="1" cellpadding="0" border="0" class="bgcolor3"><tbody><tr><td class="bodytext"><div id="dvContent"><span class="bodytext">No record</span></div></td></tr></tbody></table></td> </tr></tbody></table></form>                                    </div>
-									
-                                   <div style="display:none" id="divEdit">
-										
-										</div> 
-                                       </div>
-                           
-                                                  
-                                  </div>                                 
-                               
-                              </div></td>
-                          </tr>                          
-                          <!--<tr>
-                            <td class="btm_border">&nbsp;</td>
-                          </tr>-->
-                        </tbody></table></td>
-                    </tr>
-                  </tbody></table></td>
+                <td width="4%">
+                  <img align="bottom" width="30" height="32" border="0" title="Termination Requests" src="../../asset/images/termination-icn.png">
+                </td>
+                <td width="96%" valign="top" style="padding-top:2px">
+                  <span class="txt_big_red"> Termination Requests</span>
+                </td>
               </tr>
-            </tbody></table></td>
+            </tbody>
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <td style="padding:5px;"><table width="100%" cellspacing="0" cellpadding="0" border="0">
+            <tbody>
+              <tr>
+                <td>
+                  <table width="100%" cellspacing="0" cellpadding="0" border="0">
+                    <tbody>
+                      <tr>
+                        <td>&nbsp;</td>
+                      </tr>
+                      <tr>
+                        <td align="left" valign="top">
+                          <div id="dvContent">
+                            <div id="content">
+                              <div id="gallery">
+                                <div id="divSearch">
+                                  <form method="post" name="frmtermreq" target="frmEdit" action="searchsubscrmanager.php?search=termreq" id="frmtermreq">
+                                    <table width="80%" cellspacing="0" cellpadding="0">
+                                      <tbody>
+                                        <tr class="cate_listing_head">
+                                          <td valign="middle" colspan="9">&nbsp;&nbsp;Search</td>
+                                          <td width="5%" valign="middle">
+                                            <img align="bottom" onclick="javascript:ShowHideHR('S33');" src="../../asset/images/search_show.png" style="padding-left: 2px;" id="imgS33">
+                                          </td>
+                                        </tr>
+                                        <tr id="trS33">
+                                          <td valign="top" colspan="9">
+                                            <table width="100%" cellspacing="0" cellpadding="0" border="0">
+                                              <tbody>
+                                                <tr>
+                                                  <td width="9%" valign="bottom" nowrap="nowrap">ID&nbsp;<br>
+                                                    <input type="text" value="" size="6" id="txtSubid" name="txtSubid">&nbsp;&nbsp;
+                                                  </td>
+                                                  <td width="16%" valign="top" nowrap="nowrap">Hosting Plan Type&nbsp;&nbsp;<br>
+                                                    <select name="cmbCategory_1" id="cmbCategory_1">
+                                                      <option value="0">All</option>
+                                                      <option value="1">XEN-VPS</option>
+                                                      <option value="2">OpenVZ</option>
+                                                      <option value="3">Dedicated Server</option>
+                                                    </select>&nbsp;&nbsp;
+                                                  </td>
+                                                  <td width="17%" valign="bottom" nowrap="nowrap">Account Name&nbsp;&nbsp;<br>
+                                                    <input type="text" value="" size="18" id="txtAccname" name="txtAccname">
+                                                  </td>
+                                                  <td width="3%" valign="bottom" nowrap="nowrap"><!--<a href="#">-->
+                                                    <input width="31" type="image" height="33" onclick="return formsubmit();" name="go" id="go" title="Search" src="../../asset/images/icon_search.gif"><!--</a><input name="btnsearch" id="btnsearch" value="Search" type="submit" >-->
+                                                  </td>
+                                                  <td align="left" width="4%" valign="bottom" class="bodytext">Show</td>
+                                                  <td align="left" width="51%" valign="bottom" class="bodytext">
+                                                    <select onchange="document.frmtermreq.submit()" id="limit" class="limit" name="limit">
+                                                      <option value="5">5</option>
+                                                      <option value="10">10</option>
+                                                      <option value="20">20</option>
+                                                      <option value="40">40</option>
+                                                      <option value="80">80</option>
+                                                      <option value="160">160</option>
+                                                      <option value="320">320</option>
+                                                    </select>
+                                                  </td>
+                                                </tr>
+                                                <tr>
+                                                  <td colspan="6">&nbsp;</td>
+                                                </tr>
+                                              </tbody>
+                                            </table>
+                                          </td>
+                                        </tr>
+                                      </tbody>
+                                    </table>
+                                    <input type="hidden" value="" id="p_start" name="p_start">
+                                    <input type="hidden" value="" id="p_sort" name="p_sort">
+                                    <input type="hidden" value="" id="column_name" name="column_name">
+                                    <input type="hidden" value="" id="orderby" name="orderby">
+                                    <input type="hidden" value="2" id="start_search" name="start_search">
+                                  </form>
+                                </div>
+                                <script type="text/javascript">
+                                  function formsubmit()
+                                  {
+                                    document.getElementById('start_search').value=1;
+                                    document.getElementById('orderby').value="";
+                                    document.getElementById('column_name').value="";
+                                    document.frmtermreq.submit();
+                                  }
+                                  document.getElementById('start_search').value=2;
+                                </script>
+                                <div id="term_req">
+                                  <form method="post" name="frmvm" id="frmvm">
+                                    <table width="80%" cellspacing="2" cellpadding="0" border="0">
+                                      <tbody>
+                                        <tr>
+                                          <td align="right" valign="middle">&nbsp;
+                                            <a href="term_reqxls.php" class="det_link">
+                                              <img title="Export to Excel" src="../../asset/images/excel.jpg">
+                                            </a>
+                                          </td>
+                                        </tr>
+                                        <tr>
+                                          <td valign="top">
+                                            <table width="100%" cellspacing="1" cellpadding="0" border="0" class="bgcolor3">
+                                              <tbody>
+                                                <tr>
+                                                  <td class="bodytext">
+                                                    <div id="dvContent">
+                                                      <span class="bodytext">No record</span>
+                                                    </div>
+                                                  </td>
+                                                </tr>
+                                              </tbody>
+                                            </table>
+                                          </td>
+                                        </tr>
+                                      </tbody>
+                                    </table>
+                                  </form>                                    </div>
+                                <div style="display:none" id="divEdit">
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </td>
+                      </tr>
+                      <!--<tr>
+                        <td class="btm_border">&nbsp;</td>
+                      </tr>-->
+                    </tbody>
+                  </table>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</td>
