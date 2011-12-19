@@ -1,92 +1,162 @@
-<td valign="top" class="bgcolor2"><table width="100%" cellspacing="0" cellpadding="0" border="0">
-              <tbody><tr>
-                <td class="middle_top"><table width="100%" cellspacing="0" cellpadding="0" border="0">			
-                    <tbody><tr>
-                      <td colspan="2"><span class="bodytext_1"><a class="bodylink" href="index.php?cid=3">Home</a> &gt; <a class="bodylink" href="antifraud_manager.php?left=7">Commerce Manager</a> &gt; Anti-Fraud Manager</span></td>
-                    </tr>
-                    <tr>
-                      <td width="4%"><img align="bottom" width="30" height="32" border="0" title="Anti-Fraud Manager" alt="Anti-Fraud Manager" src="/images/anti-fraud-icn.png"></td>
-                      <td width="96%" valign="top" style="padding-top:2px"><span class="txt_big_red">Anti-Fraud Manager</span></td>
-                    </tr>
-                  </tbody></table></td>
+<td valign="top" class="bgcolor2">
+  <table width="100%" cellspacing="0" cellpadding="0" border="0">
+    <tbody>
+      <tr>
+        <td class="middle_top">
+          <table width="100%" cellspacing="0" cellpadding="0" border="0">
+            <tbody>
+              <tr>
+                <td colspan="2">
+                  <span class="bodytext_1">
+                    <a class="bodylink" href="index.php?cid=3">Home</a> &gt;
+                    <a class="bodylink" href="antifraud_manager.php?left=7">Commerce Manager</a> &gt; Anti-Fraud Manager
+                  </span>
+                </td>
               </tr>
               <tr>
-                <td style="padding:5px;"><table width="100%" cellspacing="0" cellpadding="0" border="0">
-                    <tbody><tr>
-                      <td><table width="100%" cellspacing="0" cellpadding="0" border="0">
-                                                <tbody><tr><td>&nbsp;</td></tr>
-                          <tr>
-                            <td align="left" valign="top">
-                            <div style="height:100%" id="dvContent">
-                                <div id="content">
-                                  <div id="gallery">
-                                  	<div class="show" style="height:100%" id="antifraud">
-								             <div id="divSearch">
-<form method="post" name="frmFraud" target="frmEdit" action="searchsubscrmanager.php?search=antifraud" id="frmFraud">
-	<table width="60%" cellspacing="0" cellpadding="0">
-		<tbody><tr class="cate_listing_head"><td valign="middle">&nbsp;&nbsp;Anti-Fraud Search</td><td width="5%" valign="middle"><img onclick="javascript:ShowHideHR('S33');" style="padding-left: 20px;" id="imgS33" name="imgS33" src="/images/search_show.png"></td></tr>
-        <tr id="trS33" width="100%">
-			<td valign="top">
-            	<table width="100%" cellspacing="0" cellpadding="0" border="0">
-					<tbody><tr>
-                    	<td width="11%" valign="bottom" nowrap="nowrap">ID&nbsp;<br><input type="text" value="" size="4" id="txtuserid" name="txtuserid">&nbsp;&nbsp;</td>
-                        <td width="23%" valign="bottom" nowrap="nowrap">Name&nbsp;&nbsp;<br><input type="text" value="" size="18" id="txtname" name="txtname"></td>
-                    	<td width="14%" valign="top" nowrap="nowrap">Status&nbsp;&nbsp;<br><select name="fstatus" id="fstatus"><option value="0">All</option><option value="1">Active</option><option value="2">On Hold</option></select>&nbsp;&nbsp;</td>                       
-                       
-                        <td width="5%">
-                        <input width="31" type="image" height="33" onclick="return formsubmit();" name="gohold" id="gohold" title="Search" src="/images/icon_search.gif"></td>
-						<td width="5%" valign="bottom" class="bodytext">Show</td>
-								<td width="45%" valign="bottom" class="bodytext">
-								<select onchange="document.frmFraud.submit()" id="limit" class="limit" name="limit">
-								<option value="5">5</option><option value="10">10</option><option value="20">20</option><option value="40">40</option><option value="80">80</option><option value="160">160</option><option value="320">320</option>								</select>
-								</td>
-                    </tr>                  
-              
-                  </tbody></table>
-             </td>
-           </tr>
-         </tbody></table>
-         <input type="hidden" value="" id="p_start" name="p_start">
-    <input type="hidden" value="" id="p_sort" name="p_sort">
-    <input type="hidden" value="" id="column_name" name="column_name">
-    <input type="hidden" value="" id="orderby" name="orderby">
-    <input type="hidden" value="2" id="start_search" name="start_search">
-</form>
-</div>
-<script type="text/javascript">
- function formsubmit()
- {
-	  document.getElementById('start_search').value=1;
-	   document.getElementById('orderby').value="";
-	document.getElementById('column_name').value="";
-	 document.frmFraud.submit();
- }
- document.getElementById('start_search').value=2;
- </script> 
-                                        <div style="width:100%" id="divFraud">
-										<table width="60%" cellspacing="0" cellpadding="0" border="0"><tbody><tr><td align="right" valign="middle">&nbsp;<a href="antifraudxls.php" class="det_link"><img title="Export to Excel" src="/images/excel.jpg"></a></td></tr><tr><td valign="top"><div style="display:none" id="divEdit">
-										
-										</div><table width="100%" cellspacing="1" cellpadding="0" border="0" class="bgcolor3"><tbody><tr><td class="bodytext"><div id="dvContent"><span class="bodytext">No record</span></div></td></tr>										
-                                         
-                                     
-           						  
-                               
-                            
-                               
-                                                    
-                          <!--<tr>
-                            <td class="btm_border">&nbsp;</td>
-                          </tr>-->
-                        </tbody></table></td>
-                    </tr>
-                  </tbody></table></div></div></div></div></div></td>
+                <td width="4%">
+                  <img align="bottom" width="30" height="32" border="0" title="Anti-Fraud Manager" alt="Anti-Fraud Manager" src="/images/anti-fraud-icn.png">
+                </td>
+                <td width="96%" valign="top" style="padding-top:2px">
+                  <span class="txt_big_red">Anti-Fraud Manager</span>
+                </td>
               </tr>
-            </tbody></table></td>
-        </tr>
-      </tbody></table>
-    </td>
-    
-    </tr>
-    
-  </tbody></table>
-  </td>
+            </tbody>
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <td style="padding:5px;">
+          <table width="100%" cellspacing="0" cellpadding="0" border="0">
+            <tbody>
+              <tr>
+                <td>
+                  <table width="100%" cellspacing="0" cellpadding="0" border="0">
+                    <tbody>
+                      <tr>
+                        <td>&nbsp;</td>
+                      </tr>
+                      <tr>
+                        <td align="left" valign="top">
+                          <div style="height:100%" id="dvContent">
+                            <div id="content">
+                              <div id="gallery">
+                                <div class="show" style="height:100%" id="antifraud">
+                                  <div id="divSearch">
+                                    <form method="post" name="frmFraud" target="frmEdit" action="searchsubscrmanager.php?search=antifraud" id="frmFraud">
+                                      <table width="60%" cellspacing="0" cellpadding="0">
+                                        <tbody>
+                                          <tr class="cate_listing_head">
+                                            <td valign="middle">&nbsp;&nbsp;Anti-Fraud Search</td>
+                                            <td width="5%" valign="middle">
+                                              <img onclick="javascript:ShowHideHR('S33');" style="padding-left: 20px;" id="imgS33" name="imgS33" src="/images/search_show.png">
+                                            </td>
+                                          </tr>
+                                          <tr id="trS33" width="100%">
+                                            <td valign="top">
+                                              <table width="100%" cellspacing="0" cellpadding="0" border="0">
+                                                <tbody>
+                                                  <tr>
+                                                    <td width="11%" valign="bottom" nowrap="nowrap">ID&nbsp;<br>
+                                                      <input type="text" value="" size="4" id="txtuserid" name="txtuserid">&nbsp;&nbsp;
+                                                    </td>
+                                                    <td width="23%" valign="bottom" nowrap="nowrap">Name&nbsp;&nbsp;<br>
+                                                      <input type="text" value="" size="18" id="txtname" name="txtname">
+                                                    </td>
+                                                    <td width="14%" valign="top" nowrap="nowrap">Status&nbsp;&nbsp;<br>
+                                                      <select name="fstatus" id="fstatus">
+                                                        <option value="0">All</option>
+                                                        <option value="1">Active</option>
+                                                        <option value="2">On Hold</option>
+                                                      </select>&nbsp;&nbsp;
+                                                    </td>
+
+                                                    <td width="5%">
+                                                      <input width="31" type="image" height="33" onclick="return formsubmit();" name="gohold" id="gohold" title="Search" src="/images/icon_search.gif">
+                                                    </td>
+                                                    <td width="5%" valign="bottom" class="bodytext">Show</td>
+                                                    <td width="45%" valign="bottom" class="bodytext">
+                                                      <select onchange="document.frmFraud.submit()" id="limit" class="limit" name="limit">
+                                                        <option value="5">5</option>
+                                                        <option value="10">10</option>
+                                                        <option value="20">20</option>
+                                                        <option value="40">40</option>
+                                                        <option value="80">80</option>
+                                                        <option value="160">160</option>
+                                                        <option value="320">320</option>
+                                                      </select>
+                                                    </td>
+                                                  </tr>
+
+                                                </tbody>
+                                              </table>
+                                            </td>
+                                          </tr>
+                                        </tbody>
+                                      </table>
+                                      <input type="hidden" value="" id="p_start" name="p_start">
+                                      <input type="hidden" value="" id="p_sort" name="p_sort">
+                                      <input type="hidden" value="" id="column_name" name="column_name">
+                                      <input type="hidden" value="" id="orderby" name="orderby">
+                                      <input type="hidden" value="2" id="start_search" name="start_search">
+                                    </form>
+                                  </div>
+                                  <script type="text/javascript">
+                                    function formsubmit()
+                                    {
+                                      document.getElementById('start_search').value=1;
+                                      document.getElementById('orderby').value="";
+                                      document.getElementById('column_name').value="";
+                                      document.frmFraud.submit();
+                                    }
+                                    document.getElementById('start_search').value=2;
+                                  </script>
+                                  <div style="width:100%" id="divFraud">
+                                    <table width="60%" cellspacing="0" cellpadding="0" border="0">
+                                      <tbody>
+                                        <tr>
+                                          <td align="right" valign="middle">&nbsp;
+                                            <a href="antifraudxls.php" class="det_link">
+                                              <img title="Export to Excel" src="/images/excel.jpg">
+                                            </a>
+                                          </td>
+                                        </tr>
+                                        <tr>
+                                          <td valign="top"><div style="display:none" id="divEdit">
+                                            </div>
+                                            <table width="100%" cellspacing="1" cellpadding="0" border="0" class="bgcolor3">
+                                              <tbody>
+                                                <tr>
+                                                  <td class="bodytext">
+                                                    <div id="dvContent">
+                                                      <span class="bodytext">No record</span>
+                                                    </div>
+                                                  </td>
+                                                </tr>
+                                                <!--<tr>
+                                                  <td class="btm_border">&nbsp;</td>
+                                                </tr>-->
+                                              </tbody>
+                                            </table>
+                                          </td>
+                                        </tr>
+                                      </tbody>
+                                    </table>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</td>
