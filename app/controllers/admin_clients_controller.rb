@@ -4,18 +4,20 @@ class AdminClientsController < ApplicationController
   
   
   def view_all_clients
-    @clients = User.find(:all)
+    @users = User.find(:all)
   end
   
   
   def add_new_client
-    @client_title = {"Mr."=>"Mr.","Mrs."=>"Mrs.","Ms."=>"Ms."}
-    @client = User.new      
+    @user_title = {"Mr."=>"Mr.","Mrs."=>"Mrs.","Ms."=>"Ms."}
+    @user = User.new
+    @url = admin_create_client_path
   end
   
   def client_edit
-    @client_title = {"Mr."=>"Mr.","Mrs."=>"Mrs.","Ms."=>"Ms."}
-    @client = User.find(params[:id])
+    @user_title = {"Mr."=>"Mr.","Mrs."=>"Mrs.","Ms."=>"Ms."}
+    @user = User.find(params[:id])
+   @url = admin_update_client_path
   end
   
   def create
@@ -24,5 +26,13 @@ class AdminClientsController < ApplicationController
       @user.save!
     end
     redirect_to(admin_all_clients_path)
+  end
+  
+  def client_update
+    if params[:client]
+      @user = User.find(params[:id])
+      @user.update_attributes(params[:user])
+    end
+    redirect_to(admin_all_clients_path)   
   end
 end
