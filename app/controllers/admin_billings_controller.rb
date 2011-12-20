@@ -34,10 +34,14 @@ class AdminBillingsController < ApplicationController
   end
   
   def gateway_settings
-    
+      @gateway_settings = Gateway.all
   end
   
   def fraud_score
     
   end
+  
+  def configure_gateway
+  end
+  
 end

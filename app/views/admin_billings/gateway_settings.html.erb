@@ -39,7 +39,7 @@
 
               </tr>
               <tr>
-              <td align="left" height="20%" valign="bottom"><a href="selgateways.php?left=7" class="sm_heading">Select Payment Gateway </a></td>
+              <td align="left" height="20%" valign="bottom"><a href="#" class="sm_heading">Select Payment Gateway </a></td>
               </tr>
               <tr>
                 <td class="btm_border" colspan="4"></td>
@@ -77,36 +77,7 @@
                                               <td align="center" width="20%" class="cate_listing">Action</td>
                                             </tr>
                                             <tr>
-                                              <!--<td   align="center" class="bgcolor4_center">
-                                                       <input type="checkbox" name="chkdel[]" id="chkdel" value="1"/>
-                                                     </td>-->
-                                              <td align="center" width="50%" class="bgcolor4">
-                                                <a href="addgateway.php?id=1&amp;left=7" class="det_link">Paypal</a>
-                                              </td>
-
-                                              <td align="center" width="20%" valign="middle" class="bgcolor4">
-                                                <img title="Active" src="/images/online.png">
-                                                <span class="Running">&nbsp;Active</span>
-                                              </td>
-                                              <td align="center" width="20%" class="bgcolor4">
-                                                <a href="addgateway.php?id=1&amp;left=7" class="det_link">Configure</a>
-                                              </td>
-                                            </tr>
-                                            <tr>
-                                              <!--<td   align="center" class="bgcolor4_center">
-                                                       <input type="checkbox" name="chkdel[]" id="chkdel" value="2"/>
-                                                     </td>-->
-                                              <td align="center" width="50%" class="bgcolor4">
-                                                <a href="addgateway.php?id=2&amp;left=7" class="det_link">Authorize.Net</a>
-                                              </td>
-
-                                              <td align="center" width="20%" valign="middle" class="bgcolor4">
-                                                <img title="Active" src="/images/online.png">
-                                                <span class="Running">&nbsp;Active</span>
-                                              </td>
-                                              <td align="center" width="20%" class="bgcolor4">
-                                                <a href="addgateway.php?id=2&amp;left=7" class="det_link">Configure</a>
-                                              </td>
+                                               <%= render :partial=>'gateway_setting',:collection=>@gateway_settings %>
                                             </tr>
                                           </tbody>
                                         </table>
