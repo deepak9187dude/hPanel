@@ -1,5 +1,11 @@
-<%= form_for @user, :as => :user, :url => admin_update_client_path,:html=>{:onsubmit=>"return validateForms('frmusr_edit');",:id=>"frmusr_edit"} do |f| %>
+<% if params[:action] == "client_edit" %>
+  <% @url = admin_update_client_path %>    
+ <% elsif params[:action]=="add_new_client" %>
+  <% @url = admin_create_client_path %>
+<% end %>
 
+
+<%= form_for @user, :as => :user, :url => @url,:html=>{:onsubmit=>"return validateForms('frmusr_edit');",:id=>"frmusr_edit"} do |f| %>
   <table cellspacing="0" cellpadding="0" border="0" width="80%">
     <tbody>
       <tr>

@@ -4,6 +4,11 @@ class AdminClientsController < ApplicationController
   
   
   def view_all_clients
+#    Delete Users
+    if params[:chkdel]
+      del = params[:chkdel]
+#      User.destroy(del)      
+    end
     @users = User.find(:all)
   end
   
@@ -20,6 +25,19 @@ class AdminClientsController < ApplicationController
    @url = admin_update_client_path
   end
   
+  def general_settings
+    @user = User.find(params[:id])
+  end
+  
+  def client_vms
+    
+  end
+  def containers
+    
+  end
+  def billing_history
+    
+  end
   def create
     if params[:user]
       @user = User.new(params[:user])
@@ -29,7 +47,7 @@ class AdminClientsController < ApplicationController
   end
   
   def client_update
-    if params[:client]
+    if params[:user]
       @user = User.find(params[:id])
       @user.update_attributes(params[:user])
     end

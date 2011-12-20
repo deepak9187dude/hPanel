@@ -39,25 +39,25 @@
                           <div style="height:100%" id="dvContent">
                             <div id="content">
                               <div id="gallery">
-                                <a href="<%= admin_subscriptions_path("all",0) %>" class="ondiv">
+                                <a href="<%= admin_subscriptions_path("all") %>" class="ondiv">
                                   <div title="All Subscriptions" class="<%= (params[:type]=="all")?"ondiv":"offdiv" %>">
                                     <span onclick="ShowDiv('divAll','divEdit')">All Subscriptions (0)</span>
                                   </div>
                                 </a>								 
-                                <a href="<%= admin_subscriptions_path("onhold",0) %>" class="ondiv">
+                                <a href="<%= admin_subscriptions_path("onhold") %>" class="ondiv">
                                   <div title="Subscriptions On Hold" class="<%= (params[:type]=="onhold")?"ondiv":"offdiv" %>">Subscriptions On Hold (0)</div>
                                 </a>
-                                <a href="<%= admin_subscriptions_path("expired",0) %>" class="offdiv">
+                                <a href="<%= admin_subscriptions_path("expired") %>" class="offdiv">
                                   <div title="Expired" class="<%= (params[:type]=="expired")?"ondiv":"offdiv" %>">
                                     <span onclick="ShowDiv('divExpired','divEdit')">Expired (0)</span>
                                   </div>
                                 </a>
-                                <a href="<%= admin_subscriptions_path("termination",0) %>" class="offdiv">
+                                <a href="<%= admin_subscriptions_path("termination") %>" class="offdiv">
                                   <div title="Termination Queue" class="<%= (params[:type]=="termination")?"ondiv":"offdiv" %>">
                                     <span onclick="ShowDiv('divTermination','divEdit')">Termination Queue (0)</span>
                                   </div>
                                 </a>
-                                <a href="<%= admin_subscriptions_path("failed",0) %>" class="offdiv">
+                                <a href="<%= admin_subscriptions_path("failed") %>" class="offdiv">
                                   <div title="Transaction Failed" class="<%= (params[:type]=="failed")?"ondiv":"offdiv" %>">
                                     <span onclick="ShowDiv('divFailed','divEdit')">Failed(0)</span>
                                   </div>

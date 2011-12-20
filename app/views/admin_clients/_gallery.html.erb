@@ -1,0 +1,34 @@
+<div id="gallery">
+  <a href="<%=  admin_client_general_settings_path(params[:id]) %>" class="<%= (params[:action]=="general_settings")?"ondiv":"offdiv" %>">
+    <span>
+      <div title="General Settings" class="<%= (params[:action]=="general_settings")?"ondiv":"offdiv" %>">
+        <span onclick="ShowDiv('divGS','divTmp')">General Settings</span>
+      </div>                
+    </span>
+  </a>
+  <a href="<%=  admin_client_containers_path(params[:id]) %>" class="<%= (params[:action]=="containers")?"ondiv":"offdiv" %>">
+    <div title="Containers" class="<%= (params[:action]=="containers")?"ondiv":"offdiv" %>">
+      <span onclick="ShowDiv('divC','divTmp')">Containers</span>
+    </div> 
+  </a>
+  <a href="<%=  admin_client_fraudstatus_path(params[:id]) %>" class="<%= (params[:action]=="fraudstatus")?"ondiv":"offdiv" %>">
+    <div title="Anti-fraud status" class="<%= (params[:action]=="fraudstatus")?"ondiv":"offdiv" %>">
+      <span onclick="ShowDiv('divA','divTmp')">Anti-fraud status</span>
+    </div> 
+  </a>
+  <a href="<%=  admin_client_subscriptions_path(params[:id]) %>" class="<%= (params[:action]=="subscriptions")?"ondiv":"offdiv" %>">
+    <div title="Subscriptions" class="<%= (params[:action]=="subscriptions")?"ondiv":"offdiv" %>">
+      <span onclick="ShowDiv('divS','divTmp')">Subscriptions</span>
+    </div> 
+  </a>
+  <a href="<%=  admin_client_billing_history_path(params[:id]) %>" class="<%= (params[:action]=="billing_history")?"ondiv":"offdiv" %>">
+    <div title="Billing History" class="<%= (params[:action]=="billing_history")?"ondiv":"offdiv" %>">
+      <span onclick="ShowDiv('divBH','divTmp')">Billing History</span>
+    </div> 
+  </a>
+  <a href="<%=  admin_client_payment_settings_path(params[:id]) %>" class="<%= (params[:action]=="payment_settings")?"ondiv":"offdiv" %>">
+    <div title="Payment settings" class="<%= (params[:action]=="payment_settings")?"ondiv":"offdiv" %>">
+      <span onclick="ShowDiv('divPS','divTmp')">Payment settings</span>
+    </div> 
+  </a>
+</div>

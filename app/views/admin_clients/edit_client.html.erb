@@ -1,0 +1,41 @@
+<td valign="top" class="bgcolor2"><script type="text/javascript">
+
+
+function checkCountry(country) {
+    if(country == 225) {
+        
+        document.getElementById('stateid').style.display= "block";
+        //document.getElementById('usstates2').style.display= "block";
+          
+    } else {
+        document.getElementById('stateid').style.display= "none";
+        //document.getElementById('usstates2').style.display= "none";
+        
+    }
+
+}
+</script>
+<table width="100%" cellspacing="0" cellpadding="0" border="0">
+  <tbody><tr>
+  <td class="middle_top"><table width="100%" cellspacing="0" cellpadding="0" border="0">
+                  <tbody><tr>
+                    <td colspan="2"><span class="bodytext_1"><a class="bodylink" href="index.php?cid=3">Home</a> &gt;  <a class="bodylink" href="index.php?cid=21&amp;action=CMM">Client Manager</a> &gt; Edit Client  </span></td>
+        </tr>
+                  <tr>
+                    <td width="47"><img align="bottom" width="30" height="32" border="0" title="Edit Client" src="../asset/images/icon_edit_client_big.png"></td>
+                    <td width="1262" valign="top" style="padding-top:2px"><span class="txt_big_red">Edit Client</span></td>
+                  </tr>
+                </tbody></table></td>
+
+  </tr>
+  <tr>
+    <td class="tdgap1"><table width="100%" cellspacing="0" cellpadding="0" border="0">
+        <tbody><tr>
+          <td class="tdgap1">
+		 <%= render :partial => 'form' %>
+		  </td>
+        </tr>
+    </tbody></table> </td>
+  </tr>
+</tbody></table>
+</td>

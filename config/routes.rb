@@ -107,6 +107,14 @@ scope 'admin' do
   match "/clients/create"=>"admin_clients#create",:as=>"admin_create_client"
   match "/clients/:id/edit"=>"admin_clients#client_edit",:as=>"admin_edit_client"
   match "/clients/:id/update"=>"admin_clients#client_update",:as=>"admin_update_client"
+  match "/clients/:id/delete"=>"admin_clients#client_delete",:as=>"admin_delete_client"
+  match "/clients/:id/settings"=>"admin_clients#general_settings",:as=>"admin_client_general_settings"
+  match "/clients/:id/containers"=>"admin_clients#containers",:as=>"admin_client_containers"
+  match "/clients/:id/fraudstatus"=>"admin_clients#fraudstatus",:as=>"admin_client_fraudstatus"
+  match "/clients/:id/subscriptions"=>"admin_clients#subscriptions",:as=>"admin_client_subscriptions"
+  match "/clients/:id/billing/history"=>"admin_clients#billing_history",:as=>"admin_client_billing_history"
+  match "/clients/:id/billing/settings"=>"admin_clients#payment_settings",:as=>"admin_client_payment_settings"
+  match "/clients/:id/vms"=>"admin_clients#client_vms",:as=>"admin_client_vms"
   
   match "/subscriptions/:type"=>"admin#admin_subscriptions",:as=>"admin_subscriptions",:defaults=>{:type=>'all'}
 #  match "/subscriptions/onhold"=>"admin#subscriptions_on_hold",:as=>"admin_subscriptions_on_hold"

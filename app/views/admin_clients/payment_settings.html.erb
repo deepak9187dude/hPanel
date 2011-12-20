@@ -1,0 +1,212 @@
+<td valign="top" class="bgcolor2"><script type="text/javascript">
+  function ShowHideSerch(id)
+  {
+    var  browser_type = navigator.appName;
+    var imgId = "img"+id;
+    id = "tr"+id;
+ 
+    var img = document.getElementById(imgId);
+	 
+    if(browser_type=="Microsoft Internet Explorer")
+    {
+      if(img.src == "http://localhost/asset/images/search_show.png")
+      {
+        img.src = "http://localhost/asset/images/search_hide.png";
+        //document.getElementById(id).style.display='none';
+        window.document.getElementById(id).style.setAttribute('display', 'none');
+			
+      }
+      else
+      {
+        img.src = "http://localhost/asset/images/search_show.png";
+        //document.getElementById(id).style.display='table-row';
+        window.document.getElementById(id).style.setAttribute('cssText', 'table-row');
+		
+	
+      }
+    }
+    else
+    {
+		
+      if(img.src == "http://localhost/asset/images/search_show.png")
+      {
+        img.src = "http://localhost/asset/images/search_hide.png";
+        document.getElementById(id).style.display='none';
+			
+      }
+      else
+      {
+        img.src = "http://localhost/asset/images/search_show.png";
+        document.getElementById(id).style.display='table-row';
+		
+	
+      }
+    }	
+  }
+  </script>
+
+  <table width="100%" cellspacing="0" cellpadding="0" border="0">
+    <tbody><tr>
+        <td class="middle_top"><table width="100%" cellspacing="0" cellpadding="0" border="0">
+            <tbody><tr>
+                <td colspan="3"><span class="bodytext_1"><a class="bodylink" href="index.php?cid=3">Home</a> &gt; <a class="bodylink" href="index.php?cid=21&amp;action=CMM">Client Manager</a> &gt; <a class="bodylink" href="index.php?cid=9&amp;action=CML&amp;left=0">Clients</a> &gt; Payment Settings </span></td>
+              </tr>
+              <tr>
+                <td width="3%"><img align="bottom" width="30" height="32" border="0" src="/images/icon_view_client_big.png"></td>
+                <td width="92%" valign="top" style="padding-top:2px; padding-left:7px"><span class="txt_big_red">deepak sharma</span></td>
+                <td width="5%" valign="top" style="padding-top:2px"><img align="bottom" width="30" height="30" border="0" title="#STATUS#" src="/images/online_big.png"></td>
+              </tr>
+            </tbody></table></td>
+      </tr>
+      <tr>
+        <td class="tdgap1">
+          <%= render :partial=>'gallery' %>
+          <div class="hide" style="height: 100%;" id="General Settings">
+            <div id="divTmp">
+            </div>
+            <div id="divGS">
+            </div>
+          </div>
+          <div class="hide" style="height: 100%;" id="Containers">
+
+            <div id="divC">
+            </div>
+          </div>
+          <div class="hide" style="height: 100%;" id="Anti-fraud status">
+            <div id="divA">
+            </div>
+          </div>
+          <div class="hide" style="height: 100%;" id="Subscriptions">								   	 								 		<div id="divS">
+            </div>
+          </div>								 
+          <div class="hide" style="height: 100%;" id="Billing History">
+
+            <div id="divBH">
+
+            </div>
+          </div>
+          <div class="show" style="height: 100%;" id="Payment settings">
+            <table width="100%" cellspacing="0" cellpadding="0" border="0">
+              <tbody><tr>
+                  <td>
+                    <table width="100%" cellspacing="0" cellpadding="0" border="0">
+                      <tbody><tr>
+                          <td width="7%"><span class="bodytext">Actions</span></td>
+                          <td width="93%" class="line_bg">&nbsp;</td>
+                        </tr>
+                      </tbody></table>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="btm_border">
+                    <table width="160" cellspacing="0" cellpadding="0" border="0">
+                      <tbody><tr>
+                          <td align="center"> 
+                            <a href="index.php?cid=9&amp;left=0&amp;action=CCN&amp;userid=3"><img align="absmiddle" width="30" height="32" border="0" title="New Payment Method" src="/images/icon_gateway_big.png"></a>
+                          </td>
+                        </tr>
+
+                        <tr>
+                          <td align="center" valign="top" height="20"><a class="sm_heading" href="index.php?cid=9&amp;left=0&amp;action=CCN&amp;userid=3">New Payment Method </a></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </td>
+                </tr>					
+                <tr>
+                  <td>
+                    <table width="75%" cellspacing="0" cellpadding="0" border="0"> 
+                      <tbody><tr><td><div class="Running" style="clear:both; text-align:center; padding: 2px 2px 2px 2px"> </div></td></tr>							
+                      <form id="frmsearch" method="post" action="index.php?cid=9&amp;action=CMP&amp;left=0" name="frmsearch"></form>    
+                      <tr>
+                        <td width="50%">&nbsp;
+                        </td>
+                      </tr>
+                      <tr>
+                        <td width="50%">
+                          <table width="100%" cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr class="cate_listing_head"><td valign="middle">&nbsp;&nbsp;Search</td><td width="5%" valign="middle"><img align="bottom" onclick="javascript:ShowHideSerch('HR33');" src="/images/search_show.png" style="padding-left: 20px;" id="imgHR33"></td></tr>
+                            </tbody></table>
+                        </td>
+                      </tr>
+                      <tr id="trHR33">
+                        <td align="left" width="79%">
+                          <table width="75%" cellspacing="0" cellpadding="0" border="0">
+                            <tbody><tr>
+
+                                <td width="13%" class="bodytext">ID<br>
+                                  <label>
+                                    <input type="text" size="4" value="" id="txtid" name="txtid">
+                                  </label>
+                                </td>
+                                <td width="25%" class="bodytext">Card No.<br>                               
+                                  <label>
+                                    <input type="text" size="20" maxlength="16" value="" id="txtnum" name="txtnum">
+                                  </label>
+                                </td>
+                                <td width="28%" valign="top" class="bodytext">Type<br>
+                                  <select id="cmbtype" name="cmbtype">
+
+                                    <option selected="" value="All">All</option>
+                                    <option value="Visa">Visa</option><option value="MasterCard">MasterCard</option><option value="Discover">Discover</option><option value="American Express">American Express</option>	
+
+                                  </select>
+                                </td>
+                                <td width="20%" valign="top" class="bodytext">Status<br>
+                                  <select id="cmbstatus" name="cmbstatus">											
+                                    <option selected="" value="All">All</option>
+                                    <option value="1">Active</option><option value="0">Disabled</option>
+
+                                  </select>
+                                </td>
+                                <td width="5%"><input width="31" type="image" height="33" name="go" id="go" title="Search" src="/images/icon_search.gif"></td>
+                                <td width="5%" valign="bottom" class="bodytext">Show</td>
+                                <td width="20%" valign="bottom" class="bodytext">
+                                  <select onchange="document.frmsearch.submit()" id="limit" class="limit" name="limit">
+                                    <option value="5">5</option><option selected="" value="10">10</option><option value="20">20</option><option value="40">40</option><option value="80">80</option><option value="160">160</option><option value="320">320</option>
+                                  </select>
+                                </td>
+                              </tr>
+                            </tbody></table>
+                        </td>
+                      </tr>
+              </tbody></table>
+        </td>
+      </tr>
+    <form action="" method="post" name="frmvm" id="frmvm"></form>
+    <tr><td>
+        <table align="left" width="75%" cellspacing="1" cellpadding="0" border="0">
+          <tbody><tr><td align="right" valign="middle" bordercolor="#FF0000" colspan="8"> &nbsp;<a href="downloadxls.php?key=CMP&amp;searchval1=&amp;searchval2=&amp;searchval3=&amp;searchval4=" class="det_link"><img title="Export to Excel" src="/images/excel.jpg"></a></td></tr>
+          </tbody></table>
+      </td></tr>
+    <tr>
+      <td><div align="center" id="chldpar2">
+
+          <table align="left" width="75%" cellspacing="1" cellpadding="0" border="0" class="bgcolor3">
+            <tbody><tr>
+
+                <td width="6%" valign="middle" class="cate_listing"><a class="cate_listing" href="index.php?cid=9&amp;left=2&amp;action=CMP&amp;orderby=id&amp;sort=ASC&amp;searchval1=&amp;searchval2=&amp;searchval3=&amp;searchval4=&amp;limit=10&amp;page=&amp;userid=3">ID</a>  </td>
+                <td width="23%" class="cate_listing"><a class="cate_listing" href="index.php?cid=9&amp;left=2&amp;action=CMP&amp;orderby=cnum&amp;sort=ASC&amp;searchval1=&amp;searchval2=&amp;searchval3=&amp;searchval4=&amp;limit=10&amp;page=&amp;userid=3">Card No.</a>  </td>
+                <td width="25%" class="cate_listing"><a class="cate_listing" href="index.php?cid=9&amp;left=2&amp;action=CMP&amp;orderby=type&amp;sort=ASC&amp;searchval1=&amp;searchval2=&amp;searchval3=&amp;searchval4=&amp;limit=10&amp;page=&amp;userid=3">Type</a>  </td>
+                <!--<td width="15%"  class="cate_listing"><a href="index.php?cid=9&left=2&action=CMP&orderby=edate&sort=ASC&searchval1=&searchval2=&searchval3=&searchval4=&limit=10&page=&userid=3" class="cate_listing">Expiration Date</a>  </td>-->                                                      
+                <td width="24%" class="cate_listing"><a class="cate_listing" href="index.php?cid=9&amp;left=2&amp;action=CMP&amp;orderby=status&amp;sort=ASC&amp;searchval1=&amp;searchval2=&amp;searchval3=&amp;searchval4=&amp;limit=10&amp;page=&amp;userid=3">Status</a>  </td>
+              </tr>
+
+              <tr style="display:table-row"><td align="center" height="50" bgcolor="#FFFFFF" class="no_record" colspan="8">Payment Settings are not available</td>
+              </tr>
+            </tbody></table>
+        </div></td>
+    </tr>
+    <tr>
+      <td class="bodytext"><table width="75%" cellspacing="1" cellpadding="1" border="0">
+          <tbody><tr>
+
+              <td align="right" width="100%" colspan="2"></td>
+            </tr>
+          </tbody></table></td>
+    </tr>
+  </tbody></table></div></td>
+</tr>
+</tbody></table>
+
+</td>

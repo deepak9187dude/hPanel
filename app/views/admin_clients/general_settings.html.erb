@@ -1,0 +1,153 @@
+<td valign="top" class="bgcolor2"><script language="javascript" type="text/javascript">
+  function ShowDiv(id1, id2)
+  {
+ 
+    window.document.getElementById(id1).style.display = "block";
+    window.document.getElementById(id2).style.display = "none";
+
+  }
+  </script>
+  <!-- action CMT-->
+  <table width="100%" cellspacing="0" cellpadding="0" border="0">
+    <tbody><tr>
+        <td class="middle_top"><table width="100%" cellspacing="0" cellpadding="0" border="0">
+            <tbody><tr>
+                <td colspan="3"><span class="bodytext_1"><a class="bodylink" href="index.php?cid=3">Home</a> &gt; <a class="bodylink" href="index.php?cid=21&amp;action=CMM">Client Manager</a> &gt; <a class="bodylink" href="index.php?cid=9&amp;action=CML&amp;left=0">Clients</a> &gt; General Settings</span></td>
+              </tr>
+              <tr>
+                <td width="3%"><img align="bottom" width="30" height="32" border="0" src="/images/icon_view_client_big.png"></td>
+                <td width="92%" valign="top" style="padding-top:2px; padding-left:7px"><span class="txt_big_red">deepak sharma</span></td>
+                <td width="5%" valign="top" style="padding-top:2px"><img align="bottom" width="30" height="30" border="0" title="Active" src="/images/online_big.png"></td>
+              </tr>
+            </tbody></table></td>
+
+      </tr>
+      <tr>
+        <td class="tdgap1">
+          <%= render :partial=>'gallery' %>
+          <div class="show" style="height: 100%;" id="General Settings">
+            <div id="divTmp">
+            </div>
+            <div id="divGS">
+              <table width="100%" cellspacing="0" cellpadding="0" border="0">
+                <tbody><tr>
+                    <td class="btm_border"><table width="100%" cellspacing="0" cellpadding="0" border="0">
+                        <tbody><tr>
+                            <td><table width="100%" cellspacing="0" cellpadding="0" border="0">
+                                <tbody><tr>
+                                    <td width="7%"><span class="bodytext">Actions</span></td>
+                                    <td width="93%" class="line_bg">&nbsp;</td>
+                                  </tr>
+                                </tbody></table></td>
+                          </tr>
+                          <tr>
+                            <td><table width="160" cellspacing="0" cellpadding="0" border="0">
+                                <tbody><tr>
+                                    <td align="center" width="12%" valign="top"><table width="100%" cellspacing="1" cellpadding="1" border="0">
+                                        <tbody><tr>
+                                            <td align="center" height="41"><a href="index.php?cid=9&amp;action=CME&amp;userid=3"><img align="absmiddle" width="30" height="32" border="0" title="Edit Client" src="/images/icon_edit_client_big.png"></a></td>
+                                          </tr>
+                                          <tr>
+                                            <td align="center"><a class="sm_heading" href="index.php?cid=9&amp;action=CME&amp;userid=3"><span class="sm_heading">Edit Profile </span></a></td>
+                                          </tr>
+                                        </tbody></table></td>
+                                    <td align="center" width="12%" valign="top"><table width="94%" cellspacing="1" cellpadding="1" border="0">
+                                        <tbody><tr>
+                                            <td align="center" height="41"><a style="cursor:pointer" onclick="if(chk_confirm('DELETE','User')!=false) location.href='index.php?cid=9&amp;action=CMD&amp;userid=3&amp;left=0';"> <img align="absmiddle" width="26" height="29" border="0" name="serverdel" title="Delete Client" src="/images/icon_delete_big.gif"> </a></td>
+                                          </tr>
+                                          <tr>
+                                            <td align="center" valign="top" height="20"><a style="cursor:pointer" onclick="if(chk_confirm('DELETE','User')!=false) location.href='index.php?cid=9&amp;action=CMD&amp;userid=3&amp;left=0';" class="sm_heading">Delete </a></td>
+                                          </tr>
+                                        </tbody></table></td>
+                                  </tr>
+                                </tbody></table></td>
+                          </tr>
+                        </tbody></table></td>
+                  </tr>
+                  <tr>
+                    <td class="tdgap1"><table align="left" width="50%" cellspacing="0" cellpadding="0" border="0">
+                        <tbody><tr>
+                            <td class="bgcolor1"><table align="left" width="100%" cellspacing="1" cellpadding="0" border="0" class="bgcolor3">
+                                <tbody><tr>
+                                    <td align="right" valign="top" class="cate_listing"><strong>Customer ID  :</strong></td>
+                                    <td valign="top" class="bgcolor4">&nbsp;<span class="bodytext">3</span></td>
+                                  </tr>
+                                  <tr>
+                                    <td align="right" width="40%" valign="top" class="cate_listing"><strong>Email :</strong></td>
+                                    <td width="60%" valign="top" class="bgcolor4">&nbsp;<span class="bodytext">superadmin@idifysolutions.com</span></td>
+                                  </tr>
+                                  <!-- <tr>
+                                     <td align="right" valign="top" class="cate_listing"><strong>Accounty Type :</strong></td>
+                                     <td valign="top" class="bgcolor4">&nbsp;<span  class="bodytext">Personal</span></td>
+                                   </tr>-->
+                                  <tr>
+                                    <td align="right" width="40%" valign="top" class="cate_listing"><strong>Address Line 1 :</strong></td>
+                                    <td width="60%" valign="top" class="bgcolor4">&nbsp;<span class="bodytext">dlkajfldks</span></td>
+                                  </tr>
+                                  <tr>
+                                    <td align="right" width="40%" valign="top" class="cate_listing"><strong>Address Line 2 :</strong></td>
+                                    <td width="60%" valign="top" class="bgcolor4">&nbsp;<span class="bodytext"></span></td>
+                                  </tr>
+                                  <tr>
+                                    <td align="right" width="40%" valign="top" class="cate_listing"><strong>City :</strong></td>
+                                    <td width="60%" valign="top" class="bgcolor4">&nbsp;<span class="bodytext">delhi</span></td>
+                                  </tr>
+                                  <tr>
+                                    <td align="right" valign="top" class="cate_listing"><strong>State :</strong></td>
+                                    <td valign="top" class="bgcolor4">&nbsp;<span class="bodytext"></span></td>
+                                  </tr>
+                                  <tr>
+                                    <td align="right" width="40%" valign="top" class="cate_listing"><strong>Country :</strong></td>
+                                    <td width="60%" valign="top" class="bgcolor4">&nbsp;<span class="bodytext">India</span></td>
+                                  </tr>
+                                  <tr>
+                                    <td align="right" width="40%" valign="top" class="cate_listing"><strong>Postal Code :</strong></td>
+                                    <td width="60%" valign="top" class="bgcolor4">&nbsp;<span class="bodytext"></span></td>
+                                  </tr>
+                                  <tr>
+                                    <td align="right" width="40%" valign="top" class="cate_listing"><strong>Phone :</strong></td>
+                                    <td width="60%" valign="top" class="bgcolor4">&nbsp;<span class="bodytext">91 11 98777890</span></td>
+                                  </tr>
+                                  <tr>
+                                    <td align="right" width="40%" valign="top" class="cate_listing"><strong>Mobile :</strong></td>
+                                    <td width="60%" valign="top" class="bgcolor4">&nbsp;<span class="bodytext">  </span></td>
+                                  </tr>
+                                  <tr>
+                                    <td align="right" width="40%" valign="top" class="cate_listing"><strong>Fax :</strong></td>
+                                    <td width="60%" valign="top" class="bgcolor4">&nbsp;<span class="bodytext">  </span></td>
+                                  </tr>
+                                </tbody></table></td>
+                          </tr>
+                        </tbody></table></td>
+                  </tr>
+                </tbody></table>
+            </div>
+          </div>
+          <div class="hide" style="height: 100%;" id="Containers">
+
+            <div id="divC">
+            </div>
+          </div>
+          <div class="hide" style="height: 100%;" id="Anti-fraud status">
+
+            <div id="divA">
+            </div>
+          </div>
+          <div class="hide" style="height: 100%;" id="Subscriptions">
+
+            <div id="divS">
+            </div>
+          </div>
+          <div class="hide" style="height: 100%;" id="Billing History">
+
+            <div id="divBH">
+            </div>
+          </div>
+          <div class="hide" style="height: 100%;" id="Payment settings">
+
+            <div id="divPS">
+            </div>
+          </div>
+        </td>
+      </tr>
+    </tbody></table></td>
