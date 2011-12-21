@@ -7,7 +7,7 @@ class AdminClientsController < ApplicationController
 #    Delete Users
     if params[:chkdel]
       del = params[:chkdel]
-#      User.destroy(del)      
+      User.destroy(del)      
     end
     @users = User.find(:all)
   end
