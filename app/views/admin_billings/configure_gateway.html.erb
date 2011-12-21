@@ -10,7 +10,7 @@
                   <span class="contenttext_1">
                     <a class="bodylink" href="../index.php?cid=3">Home</a>&gt;
                     <span class="bodytext_1">
-                      <a class="bodylink" href="gateways.php?left=7">Payment Gateway</a>
+                      <a class="bodylink" href="<%=gateway_settings_path%>">Payment Gateway</a>
                     </span> &gt;
                     <span class="bodytext_1">Configure Payment Gateway</span>
                   </span>
@@ -41,7 +41,7 @@
               <tr>
                 <td>
                   <div id="dvContent">
-                  <%= form_for @gateway_configuration,:url=>gateway_update_path(@gateway_configuration.id),:html=>{:id=>'frmaddgs'} ,:action=>"post" do |f| %>
+                  <%= form_for @gateway_configuration,:url=>gateway_update_path(@gateway_configuration.id),:html=>{:id=>'frmaddgs'} ,:method=>"post" do |f| %>
                   
          <!--           <form method="post" name="frmaddgs" id="frmaddgs">-->
                       <table width="100%" cellspacing="0" cellpadding="0" border="0">

@@ -8,8 +8,8 @@
               <tr>
                 <td colspan="2">
                   <span class="bodytext_1">
-                    <a class="bodylink" href="index.php?cid=3">Home</a> &gt;
-                    <a class="bodylink" href="../index.php?cid=21&amp;action=BMM&amp;left=3">Billing Manager</a> &gt;
+                    <a class="bodylink" href="#">Home</a> &gt;
+                    <a class="bodylink" href="#">Billing Manager</a> &gt;
                     <span class="bodytext_1"> Hosting Plans</span>
 
                   </span>
@@ -17,7 +17,7 @@
               </tr>
               <tr>
                 <td width="4%">
-                  <img align="bottom" width="30" height="32" border="0" title="Hosting Plans" src="../../asset/images/icon_hosting_plan.png">
+                  <img align="bottom" width="30" height="32" border="0" title="Hosting Plans" src="/images/icon_hosting_plan.png">
                 </td>
                 <td width="96%" valign="top" style="padding-top:2px">
                   <span class="txt_big_red">Hosting Plans</span>
@@ -60,14 +60,14 @@
                                     <tbody>
                                       <tr>
                                         <td align="center" height="30">
-                                          <a href="addplan.php?category=All&amp;left=3">
-                                            <img align="absmiddle" width="30" height="32" border="0" title="Add" src="../../asset/images/icon_hosting_plan.png">
+                                          <a href="<%=add_billing_hosting_plan_path%>">
+                                            <img align="absmiddle" width="30" height="32" border="0" title="Add" src="/images/icon_hosting_plan.png">
                                           </a>
                                         </td>
                                       </tr>
                                       <tr>
                                         <td align="center" height="20">
-                                          <a class="sm_heading" href="addplan.php?category=All&amp;left=3">Add </a>
+                                          <a class="sm_heading" href="<%=add_billing_hosting_plan_path%>">Add </a>
                                         </td>
 
                                       </tr>
@@ -80,14 +80,14 @@
                                     <tbody>
                                       <tr>
                                         <td align="center" height="30">
-                                          <a href="ViewPlans.php?category=All&amp;left=3">
-                                            <img align="absmiddle" width="27" height="24" border="0" title="Refresh" src="../../asset/images/icon_refresh.gif">
+                                          <a href="">
+                                            <img align="absmiddle" width="27" height="24" border="0" title="Refresh" src="/images/icon_refresh.gif">
                                           </a>
                                         </td>
                                       </tr>
                                       <tr>
                                         <td align="center" height="20">
-                                          <a class="sm_heading" href="ViewPlans.php?category=All&amp;left=3">Refresh</a>
+                                          <a class="sm_heading" href="">Refresh</a>
                                         </td>
                                       </tr>
                                     </tbody>
@@ -111,7 +111,7 @@
                           <tr class="cate_listing_head">
                             <td valign="middle" colspan="9">&nbsp;&nbsp;Search</td>
                             <td width="2%" valign="middle">
-                              <img align="bottom" onclick="javascript:ShowHideHR('S33');" src="../../asset/images/search_show.png" style="padding-left: 20px;" id="imgS33">
+                              <img align="bottom" onclick="javascript:ShowHideHR('S33');" src="/images/search_show.png" style="padding-left: 20px;" id="imgS33">
                             </td>
                           </tr>
                           <tr id="trS33" width="100%">
@@ -141,7 +141,7 @@
                                         <option value="Dedicated Server">Dedicated Server</option>
                                       </select>&nbsp;&nbsp;</td>
                                     <td width="3%" valign="bottom" nowrap="nowrap">&nbsp;</td>
-                                    <td width="5%" valign="bottom" nowrap="nowrap"><!--<a href="#">--><input width="31" type="image" height="33" onclick="return formsubmit();" name="go" id="go" title="Search" src="../../asset/images/icon_search.gif"><!--</a>--><!--<input name="btnsearch" id="btnsearch" value="Search" type="submit" >-->
+                                    <td width="5%" valign="bottom" nowrap="nowrap"><!--<a href="#">--><input width="31" type="image" height="33" onclick="return formsubmit();" name="go" id="go" title="Search" src="/images/icon_search.gif"><!--</a>--><!--<input name="btnsearch" id="btnsearch" value="Search" type="submit" >-->
                                     </td>
                                     <td width="5%" valign="bottom" class="bodytext">Show</td>
                                     <td width="45%" valign="bottom" class="bodytext">
@@ -194,7 +194,7 @@
                         <tr>
                           <td align="right" valign="middle">&nbsp;
                             <a href="plansxls.php?cat=All" class="det_link">
-                              <img title="Export to Excel" src="../../asset/images/excel.jpg">
+                              <img title="Export to Excel" src="/images/excel.jpg">
                             </a>
                           </td>
                         </tr>
@@ -248,16 +248,16 @@
                                   <td align="right" width="12%" height="26" class="bgcolor4">XEN-VPS</td>
                                   <td align="right" width="12%" height="26" class="bgcolor4">0</td>
                                   <td align="center" width="12%" valign="middle" class="bgcolor4">
-                                    <img title="Active" src="../../asset/images/online.png">
+                                    <img title="Active" src="/images/online.png">
                                     <span class="Running">&nbsp;Active</span>
                                   </td>
                                   <td align="center" width="11%" valign="middle" class="bgcolor4">
-                                    <img title="Stopped" src="../../asset/images/offline.png">
+                                    <img title="Stopped" src="/images/offline.png">
                                     <span class="Stopped">&nbsp;Stopped
                                     </span>
                                   </td>
                                   <td align="center" width="10%" valign="middle" class="bgcolor4">&nbsp;
-                                    <img onclick="if(chk_confirm('SET','plan for sell in store')!=false)  location.href='sellplans.php?action=SELL&amp;id=1'" title="Set for Sell" style="padding-top:5px; cursor:pointer" src="../../asset/images/tick.gif">
+                                    <img onclick="if(chk_confirm('SET','plan for sell in store')!=false)  location.href='sellplans.php?action=SELL&amp;id=1'" title="Set for Sell" style="padding-top:5px; cursor:pointer" src="/images/tick.gif">
                                   </td>
                                 </tr>
                               </tbody>

@@ -38,7 +38,11 @@ class AdminBillingsController < ApplicationController
   end
   
   def fraud_score
-    
+      @fraud_score = FraudScore.first
+  end
+  
+  def add_fraud_score
+      @fraud_score = FraudScore.find(params[:id]) if params[:id]
   end
   
   def configure_gateway
@@ -50,6 +54,17 @@ class AdminBillingsController < ApplicationController
       @gateway_configuration.update_attributes(params[:gateway_configuration]) 
       redirect_to gateway_settings_path
   end
+
+  def fraud_score_update
+      @fraud_score = FraudScore.find(params[:id]) if params[:id]
+      @fraud_score.update_attributes(params[:fraud_score])
+      redirect_to fraud_score_path
+  end
+  
+  def add_hosting_plan
+  end
+  
+  
   
 end
 

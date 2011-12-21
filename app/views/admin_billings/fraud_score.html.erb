@@ -8,9 +8,9 @@
               <tr>
                 <td colspan="2">
                   <span class="contenttext_1">
-                    <a class="bodylink" href="../index.php?cid=3">Home</a>&gt;
+                    <a class="bodylink" href="#">Home</a>&gt;
                     <span class="bodytext_1">
-                      <a class="bodylink" href="fraudscore.php?left=LEFT_SCORE">Fraud Score</a>
+                      <a class="bodylink" href="<%=fraud_score_path%>">Fraud Score</a>
                     </span>
                   </span>
                 </td>
@@ -45,7 +45,7 @@
                 <td>
                   <div id="dvContent">
 
-                    <form method="post" name="frmaddgs" id="frmaddgs">
+                   <form method="post" name="frmaddgs" id="frmaddgs">
                       <table width="100%" cellspacing="0" cellpadding="0" border="0">
                         <tbody>
                           <tr>
@@ -57,7 +57,7 @@
                                   </tr>
                                   <tr>
                                     <td align="right" width="31%" valign="middle" class="cate_listing">  Fraud Score:</td>
-                                    <td width="69%" valign="middle" class="bgcolor4">3.00
+                                    <td width="69%" valign="middle" class="bgcolor4"><%=@fraud_score.fraud_score%>
                                     </td>
                                   </tr>
                                 </tbody>
@@ -77,7 +77,7 @@
                           <tr>
                             <td align="right" width="18%" valign="top">&nbsp;  </td>
                             <td align="left" width="71%" valign="top">
-                              <input align="right" width="64" type="button" height="25" border="0" id="btnfraud" onclick="javascript:window.location='addscore.php?id=1&amp;left=LEFT_SCORE';" name="btnfraud" value="Edit" class="button">
+                              <input align="right" width="64" type="button" height="25" border="0" id="btnfraud" onclick="javascript:window.location='<%=add_fraud_score_path(@fraud_score.id)%>'" name="btnfraud" value="Edit" class="button">
                             </td>
                           </tr>
                         </tbody>

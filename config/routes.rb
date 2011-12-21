@@ -145,6 +145,7 @@ scope 'admin' do
   
 #    admin billing manager
   match "/billing/hosting/plans/:left"=>"admin_billings#hosting_plans",:as=>"billing_hosting_plans",:defaults=>{:left=>3}
+  match "/billing/hosting/plan/:left/add"=>"admin_billings#add_hosting_plan",:as=>"add_billing_hosting_plan",:defaults=>{:left=>3}
   match "/billing/receivables/:left/:receivable"=>"admin_billings#receivables",:as => "billing_reveivables",:defaults=>{:left=>3,:receivable=>'orders'}
   
 #    admin logs  
@@ -155,6 +156,8 @@ scope 'admin' do
   match "/commerce/fraud/:left"=>"admin_billings#anti_fraud_checklist",:as=>"anti_fraud_checklist",:defaults=>{:left=>5}
   match "/gateway/settings/:left"=>"admin_billings#gateway_settings",:as=>"gateway_settings",:defaults=>{:left=>5}
   match "/gateway/fraudscore/:left"=>"admin_billings#fraud_score",:as=>"fraud_score",:defaults=>{:left=>5}
+  match "/gateway/fraudscore/:left/add/:id"=>"admin_billings#add_fraud_score",:as=>"add_fraud_score",:defaults=>{:left=>5}
+  match "/gateway/fraudscore/:left/update/:id"=>"admin_billings#fraud_score_update",:as=>"fraud_score_update",:defaults=>{:left=>5}
   match "/gateway/settings/configuregateway/:left/:id"=>"admin_billings#configure_gateway",:as=>"configure_gateway",:defaults=>{:left=>5}
   match "/gateway/settings/configuregateway/:left/update/:id"=>"admin_billings#gateway_update",:as=>"gateway_update",:defaults=>{:left=>5}
   
