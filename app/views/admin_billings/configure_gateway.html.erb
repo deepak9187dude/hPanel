@@ -41,7 +41,9 @@
               <tr>
                 <td>
                   <div id="dvContent">
-                    <form method="post" name="frmaddgs" id="frmaddgs">
+                  <%= form_for @gateway_configuration,:url=>gateway_update_path(@gateway_configuration.id),:html=>{:id=>'frmaddgs'} ,:action=>"post" do |f| %>
+                  
+         <!--           <form method="post" name="frmaddgs" id="frmaddgs">-->
                       <table width="100%" cellspacing="0" cellpadding="0" border="0">
                         <tbody>
                           <tr>
@@ -60,7 +62,7 @@
                                       <span class="mandotry">*</span> Payment Gateway Login ID :
                                     </td>
                                     <td width="59%" valign="middle" class="bgcolor4">
-                                      <input type="text" value="" maxlength="200" id="txtgatewaylogin_1" class="txtfield1" name="txtgatewaylogin_1">&nbsp;
+                                      <input type="text" value="<%=@gateway_configuration.gateway_login%>" maxlength="200" id="txtgatewaylogin_1" class="txtfield1" name="gateway_configuration[gateway_login]">&nbsp;
                                       <span class="error" id="txtgatewaylogin">&nbsp;</span>
                                     </td>
                                   </tr>
@@ -68,7 +70,7 @@
                                     <td align="right" width="41%" valign="middle" class="cate_listing"> Payment Gateway Key :
                                     </td>
                                     <td width="59%" valign="middle" class="bgcolor4">
-                                      <input type="text" value="" maxlength="400" id="txtgatewaykey" class="txtfield1" name="txtgatewaykey">&nbsp;
+                                      <input type="text" value="<%=@gateway_configuration.gateway_key%>" maxlength="400" id="txtgatewaykey" class="txtfield1" name="gateway_configuration[gateway_key]">&nbsp;
                                     </td>
                                   </tr>
                                 </tbody>
@@ -83,15 +85,17 @@
                           </tr>
                           <tr>
                             <td align="right" width="27%" valign="top">
-                              <input align="right" width="64" type="button" height="25" border="0" onclick="javascript:window.location='gateways.php?left=7';" id="btncancel" name="btncancel" value="Cancel" class="button">     &nbsp; &nbsp;
+                              <input align="right" width="64" type="button" height="25" border="0" onclick="javascript:window.location='<%=gateway_settings_path%>';" id="btncancel" name="btncancel" value="Cancel" class="button">     &nbsp; &nbsp;
                             </td>
                             <td align="left" valign="top">
-                              <input align="right" width="64" type="submit" height="25" border="0" id="btngateway" onclick="return validateForms('frmaddgs');" name="btngateway" value="Submit" class="button">
+                               <%= submit_tag 'Submit' ,:class=>"button"  ,:html=>{:align=>"right" ,:width=>"64" ,:height=>"25" ,:border=>"0",:name=>"btngateway"}%>
+<!--                              <input align="right" width="64" type="submit" height="25" border="0" id="btngateway" onclick="return validateForms('frmaddgs');" name="btngateway" value="Submit" class="button">-->
                             </td>
                           </tr>
                         </tbody>
                       </table>
-                    </form>
+                    <% end %>
+                    <!--</form> -->
                   </div>
                 </td>
               </tr>

@@ -2,7 +2,7 @@
 <input type="checkbox" name="chkdel[]" id="chkdel" value="1"/>
 </td>-->
 <td align="center" width="50%" class="bgcolor4">
-<a href="<%=configure_gateway_path%>" class="det_link"><%=gateway_setting.gateway%></a>
+<a href="<%=configure_gateway_path(gateway_setting.id)%>" class="det_link"><%=gateway_setting.gateway%></a>
 </td>
 
 <td align="center" width="20%" valign="middle" class="bgcolor4">
@@ -10,7 +10,7 @@
 <span class="Running">&nbsp;<%= gateway_setting.status_msg %></span>
 </td>
 <td align="center" width="20%" class="bgcolor4">
-<a href="<%=configure_gateway_path%>" class="det_link">Configure</a>
+<a href="<%=configure_gateway_path(gateway_setting.id)%>" class="det_link">Configure</a>
 </td>
 </tr>
 <tr>

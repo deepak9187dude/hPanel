@@ -154,7 +154,9 @@ scope 'admin' do
   match "/commerce/fraud/:left"=>"admin_billings#anti_fraud_checklist",:as=>"anti_fraud_checklist",:defaults=>{:left=>5}
   match "/gateway/settings/:left"=>"admin_billings#gateway_settings",:as=>"gateway_settings",:defaults=>{:left=>5}
   match "/gateway/fraudscore/:left"=>"admin_billings#fraud_score",:as=>"fraud_score",:defaults=>{:left=>5}
-  match "/gateway/settings/configuregateway/:left"=>"admin_billings#configure_gateway",:as=>"configure_gateway",:defaults=>{:left=>5}
+  match "/gateway/settings/configuregateway/:left/:id"=>"admin_billings#configure_gateway",:as=>"configure_gateway",:defaults=>{:left=>5}
+  match "/gateway/settings/configuregateway/:left/update/:id"=>"admin_billings#gateway_update",:as=>"gateway_update",:defaults=>{:left=>5}
+  
 
 # admin settings 
   match "/password/reset/:left"=>"admin#reset_password",:as=>"admin_reset_password",:defaults=>{:left=>6}

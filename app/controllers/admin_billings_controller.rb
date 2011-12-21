@@ -42,6 +42,14 @@ class AdminBillingsController < ApplicationController
   end
   
   def configure_gateway
+      @gateway_configuration = Gateway.find(params[:id]) if params[:id]
+  end
+  
+  def gateway_update
+      @gateway_configuration = Gateway.find(params[:id]) if params[:id]
+      @gateway_configuration.update_attributes(params[:gateway_configuration]) 
+      redirect_to gateway_settings_path
   end
   
 end
+
