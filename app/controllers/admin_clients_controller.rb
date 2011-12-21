@@ -57,4 +57,10 @@ class AdminClientsController < ApplicationController
     end
     redirect_to(admin_all_clients_path)   
   end
+  
+  def client_delete
+    client = User.find(params[:id])
+    client.destroy
+    redirect_to(admin_all_clients_path) 
+  end
 end

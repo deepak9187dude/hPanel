@@ -1,11 +1,11 @@
 <tr>
   <td align="center" height="26" class="bgcolor4_center">
 <center>
-  <input type="checkbox" value="3" id="chkdel" name="chkdel[]">
+  <input type="checkbox" value="<%= client.id %>" id="chkdel" name="chkdel[]">
 </center>
 </td>
 <td height="26" class="bgcolor4">
-  <a class="det_link" href="index.php?cid=9&amp;action=CMT&amp;userid=3"><%= client.name %></a>
+  <a class="det_link" href="<%= admin_client_general_settings_path(client) %>"><%= client.name %></a>
 </td>
 <td height="26" class="bgcolor4"><%= client.email %></td>
 <td align="center" height="26" class="bgcolor4">
@@ -22,7 +22,7 @@
           </a>
         </td>
         <td align="center" width="20">
-          <a style="cursor:pointer" onclick="if(chk_confirm('DELETE','User')!=false) location.href='index.php?cid=9&amp;action=CMD&amp;userid=3&amp;left=0';">
+          <a style="cursor:pointer" onclick="if(chk_confirm('DELETE','User')!=false) location.href='<%= admin_delete_client_path(client) %>';">
             <img width="18" height="16" border="0" title="Delete" src="/images/icon_delete.gif">
           </a>
         </td>

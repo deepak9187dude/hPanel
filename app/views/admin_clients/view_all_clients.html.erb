@@ -78,13 +78,13 @@
                                       <tr>
                                         <td align="center" valign="bottom" height="33">
                                           <a href="#">
-                                            <input align="absmiddle" width="26" type="image" height="29" border="0" onclick="if(chkdel(document.frmuser, 'DELETE', 'User')!=false)  { document.frmuser.action ='index.php?cid=9&amp;action=CMD'; document.frmuser.submit();}" name="userdel" title="Delete User" src="/images/icon_delete_big.gif">
+                                            <input align="absmiddle" width="26" type="image" height="29" border="0" onclick="if(chkdel(document.frmuser, 'DELETE', 'User')!=false)  { document.frmuser.action =''; document.frmuser.submit();}" name="userdel" title="Delete User" src="/images/icon_delete_big.gif">
                                           </a>
                                         </td>
                                       </tr>
                                       <tr>
                                         <td align="center" valign="bottom" height="20">
-                                          <a onclick="if(chkdel(document.frmuser, 'DELETE', 'User')!=false)  { document.frmuser.action ='index.php?cid=9&amp;action=CMD'; document.frmuser.submit();}" class="sm_heading" href="#">Delete </a>
+                                          <a onclick="if(chkdel(document.frmuser, 'DELETE', 'User')!=false)  { document.frmuser.action =''; document.frmuser.submit();}" class="sm_heading" href="#">Delete </a>
                                         </td>
                                       </tr>
                                     </tbody>
@@ -202,7 +202,8 @@
                           </table>
                         </td>
                       </tr>
-                    <form action="index.php?cid=9&amp;action=CMD" method="post" name="frmuser" id="frmuser"></form>
+                    <form action="index.php?cid=9&amp;action=CMD" method="post" name="frmuser" id="frmuser">
+                    <%=  form_tag("", :method=>'post', :multipart => true,:name=>"frmuser",:id=>"frmuser",:action=>'') do %>  
                     <tr>
                       <td>
                         <table width="70%" cellspacing="1" cellpadding="0" border="0" class="bgcolor3">
@@ -233,7 +234,7 @@
                       </td>
 
       </tr>
-
+      <% end %>
       <tr>
         <td class="bodytext">
           <table width="70%" cellspacing="1" cellpadding="1" border="0">
