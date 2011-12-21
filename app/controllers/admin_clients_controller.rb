@@ -12,6 +12,10 @@ class AdminClientsController < ApplicationController
     @users = User.find(:all)
   end
   
+  def client_manager
+    
+  end
+  
   
   def add_new_client
     @user_title = {"Mr."=>"Mr.","Mrs."=>"Mrs.","Ms."=>"Ms."}
