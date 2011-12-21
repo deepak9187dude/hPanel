@@ -83,7 +83,7 @@
                                           </tr>
                                           <tr>
                                             <td align="center">
-                                              <a class="sm_heading" href="index.php?cid=9&amp;action=CME&amp;userid=3">
+                                              <a class="sm_heading" href="<%= admin_edit_client_path(@user)  %>">
                                                 <span class="sm_heading">Edit Profile </span>
                                               </a>
                                             </td>
@@ -131,7 +131,7 @@
                                       <strong>Customer ID  :</strong>
                                     </td>
                                     <td valign="top" class="bgcolor4">&nbsp;
-                                      <span class="bodytext">3</span>
+                                      <span class="bodytext"><%= @user.id %></span>
                                     </td>
                                   </tr>
                                   <tr>
@@ -139,7 +139,7 @@
                                       <strong>Email :</strong>
                                     </td>
                                     <td width="60%" valign="top" class="bgcolor4">&nbsp;
-                                      <span class="bodytext">superadmin@idifysolutions.com</span>
+                                      <span class="bodytext"><%= @user.email %></span>
                                     </td>
                                   </tr>
                                   <!-- <tr>
@@ -151,7 +151,7 @@
                                       <strong>Address Line 1 :</strong>
                                     </td>
                                     <td width="60%" valign="top" class="bgcolor4">&nbsp;
-                                      <span class="bodytext">dlkajfldks</span>
+                                      <span class="bodytext"><%= @user.address %></span>
                                     </td>
                                   </tr>
                                   <tr>
@@ -159,7 +159,7 @@
                                       <strong>Address Line 2 :</strong>
                                     </td>
                                     <td width="60%" valign="top" class="bgcolor4">&nbsp;
-                                      <span class="bodytext"></span>
+                                      <span class="bodytext"><%= @user.address2 %></span>
                                     </td>
                                   </tr>
                                   <tr>
@@ -167,7 +167,7 @@
                                       <strong>City :</strong>
                                     </td>
                                     <td width="60%" valign="top" class="bgcolor4">&nbsp;
-                                      <span class="bodytext">delhi</span>
+                                      <span class="bodytext"><%= @user.city %></span>
                                     </td>
                                   </tr>
                                   <tr>
@@ -175,7 +175,7 @@
                                       <strong>State :</strong>
                                     </td>
                                     <td valign="top" class="bgcolor4">&nbsp;
-                                      <span class="bodytext"></span>
+                                      <span class="bodytext"><%= @user.state %></span>
                                     </td>
                                   </tr>
                                   <tr>
@@ -183,7 +183,7 @@
                                       <strong>Country :</strong>
                                     </td>
                                     <td width="60%" valign="top" class="bgcolor4">&nbsp;
-                                      <span class="bodytext">India</span>
+                                      <span class="bodytext"><%= @user.country %></span>
                                     </td>
                                   </tr>
                                   <tr>
@@ -191,7 +191,7 @@
                                       <strong>Postal Code :</strong>
                                     </td>
                                     <td width="60%" valign="top" class="bgcolor4">&nbsp;
-                                      <span class="bodytext"></span>
+                                      <span class="bodytext"><%= @user.postal_code %></span>
                                     </td>
                                   </tr>
                                   <tr>
@@ -199,7 +199,7 @@
                                       <strong>Phone :</strong>
                                     </td>
                                     <td width="60%" valign="top" class="bgcolor4">&nbsp;
-                                      <span class="bodytext">91 11 98777890</span>
+                                      <span class="bodytext"><%= @user.phone %></span>
                                     </td>
                                   </tr>
                                   <tr>
@@ -207,7 +207,7 @@
                                       <strong>Mobile :</strong>
                                     </td>
                                     <td width="60%" valign="top" class="bgcolor4">&nbsp;
-                                      <span class="bodytext">  </span>
+                                      <span class="bodytext">  <%= @user.mobile %></span>
                                     </td>
                                   </tr>
                                   <tr>
@@ -215,7 +215,7 @@
                                       <strong>Fax :</strong>
                                     </td>
                                     <td width="60%" valign="top" class="bgcolor4">&nbsp;
-                                      <span class="bodytext">  </span>
+                                      <span class="bodytext"> <%= @user.fax %> </span>
                                     </td>
                                   </tr>
                                 </tbody>
