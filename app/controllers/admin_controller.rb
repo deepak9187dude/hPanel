@@ -3,7 +3,7 @@ class AdminController < ApplicationController
   before_filter :admin_current_user
   
   def index
-    
+    @clients = User.all
   end
 
   def admin_subscriptions    

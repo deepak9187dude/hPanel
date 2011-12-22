@@ -7,6 +7,8 @@ class User < ActiveRecord::Base
   has_many :vms
   has_many :ccdatas
   
+  scope :active, where(:status => 'active')
+  
   def self.authenticate(username, password)
       user = find_by_email(username) if !user = find_by_username(username)
       return user if user && user.authenticated?(password)

@@ -9,7 +9,7 @@ class AdminClientsController < ApplicationController
       del = params[:chkdel]
       User.destroy(del)      
     end
-    @users = User.find(:all)
+    @users = User.active
   end
   
   def client_manager
