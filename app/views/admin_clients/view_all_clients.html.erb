@@ -137,7 +137,7 @@
                               </tr>
                               <tr id="trS33">
                                 <td width="95%">
-                                  <form id="frmsearch" method="post" action="<%= admin_all_clients_path %>" name="frmsearch">
+                                  <%=  form_tag("", :method=>'post', :multipart => true,:name=>"frmsearch",:id=>"frmsearch",:action=>'') do %>
                                     <table width="75%" cellspacing="2" cellpadding="2" border="0">
                                       <tbody>
                                         <tr>
@@ -146,9 +146,9 @@
                                             <label>
                                               <select id="cmbsearch" class="txtdrop" name="cmbsearch">
                                                 <option value="">-Search by-</option>
-                                                <option value="CONCAT(user_first_name,' ',user_last_name)">Client Name</option>
-                                                <option value="user_email">Email</option>
-                                                <option value="user_status">Status</option>
+                                                <option value="CONCAT(first_name,' ',last_name)">Client Name</option>
+                                                <option value="email">Email</option>
+                                                <option value="status">Status</option>
                                               </select>
                                             </label>
                                           </td>
@@ -176,7 +176,7 @@
                                         </tr>
                                       </tbody>
                                     </table>
-                                  </form>
+                                  <% end %>
                                 </td>
                                 <td width="5%" valign="bottom" class="bodytext">&nbsp;</td>
                               </tr>
