@@ -10,10 +10,26 @@ class AdminClientsController < ApplicationController
       User.destroy(del)      
     end
     @users = User.active
+#    search
+    if params[:limit]
+      @selection = params[:limit]
+      @tickets = @tickets.find(:all,:limit=>params[:limit])
+      if params[:txtsearch] and params[:txtsearch].strip !=""
+# @tickets = Ticket.where("#{params[:cmbsearch]} = ? AND category = ?",params[:txtsearch].to_s,"support").find(:all, :order => "id desc", :limit => params[:limit])
+         if params[:cmbsearch].to_s.downcase == "lastactivity"
+           
+         else
+          @tickets = Ticket.find(:all,:conditions=>["#{params[:cmbsearch].to_s.downcase} like ? AND category = 'support'", params[:txtsearch].to_s.strip.downcase],:limit=>params[:limit])
+         end
+      end
+    end
+    
+    
   end
   
   def client_manager
-    
+    @clients_active = User.active
+    @clients = User.all
   end
   
   

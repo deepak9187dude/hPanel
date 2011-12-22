@@ -1,78 +1,144 @@
-<td valign="top" class="bgcolor2"><table align="left" width="65%" cellspacing="0" cellpadding="0" border="0">
-					  <tbody><tr>
-					    <td><img align="absmiddle" width="29" height="35" title="New Client" src="/images/client_manager.gif"> <span class="heading">Client Manager : </span></td>
-					  </tr>
-                          <tr>
-                            <td style="padding:20px" class="bgcolor1"><table width="100%" cellspacing="0" cellpadding="0" border="0">
-                              <tbody><tr>
-                                <td width="70%"><table align="center" width="100%" cellspacing="0" cellpadding="0" border="0" class="bgcolor6">
-                              <tbody><tr>
-                                <td><table align="center" width="100%" cellspacing="1" cellpadding="1" border="0">
-                                <tbody><tr>
-                                  <td align="left" width="50%" class="bgcolor5"><span class="txt_spac">Active Clients</span> </td>
-
-                                  <td align="right" width="50%" class="bgcolor2"><a class="det_link" href="index.php?cid=9&amp;action=CML&amp;left=0&amp;searchfield=user_status&amp;searchval=Active">1</a></td>
-                                </tr>
-                                <tr>
-                                  <td align="left" width="50%" class="bgcolor5"><span class="txt_spac">On Hold Accounts</span> </td>
-                                  <td align="right" width="50%" class="bgcolor2"><span class="bodytext">0&nbsp;&nbsp;</span></td>
-                                </tr>
-                                <tr>
-                                  <td align="left" width="50%" class="bgcolor5"><span class="txt_spac">Total Accounts</span></td>
-                                  <td align="right" width="50%" class="bgcolor2"><a class="det_link" href="index.php?cid=9&amp;action=CML&amp;left=0">1</a></td>
-                                </tr>
-                            </tbody></table></td>
+<td valign="top" class="bgcolor2">
+  <table align="left" width="65%" cellspacing="0" cellpadding="0" border="0">
+    <tbody>
+      <tr>
+        <td>
+          <img align="absmiddle" width="29" height="35" title="New Client" src="/images/client_manager.gif">
+          <span class="heading">Client Manager : </span>
+        </td>
+      </tr>
+      <tr>
+        <td style="padding:20px" class="bgcolor1">
+          <table width="100%" cellspacing="0" cellpadding="0" border="0">
+            <tbody>
+              <tr>
+                <td width="70%">
+                  <table align="center" width="100%" cellspacing="0" cellpadding="0" border="0" class="bgcolor6">
+                    <tbody>
+                      <tr>
+                        <td>
+                          <table align="center" width="100%" cellspacing="1" cellpadding="1" border="0">
+                            <tbody>
+                              <tr>
+                                <td align="left" width="50%" class="bgcolor5">
+                                  <span class="txt_spac">Active Clients</span>
+                                </td>
+                                <td align="right" width="50%" class="bgcolor2">
+                                  <a class="det_link" href="index.php?cid=9&amp;action=CML&amp;left=0&amp;searchfield=user_status&amp;searchval=Active"><%= @clients_active.count %></a>
+                                </td>
                               </tr>
-                            </tbody></table></td>
-                                <td valign="top"><table align="center" width="68%" cellspacing="0" cellpadding="0" border="0">
-                                  <tbody><tr>
-                                    <td align="right" width="22%"><img width="16" height="16" src="/images/icon_add.png"></td>
-                                    <td width="2%">&nbsp;</td>
-                                    <td width="76%"><a class="det_link" href="index.php?cid=9&amp;action=CMC&amp;left=0">New Client </a></td>
-                                  </tr>
-                                </tbody></table></td>
+                              <tr>
+                                <td align="left" width="50%" class="bgcolor5"><span class="txt_spac">On Hold Accounts</span> </td>
+                                <td align="right" width="50%" class="bgcolor2"><span class="bodytext">0&nbsp;&nbsp;</span></td>
                               </tr>
-                            </tbody></table>
-                            </td>
-                          </tr>
-                      </tbody></table>
-<table align="left" width="65%" cellspacing="0" cellpadding="0" border="0">
-                        <tbody><tr>
-                          <td><img align="absmiddle" width="30" height="32" title="New Client" src="/images/icon_hosting_plan.png"> <span class="heading">Subscription Manager : </span></td>
-                        </tr>
-                        <tr>
-                          <td style="padding:20px" class="bgcolor1"><table width="100%" cellspacing="0" cellpadding="0" border="0">
-                              <tbody><tr>
-                                <td width="70%"><table align="center" width="100%" cellspacing="0" cellpadding="0" border="0" class="bgcolor6">
-                                    <tbody><tr>
-                                      <td><table align="center" width="100%" cellspacing="1" cellpadding="1" border="0">
-                                          
-                                          <tbody><tr>
-                                            <td align="left" width="50%" class="bgcolor5"><span class="txt_spac">XEN-VPS</span></td>
-                                            <td align="right" width="50%" class="bgcolor2"><a href="BillingDirector/Subscriptions.php?category=1" class="det_link">0</a></td>
-                                          </tr>
-                                          
-                                          <tr>
-                                            <td align="left" width="50%" class="bgcolor5"><span class="txt_spac">OpenVZ</span></td>
-                                            <td align="right" width="50%" class="bgcolor2"><a href="BillingDirector/Subscriptions.php?category=2" class="det_link">0</a></td>
-                                          </tr>
-                                          
-                                          <tr>
-                                            <td align="left" width="50%" class="bgcolor5"><span class="txt_spac">Dedicated Server</span></td>
-                                            <td align="right" width="50%" class="bgcolor2"><a href="BillingDirector/Subscriptions.php?category=3" class="det_link">0</a></td>
-                                          </tr>
-                                          
-                                      </tbody></table></td>
-                                    </tr>
-                                </tbody></table></td>
-                                <td valign="top"><table align="center" width="74%" cellspacing="0" cellpadding="0" border="0">
-                                    <tbody><tr>
-                                      <td align="right" width="24%"><img width="16" height="16" src="/images/icon_add.png"></td>
-                                      <td width="3%">&nbsp;</td>
-                                      <td width="73%"><a class="det_link" href="BillingDirector/Subscriptions.php?category=1">Subscriptions</a></td>
-                                    </tr>
-                                </tbody></table></td>
+                              <tr>
+                                <td align="left" width="50%" class="bgcolor5">
+                                  <span class="txt_spac">Total Accounts</span>
+                                </td>
+                                <td align="right" width="50%" class="bgcolor2">
+                                  <a class="det_link" href="index.php?cid=9&amp;action=CML&amp;left=0"><%= @clients.count %></a>
+                                </td>
                               </tr>
-                          </tbody></table></td>
-                        </tr>
-                      </tbody></table></td>
+                            </tbody>
+                          </table>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </td>
+                <td valign="top">
+                  <table align="center" width="68%" cellspacing="0" cellpadding="0" border="0">
+                    <tbody>
+                      <tr>
+                        <td align="right" width="22%">
+                          <img width="16" height="16" src="/images/icon_add.png">
+                        </td>
+                        <td width="2%">&nbsp;</td>
+                        <td width="76%">
+                          <a class="det_link" href="<%= admin_new_client_path %>">New Client </a>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <table align="left" width="65%" cellspacing="0" cellpadding="0" border="0">
+    <tbody>
+      <tr>
+        <td>
+          <img align="absmiddle" width="30" height="32" title="New Client" src="/images/icon_hosting_plan.png">
+          <span class="heading">Subscription Manager : </span>
+        </td>
+      </tr>
+      <tr>
+        <td style="padding:20px" class="bgcolor1">
+          <table width="100%" cellspacing="0" cellpadding="0" border="0">
+            <tbody>
+              <tr>
+                <td width="70%">
+                  <table align="center" width="100%" cellspacing="0" cellpadding="0" border="0" class="bgcolor6">
+                    <tbody>
+                      <tr>
+                        <td>
+                          <table align="center" width="100%" cellspacing="1" cellpadding="1" border="0">
+                            <tbody>
+                              <tr>
+                                <td align="left" width="50%" class="bgcolor5">
+                                  <span class="txt_spac">XEN-VPS</span>
+                                </td>
+                                <td align="right" width="50%" class="bgcolor2">
+                                  <a href="<%= admin_subscriptions_path %>" class="det_link">0</a>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td align="left" width="50%" class="bgcolor5">
+                                  <span class="txt_spac">OpenVZ</span>
+                                </td>
+                                <td align="right" width="50%" class="bgcolor2">
+                                  <a href="<%= admin_subscriptions_path %>" class="det_link">0</a>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td align="left" width="50%" class="bgcolor5">
+                                  <span class="txt_spac">Dedicated Server</span>
+                                </td>
+                                <td align="right" width="50%" class="bgcolor2">
+                                  <a href="<%= admin_subscriptions_path %>" class="det_link">0</a>
+                                </td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </td>
+                <td valign="top">
+                  <table align="center" width="74%" cellspacing="0" cellpadding="0" border="0">
+                    <tbody>
+                      <tr>
+                        <td align="right" width="24%">
+                          <img width="16" height="16" src="/images/icon_add.png">
+                        </td>
+                        <td width="3%">&nbsp;</td>
+                        <td width="73%">
+                          <a class="det_link" href="<%= admin_subscriptions_path %>">Subscriptions</a>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</td>
