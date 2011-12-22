@@ -1,7 +1,9 @@
-class AdminBillingsController < ApplicationController
+	class AdminBillingsController < ApplicationController
   layout 'admin_backend'   
   before_filter :admin_current_user
+
   def hosting_plans    
+      @hosting_plans = AdminPlan.all
   end
   
   def receivables
@@ -62,7 +64,28 @@ class AdminBillingsController < ApplicationController
   end
   
   def add_hosting_plan
+      @admin_plan = AdminPlan.new
+      phase = params[:phase] if params[:phase]
+      
+      case phase
+      when '1'
+      when '2'
+         render :phase2
+      when '3' 
+         render :phase3
+      when '4'
+         render :phase4
+      when '5'
+         render :phase5
+      when '6'
+         render :phase6            
+      when '7'
+         render :phase7
+      when '8'
+      else
+      end  
   end
+  
   
   
   

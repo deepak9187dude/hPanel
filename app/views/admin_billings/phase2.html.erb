@@ -1,0 +1,38 @@
+<td valign="top" class="bgcolor2"><table width="100%" cellspacing="0" cellpadding="0" border="0">
+              <tbody><tr>
+                <td class="middle_top"><table width="100%" cellspacing="0" cellpadding="0" border="0">
+                    <tbody><tr>
+                      <td colspan="2"><span class="contenttext_1"><a class="bodylink" href="index.php?cid=3">Home</a> &gt; <a class="bodylink" href="ViewPlans.php?category=1&amp;left=3">Plans Manager</a> &gt; <a class="bodylink" href="ViewPlans.php?category=">Hosting Plans</a> </span></td>
+                    </tr>
+                    <tr>
+                      <td width="4%"><img align="bottom" width="30" height="32" border="0" title="Add Server" src="../../asset/images/icon_hosting_plan.png"></td>
+                      <td width="96%" valign="top" style="padding-top:2px"><span class="txt_big_red">Plan3</span></td>
+                    </tr>
+                  </tbody></table></td>
+              </tr>
+              <tr>
+                <td style="padding:5px;"><table width="100%" cellspacing="0" cellpadding="0" border="0">
+                    <tbody><tr>
+                      <td><table width="100%" cellspacing="0" cellpadding="0" border="0">                        
+                          <tbody><tr>
+                            <td align="left" valign="top">
+							<div style="height:100%" id="dvContent">                              
+                                  <div class="show" style="height:100%">	
+                                  
+                     <%= form_for @admin_plan,:url=>add_billing_hosting_plan_path(3),:html=>{:id=>'frmaddbr'} ,:method=>"post" do |f| %>
+
+										<!--<form method="post" name="frmaddbr" id="frmaddbr">-->
+										<table width="76%" cellspacing="1" cellpadding="0" border="0" class="bgcolor3"><tbody><tr><td align="left" width="100%" colspan="4" class="cate_listing_head">Billing Rates<span class="error" style="padding-left:240px;" id="chk"></span></td></tr><tr><td align="center" width="8%" class="cate_listing_head">Period</td><td align="center" width="27%" class="cate_listing_head">Setup Fee</td><td align="center" width="27%" class="cate_listing_head">Recurring Fee</td><td align="center" width="38%" class="cate_listing_head">Hosting provider sells this period in the store</td></tr><tr><td align="right" height="26" class="bgcolor4">Monthly</td><td align="right" height="26" class="bgcolor4">$<input type="text" value="0.00" size="4" id="txtMonthly_1_20" name="txtMonthly_1_20">&nbsp;<span class="error" id="txtMonthly">&nbsp;</span></td><td align="right" height="26" class="bgcolor4">$<input type="text" value="0.00" size="4" id="txtRecmonthly_1_21" name="txtRecmonthly_1_21">&nbsp;<span class="error" id="txtRecmonthly">&nbsp;</span></td><td align="center" class="bgcolor4"><input type="checkbox" name="chkMonthly" id="chkMonthly" value="1">&nbsp;</td></tr><tr><td align="right" height="26" class="bgcolor4">Quarlterly</td><td align="right" height="26" class="bgcolor4">$<input type="text" value="0.00" size="4" id="txtQtly_1_20" name="txtQtly_1_20">&nbsp;<span class="error" id="txtQtly">&nbsp;</span></td><td align="right" height="26" class="bgcolor4">$<input type="text" value="0.00" size="4" id="txtRecqtly_1_21" name="txtRecqtly_1_21">&nbsp;<span class="error" id="txtRecqtly">&nbsp;</span></td><td align="center" class="bgcolor4"><input type="checkbox" name="chkQtly" id="chkQtly" value="2"></td></tr><tr><td align="right" height="26" class="bgcolor4">6 Months</td><td align="right" height="26" class="bgcolor4">$<input type="text" value="0.00" size="4" id="txtSemi_1_20" name="txtSemi_1_20">&nbsp;<span class="error" id="txtSemi">&nbsp;</span></td><td align="right" height="26" class="bgcolor4">$<input type="text" value="0.00" size="4" id="txtRecsemi_1_21" name="txtRecsemi_1_21">&nbsp;<span class="error" id="txtRecsemi">&nbsp;</span></td><td align="center" class="bgcolor4"><input type="checkbox" name="chkSemi" value="3" id="chkSemi"></td></tr><tr><td align="right" height="26" class="bgcolor4">Yearly</td><td align="right" height="26" class="bgcolor4">$<input type="text" value="0.00" size="4" id="txtYrly_1_20" name="txtYrly_1_20">&nbsp;<span class="error" id="txtYrly">&nbsp;</span></td><td align="right" height="26" class="bgcolor4">$<input type="text" value="0.00" size="4" id="txtRecyrly_1_21" name="txtRecyrly_1_21">&nbsp;<span class="error" id="txtRecyrly">&nbsp;</span></td><td align="center" class="bgcolor4"><input type="checkbox" name="chkYrly" id="chkYrly" value="4"></td></tr><tr><td align="left" colspan="4" class="cate_listing_head">When upgrading to this plan</td></tr><tr><td align="left" colspan="4" class="bgcolor4"><input type="radio" value="1" checked="checked" name="rdoupgrade">&nbsp;Do not charge setup fee for the new plan</td></tr><tr><td align="left" colspan="4" class="bgcolor4"><input type="radio" value="2" name="rdoupgrade">&nbsp;Charge the difference between the setup fees for the new plan and the previous one</td></tr><tr><td align="left" colspan="4" class="bgcolor4"><input type="radio" value="3" name="rdoupgrade">&nbsp;Charge a full setup fee for this plan</td></tr></tbody></table><table width="76%" cellspacing="1" cellpadding="0" border="0"><tbody><tr><td align="left">&nbsp;</td></tr><tr><td align="left" width="75%"> <input width="64" type="button" height="25" border="0" id="btncanceleditbr" name="btncanceleditbr" class="button" onclick="window.document.location = '<%=billing_hosting_plans_path%>';" value="Cancel">&nbsp;</td><td align="left"> <input width="64" type="button" height="25" border="0" onclick="window.document.location='<%=add_billing_hosting_plan_path(1)%>';" id="btncanceleditbr" name="btncanceleditbr" class="button" value="Back">&nbsp;<input width="64" type="submit" height="25" border="0" onclick="return funValidate();" id="btnsavebr" name="btnsavebr" value="Next" class="button"></td></tr></tbody></table>
+										<!--</form>-->
+										<%end%>                                  </div>
+                                 </div></td>
+                          </tr>
+                         
+                          <!--<tr>
+                            <td class="btm_border">&nbsp;</td>
+                          </tr>-->
+                        </tbody></table></td>
+                    </tr>
+                  </tbody></table></td>
+              </tr>
+            </tbody></table></td>

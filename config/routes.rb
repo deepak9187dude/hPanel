@@ -34,8 +34,8 @@ Vhpanel::Application.routes.draw do
     match 'paypal/checkout(/:amount)' => 'reseller#checkout', :via => [:get,:post,:put],:as=> 'paypal_checkout'
     
     match '/reseller_update' => 'reseller#reseller_update', :via => [:post,:put],:as=> 'reseller_update'
-    match 'password/change' =>"reseller#change_password",:as=>'reseller_update_password'
     match 'paymentmethod/create' => "reseller#create_payment_method", :as => 'reseller_create_payment_method', :via => [:post,:put]
+    match 'password/change' =>"reseller#change_password",:as=>'reseller_update_password'
     match 'paymentmethod/update/:id' => "reseller#update_payment_method", :as => 'reseller_update_payment_method', :via => [:post,:put]
     match 'paymentmethod/delete/:id' => "reseller#delete_payment_method", :as => 'reseller_delete_payment_method', :via => [:post,:put]
     
@@ -145,7 +145,7 @@ scope 'admin' do
   
 #    admin billing manager
   match "/billing/hosting/plans/:left"=>"admin_billings#hosting_plans",:as=>"billing_hosting_plans",:defaults=>{:left=>3}
-  match "/billing/hosting/plan/:left/add"=>"admin_billings#add_hosting_plan",:as=>"add_billing_hosting_plan",:defaults=>{:left=>3}
+  match "/billing/hosting/plan/:left/add/:phase"=>"admin_billings#add_hosting_plan",:as=>"add_billing_hosting_plan",:defaults=>{:left=>3}
   match "/billing/receivables/:left/:receivable"=>"admin_billings#receivables",:as => "billing_reveivables",:defaults=>{:left=>3,:receivable=>'orders'}
   
 #    admin logs  

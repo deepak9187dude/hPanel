@@ -22,12 +22,68 @@
                             <td align="left" valign="top">
 							<div></div>
 							<div style="height:100%" id="dvContent">                              
-                                  <div class="show" style="height:100%" id="General Settings">								 
-										<form method="post" name="frmaddgs" id="frmaddgs"><div class="error"></div><table width="70%" cellspacing="1" cellpadding="0" border="0" class="bgcolor3"><tbody><tr><td align="left" width="100%" colspan="2" class="cate_listing_head">General Settings</td></tr><tr><td align="left" width="35%" class="cate_listing_head">Title <span class="error">*</span></td><td align="left" height="26" class="bgcolor4"><input type="text" maxlength="100" value="" size="20" id="txtTitle_1" name="txtTitle_1">&nbsp;<span class="error" id="txtTitle">&nbsp;</span> </td></tr><tr><td align="left" width="35%" class="cate_listing_head">Active</td><td align="left" height="26" class="bgcolor4"><input type="checkbox" name="chkActive"></td></tr><tr style="display:none"><td align="left" width="35%" class="cate_listing_head">Hosting plan type</td><td align="left" height="26" class="bgcolor4">Dedicated</td></tr><tr><td align="left" width="35%" class="cate_listing_head">Category</td><td align="left" height="26" class="bgcolor4"><select name="cmbCategory_1" id="cmbCategory_1"><option value="0">Select Category</option><option value="1">XEN-VPS</option><option value="2">OpenVZ</option><option value="3">Dedicated Server</option></select> &nbsp;<span class="error" id="cmbCategory">&nbsp;</span></td></tr> <script>document.getElementById('cmbCategory').value=All;</script><tr><td bgcolor="#cbf1ff" align="left" width="35%" valign="top" class="cate_listing_head_1" style="height:20%;">Short Description</td><td align="left" valign="top" class="bgcolor4"><textarea rows="5" cols="50" type="text" id="txtDesc" name="txtDesc"></textarea></td></tr></tbody></table><table width="70%" cellspacing="1" cellpadding="0" border="0"><tbody><tr><td align="right" width="100%" colspan="2">&nbsp;</td></tr><tr><td align="left" width="70%"><input width="64" type="button" height="25" border="0" id="btncancelgen" name="btncancelgen" class="button" onclick="javascript:window.document.location='ViewPlans.php?category=All&amp;left=3';" value="Cancel">&nbsp;</td><td align="right" width="30%"><input align="right" width="64" type="submit" height="25" border="0" id="btnsubmitgs" name="btnsubmitgs" onclick="return validateForms('frmaddgs');" value="Next" class="button">&nbsp;</td></tr></tbody></table></form>										
-                                  </div>
-                                 </div></td>
-                          </tr>
-                         
+                                  <div class="show" style="height:100%" id="General Settings">			
+
+                                        					 
+										<!--<form method="post" name="frmaddgs" id="frmaddgs">-->
+
+                     <%= form_for @admin_plan,:url=>add_billing_hosting_plan_path(2),:html=>{:id=>'frmaddgs'} ,:method=>"post" do |f| %>
+										  <div class="error"></div>
+										    <table width="70%" cellspacing="1" cellpadding="0" border="0" class="bgcolor3">
+										        <tbody>
+										          <tr>
+										            <td align="left" width="100%" colspan="2" class="cate_listing_head">General Settings</td>
+									            </tr>
+									            <tr>
+									              <td align="left" width="35%" class="cate_listing_head">Title <span class="error">*</span></td>
+									              <td align="left" height="26" class="bgcolor4">
+									                <input type="text" maxlength="100" value="" size="20" id="txtTitle_1" name="txtTitle_1">&nbsp;<span class="error" id="txtTitle">&nbsp;</span> 
+									              </td>
+								              </tr>
+								              <tr>
+								                <td align="left" width="35%" class="cate_listing_head">Active</td>
+								                <td align="left" height="26" class="bgcolor4"><input type="checkbox" name="chkActive"></td></tr><tr style="display:none"><td align="left" width="35%" class="cate_listing_head">Hosting plan type
+								                </td>
+								                <td align="left" height="26" class="bgcolor4">Dedicated</td>
+							                </tr>
+							                <tr>
+							                  <td align="left" width="35%" class="cate_listing_head">Category</td>
+							                  <td align="left" height="26" class="bgcolor4">
+							                  <%= select ("frmaddgs", "plan_category_id", PlanCategory.all.map {|c| [c.category_name,c.id]} ,:html=>{:id=>'cmbCategory_1'}) %>
+							                      <!--<select name="cmbCategory_1" id="cmbCategory_1">
+							                          <option value="0">Select Category</option>
+							                          <option value="1">XEN-VPS</option>
+							                          <option value="2">OpenVZ</option>
+							                          <option value="3">Dedicated Server</option>
+					                          </select> &nbsp;<span class="error" id="cmbCategory">&nbsp;</span>-->
+			                          </td>
+		                          </tr> 
+		                          <script>document.getElementById('cmbCategory').value=All;</script>
+		                          <tr>
+		                              <td bgcolor="#cbf1ff" align="left" width="35%" valign="top" class="cate_listing_head_1" style="height:20%;">Short Description</td>
+		                              <td align="left" valign="top" class="bgcolor4"><textarea rows="5" cols="50" type="text" id="txtDesc" name="txtDesc"></textarea></td>
+                              </tr>
+                            </tbody>
+                          </table>
+                          <table width="70%" cellspacing="1" cellpadding="0" border="0">
+                              <tbody>
+                                  <tr>
+                                      <td align="right" width="100%" colspan="2">&nbsp;</td>
+                                  </tr>
+                                  <tr>
+                                      <td align="left" width="70%"><input width="64" type="button" height="25" border="0" id="btncancelgen" name="btncancelgen" class="button" onclick="javascript:window.document.location='<%=billing_hosting_plans_path%>';" value="Cancel">&nbsp;
+                                      </td>
+                                      <td align="right" width="30%"><input align="right" width="64" type="submit" height="25" border="0" id="btnsubmitgs" name="btnsubmitgs" onclick="return validateForms('frmaddgs');" value="Next" class="button">&nbsp;
+                                      </td>
+                                  </tr>
+                                </tbody>
+                          </table>
+<!--                        </form>										 -->
+                        <% end %>
+                      </div>
+                     </div></td>
+              </tr>
+               
                          <!-- <tr>
                             <td class="btm_border">&nbsp;</td>
                           </tr>-->

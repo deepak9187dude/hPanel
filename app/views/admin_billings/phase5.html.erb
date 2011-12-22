@@ -1,0 +1,37 @@
+<td valign="top" class="bgcolor2"><table width="100%" cellspacing="0" cellpadding="0" border="0">
+              <tbody><tr>
+                <td class="middle_top"><table width="100%" cellspacing="0" cellpadding="0" border="0">
+                    <tbody><tr>
+                      <td colspan="2"><span class="contenttext_1"><a class="bodylink" href="index.php?cid=3">Home</a> &gt; <a class="bodylink" href="ViewPlans.php?category=1&amp;left=3">Plans Manager</a> &gt; <a class="bodylink" href="ViewPlans.php?category=">Hosting Plans</a></span></td>
+                    </tr>
+                    <tr>
+                      <td width="4%"><img align="bottom" width="30" height="32" border="0" title="Add Server" src="../../asset/images/icon_hosting_plan.png"></td>
+                      <td width="96%" valign="top" style="padding-top:2px"><span class="txt_big_red">Plan3</span></td>
+                    </tr>
+                  </tbody></table></td>
+              </tr>
+              <tr>
+                <td style="padding:5px;"><table width="100%" cellspacing="0" cellpadding="0" border="0">
+                    <tbody><tr>
+                      <td><table width="100%" cellspacing="0" cellpadding="0" border="0">                        
+                          <tbody><tr>
+                            <td align="left" valign="top">
+							<div style="height:100%" id="dvContent">                              
+                                  <div class="show" style="height:100%">	
+                   <%= form_for @admin_plan,:url=>add_billing_hosting_plan_path(6),:html=>{:id=>'frmhr'} ,:method=>"post" do |f| %>
+
+<!--										<form method="post" name="frmhr" id="frmhr">-->
+										<table width="70%" cellspacing="1" cellpadding="0" border="0"><tbody><tr><td class="cate_listing_head">Assign this plan to the following hardware nodes<span style="padding-left:400px;" align="right"> <img align="bottom" src="../../asset/images/search_show.png" id="img1"></span></td></tr><tr width="100%" id="tr1"><td colspan="2"><table><tbody><tr width="100%"><td width="40%" valign="top" class="bgcolor4"><input type="radio" value="all" name="rdoption" checked="checked">&nbsp;All of the available hardware nodes</td><td width="20%" valign="top" class="bgcolor4"></td><td class="bgcolor4">&nbsp;</td></tr><tr id="trHR2" width="100%"><td width="40%" valign="top" class="bgcolor4"><input type="radio" value="sel" name="rdoption">&nbsp;Selected hardware nodes only</td><td width="20%" valign="top" class="bgcolor4"><select style="width:250px; background-color:#FFFFFF" multiple="" size="10" id="cmbserver" name="cmbserver[]"></select></td><td width="40%" valign="top" class="bgcolor4"><input width="20%" type="button" value="Add" onclick="document.getElementById('cmbserver').disabled = false; document.getElementById('frmhr').rdoption[1].checked = true; window_open('addhr.php');" name="AddHr" id="AddHr" class="button"><br><br><input width="20%" type="button" onclick="document.getElementById('cmbserver').disabled = false;  server_list_remove('cmbserver')" value="Remove" class="button" name="RemoveHr" id="RemoveHr"></td></tr><tr id="trHR2" width="100%"><td width="40%" valign="top" class="bgcolor4"><input type="radio" value="expsel" name="rdoption">&nbsp;All of the hardware nodes except the selected ones</td><td width="20%" valign="top" class="bgcolor4"><select style="width:250px; background-color:#FFFFFF" multiple="" size="10" id="cmbserversel" name="cmbserversel[]"></select></td><td width="40%" valign="top" class="bgcolor4"><input width="20%" type="button" onclick="document.getElementById('cmbserversel').disabled = false; document.getElementById('frmhr').rdoption[2].checked = true; window_open('addhr.php');" value="Add" name="AddSelHr" id="AddSelHr" class="button"><br><br><input width="20%" type="button" onclick="document.getElementById('cmbserversel').disabled = false;  server_list_remove('cmbserversel')" value="Remove" class="button" name="RemoveSelHr" id="RemoveSelHr"></td></tr><tr><td align="left" colspan="3">&nbsp;</td></tr><tr><td align="left"><input width="64" type="button" height="25" border="0" id="btncanceleditbr" name="btncanceleditbr" class="button" onclick="window.document.location = '<%=billing_hosting_plans_path%>';" value="Cancel"></td><td align=<%=add_billing_hosting_plan_path(7)%>"left">&nbsp;</td><td align="right"> <input width="64" type="button" height="25" border="0" id="btncanceleditbr" name="btncanceleditbr" class="button" onclick="window.document.location='<%=add_billing_hosting_plan_path(4)%>';" value="Back">&nbsp;<input width="64" type="submit" height="25" border="0" onclick="selectAllNodes('cmbserver');" id="btnsavehr" name="btnsavehr" value="Next" class="button"></td></tr></tbody></table></td><td></td></tr><tr></tr></tbody></table>
+										
+										<!--</form> --> <%end%>                                 </div>
+                                 </div></td>
+                          </tr>
+                         
+                         <!-- <tr>
+                            <td class="btm_border">&nbsp;</td>
+                          </tr>-->
+                        </tbody></table></td>
+                    </tr>
+                  </tbody></table></td>
+              </tr>
+            </tbody></table></td>

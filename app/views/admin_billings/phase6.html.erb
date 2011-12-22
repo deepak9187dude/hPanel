@@ -1,0 +1,40 @@
+<td valign="top" class="bgcolor2"><table width="100%" cellspacing="0" cellpadding="0" border="0">
+              <tbody><tr>
+                <td class="middle_top"><table width="100%" cellspacing="0" cellpadding="0" border="0">
+                    <tbody><tr>
+                      <td colspan="2"><span class="contenttext_1"><a class="bodylink" href="index.php?cid=3">Home</a> &gt; <a class="bodylink" href="ViewPlans.php?category=1&amp;left=3">Plans Manager</a> &gt; <a class="bodylink" href="ViewPlans.php?category=">Hosting Plans</a></span></td>
+                    </tr>
+                    <tr>
+                      <td width="4%"><img align="bottom" width="30" height="32" border="0" title="Add Server" src="../../asset/images/icon_hosting_plan.png"></td>
+                      <td width="96%" valign="top" style="padding-top:2px"><span class="txt_big_red">Plan3</span></td>
+                    </tr>
+                  </tbody></table></td>
+              </tr>
+              <tr>
+                <td style="padding:5px;"><table width="100%" cellspacing="0" cellpadding="0" border="0">
+                    <tbody><tr>
+                      <td><table width="100%" cellspacing="0" cellpadding="0" border="0">                        
+                          <tbody><tr>
+                            <td align="left" valign="top">
+							<div style="height:100%" id="dvContent">                              
+                                  <div class="show" style="height:100%">	
+										<!--<form method="post" name="frmaddtr" id="frmaddtr">-->
+                   <%= form_for @admin_plan,:url=>add_billing_hosting_plan_path(7),:html=>{:id=>'frmaddtr'} ,:method=>"post" do |f| %>
+
+										<table><tbody><tr><td align="center" width="750" class="cate_listing_head">Traffic Settings</td></tr><tr><td align="left" class="bgcolor4"><input type="checkbox" onchange="AddchkEnable();" name="chkenable" id="chkenable"> Enable this traffic class for this hosting plan</td></tr><tr><td align="left" class="bgcolor4"><input type="checkbox" checked="checked" name="chkoverusage" id="chkoverusage" disabled="">Create an overusage invoice at the end of every billing month instead of limiting traffic with the included value</td></tr><tr><td align="left" class="bgcolor4"><input type="checkbox" onchange="AddchkEnable();" checked="checked" name="chktraffic" id="chktraffic" disabled="">Combine incoming and outgoing traffic</td></tr>  <tr><td class="bgcolor4"><table width="100%"><tbody><tr><td align="right" height="20" class="bgcolor4"></td><td align="right" height="20" class="bgcolor4"></td><td align="right" height="20" class="bgcolor4"></td></tr><tr><td align="center" width="20%" class="cate_listing_head">Type</td><td align="center" width="20%" class="cate_listing_head">Included</td><td align="center" width="20%" class="cate_listing_head">Maximum</td><td align="right" width="20%" height="20" class="cate_listing_head">Unit(s)&nbsp;<select name="cmbUnits1" id="cmbUnits1" disabled=""><option value="1">KB</option><option value="2">MB</option><option value="3">GB</option><option value="4">Count</option></select></td></tr><script>document.getElementById('cmbUnits1').value=1;</script><tr><td align="right" height="20" class="bgcolor4">Combined</td><td align="right" height="20" class="bgcolor4">&nbsp;&nbsp;<input type="text" value="0" size="6" id="txtCombine_1" name="txtCombine_1" disabled=""> &nbsp;<span class="error" id="txtCombine"></span></td><td align="right" height="20" class="bgcolor4"><input type="text" value="0" size="6" id="txtCombineMax_1" name="txtCombineMax_1" disabled="">&nbsp;<span class="error" id="txtCombineMax"></span></td></tr><tr><td align="right" height="20" class="bgcolor4">Incoming</td><td align="right" height="20" class="bgcolor4">&nbsp;&nbsp;<input type="text" value="0" size="6" id="txtIncoming_1" disabled="" name="txtIncoming_1">&nbsp;<span class="error" id="txtIncoming">&nbsp;</span></td><td align="right" height="20" class="bgcolor4"><input type="text" value="0" size="6" id="txtIncomingMax_1" disabled="" name="txtIncomingMax_1">&nbsp;<span class="error" id="txtIncomingMax">&nbsp;</span></td></tr><tr><td align="right" height="20" class="bgcolor4">Outgoing</td><td align="right" height="20" class="bgcolor4">&nbsp;&nbsp;<input type="text" value="0" size="6" id="txtOutgoing_1" disabled="" name="txtOutgoing_1">&nbsp;<span class="error" id="txtOutgoing">&nbsp;</span></td><td align="right" height="20" class="bgcolor4"><input type="text" value="0" size="6" id="txtOutgoingMax_1" disabled="" name="txtOutgoingMax_1">&nbsp;<span class="error" id="txtOutgoingMax">&nbsp;</span></td></tr><tr><td align="right" height="20" class="bgcolor4">Additional Rates</td><td align="right" height="20" class="bgcolor4">$<input type="text" value="0" size="6" id="txtAdditional_1" name="txtAdditional_1" disabled="">&nbsp;<span class="error" id="txtAdditional">&nbsp;</span></td><td align="right" height="20" class="bgcolor4"></td></tr><tr><td align="right" height="20" class="bgcolor4">Upgrade</td><td align="right" height="20" class="bgcolor4">&nbsp;&nbsp;<input type="text" value="1" size="6" id="txtUpgrade_1" name="txtUpgrade_1" disabled="">&nbsp;<span class="error" id="txtUpgrade">&nbsp;</span></td><td align="right" height="20" class="bgcolor4"></td></tr></tbody></table></td></tr></tbody></table><table width="750"><tbody><tr><td align="left">&nbsp;</td></tr><tr><td align="left" width="70%">
+										<input width="64" type="button" height="25" border="0" id="btncanceleditbr" name="btncanceleditbr" class="button" onclick="window.document.location = '<%=billing_hosting_plans_path%>';" value="Cancel">&nbsp;</td><td align="right" width="30%"> 
+										<input width="64" type="button" height="25" border="0" id="btncanceleditbr" name="btncanceleditbr" class="button" onclick="window.document.location='<%=add_billing_hosting_plan_path(5)%>';" value="Back">&nbsp;
+										<input width="64" type="submit" height="25" border="0" onclick="return funcValidate();" id="btnsavetr" name="btnsavetr" value="Next" class="button">&nbsp;</td></tr></tbody></table>
+										<!--</form>-->
+										<%end%>                                 </div>
+                                 </div></td>
+                          </tr>
+                         
+                          <!--<tr>
+                            <td class="btm_border">&nbsp;</td>
+                          </tr>-->
+                        </tbody></table></td>
+                    </tr>
+                  </tbody></table></td>
+              </tr>
+            </tbody></table></td>

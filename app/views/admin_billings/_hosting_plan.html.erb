@@ -1,0 +1,23 @@
+<td align="center" width="5%" class="bgcolor4">
+  <a href="#" class="det_link"><%=hosting_plan.id%></a>
+</td>
+<td align="center" width="18%" class="bgcolor4">
+  <a href="#" class="det_link"><%=hosting_plan.title%></a>
+</td>
+<td align="right" width="20%" height="26" class="bgcolor4"><%=hosting_plan.type%></td>
+<td align="right" width="12%" height="26" class="bgcolor4"><%=PlanCategory.find(hosting_plan.plan_category_id).category_name%></td>
+<td align="right" width="12%" height="26" class="bgcolor4">0</td>
+
+<td align="center" width="12%" valign="middle" class="bgcolor4">
+<img title="<%=hosting_plan.sell_status%>" src="/images/<%=hosting_plan.status%>">
+<span class="<%=hosting_plan.sell_status_msg%>">&nbsp;<%=hosting_plan.status_msg%></span>
+</td>
+<td align="center" width="12%" valign="middle" class="bgcolor4">
+<img title="<%=hosting_plan.sell_status%>" src="/images/<%=hosting_plan.sell_status%>">
+<span class="<%=hosting_plan.sell_status_msg%>">&nbsp;<%=hosting_plan.sell_status_msg%></span>
+</td>
+<td align="center" width="11%" valign="middle" class="bgcolor4">
+    <img title="<%=hosting_plan.sell_option%>" src="/images/<%=hosting_plan.sell_option%>">
+</td>
+
+	
