@@ -22,9 +22,7 @@ class AdminClientsController < ApplicationController
           @users = User.find(:all,:conditions=>["#{params[:cmbsearch].to_s.downcase} like ?", "%"+params[:txtsearch].to_s.strip.downcase+"%"],:limit=>params[:limit])
          end
       end
-    end
-    
-    
+    end    
   end
   
   def client_manager
