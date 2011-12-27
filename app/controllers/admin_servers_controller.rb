@@ -3,7 +3,7 @@ class AdminServersController < ApplicationController
   before_filter :admin_current_user
     
   def view_all_servers
-    
+    @vms = Vm.all
   end
   
   def add_new_server

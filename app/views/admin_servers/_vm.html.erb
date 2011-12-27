@@ -1,0 +1,46 @@
+<tr>
+  <td align="center" height="26" class="bgcolor4_center">
+    <input type="checkbox" value="2" id="chkdel" name="chkdel[]">
+  </td>
+  <td height="26" class="bgcolor4">
+    <a class="det_link" href="index.php?cid=8&amp;action=SMT&amp;sid=2&amp;left=1"><%= vm.host_name %></a>
+  </td>
+  <td height="26" class="bgcolor4">
+    <img align="absmiddle" width="16" height="16" title="OpenVZ" src="/images/oenvz_sm.png"> openVZ
+  </td>
+  <td align="center" height="26" class="bgcolor4">20</td>
+  <td align="center" class="bgcolor4">0</td>
+  <td align="center" height="26" class="bgcolor4_center">
+    <table align="center" width="101" cellspacing="0" cellpadding="0" border="0">
+      <tbody>
+        <tr>
+          <td align="center">
+            <a href="index.php?cid=8&amp;action=SME&amp;sid=2&amp;left=1">
+              <img width="16" height="20" border="0" title="Edit" src="/images/icon_add_server.png">
+            </a>
+          </td>
+          <td align="center">
+            <a style="cursor:pointer" onclick="if(chk_confirm('DELETE','Server')!=false)  location.href='index.php?cid=8&amp;action=SMD&amp;sid=2&amp;left=1';">
+              <img width="18" height="16" border="0" title="Delete" src="/images/icon_delete.gif">
+            </a>
+          </td>
+          <td align="center">
+            <a href="index.php?cid=8&amp;action=SRP&amp;sid=2&amp;left=1">
+              <img width="16" height="20" border="0" title="Reset Password" src="/images/reset_password.png">
+            </a>
+          </td>
+          <td align="center">
+            <a href="index.php?cid=8&amp;action=SVL&amp;sid=2&amp;left=1">
+              <img width="16" height="20" border="0" title="View VM" src="/images/icon_view_vm.png">
+            </a>
+          </td>
+          <td align="center">
+            <a href="index.php?cid=12&amp;action=SVI&amp;sid=2&amp;left=1">
+              <img width="16" height="20" border="0" title="View IP" src="/images/icon_ip.png">
+            </a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </td>
+</tr>
