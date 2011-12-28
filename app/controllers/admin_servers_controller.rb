@@ -25,4 +25,12 @@ class AdminServersController < ApplicationController
   def blocked_ip
     
   end
+  
+  def edit_server
+    @server = ServerMaster.find(params[:id])
+  end
+  
+  def update_server
+    @server = ServerMaster.find(params[:id])
+  end
 end

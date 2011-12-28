@@ -14,6 +14,7 @@ class CreateServerMasters < ActiveRecord::Migration
       t.string  :file_system
       t.integer :architecture
       t.integer :admin_id
+      t.integer :vm_id
       t.timestamps
     end
   end

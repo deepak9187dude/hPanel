@@ -6,16 +6,16 @@
     <a class="det_link" href="index.php?cid=8&amp;action=SMT&amp;sid=2&amp;left=1"><%= vm.host_name %></a>
   </td>
   <td height="26" class="bgcolor4">
-    <img align="absmiddle" width="16" height="16" title="OpenVZ" src="/images/oenvz_sm.png"> openVZ
+    <img align="absmiddle" width="16" height="16" title="OpenVZ" src="/images/oenvz_sm.png"> <%= vm.server_master ? vm.server_master.server_type: "N/A" %>
   </td>
-  <td align="center" height="26" class="bgcolor4">20</td>
-  <td align="center" class="bgcolor4">0</td>
+  <td align="center" height="26" class="bgcolor4"><%= vm.server_master ? vm.server_master.max_vps : "N/A" %></td>
+  <td align="center" class="bgcolor4"><%= vm.server_master ? vm.server_master.vps_count : "N/A" %></td>
   <td align="center" height="26" class="bgcolor4_center">
     <table align="center" width="101" cellspacing="0" cellpadding="0" border="0">
       <tbody>
         <tr>
           <td align="center">
-            <a href="index.php?cid=8&amp;action=SME&amp;sid=2&amp;left=1">
+            <a href="<%= admin_edit_server_path(vm) %>">
               <img width="16" height="20" border="0" title="Edit" src="/images/icon_add_server.png">
             </a>
           </td>

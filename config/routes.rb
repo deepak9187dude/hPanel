@@ -136,6 +136,8 @@ scope 'admin' do
   match "/server/network/ipblocked/:left"=>"admin_servers#blocked_ip",:as=>"admin_blocked_ip",:defaults=>{:left=>'1'}
   match "/server/network/nameserver/:left"=>"admin_servers#resolver_management",:as=>"admin_resolver_management",:defaults=>{:left=>'1'}
   match "/server/password/reset/:left"=>"admin_servers#reset_password",:as=>"admin_server_reset_password",:defaults=>{:left=>'1'}
+  match "/server/:id/edit/:left"=>"admin_servers#edit_server",:as=>"admin_edit_server",:defaults=>{:left=>'1'}
+  match "/server/:id/update/:left"=>"admin_servers#update_server",:as=>"admin_update_server",:defaults=>{:left=>'1'}
   
     
 #  admin server manager
