@@ -19,7 +19,7 @@ Vhpanel::Application.routes.draw do
   match "/signinh/:plan_id/:plantype" => "front#signinh"
   match "/:action"=>"front"
   
-  #clients points to users, pathname changed, 
+  #clients points to users, pathname changed,
   resources :users
   resources :clients, :controller=>'users',:path=>'superadmin/clients' do 
     collection do
@@ -135,9 +135,10 @@ scope 'admin' do
   match "/server/network/ipmanager/:left"=>"admin_servers#ip_manager",:as=>"admin_ip_manager",:defaults=>{:left=>'1'}
   match "/server/network/ipblocked/:left"=>"admin_servers#blocked_ip",:as=>"admin_blocked_ip",:defaults=>{:left=>'1'}
   match "/server/network/nameserver/:left"=>"admin_servers#resolver_management",:as=>"admin_resolver_management",:defaults=>{:left=>'1'}
-  match "/server/password/reset/:left"=>"admin_servers#reset_password",:as=>"admin_server_reset_password",:defaults=>{:left=>'1'}
+  match "/server/password/reset/:left(/:id)"=>"admin_servers#reset_password",:as=>"admin_server_reset_password",:defaults=>{:left=>'1'}
   match "/server/:id/edit/:left"=>"admin_servers#edit_server",:as=>"admin_edit_server",:defaults=>{:left=>'1'}
   match "/server/:id/update/:left"=>"admin_servers#update_server",:as=>"admin_update_server",:defaults=>{:left=>'1'}
+  match "/server/:id/delete/:left"=>"admin_servers#delete_server",:as=>"admin_delete_server",:defaults=>{:left=>'1'}
   
     
 #  admin server manager
@@ -150,40 +151,43 @@ scope 'admin' do
   match "/billing/hosting/plan/:left/add/:phase"=>"admin_billings#add_hosting_plan",:as=>"add_billing_hosting_plan",:defaults=>{:left=>3}
   match "/billing/receivables/:left/:receivable"=>"admin_billings#receivables",:as => "billing_reveivables",:defaults=>{:left=>3,:receivable=>'orders'}
   
+#    message manager
+    
 #    admin logs  
-  match "/logs/jobs/:type/:left"=>"admin_logs#jobs_queue",:as=>"jobs_queue",:defaults=>{:left=>4,:type=>'completed'}
-  match "/logs/jong/:type/:left"=>"admin_logs#long_queue",:as=>"long_queue",:defaults=>{:left=>4,:type=>'completed'}
+  match "/logs/jobs/:type/:left"=>"admin_logs#jobs_queue",:as=>"jobs_queue",:defaults=>{:left=>6,:type=>'completed'}
+  match "/logs/jong/:type/:left"=>"admin_logs#long_queue",:as=>"long_queue",:defaults=>{:left=>6,:type=>'completed'}
   
 #   admin commerce manager
-  match "/commerce/fraud/:left"=>"admin_billings#anti_fraud_checklist",:as=>"anti_fraud_checklist",:defaults=>{:left=>5}
-  match "/gateway/settings/:left"=>"admin_billings#gateway_settings",:as=>"gateway_settings",:defaults=>{:left=>5}
-  match "/gateway/fraudscore/:left"=>"admin_billings#fraud_score",:as=>"fraud_score",:defaults=>{:left=>5}
-  match "/gateway/fraudscore/:left/add/:id"=>"admin_billings#add_fraud_score",:as=>"add_fraud_score",:defaults=>{:left=>5}
-  match "/gateway/fraudscore/:left/update/:id"=>"admin_billings#fraud_score_update",:as=>"fraud_score_update",:defaults=>{:left=>5}
-  match "/gateway/settings/configuregateway/:left/:id"=>"admin_billings#configure_gateway",:as=>"configure_gateway",:defaults=>{:left=>5}
-  match "/gateway/settings/configuregateway/:left/update/:id"=>"admin_billings#gateway_update",:as=>"gateway_update",:defaults=>{:left=>5}
+  match "/commerce/fraud/:left"=>"admin_billings#anti_fraud_checklist",:as=>"anti_fraud_checklist",:defaults=>{:left=>7}
+  match "/gateway/settings/:left"=>"admin_billings#gateway_settings",:as=>"gateway_settings",:defaults=>{:left=>7}
+  match "/gateway/fraudscore/:left"=>"admin_billings#fraud_score",:as=>"fraud_score",:defaults=>{:left=>7}
+  match "/gateway/fraudscore/:left/add/:id"=>"admin_billings#add_fraud_score",:as=>"add_fraud_score",:defaults=>{:left=>7}
+  match "/gateway/fraudscore/:left/update/:id"=>"admin_billings#fraud_score_update",:as=>"fraud_score_update",:defaults=>{:left=>7}
+  match "/gateway/settings/configuregateway/:left/:id"=>"admin_billings#configure_gateway",:as=>"configure_gateway",:defaults=>{:left=>7}
+  match "/gateway/settings/configuregateway/:left/update/:id"=>"admin_billings#gateway_update",:as=>"gateway_update",:defaults=>{:left=>7}
   
 
 # admin settings 
-  match "/password/reset/:left"=>"admin#reset_password",:as=>"admin_reset_password",:defaults=>{:left=>6}
+  match "/password/reset/:left"=>"admin#reset_password",:as=>"admin_reset_password",:defaults=>{:left=>8}
+  match "/password/change/:id"=>"admin#change_password",:as=>"admin_change_password"
   
     
 #  admin tickets
-    match 'support/:left' =>"admin_tickets#support_tickets",:via => [:get,:post,:put],:as=>'admin_all_support_tickets',:defaults=>{:left=>7}
-    match 'support/:left/:show' =>"admin_tickets#support_tickets",:via => [:get,:post,:put],:as=>'admin_open_support_tickets',:defaults=>{:left=>7,:show=>"open"}
-    match 'support/:left/:show' =>"admin_tickets#support_tickets",:via => [:get,:post,:put],:as=>'admin_hold_support_tickets',:defaults=>{:left=>7,:show=>"hold"}
-    match 'support/:left/:show' =>"admin_tickets#support_tickets",:via => [:get,:post,:put],:as=>'admin_closed_support_tickets',:defaults=>{:left=>7,:show=>"closed"}
-    match 'support/:left/:show' =>"admin_tickets#support_tickets",:via => [:get,:post,:put],:as=>'admin_progress_support_tickets',:defaults=>{:left=>7,:show=>"progress"} 
+    match 'support/:left' =>"admin_tickets#support_tickets",:via => [:get,:post,:put],:as=>'admin_all_support_tickets',:defaults=>{:left=>9}
+    match 'support/:left/:show' =>"admin_tickets#support_tickets",:via => [:get,:post,:put],:as=>'admin_open_support_tickets',:defaults=>{:left=>9,:show=>"open"}
+    match 'support/:left/:show' =>"admin_tickets#support_tickets",:via => [:get,:post,:put],:as=>'admin_hold_support_tickets',:defaults=>{:left=>9,:show=>"hold"}
+    match 'support/:left/:show' =>"admin_tickets#support_tickets",:via => [:get,:post,:put],:as=>'admin_closed_support_tickets',:defaults=>{:left=>9,:show=>"closed"}
+    match 'support/:left/:show' =>"admin_tickets#support_tickets",:via => [:get,:post,:put],:as=>'admin_progress_support_tickets',:defaults=>{:left=>9,:show=>"progress"} 
     
-    match 'billing/:left' =>"admin_tickets#billing_tickets",:via => [:get,:post,:put],:as=>'admin_all_billing_tickets',:defaults=>{:left=>7}
-    match 'billing/:left/:show' =>"admin_tickets#billing_tickets",:via => [:get,:post,:put],:as=>'admin_open_billing_tickets',:defaults=>{:left=>7,:show=>"open"}
-    match 'billing/:left/:show' =>"admin_tickets#billing_tickets",:via => [:get,:post,:put],:as=>'admin_hold_billing_tickets',:defaults=>{:left=>7,:show=>"hold"}
-    match 'billing/:left/:show' =>"admin_tickets#billing_tickets",:via => [:get,:post,:put],:as=>'admin_closed_billing_tickets',:defaults=>{:left=>7,:show=>"closed"}
-    match 'billing/:left/:show' =>"admin_tickets#billing_tickets",:via => [:get,:post,:put],:as=>'admin_progress_billing_tickets',:defaults=>{:left=>7,:show=>"progress"} 
+    match 'billing/:left' =>"admin_tickets#billing_tickets",:via => [:get,:post,:put],:as=>'admin_all_billing_tickets',:defaults=>{:left=>9}
+    match 'billing/:left/:show' =>"admin_tickets#billing_tickets",:via => [:get,:post,:put],:as=>'admin_open_billing_tickets',:defaults=>{:left=>9,:show=>"open"}
+    match 'billing/:left/:show' =>"admin_tickets#billing_tickets",:via => [:get,:post,:put],:as=>'admin_hold_billing_tickets',:defaults=>{:left=>9,:show=>"hold"}
+    match 'billing/:left/:show' =>"admin_tickets#billing_tickets",:via => [:get,:post,:put],:as=>'admin_closed_billing_tickets',:defaults=>{:left=>9,:show=>"closed"}
+    match 'billing/:left/:show' =>"admin_tickets#billing_tickets",:via => [:get,:post,:put],:as=>'admin_progress_billing_tickets',:defaults=>{:left=>9,:show=>"progress"} 
     
-    match 'tickets/:left/new' => "admin_tickets#new_ticket", :as => 'admin_new_ticket',:defaults=>{:left=>7}
+    match 'tickets/:left/new' => "admin_tickets#new_ticket", :as => 'admin_new_ticket',:defaults=>{:left=>9}
     match 'tickets/create' => "admin_tickets#create_ticket", :as => 'admin_create_ticket', :via => [:post,:put]
-    match 'tickets/:left/:page(/:id)' => "admin_tickets#ticket_details", :as => 'admin_ticket_details',:defaults=>{:left=>7,:page=>'general'}
+    match 'tickets/:left/:page(/:id)' => "admin_tickets#ticket_details", :as => 'admin_ticket_details',:defaults=>{:left=>9,:page=>'general'}
     match 'ticket_reply/create_reply/:id' => "admin_tickets#create_reply", :as => 'admin_create_reply'
 
 end

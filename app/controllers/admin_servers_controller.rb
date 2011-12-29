@@ -31,6 +31,19 @@ class AdminServersController < ApplicationController
   end
   
   def update_server
-    @server = ServerMaster.find(params[:id])
+    if params[:server]
+      @server = ServerMaster.find(params[:id])
+      @server.update_attributes(params[:server])
+      redirect_to admin_edit_server_path(params[:id])    
+    end
+  end
+  
+  def delete_server
+    
+  end
+  
+  def reset_password
+    @vm = Vm.all
+    @selected_vm = Vm.find(params[:id])
   end
 end

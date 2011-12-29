@@ -45,4 +45,22 @@ class AdminController < ApplicationController
   def reset_password
     
   end
+  
+  def change_password
+    @user = User.find(params[:id])
+    if params[:old_password]==@user.password
+      if params[:resetpwd] && params[:password]==params[:re_password]
+        @user.password = params[:password]
+        @user.save
+        flash[:info_msg] = "password updated successfully"
+        redirect_to admin_reset_password_path
+      else
+        flash[:error_msg] = "password do not match"
+        redirect_to admin_reset_password_path
+      end
+    else
+      flash[:error_msg] = "Incorrect old password"
+      redirect_to admin_reset_password_path
+    end
+  end
 end

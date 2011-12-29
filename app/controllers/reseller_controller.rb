@@ -74,7 +74,7 @@ class ResellerController < ApplicationController
         flash[:info_msg] = "password updated successfully"
         redirect_to reseller_update_password_path
       else
-        flash[:error_msg] = "password no not match"
+        flash[:error_msg] = "password do not match"
         redirect_to reseller_update_password_path
       end
     else

@@ -266,6 +266,62 @@
                                               </tr>
                                             </table>
                                           </div>
+                                          <h1 class="accordion_toggle">MESSAGES MANAGER</h1>
+                                          <div class="accordion_content" id="content_width" style="height: auto; display: block;">
+                                            <table width="90%" cellspacing="0" cellpadding="0" border="0">
+                                              <tbody>
+                                                <tr>
+                                                  <td class="cate_border">
+                                                    <img align="bottom" width="16" height="20" title="Inbox" src="/images/icon_inbox.png">
+                                                    <span class="left_nav">
+                                                      <a href="index.php?cid=24&amp;action=AIM&amp;left=4">Inbox</a>
+                                                    </span>
+                                                  </td>
+                                                </tr>
+                                                <tr>
+                                                  <td class="cate_border">
+                                                    <img align="bottom" width="16" height="20" title="Sentbox" src="/images/icon_sendmail.png">
+                                                    <span class="left_nav">
+                                                      <a href="index.php?cid=24&amp;action=ASM&amp;left=4">Sentbox</a>
+                                                    </span>
+                                                  </td>
+                                                </tr>
+                                                <tr>
+                                                  <td>
+                                                    <img align="bottom" width="16" height="20" title="Templates" src="/images/icon_sendmail.png">
+                                                    <span class="left_nav">
+                                                      <a href="index.php?cid=24&amp;action=TML&amp;left=4">Templates</a>
+                                                    </span>
+                                                  </td>
+                                                </tr>
+                                              </tbody>
+                                            </table>
+                                          </div>
+                                          <h1 class="accordion_toggle">LICENSE MANAGER</h1>
+                                          <div class="accordion_content" id="content_width" style="height: auto; display: block;">
+                                          <table width="90%" cellspacing="0" cellpadding="0" border="0">
+                                            <tbody>
+                                              <tr>
+                                                <td>
+                                                  <img align="bottom" width="16" height="20" title="License Details" src="/images/icon_license_s.png">
+                                                  <span class="left_nav">
+                                                    <a href="index.php?cid=19&amp;action=ALL&amp;left=5">License Details</a>
+                                                  </span>
+                                                </td>
+                                              </tr>
+                                              <tr> 
+                                              <td>
+                                                <div style="display:none">
+                                                  <img align="bottom" width="16" height="20" title="License Verification" src="/images/icon_license_s.png">
+                                                    <span class="left_nav">
+                                                      <a href="index.php?cid=19&amp;action=ALV&amp;left=5">License Verification</a>
+                                                    </span>
+                                                </div>
+                                              </td>
+                                              </tr>
+                                            </tbody>
+                                          </table>
+                                          </div>
                                           <h1 class="accordion_toggle">LOG MANAGER</h1>
                                           <div id="content_width" class="accordion_content">
                                             <table width="90%" border="0" cellspacing="0" cellpadding="0">
@@ -280,10 +336,10 @@
                                                       <%= link_to "Completed Logs", jobs_queue_path %>
                                                     </li>
                                                     <li class="left_nav">
-                                                      <%= link_to "Action Logs", jobs_queue_path('action',4) %>
+                                                      <%= link_to "Action Logs", jobs_queue_path('action',6) %>
                                                     </li>
                                                     <li class="left_nav">
-                                                      <%= link_to "Error Logs", jobs_queue_path('error',4) %>
+                                                      <%= link_to "Error Logs", jobs_queue_path('error',5) %>
                                                     </li>
                                                   </ul>
                                                 </td>
@@ -296,13 +352,13 @@
                                                   </span>
                                                   <ul>
                                                     <li class="left_nav">
-                                                      <%= link_to "Completed Logs", long_queue_path('completed',4) %>
+                                                      <%= link_to "Completed Logs", long_queue_path('completed',6) %>
                                                     </li>
                                                     <li class="left_nav">
-                                                      <%= link_to "Action Logs", long_queue_path('action',4) %>
+                                                      <%= link_to "Action Logs", long_queue_path('action',6) %>
                                                     </li>
                                                     <li class="left_nav">
-                                                      <%= link_to "Error Logs", long_queue_path('error',4) %>
+                                                      <%= link_to "Error Logs", long_queue_path('error',6) %>
                                                     </li>
                                                   </ul>
                                                 </td>

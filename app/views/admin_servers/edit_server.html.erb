@@ -1,0 +1,156 @@
+<td valign="top" class="bgcolor2">
+  <table width="100%" cellspacing="0" cellpadding="0" border="0">
+    <tbody>
+      <tr>
+        <td class="middle_top">
+          <table width="100%" cellspacing="0" cellpadding="0" border="0">
+            <tbody>
+              <tr>
+                <td colspan="2">
+                  <span class="bodytext_1">
+                    <a class="bodylink" href="index.php?cid=3">Home</a> 
+                    &gt; <a class="bodylink" href="index.php?cid=21&amp;action=SMM&amp;left=1">Servers Manager</a> 
+                    &gt;<a class="bodylink" href="index.php?cid=8&amp;action=SMT&amp;sid=4&amp;left=1">Servers Details</a> 
+                    &gt; Edit Server 
+                  </span>
+                </td>
+              </tr>
+              <tr>
+                <td width="4%">
+                  <img align="bottom" width="30" height="32" border="0" title="Edit Server" src="/images/icon_add_server_big.png">
+                </td>
+                <td width="96%" valign="top" style="padding-top:2px">
+                  <span class="txt_big_red">Edit Server</span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <td class="tdgap1">
+          <div align="center" id="chldpar2">
+            <table width="100%" cellspacing="0" cellpadding="0" border="0">
+              <tbody>
+                <tr>
+                  <td class="tdgap1">
+                    <%= form_for @server, :as => :server, :url => admin_update_server_path,:html=>{:onsubmit=>"return validateForms('frmusr_edit');",:id=>"frmusr_edit"} do |f| %>
+                    <form action="index.php?cid=8&amp;action=SME&amp;sid=4&amp;left=1" method="post" id="frmscr" name="frmscr">
+                      <table align="left" width="55%" cellspacing="0" cellpadding="0" border="0">
+                        <tbody>
+                          <tr>
+                            <td align="center" height="25" class="mandotry" colspan="2">
+                              <span class="bolderror"></span>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td colspan="2" class="bgcolor1">
+                              <table width="100%" cellspacing="1" cellpadding="2" border="0" class="bgcolor3">
+                                <tbody>
+                                  <tr>
+                                    <td align="right" width="43%" valign="top" class="cate_listing">
+                                      <span class="mandotry">*</span> IP or Hostname :
+                                    </td>
+                                    <td width="57%" valign="top" class="bgcolor4">admin@idifysolutions.com
+                                      <input type="hidden" value="admin@idifysolutions.com" name="txtshost">
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <td align="right" valign="top" class="cate_listing">
+                                      <span class="mandotry">*</span> Server Type :</td>
+                                    <td valign="top" class="bgcolor4">openVZ
+                                      <input type="hidden" value="openVZ" name="cmbstype">
+                                    </td>
+                                  </tr>
+                                  <!--
+          
+                                          <tr>
+          
+                                            <td align="right" valign="top" class="cate_listing"><span class="mandotry">*</span> Password :</td>
+          
+                                            <td valign="top" class="bgcolor4">                                    <input name="txtspwd_1" type="password" class="txtfield1" id="txtspwd_1" value="#PWD#" /> </td>
+          
+                                          </tr>
+          
+                                          <tr>
+          
+                                            <td align="right" valign="top" class="cate_listing"><span class="mandotry">*</span> Retype Password :</td>
+          
+                                            <td valign="top" class="bgcolor4">                                    <input name="txtsrpwd_1" type="password" class="txtfield1" id="txtsrpwd_1" /> 
+          
+                                             </td>
+          
+                                          </tr>-->
+                                  <tr>
+                                    <td align="right" valign="top" class="cate_listing">
+                                      <span class="mandotry">*</span> Max VPS :
+                                    </td>
+                                    <td valign="top" class="bgcolor4">
+                                      <input type="text" value="1" id="txtvps_1" class="txtfield1" name="txtvps_1">
+                                    </td>
+                                  </tr>
+                                  <!--
+          
+                                          <tr>
+          
+                                            <td align="right" valign="top" class="cate_listing"><span class="mandotry">*</span>  IP :</td>
+          
+                                            <td valign="top" class="bgcolor4"><input name="txtip_1" type="text" class="txtfield1" id="txtip_1" value="#IP#"/>
+          
+               </td>
+          
+                                          </tr>-->
+                                  <tr>
+                                    <td align="right" valign="top" class="cate_listing">
+                                      <span class="mandotry">*</span> Subnetmask :
+                                    </td>
+                                    <td valign="top" class="bgcolor4">
+                                      <%= f.text_field :subnet, :id=>'txtsubnet_1',:class=>'txtfield1',:size=>20 %>
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <td align="right" valign="top" class="cate_listing">
+                                      <span class="mandotry">*</span> SSH Port :
+                                    </td>
+                                    <td valign="top" class="bgcolor4">
+                                      <%= f.text_field :ssh, :id=>'txtssh_1',:class=>'txtfield1',:size=>20 %>
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <td align="right" valign="top" class="cate_listing">
+                                      <span class="mandotry">*</span> Gateway :
+                                    </td>
+                                    <td valign="top" class="bgcolor4">
+                                      <%= f.text_field :gateway, :id=>'txtgateway_1',:class=>'txtfield1',:size=>20 %>
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <td align="right" valign="top" class="cate_listing">
+                                      <span class="mandotry">*</span> Server OS Type :</td>
+                                    <td valign="top" class="bgcolor4">
+                                      centos
+                                      <input type="hidden" value="centos" name="txtserverostype">
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <td align="right" valign="top" class="cate_listing"><span class="mandotry">*</span> Server Architecture :</td>
+                                    <td valign="top" class="bgcolor4">64-bit</td>
+                                  </tr>						
+                                </tbody></table></td>
+                          </tr>
+                          <tr>
+                            <td align="right" width="43%" valign="middle"><input type="button" onclick="history.back()" value="Cancel" id="btncancel" class="button" name="btncancel">
+                              &nbsp;</td>
+                            <td align="left" width="57%" valign="middle" height="35"><input type="submit" value="Submit" id="btnsubmit" class="button" name="btnsubmit"></td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </form>
+                    <% end %>
+                  </td>
+                </tr>
+              </tbody></table>
+          </div></td>
+      </tr>
+    </tbody></table>
+</td>
